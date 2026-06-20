@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 from ams2_ai.models.driver import DriverEntry
-from ams2_ai.models.parameters import NUMERIC_KEYS, clamp, ui_to_xml
+from ams2_ai.models.parameters import NUMERIC_KEYS, clamp
 
 
 def _clamp01(value: float) -> float:
     return clamp(value, 0.0, 1.0)
 
-# Vehicle performance, setup, and reliability are car-specific — editable independently in Smart mode.
+
+# Vehicle performance, setup, and reliability are car-specific settings.
+# They stay editable independently in Smart mode.
 INDEPENDENT_KEYS = frozenset(
     {
         "weight_scalar",

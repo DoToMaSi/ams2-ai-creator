@@ -1,4 +1,3 @@
-from ams2_ai.models.parameters import xml_to_ui
 from ams2_ai.smart.derivation import calculate_smart_ai, derive_from_skill_aggression
 
 
