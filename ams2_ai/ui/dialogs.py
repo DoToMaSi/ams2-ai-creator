@@ -56,25 +56,67 @@ class ErrorDialog(QDialog):
         QApplication.clipboard().setText(str(get_log_file_path()))
 
 
+CUSTOM_CLASS_OPTION = "Custom…"
+
+
 class NewFileDialog(QDialog):
     def __init__(self, parent: QWidget | None = None):
         super().__init__(parent)
         self.setWindowTitle("New AI File")
-        self.resize(420, 120)
+        self.resize(460, 200)
 
         layout = QFormLayout(self)
+
+        self.set_name_edit = QLineEdit()
+        self.set_name_edit.setPlaceholderText('e.g. "F1 2005" — shown in the file list')
+        layout.addRow("Name:", self.set_name_edit)
+
         self.class_combo = QComboBox()
-        self.class_combo.setEditable(True)
+        self.class_combo.addItem(CUSTOM_CLASS_OPTION)
         self.class_combo.addItems(load_vehicle_classes())
+        self.class_combo.currentTextChanged.connect(self._on_class_changed)
         layout.addRow("Vehicle class file:", self.class_combo)
 
+        self.custom_file_row = QWidget()
+        custom_row_layout = QFormLayout(self.custom_file_row)
+        custom_row_layout.setContentsMargins(0, 0, 0, 0)
+        self.custom_file_edit = QLineEdit()
+        self.custom_file_edit.setPlaceholderText("Modded class filename, e.g. MyMod_GT3.xml")
+        custom_row_layout.addRow("Custom filename:", self.custom_file_edit)
+        layout.addRow(self.custom_file_row)
+
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
-        buttons.accepted.connect(self.accept)
+        buttons.accepted.connect(self._validate_and_accept)
         buttons.rejected.connect(self.reject)
         layout.addRow(buttons)
 
+        self._on_class_changed(self.class_combo.currentText())
+
+    def _on_class_changed(self, text: str) -> None:
+        self.custom_file_row.setVisible(text == CUSTOM_CLASS_OPTION)
+
+    def _validate_and_accept(self) -> None:
+        if self.is_custom_class() and not self.custom_file_edit.text().strip():
+            QMessageBox.warning(self, "New AI File", "Enter a custom XML filename.")
+            return
+        if not self.selected_filename():
+            QMessageBox.warning(self, "New AI File", "Select or enter a vehicle class filename.")
+            return
+        self.accept()
+
+    def is_custom_class(self) -> bool:
+        return self.class_combo.currentText() == CUSTOM_CLASS_OPTION
+
+    def set_name(self) -> str:
+        return self.set_name_edit.text().strip()
+
     def selected_filename(self) -> str:
-        text = self.class_combo.currentText().strip()
+        if self.is_custom_class():
+            text = self.custom_file_edit.text().strip()
+        else:
+            text = self.class_combo.currentText().strip()
+        if not text or text == CUSTOM_CLASS_OPTION:
+            return ""
         if not text.endswith(".xml"):
             text = f"{text}.xml"
         return text

@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (
 from ams2_ai.data import load_countries, load_tracks
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.parameters import PARAMETER_GROUPS, PARAMETERS, ParameterDef
-from ams2_ai.smart.derivation import apply_smart_derivation
+from ams2_ai.smart.derivation import INDEPENDENT_KEYS, apply_smart_derivation
 from ams2_ai.smart.presets import PRESET_NAMES, apply_preset
 from ams2_ai.ui.dialogs import TrackPickerDialog
 from ams2_ai.ui.parameter_row import ParameterRow
@@ -30,7 +30,7 @@ from ams2_ai.ui.parameter_row import ParameterRow
 class DriverEditor(QWidget):
     driverChanged = Signal()
 
-    SMART_EDITABLE = {"race_skill", "aggression"}
+    SMART_PRIMARY = {"race_skill", "aggression"}
 
     def __init__(self, parent: QWidget | None = None):
         super().__init__(parent)
@@ -145,7 +145,10 @@ class DriverEditor(QWidget):
     def _update_field_locks(self) -> None:
         smart = self.smart_radio.isChecked()
         for key, row in self._rows.items():
-            editable = (not smart) or (key in self.SMART_EDITABLE)
+            if not smart:
+                editable = True
+            else:
+                editable = key in self.SMART_PRIMARY or key in INDEPENDENT_KEYS
             row.set_enabled_editable(editable)
 
     def _on_mode_changed(self) -> None:
@@ -153,10 +156,11 @@ class DriverEditor(QWidget):
             return
         self._driver.mode = "smart" if self.smart_radio.isChecked() else "custom"
         if self._driver.mode == "smart":
-            apply_smart_derivation(self._driver)
+            apply_smart_derivation(self._driver, preserve_independent=True)
             self._loading = True
             for key, row in self._rows.items():
-                row.set_value(self._driver.get_ui_value(key))
+                if key not in self.SMART_PRIMARY and key not in INDEPENDENT_KEYS:
+                    row.set_value(self._driver.get_ui_value(key))
             self._loading = False
         self._update_field_locks()
         self.driverChanged.emit()
@@ -183,11 +187,11 @@ class DriverEditor(QWidget):
         if self._loading or not self._driver:
             return
         self._driver.set_ui_value(key, ui_value)
-        if self._driver.mode == "smart" and key in self.SMART_EDITABLE:
-            apply_smart_derivation(self._driver)
+        if self._driver.mode == "smart" and key in self.SMART_PRIMARY:
+            apply_smart_derivation(self._driver, preserve_independent=True)
             self._loading = True
             for row_key, row in self._rows.items():
-                if row_key not in self.SMART_EDITABLE:
+                if row_key not in self.SMART_PRIMARY and row_key not in INDEPENDENT_KEYS:
                     row.set_value(self._driver.get_ui_value(row_key))
             self._loading = False
         self.driverChanged.emit()

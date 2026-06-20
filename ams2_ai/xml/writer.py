@@ -47,5 +47,6 @@ def save_document(document: AIDocument, path: Path) -> None:
     lines.append(xml_body)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     document.path = path
+    document.sync_header_comment()
     document.mark_clean()
     logger.info("Saved document: %s", path)

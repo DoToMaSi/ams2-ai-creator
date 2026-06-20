@@ -61,9 +61,36 @@ def derive_from_skill_aggression(
     return {key: ui_to_xml(key, ui_values[key]) for key in NUMERIC_KEYS}
 
 
-def apply_smart_derivation(driver: DriverEntry, *, apply_randomness: bool = False) -> None:
+INDEPENDENT_KEYS = frozenset(
+    {
+        "weight_scalar",
+        "power_scalar",
+        "drag_scalar",
+        "setup_downforce",
+        "setup_downforce_randomness",
+    }
+)
+
+
+def apply_smart_derivation(
+    driver: DriverEntry,
+    *,
+    apply_randomness: bool = False,
+    preserve_independent: bool = True,
+) -> None:
     skill = driver.get_skill_ui()
     aggression = driver.get_aggression_ui()
     derived = derive_from_skill_aggression(skill, aggression, apply_randomness=apply_randomness)
+
+    preserved: dict[str, float] = {}
+    if preserve_independent:
+        for key in INDEPENDENT_KEYS:
+            if key in driver.values:
+                preserved[key] = driver.values[key]
+
     for key, xml_value in derived.items():
+        if preserve_independent and key in INDEPENDENT_KEYS:
+            if key not in driver.set_fields:
+                driver.set_xml_value(key, xml_value)
+            continue
         driver.set_xml_value(key, xml_value)

@@ -190,6 +190,7 @@ ams2-ai-creator/
 │   └── ui/                 # PySide6 interface
 ├── tests/
 ├── scripts/build_windows.ps1
+├── scripts/build_windows.bat
 └── .github/workflows/
 ```
 
@@ -220,6 +221,13 @@ Build a Windows distributable with PyInstaller:
 ```powershell
 pip install -e ".[dev]"
 ./scripts/build_windows.ps1
+```
+
+Or on Windows Command Prompt:
+
+```bat
+pip install -e ".[dev]"
+scripts\build_windows.bat
 ```
 
 Output: `dist/AMS2-AI-Creator/`

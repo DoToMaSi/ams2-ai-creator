@@ -14,13 +14,26 @@ class AIDocument:
     path: Path | None = None
     drivers: list[DriverEntry] = field(default_factory=list)
     header_comment: str = ""
+    set_name: str = ""
     dirty: bool = False
 
     @property
     def display_name(self) -> str:
-        if self.path:
-            return self.path.name
-        return "Untitled.xml"
+        filename = self.path.name if self.path else "Untitled.xml"
+        label = self.set_name.strip() or self._set_name_from_comment()
+        if label:
+            return f"{label} ({filename})"
+        return filename
+
+    def _set_name_from_comment(self) -> str:
+        if not self.header_comment:
+            return ""
+        return self.header_comment.splitlines()[0].strip()
+
+    def sync_header_comment(self) -> None:
+        """Write set_name into the XML header comment."""
+        if self.set_name.strip():
+            self.header_comment = self.set_name.strip()
 
     def mark_clean(self) -> None:
         self.dirty = False
