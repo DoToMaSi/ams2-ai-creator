@@ -22,6 +22,7 @@ class AIDocument:
     header_comment: str = ""
     set_name: str = ""
     dirty: bool = False
+    saved_xml: str | None = field(default=None, repr=False, compare=False)
     _profiles: list[DriverProfile] | None = field(default=None, repr=False, compare=False)
 
     def invalidate_profiles(self) -> None:
@@ -52,6 +53,11 @@ class AIDocument:
 
     def mark_clean(self) -> None:
         self.dirty = False
+
+    def commit_saved_state(self, xml_content: str) -> None:
+        """Store a validated XML snapshot and clear the dirty flag."""
+        self.saved_xml = xml_content
+        self.mark_clean()
 
     def mark_dirty(self) -> None:
         self.dirty = True

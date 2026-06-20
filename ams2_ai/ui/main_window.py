@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-import shutil
 import uuid
 from pathlib import Path
 
@@ -11,10 +10,14 @@ from PySide6.QtCore import QSettings, QThread
 from PySide6.QtGui import QAction, QKeySequence
 from PySide6.QtWidgets import (
     QFileDialog,
+    QHBoxLayout,
     QMainWindow,
     QMessageBox,
+    QPushButton,
     QSplitter,
     QStatusBar,
+    QVBoxLayout,
+    QWidget,
 )
 
 from ams2_ai import __version__
@@ -33,7 +36,7 @@ from ams2_ai.ui.file_sidebar import FileSidebar
 from ams2_ai.ui.load_worker import DocumentLoadWorker
 from ams2_ai.ui.loading_dialog import LoadingDialog
 from ams2_ai.validation import validate_document
-from ams2_ai.xml.writer import save_document
+from ams2_ai.xml.writer import save_document, serialize_document
 
 logger = logging.getLogger("ams2_ai.ui.main_window")
 
@@ -65,12 +68,29 @@ class MainWindow(QMainWindow):
         splitter.setStretchFactor(0, 0)
         splitter.setStretchFactor(1, 1)
         splitter.setSizes([280, 920])
-        self.setCentralWidget(splitter)
+
+        footer = QHBoxLayout()
+        footer.addStretch()
+        self.save_btn = QPushButton("Save")
+        self.save_btn.setShortcut(QKeySequence.Save)
+        self.save_btn.clicked.connect(self.save_active)
+        footer.addWidget(self.save_btn)
+        self.export_xml_btn = QPushButton("Export AI XML")
+        self.export_xml_btn.clicked.connect(self.export_ai_xml)
+        footer.addWidget(self.export_xml_btn)
+
+        central = QWidget()
+        central_layout = QVBoxLayout(central)
+        central_layout.setContentsMargins(0, 0, 0, 0)
+        central_layout.addWidget(splitter, stretch=1)
+        central_layout.addLayout(footer)
+        self.setCentralWidget(central)
 
         self.setStatusBar(QStatusBar())
         self._build_menu()
         self._connect_signals()
         self._sync_driver_panel()
+        self._refresh_save_state()
 
     def _build_menu(self) -> None:
         file_menu = self.menuBar().addMenu("&File")
@@ -90,12 +110,11 @@ class MainWindow(QMainWindow):
         save_action.triggered.connect(self.save_active)
         file_menu.addAction(save_action)
 
-        save_as_action = QAction("Save &As…", self)
-        save_as_action.setShortcut(QKeySequence.SaveAs)
-        save_as_action.triggered.connect(self.save_active_as)
-        file_menu.addAction(save_as_action)
+        export_xml_action = QAction("Export AI &XML…", self)
+        export_xml_action.triggered.connect(self.export_ai_xml)
+        file_menu.addAction(export_xml_action)
 
-        export_action = QAction("&Export to AMS2…", self)
+        export_action = QAction("Export to &AMS2…", self)
         export_action.triggered.connect(self.export_to_ams2)
         file_menu.addAction(export_action)
 
@@ -240,6 +259,7 @@ class MainWindow(QMainWindow):
         self._open_paths_queue.pop(0)
         for profile in document.profiles():
             profile.base.mode = "custom"
+        document.commit_saved_state(serialize_document(document))
         doc_id = self._register_document(document)
 
         if self._open_paths_queue:
@@ -288,41 +308,51 @@ class MainWindow(QMainWindow):
                 self.statusBar().showMessage(f"Opened {document.display_name}", 3000)
 
     def save_active(self) -> bool:
+        """Validate and store the current document state in memory."""
         document = self._active_document()
         if not document:
             return False
-        if not document.path:
-            return self.save_active_as()
-        return self._save_document(document, document.path)
+        errors = validate_document(document)
+        if errors:
+            warn_validation_errors(self, errors)
+            return False
+        document.commit_saved_state(serialize_document(document))
+        self._refresh_save_state()
+        self.statusBar().showMessage(f"Saved {document.display_name}", 3000)
+        logger.info("Internally saved document: %s", document.display_name)
+        return True
 
-    def save_active_as(self) -> bool:
+    def export_ai_xml(self) -> bool:
+        """Write the active document to an AI XML file on disk."""
         document = self._active_document()
         if not document:
             return False
+        default_name = document.path.name if document.path else "custom_ai.xml"
         path_str, _ = QFileDialog.getSaveFileName(
             self,
-            "Save AI XML File",
-            document.path.name if document.path else "custom_ai.xml",
+            "Export AI XML File",
+            default_name,
             "XML Files (*.xml)",
         )
         if not path_str:
             return False
-        return self._save_document(document, Path(path_str))
+        return self._export_document_to_path(document, Path(path_str))
 
-    def _save_document(self, document: AIDocument, path: Path) -> bool:
+    def _export_document_to_path(self, document: AIDocument, path: Path) -> bool:
         errors = validate_document(document)
         if errors:
             warn_validation_errors(self, errors)
             return False
         try:
             save_document(document, path)
+            document.commit_saved_state(serialize_document(document))
         except OSError as exc:
-            logger.exception("Save failed: %s", path)
-            QMessageBox.critical(self, "Save Failed", str(exc))
+            logger.exception("Export failed: %s", path)
+            QMessageBox.critical(self, "Export Failed", str(exc))
             return False
-        self.sidebar.refresh_file_labels()
-        self.statusBar().showMessage(f"Saved {path.name}", 3000)
-        logger.info("Saved document: %s", path)
+        self._refresh_save_state()
+        self.statusBar().showMessage(f"Exported {path.name}", 3000)
+        logger.info("Exported document: %s", path)
         return True
 
     def export_to_ams2(self) -> bool:
@@ -340,7 +370,9 @@ class MainWindow(QMainWindow):
             return False
         self._settings.setValue("ams2/custom_ai_dir", folder)
 
-        if not self.save_active():
+        errors = validate_document(document)
+        if errors:
+            warn_validation_errors(self, errors)
             return False
 
         if document.path:
@@ -348,7 +380,7 @@ class MainWindow(QMainWindow):
         else:
             target = Path(folder) / "custom_ai.xml"
         try:
-            shutil.copy2(document.path, target)
+            target.write_text(serialize_document(document), encoding="utf-8")
         except OSError as exc:
             logger.exception("Export failed")
             QMessageBox.critical(self, "Export Failed", str(exc))
@@ -374,7 +406,7 @@ class MainWindow(QMainWindow):
             return
         document.remove_profile(profile_id)
         self._sync_driver_panel()
-        self.sidebar.refresh_file_labels()
+        self._refresh_save_state()
         self.statusBar().showMessage("Driver removed", 2000)
 
     def duplicate_driver(self, profile_id: str) -> None:
@@ -387,7 +419,7 @@ class MainWindow(QMainWindow):
 
     def _refresh_after_profile_change(self, profile_id: str) -> None:
         self._sync_driver_panel(expand_profile_id=profile_id)
-        self.sidebar.refresh_file_labels()
+        self._refresh_save_state()
 
     def _select_document(self, doc_id: str) -> None:
         if doc_id == self._active_doc_id:
@@ -420,13 +452,20 @@ class MainWindow(QMainWindow):
             self._populate_driver_panel(document, expand_profile_id=expand_profile_id)
         title = document.display_name if document else "No file"
         self.setWindowTitle(f"AMS2 AI Creator v{__version__} — {title}")
+        self._refresh_save_state()
+
+    def _refresh_save_state(self) -> None:
+        has_document = self._active_document() is not None
+        self.save_btn.setEnabled(has_document)
+        self.export_xml_btn.setEnabled(has_document)
+        self.sidebar.refresh_file_labels()
 
     def _on_driver_edited(self) -> None:
         document = self._active_document()
         if document:
             document.mark_dirty()
             self.driver_panel.refresh_titles()
-            self.sidebar.refresh_file_labels()
+            self._refresh_save_state()
 
     def closeEvent(self, event) -> None:
         dirty_docs = [doc for doc in self._documents.values() if doc.dirty]
