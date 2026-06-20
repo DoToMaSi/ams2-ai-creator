@@ -18,10 +18,10 @@ from PySide6.QtWidgets import (
 )
 
 from ams2_ai import __version__
+from ams2_ai.identity.generator import randomize_new_driver
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.driver_profile import DriverProfile
-from ams2_ai.smart.derivation import apply_smart_derivation
 from ams2_ai.ui.dialogs import (
     NewFileDialog,
     confirm_unsaved,
@@ -364,7 +364,7 @@ class MainWindow(QMainWindow):
             return
         profile = DriverProfile(base=DriverEntry())
         profile.base.mode = "smart"
-        apply_smart_derivation(profile.base, preserve_independent=False)
+        randomize_new_driver(profile.base)
         document.add_profile(profile)
         self._refresh_after_profile_change(profile.profile_id)
 

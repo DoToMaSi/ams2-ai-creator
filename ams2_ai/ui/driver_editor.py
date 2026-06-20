@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from PySide6.QtCore import Qt, Signal
+from PySide6.QtCore import QSize, Qt, Signal
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (
     QButtonGroup,
     QComboBox,
@@ -20,7 +21,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ams2_ai.data import load_countries, load_tracks
+from ams2_ai.data import flag_icon_path, load_country_codes, load_tracks
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.smart.derivation import apply_smart_derivation
@@ -56,8 +57,9 @@ class DriverEditor(QWidget):
 
         self.country_combo = QComboBox()
         self.country_combo.setEditable(True)
-        self.country_combo.addItems(load_countries())
-        self.country_combo.currentTextChanged.connect(self._on_identity_changed)
+        self.country_combo.setIconSize(QSize(24, 16))
+        self._populate_country_combo()
+        self.country_combo.currentTextChanged.connect(self._on_country_changed)
         identity_form.addRow("Country:", self.country_combo)
         root.addWidget(identity_box)
 
@@ -105,6 +107,26 @@ class DriverEditor(QWidget):
 
         self.smart_radio.toggled.connect(self._on_mode_changed)
         self.custom_radio.toggled.connect(self._on_mode_changed)
+
+    def _populate_country_combo(self) -> None:
+        self.country_combo.clear()
+        for code in load_country_codes():
+            icon_path = flag_icon_path(code)
+            icon = QIcon(str(icon_path)) if icon_path else QIcon()
+            self.country_combo.addItem(icon, code)
+
+    def _on_country_changed(self, text: str) -> None:
+        self._update_country_icon(text)
+        self._on_identity_changed()
+
+    def _update_country_icon(self, text: str) -> None:
+        code = text.strip().upper()
+        index = self.country_combo.currentIndex()
+        if index < 0:
+            return
+        icon_path = flag_icon_path(code)
+        icon = QIcon(str(icon_path)) if icon_path else QIcon()
+        self.country_combo.setItemIcon(index, icon)
 
     def set_profile(
         self,
