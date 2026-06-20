@@ -31,6 +31,7 @@ from ams2_ai.data import (
     track_display_label,
     track_tab_label,
 )
+from ams2_ai.identity.romanize import romanize_name
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.smart.derivation import apply_smart_derivation
@@ -180,7 +181,7 @@ class DriverEditor(QWidget):
             return
 
         self.livery_edit.setText(profile.base.livery_name)
-        self.name_edit.setText(profile.base.name)
+        self.name_edit.setText(romanize_name(profile.base.name))
         self._set_country_code(profile.base.country)
 
         if profile.base.mode == "smart":
@@ -262,7 +263,12 @@ class DriverEditor(QWidget):
             return
         base = self._profile.base
         base.livery_name = self.livery_edit.text()
-        base.name = self.name_edit.text()
+        name = romanize_name(self.name_edit.text())
+        if name != self.name_edit.text():
+            self.name_edit.blockSignals(True)
+            self.name_edit.setText(name)
+            self.name_edit.blockSignals(False)
+        base.name = name
         base.country = self._current_country_code()
         if base.name:
             base.set_fields.add("name")

@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from ams2_ai.data import normalize_country_code
+from ams2_ai.identity.romanize import romanize_name
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.driver_profile import normalize_document_drivers
@@ -77,7 +78,10 @@ def _parse_driver_element(element: ET.Element) -> DriverEntry:
         if not text:
             continue
         if tag in TEXT_FIELDS:
-            value = normalize_country_code(text) if tag == "country" else text
+            if tag == "country":
+                value = normalize_country_code(text)
+            else:
+                value = romanize_name(text)
             setattr(entry, tag, value)
             entry.set_fields.add(tag)
         elif tag in PARAMETER_BY_KEY:

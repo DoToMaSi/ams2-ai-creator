@@ -67,6 +67,7 @@ def test_randomize_new_driver_sets_identity_and_skills():
     randomize_new_driver(entry)
 
     assert entry.name.strip()
+    assert entry.name.isascii()
     assert entry.country in load_country_codes()
     assert "name" in entry.set_fields
     assert "country" in entry.set_fields

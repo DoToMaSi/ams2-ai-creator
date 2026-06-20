@@ -8,6 +8,7 @@ from functools import lru_cache
 from faker import Faker
 
 from ams2_ai.data import get_country_meta, load_country_codes
+from ams2_ai.identity.romanize import romanize_name
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.smart.presets import PRESET_NAMES, apply_preset
 
@@ -33,7 +34,7 @@ def randomize_new_driver(entry: DriverEntry) -> None:
     meta = get_country_meta(country)
     locale = meta.locale if meta else FALLBACK_LOCALE
 
-    entry.name = _random_name(locale)
+    entry.name = romanize_name(_random_name(locale))
     entry.country = country
     entry.set_fields.add("name")
     entry.set_fields.add("country")
