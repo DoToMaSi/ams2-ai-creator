@@ -1,9 +1,9 @@
-"""Grouped parameter editor."""
+"""Scrollable grouped parameter editor."""
 
 from __future__ import annotations
 
 from PySide6.QtCore import Signal
-from PySide6.QtWidgets import QGroupBox, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QFrame, QGroupBox, QScrollArea, QVBoxLayout, QWidget
 
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.parameters import PARAMETER_GROUPS, PARAMETERS, ParameterDef
@@ -34,6 +34,12 @@ class ParameterPanel(QWidget):
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
 
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.Shape.NoFrame)
+        content = QWidget()
+        content_layout = QVBoxLayout(content)
+
         grouped: dict[str, list[ParameterDef]] = {g: [] for g in PARAMETER_GROUPS}
         for param in PARAMETERS:
             grouped[param.group].append(param)
@@ -50,7 +56,11 @@ class ParameterPanel(QWidget):
                 row.valueChanged.connect(self._on_value_changed)
                 self._rows[param.key] = row
                 box_layout.addWidget(row)
-            layout.addWidget(box)
+            content_layout.addWidget(box)
+
+        content_layout.addStretch()
+        scroll.setWidget(content)
+        layout.addWidget(scroll)
 
     def set_entry(
         self,

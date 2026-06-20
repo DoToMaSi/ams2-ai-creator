@@ -42,6 +42,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle(f"AMS2 AI Creator v{__version__}")
         self.resize(1200, 960)
+        self.setMinimumSize(960, 720)
 
         self._documents: dict[str, AIDocument] = {}
         self._active_doc_id: str | None = None
