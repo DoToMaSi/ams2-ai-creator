@@ -221,6 +221,17 @@ class DriverAccordionPanel(QWidget):
             section.set_expanded(pid == profile_id)
 
         self.editor.set_profile(profile, self._document)
+        self._scroll_to_profile(profile_id)
+
+    def _scroll_to_profile(self, profile_id: str) -> None:
+        section = self._sections.get(profile_id)
+        if section is None:
+            return
+
+        def scroll() -> None:
+            self.list_scroll.ensureWidgetVisible(section, 50, 50)
+
+        QTimer.singleShot(0, scroll)
 
     def _on_editor_changed(self) -> None:
         if self._document and self._active_profile_id:
