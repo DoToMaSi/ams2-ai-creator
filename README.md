@@ -228,10 +228,19 @@ Output: `dist/AMS2-AI-Creator/`
 
 ## CI/CD
 
+### Branching
+
+| Branch | Purpose | Pipelines |
+|--------|---------|-----------|
+| `develop` | Day-to-day development | None |
+| `master` | Stable releases | CI on push/PR; release artifacts on version tags |
+
+Workflow: commit on `develop` → open PR to `master` → CI runs on the PR → merge → tag `v*` on `master` for a release build.
+
 | Workflow | Trigger | Actions |
 |----------|---------|---------|
-| `ci.yml` | Push/PR to `master`/`main` | ruff lint, format check, pytest (Windows + Linux core tests) |
-| `release.yml` | Tag `v*` | lint/test → PyInstaller build → GitHub Release zip |
+| `ci.yml` | Push or PR to `master` | ruff lint, format check, pytest (Windows + Linux core tests) |
+| `release.yml` | Tag `v*` on `master` | lint/test → PyInstaller build → GitHub Release zip |
 
 ---
 
@@ -266,4 +275,7 @@ MIT (placeholder — update as needed)
 
 ## Contributing
 
-Pull requests welcome. Ensure CI passes (`ruff check`, `ruff format --check`, `pytest`).
+1. Branch from `develop` for new work.
+2. Open pull requests into `master` when ready for review and release.
+3. CI runs only on PRs targeting `master` — ensure checks pass before merge.
+4. Create version tags (`v*`) on `master` to publish release artifacts.
