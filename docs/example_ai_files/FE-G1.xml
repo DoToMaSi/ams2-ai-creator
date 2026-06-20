@@ -1,0 +1,2401 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<custom_ai_drivers>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher">
+        <aggression>0.93</aggression>
+        <avoidance_of_forced_mistakes>0.74</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.74</avoidance_of_mistakes>
+        <blue_flag_conceding>0.19</blue_flag_conceding>
+        <consistency>0.99</consistency>
+        <country>DEU</country>
+        <defending>0.91</defending>
+        <fuel_management>0.98</fuel_management>
+        <name>Michael Schumacher</name>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>0.99</race_skill>
+        <stamina>1.0</stamina>
+        <start_reactions>0.92</start_reactions>
+        <tyre_management>0.97</tyre_management>
+        <vehicle_reliability>0.99</vehicle_reliability>
+        <weather_tyre_changes>0.61</weather_tyre_changes>
+        <wet_skill>0.97</wet_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <consistency>0.99</consistency>
+        <qualifying_skill>0.99</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <consistency>0.96</consistency>
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.99</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <consistency>0.96</consistency>
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.95</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Azure_Circuit_2021">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.99</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <aggression>0.92</aggression>
+        <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.17</avoidance_of_mistakes>
+        <qualifying_skill>0.99</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <consistency>0.95</consistency>
+        <qualifying_skill>0.99</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="HUNGARORING">
+        <qualifying_skill>0.97</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.78</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Monza_1991,Monza_2020">
+        <aggression>0.98</aggression>
+        <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.15</avoidance_of_mistakes>
+        <qualifying_skill>0.99</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Kansai_GP,Kansai_Classic">
+        <consistency>0.98</consistency>
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.99</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #1 - M. Schumacher" tracks="Adelaide_Historic,Adelaide_Modern">
+        <aggression>0.95</aggression>
+        <avoidance_of_forced_mistakes>0.1</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.1</avoidance_of_mistakes>
+        <qualifying_skill>0.97</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert">
+        <aggression>0.54</aggression>
+        <avoidance_of_forced_mistakes>0.67</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.67</avoidance_of_mistakes>
+        <blue_flag_conceding>0.54</blue_flag_conceding>
+        <consistency>0.92</consistency>
+        <country>GBR</country>
+        <defending>0.56</defending>
+        <fuel_management>0.82</fuel_management>
+        <name>Johnny Herbert</name>
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.96</race_skill>
+        <stamina>0.91</stamina>
+        <start_reactions>0.62</start_reactions>
+        <tyre_management>0.87</tyre_management>
+        <vehicle_reliability>0.69</vehicle_reliability>
+        <weather_tyre_changes>0.65</weather_tyre_changes>
+        <wet_skill>0.56</wet_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <aggression>0.97</aggression>
+        <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.17</avoidance_of_mistakes>
+        <qualifying_skill>0.96</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <consistency>0.99</consistency>
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Azure_Circuit_2021">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.07</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.07</avoidance_of_mistakes>
+        <qualifying_skill>0.93</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.95</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.95</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <consistency>0.99</consistency>
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.95</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="HUNGARORING">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.96</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Monza_1991,Monza_2020">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.93</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Kansai_GP,Kansai_Classic">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Benetton #2 - J. Herbert" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.91</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama">
+        <aggression>0.76</aggression>
+        <avoidance_of_forced_mistakes>0.38</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.38</avoidance_of_mistakes>
+        <blue_flag_conceding>0.5</blue_flag_conceding>
+        <consistency>0.79</consistency>
+        <country>JPN</country>
+        <defending>0.6</defending>
+        <fuel_management>0.69</fuel_management>
+        <name>Ukyo Katayama</name>
+        <qualifying_skill>0.78</qualifying_skill>
+        <race_skill>0.86</race_skill>
+        <stamina>0.8</stamina>
+        <start_reactions>0.43</start_reactions>
+        <tyre_management>0.67</tyre_management>
+        <vehicle_reliability>0.6</vehicle_reliability>
+        <weather_tyre_changes>0.38</weather_tyre_changes>
+        <wet_skill>0.34</wet_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <aggression>0.99</aggression>
+        <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+        <qualifying_skill>0.85</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.79</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.75</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Azure_Circuit_2021">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.16</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.16</avoidance_of_mistakes>
+        <qualifying_skill>0.79</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.78</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.81</qualifying_skill>
+        <vehicle_reliability>-0.8</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="HUNGARORING">
+        <aggression>0.98</aggression>
+        <avoidance_of_forced_mistakes>0.05</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.05</avoidance_of_mistakes>
+        <qualifying_skill>0.75</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.06</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.06</avoidance_of_mistakes>
+        <qualifying_skill>0.79</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <aggression>0.95</aggression>
+        <avoidance_of_forced_mistakes>0.19</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.19</avoidance_of_mistakes>
+        <qualifying_skill>0.78</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Kansai_GP,Kansai_Classic">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.09</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.09</avoidance_of_mistakes>
+        <qualifying_skill>0.81</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - U. Katayama" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.78</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo">
+        <aggression>0.75</aggression>
+        <avoidance_of_forced_mistakes>0.59</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.59</avoidance_of_mistakes>
+        <blue_flag_conceding>0.34</blue_flag_conceding>
+        <consistency>0.79</consistency>
+        <country>FIN</country>
+        <defending>0.76</defending>
+        <fuel_management>0.66</fuel_management>
+        <name>Mika Salo</name>
+        <qualifying_skill>0.8</qualifying_skill>
+        <race_skill>0.87</race_skill>
+        <stamina>0.81</stamina>
+        <start_reactions>0.63</start_reactions>
+        <tyre_management>0.69</tyre_management>
+        <vehicle_reliability>0.82</vehicle_reliability>
+        <weather_tyre_changes>0.31</weather_tyre_changes>
+        <wet_skill>0.59</wet_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.17</avoidance_of_mistakes>
+        <qualifying_skill>0.92</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.82</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.82</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.75</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.67</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.82</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="HUNGARORING">
+        <qualifying_skill>0.78</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.78</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.75</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #4 - M. Salo" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill">
+        <aggression>0.53</aggression>
+        <avoidance_of_forced_mistakes>0.35</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.35</avoidance_of_mistakes>
+        <blue_flag_conceding>0.57</blue_flag_conceding>
+        <consistency>0.99</consistency>
+        <country>GBR</country>
+        <defending>0.53</defending>
+        <fuel_management>0.9</fuel_management>
+        <name>Damon Hill</name>
+        <qualifying_skill>0.98</qualifying_skill>
+        <race_skill>0.99</race_skill>
+        <stamina>0.99</stamina>
+        <start_reactions>0.87</start_reactions>
+        <tyre_management>0.95</tyre_management>
+        <vehicle_reliability>0.81</vehicle_reliability>
+        <weather_tyre_changes>0.38</weather_tyre_changes>
+        <wet_skill>0.7</wet_skill>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>1.0</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <consistency>0.95</consistency>
+        <qualifying_skill>0.99</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.96</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.95</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Azure_Circuit_2021">
+        <consistency>0.96</consistency>
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.99</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <aggression>0.99</aggression>
+        <avoidance_of_forced_mistakes>0.2</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.2</avoidance_of_mistakes>
+        <qualifying_skill>1.0</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <aggression>0.98</aggression>
+        <avoidance_of_forced_mistakes>0.09</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.09</avoidance_of_mistakes>
+        <qualifying_skill>1.0</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="HUNGARORING">
+        <consistency>0.97</consistency>
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Monza_1991,Monza_2020">
+        <aggression>1.0</aggression>
+        <avoidance_of_forced_mistakes>0.07</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.07</avoidance_of_mistakes>
+        <qualifying_skill>0.96</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.99</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.06</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.06</avoidance_of_mistakes>
+        <qualifying_skill>0.99</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Kansai_GP,Kansai_Classic">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.16</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.16</avoidance_of_mistakes>
+        <qualifying_skill>0.96</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Williams #5 - D. Hill" tracks="Adelaide_Historic,Adelaide_Modern">
+        <consistency>0.99</consistency>
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard">
+        <aggression>0.73</aggression>
+        <avoidance_of_forced_mistakes>0.27</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.27</avoidance_of_mistakes>
+        <blue_flag_conceding>0.4</blue_flag_conceding>
+        <consistency>0.93</consistency>
+        <country>GBR</country>
+        <defending>0.7</defending>
+        <fuel_management>0.84</fuel_management>
+        <name>David Coulthard</name>
+        <qualifying_skill>0.98</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.94</stamina>
+        <start_reactions>0.85</start_reactions>
+        <tyre_management>0.85</tyre_management>
+        <vehicle_reliability>0.67</vehicle_reliability>
+        <weather_tyre_changes>0.38</weather_tyre_changes>
+        <wet_skill>0.55</wet_skill>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <consistency>0.95</consistency>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>1.0</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.97</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.96</qualifying_skill>
+        <vehicle_reliability>-0.6</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.97</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <aggression>0.99</aggression>
+        <avoidance_of_forced_mistakes>0.1</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.1</avoidance_of_mistakes>
+        <qualifying_skill>0.97</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <consistency>0.95</consistency>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.99</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="HUNGARORING">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.99</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.95</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>1.0</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <consistency>0.98</consistency>
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <consistency>0.96</consistency>
+        <qualifying_skill>1.0</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Kansai_GP,Kansai_Classic">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.06</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.06</avoidance_of_mistakes>
+        <qualifying_skill>0.93</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Williams #6 - D. Coulthard" tracks="Adelaide_Historic,Adelaide_Modern">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.18</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.18</avoidance_of_mistakes>
+        <qualifying_skill>0.99</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell">
+        <aggression>0.34</aggression>
+        <avoidance_of_forced_mistakes>0.63</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.63</avoidance_of_mistakes>
+        <blue_flag_conceding>0.77</blue_flag_conceding>
+        <consistency>0.88</consistency>
+        <country>GBR</country>
+        <defending>0.33</defending>
+        <fuel_management>0.76</fuel_management>
+        <name>Mark Blundell</name>
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.92</race_skill>
+        <stamina>0.86</stamina>
+        <start_reactions>0.69</start_reactions>
+        <tyre_management>0.7</tyre_management>
+        <vehicle_reliability>0.67</vehicle_reliability>
+        <weather_tyre_changes>0.4</weather_tyre_changes>
+        <wet_skill>0.6</wet_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.75</qualifying_skill>
+        <vehicle_reliability>-0.6</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.88</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.91</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="HUNGARORING">
+        <qualifying_skill>0.82</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.93</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Monza_1991,Monza_2020">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.95</stamina>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.07</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.07</avoidance_of_mistakes>
+        <qualifying_skill>0.88</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.65</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - M. Blundell" tracks="Adelaide_Historic,Adelaide_Modern">
+        <consistency>0.95</consistency>
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.99</stamina>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen">
+        <aggression>0.77</aggression>
+        <avoidance_of_forced_mistakes>0.4</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.4</avoidance_of_mistakes>
+        <blue_flag_conceding>0.57</blue_flag_conceding>
+        <consistency>0.85</consistency>
+        <country>FIN</country>
+        <defending>0.53</defending>
+        <fuel_management>0.77</fuel_management>
+        <name>Mika Häkkinen</name>
+        <qualifying_skill>0.9</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.85</stamina>
+        <start_reactions>0.86</start_reactions>
+        <tyre_management>0.72</tyre_management>
+        <vehicle_reliability>0.81</vehicle_reliability>
+        <weather_tyre_changes>0.6</weather_tyre_changes>
+        <wet_skill>0.55</wet_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.1</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.1</avoidance_of_mistakes>
+        <qualifying_skill>0.95</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.93</qualifying_skill>
+        <vehicle_reliability>0.09</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.89</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.93</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+        <qualifying_skill>0.92</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.91</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.92</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="HUNGARORING">
+        <qualifying_skill>0.95</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <aggression>0.98</aggression>
+        <avoidance_of_forced_mistakes>0.11</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.11</avoidance_of_mistakes>
+        <qualifying_skill>0.97</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Monza_1991,Monza_2020">
+        <consistency>0.99</consistency>
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.82</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Kansai_GP,Kansai_Classic">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.95</stamina>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - M. Häkkinen" tracks="Adelaide_Historic,Adelaide_Modern">
+        <aggression>0.98</aggression>
+        <avoidance_of_forced_mistakes>0.13</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.13</avoidance_of_mistakes>
+        <qualifying_skill>0.65</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - M. Papis">
+        <aggression>0.4</aggression>
+        <avoidance_of_forced_mistakes>0.26</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.26</avoidance_of_mistakes>
+        <blue_flag_conceding>0.76</blue_flag_conceding>
+        <consistency>0.75</consistency>
+        <country>ITA</country>
+        <defending>0.34</defending>
+        <fuel_management>0.53</fuel_management>
+        <name>Max Papis</name>
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.84</race_skill>
+        <stamina>0.73</stamina>
+        <start_reactions>0.29</start_reactions>
+        <tyre_management>0.52</tyre_management>
+        <vehicle_reliability>0.42</vehicle_reliability>
+        <weather_tyre_changes>0.31</weather_tyre_changes>
+        <wet_skill>0.32</wet_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - M. Papis" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.75</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - M. Papis" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.79</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - M. Papis" tracks="HUNGARORING">
+        <qualifying_skill>0.71</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - M. Papis" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <aggression>0.95</aggression>
+        <avoidance_of_forced_mistakes>0.08</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.08</avoidance_of_mistakes>
+        <qualifying_skill>0.71</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - M. Papis" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - M. Papis" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.71</qualifying_skill>
+        <vehicle_reliability>0.15</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - M. Papis" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.8</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue">
+        <aggression>0.15</aggression>
+        <avoidance_of_forced_mistakes>0.11</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.11</avoidance_of_mistakes>
+        <blue_flag_conceding>0.95</blue_flag_conceding>
+        <consistency>0.74</consistency>
+        <country>JPN</country>
+        <defending>0.15</defending>
+        <fuel_management>0.53</fuel_management>
+        <name>Taki Inoue</name>
+        <qualifying_skill>0.7</qualifying_skill>
+        <race_skill>0.81</race_skill>
+        <stamina>0.76</stamina>
+        <start_reactions>0.22</start_reactions>
+        <tyre_management>0.51</tyre_management>
+        <vehicle_reliability>0.44</vehicle_reliability>
+        <weather_tyre_changes>0.53</weather_tyre_changes>
+        <wet_skill>0.15</wet_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>0.03</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.95</aggression>
+        <avoidance_of_forced_mistakes>0.13</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.13</avoidance_of_mistakes>
+        <qualifying_skill>0.62</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.72</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.74</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.62</qualifying_skill>
+        <vehicle_reliability>0.07</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.19</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.19</avoidance_of_mistakes>
+        <qualifying_skill>0.72</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.72</qualifying_skill>
+        <vehicle_reliability>-0.6</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="HUNGARORING">
+        <qualifying_skill>0.74</qualifying_skill>
+        <vehicle_reliability>-0.6</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.8</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.71</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.73</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.8</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #10 - T. Inoue" tracks="Adelaide_Historic,Adelaide_Modern">
+        <aggression>0.9</aggression>
+        <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+        <qualifying_skill>0.72</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #11 - D. Schiattarella">
+        <aggression>0.17</aggression>
+        <avoidance_of_forced_mistakes>0.27</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.27</avoidance_of_mistakes>
+        <blue_flag_conceding>0.92</blue_flag_conceding>
+        <consistency>0.74</consistency>
+        <country>ITA</country>
+        <defending>0.18</defending>
+        <fuel_management>0.54</fuel_management>
+        <name>Domenico Schiattarella</name>
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.77</race_skill>
+        <stamina>0.74</stamina>
+        <start_reactions>0.2</start_reactions>
+        <tyre_management>0.56</tyre_management>
+        <vehicle_reliability>0.48</vehicle_reliability>
+        <weather_tyre_changes>0.72</weather_tyre_changes>
+        <wet_skill>0.12</wet_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #11 - D. Schiattarella" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.62</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Simtek #11 - D. Schiattarella" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.71</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #11 - D. Schiattarella" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.67</qualifying_skill>
+        <race_skill>0.73</race_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #11 - D. Schiattarella" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.73</race_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #11 - D. Schiattarella" tracks="Azure_Circuit_2021">
+        <aggression>0.95</aggression>
+        <avoidance_of_forced_mistakes>0.07</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.07</avoidance_of_mistakes>
+        <qualifying_skill>0.71</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #12 - J. Verstappen">
+        <aggression>0.7</aggression>
+        <avoidance_of_forced_mistakes>0.58</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.58</avoidance_of_mistakes>
+        <blue_flag_conceding>0.71</blue_flag_conceding>
+        <consistency>0.81</consistency>
+        <country>NLD</country>
+        <defending>0.39</defending>
+        <fuel_management>0.69</fuel_management>
+        <name>Jos Verstappen</name>
+        <qualifying_skill>0.73</qualifying_skill>
+        <race_skill>0.8</race_skill>
+        <stamina>0.78</stamina>
+        <start_reactions>0.21</start_reactions>
+        <tyre_management>0.67</tyre_management>
+        <vehicle_reliability>0.5</vehicle_reliability>
+        <weather_tyre_changes>0.64</weather_tyre_changes>
+        <wet_skill>0.51</wet_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #12 - J. Verstappen" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.65</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Simtek #12 - J. Verstappen" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.81</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Simtek #12 - J. Verstappen" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.8</race_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #12 - J. Verstappen" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.78</qualifying_skill>
+        <race_skill>0.8</race_skill>
+    </driver>
+    <driver livery_name="1995 Simtek #12 - J. Verstappen" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.67</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello">
+        <aggression>0.56</aggression>
+        <avoidance_of_forced_mistakes>0.48</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.48</avoidance_of_mistakes>
+        <blue_flag_conceding>0.58</blue_flag_conceding>
+        <consistency>0.85</consistency>
+        <country>BRA</country>
+        <defending>0.52</defending>
+        <fuel_management>0.71</fuel_management>
+        <name>Rubens Barrichello</name>
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.9</race_skill>
+        <stamina>0.85</stamina>
+        <start_reactions>0.67</start_reactions>
+        <tyre_management>0.77</tyre_management>
+        <vehicle_reliability>0.64</vehicle_reliability>
+        <weather_tyre_changes>0.81</weather_tyre_changes>
+        <wet_skill>0.75</wet_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.78</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.88</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.85</qualifying_skill>
+        <vehicle_reliability>0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <consistency>0.95</consistency>
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <aggression>0.92</aggression>
+        <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+        <qualifying_skill>0.89</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.95</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="HUNGARORING">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.93</qualifying_skill>
+        <vehicle_reliability>-0.6</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>0.82</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Kansai_GP,Kansai_Classic">
+        <aggression>0.93</aggression>
+        <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.15</avoidance_of_mistakes>
+        <qualifying_skill>0.88</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #14 - R. Barrichello" tracks="Adelaide_Historic,Adelaide_Modern">
+        <aggression>0.99</aggression>
+        <avoidance_of_forced_mistakes>0.09</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.09</avoidance_of_mistakes>
+        <qualifying_skill>0.92</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine">
+        <aggression>0.79</aggression>
+        <avoidance_of_forced_mistakes>0.59</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.59</avoidance_of_mistakes>
+        <blue_flag_conceding>0.39</blue_flag_conceding>
+        <consistency>0.88</consistency>
+        <country>GBR</country>
+        <defending>0.71</defending>
+        <fuel_management>0.77</fuel_management>
+        <name>Eddie Irvine</name>
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>0.92</race_skill>
+        <stamina>0.84</stamina>
+        <start_reactions>0.61</start_reactions>
+        <tyre_management>0.71</tyre_management>
+        <vehicle_reliability>0.61</vehicle_reliability>
+        <weather_tyre_changes>0.47</weather_tyre_changes>
+        <wet_skill>0.54</wet_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.91</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.96</qualifying_skill>
+        <vehicle_reliability>-0.8</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.93</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.89</qualifying_skill>
+        <vehicle_reliability>-0.6</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.92</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.93</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="HUNGARORING">
+        <qualifying_skill>0.92</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.92</qualifying_skill>
+        <vehicle_reliability>0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.84</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.95</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Kansai_GP,Kansai_Classic">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Jordan #15 - E. Irvine" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.89</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot">
+        <aggression>0.13</aggression>
+        <avoidance_of_forced_mistakes>0.25</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.25</avoidance_of_mistakes>
+        <blue_flag_conceding>0.92</blue_flag_conceding>
+        <consistency>0.73</consistency>
+        <country>FRA</country>
+        <defending>0.18</defending>
+        <fuel_management>0.51</fuel_management>
+        <name>Bertrand Gachot</name>
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.83</race_skill>
+        <stamina>0.75</stamina>
+        <start_reactions>0.27</start_reactions>
+        <tyre_management>0.51</tyre_management>
+        <vehicle_reliability>0.27</vehicle_reliability>
+        <weather_tyre_changes>0.45</weather_tyre_changes>
+        <wet_skill>0.16</wet_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.71</qualifying_skill>
+        <vehicle_reliability>-0.8</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.93</aggression>
+        <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.17</avoidance_of_mistakes>
+        <qualifying_skill>0.67</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.68</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.65</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.71</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.69</qualifying_skill>
+        <race_skill>0.8</race_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.67</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - B. Gachot" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.67</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini">
+        <aggression>0.15</aggression>
+        <avoidance_of_forced_mistakes>0.38</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.38</avoidance_of_mistakes>
+        <blue_flag_conceding>0.91</blue_flag_conceding>
+        <consistency>0.75</consistency>
+        <country>ITA</country>
+        <defending>0.19</defending>
+        <fuel_management>0.57</fuel_management>
+        <name>Andrea Montermini</name>
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.84</race_skill>
+        <stamina>0.73</stamina>
+        <start_reactions>0.3</start_reactions>
+        <tyre_management>0.5</tyre_management>
+        <vehicle_reliability>0.3</vehicle_reliability>
+        <weather_tyre_changes>0.63</weather_tyre_changes>
+        <wet_skill>0.11</wet_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+        <qualifying_skill>0.68</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.65</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.67</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.64</qualifying_skill>
+        <vehicle_reliability>0.14</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.1</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.1</avoidance_of_mistakes>
+        <qualifying_skill>0.65</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.67</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="HUNGARORING">
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.8</race_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Monza_1991,Monza_2020">
+        <aggression>0.97</aggression>
+        <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+        <qualifying_skill>0.69</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.71</qualifying_skill>
+        <vehicle_reliability>0.06</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Kansai_GP,Kansai_Classic">
+        <aggression>0.92</aggression>
+        <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+        <qualifying_skill>0.71</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #17 - A. Montermini" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.68</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz">
+        <aggression>0.19</aggression>
+        <avoidance_of_forced_mistakes>0.19</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.19</avoidance_of_mistakes>
+        <blue_flag_conceding>0.93</blue_flag_conceding>
+        <consistency>0.74</consistency>
+        <country>BRA</country>
+        <defending>0.17</defending>
+        <fuel_management>0.56</fuel_management>
+        <name>Pedro Diniz</name>
+        <qualifying_skill>0.67</qualifying_skill>
+        <race_skill>0.8</race_skill>
+        <stamina>0.74</stamina>
+        <start_reactions>0.28</start_reactions>
+        <tyre_management>0.57</tyre_management>
+        <vehicle_reliability>0.22</vehicle_reliability>
+        <weather_tyre_changes>0.89</weather_tyre_changes>
+        <wet_skill>0.2</wet_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.64</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.64</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.62</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.62</qualifying_skill>
+        <vehicle_reliability>0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.65</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.71</qualifying_skill>
+        <vehicle_reliability>-0.6</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="HUNGARORING">
+        <qualifying_skill>0.67</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.65</qualifying_skill>
+        <race_skill>0.75</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.67</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.72</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.75</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Kansai_GP,Kansai_Classic">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.1</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.1</avoidance_of_mistakes>
+        <qualifying_skill>0.69</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Forti #21 - P. Diniz" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.69</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno">
+        <aggression>0.3</aggression>
+        <avoidance_of_forced_mistakes>0.38</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.38</avoidance_of_mistakes>
+        <blue_flag_conceding>0.98</blue_flag_conceding>
+        <consistency>0.75</consistency>
+        <country>BRA</country>
+        <defending>0.12</defending>
+        <fuel_management>0.57</fuel_management>
+        <name>Roberto Moreno</name>
+        <qualifying_skill>0.67</qualifying_skill>
+        <race_skill>0.75</race_skill>
+        <stamina>0.72</stamina>
+        <start_reactions>0.27</start_reactions>
+        <tyre_management>0.54</tyre_management>
+        <vehicle_reliability>0.26</vehicle_reliability>
+        <weather_tyre_changes>0.66</weather_tyre_changes>
+        <wet_skill>0.11</wet_skill>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <aggression>0.97</aggression>
+        <avoidance_of_forced_mistakes>0.16</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.16</avoidance_of_mistakes>
+        <qualifying_skill>0.67</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.65</qualifying_skill>
+        <race_skill>0.82</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.64</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.64</qualifying_skill>
+        <vehicle_reliability>0.08</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.65</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.67</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.68</qualifying_skill>
+        <vehicle_reliability>-0.6</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.68</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="HUNGARORING">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.68</qualifying_skill>
+        <race_skill>0.74</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Monza_1991,Monza_2020">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.19</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.19</avoidance_of_mistakes>
+        <qualifying_skill>0.68</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.67</qualifying_skill>
+        <race_skill>0.7</race_skill>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.67</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.68</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Forti #22 - R. Moreno" tracks="Adelaide_Historic,Adelaide_Modern">
+        <aggression>0.95</aggression>
+        <avoidance_of_forced_mistakes>0.08</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.08</avoidance_of_mistakes>
+        <qualifying_skill>0.71</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini">
+        <aggression>0.33</aggression>
+        <avoidance_of_forced_mistakes>0.5</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.5</avoidance_of_mistakes>
+        <blue_flag_conceding>0.98</blue_flag_conceding>
+        <consistency>0.79</consistency>
+        <country>ITA</country>
+        <defending>0.12</defending>
+        <fuel_management>0.7</fuel_management>
+        <name>Pierluigi Martini</name>
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.81</race_skill>
+        <stamina>0.82</stamina>
+        <start_reactions>0.43</start_reactions>
+        <tyre_management>0.65</tyre_management>
+        <vehicle_reliability>0.44</vehicle_reliability>
+        <weather_tyre_changes>0.3</weather_tyre_changes>
+        <wet_skill>0.36</wet_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.75</qualifying_skill>
+        <vehicle_reliability>-0.8</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.12</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.12</avoidance_of_mistakes>
+        <qualifying_skill>0.78</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.74</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.74</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.75</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Martini" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.71</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer">
+        <aggression>0.33</aggression>
+        <avoidance_of_forced_mistakes>0.25</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.25</avoidance_of_mistakes>
+        <blue_flag_conceding>0.98</blue_flag_conceding>
+        <consistency>0.81</consistency>
+        <country>ITA</country>
+        <defending>0.12</defending>
+        <fuel_management>0.61</fuel_management>
+        <name>Luca Badoer</name>
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.83</race_skill>
+        <stamina>0.81</stamina>
+        <start_reactions>0.44</start_reactions>
+        <tyre_management>0.68</tyre_management>
+        <vehicle_reliability>0.42</vehicle_reliability>
+        <weather_tyre_changes>0.78</weather_tyre_changes>
+        <wet_skill>0.3</wet_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.74</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+        <qualifying_skill>0.82</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.71</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.69</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.78</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.78</qualifying_skill>
+        <vehicle_reliability>-0.8</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="HUNGARORING">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.08</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.08</avoidance_of_mistakes>
+        <qualifying_skill>0.72</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Monza_1991,Monza_2020">
+        <aggression>0.92</aggression>
+        <avoidance_of_forced_mistakes>0.1</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.1</avoidance_of_mistakes>
+        <qualifying_skill>0.74</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.74</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.82</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #24 - L. Badoer" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.79</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - A. Suzuki">
+        <aggression>0.79</aggression>
+        <avoidance_of_forced_mistakes>0.41</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.41</avoidance_of_mistakes>
+        <blue_flag_conceding>0.55</blue_flag_conceding>
+        <consistency>0.78</consistency>
+        <country>JPN</country>
+        <defending>0.55</defending>
+        <fuel_management>0.62</fuel_management>
+        <name>Aguri Suzuki</name>
+        <qualifying_skill>0.77</qualifying_skill>
+        <race_skill>0.89</race_skill>
+        <stamina>0.79</stamina>
+        <start_reactions>0.64</start_reactions>
+        <tyre_management>0.66</tyre_management>
+        <vehicle_reliability>0.66</vehicle_reliability>
+        <weather_tyre_changes>0.67</weather_tyre_changes>
+        <wet_skill>0.5</wet_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - A. Suzuki" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - A. Suzuki" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.97</aggression>
+        <avoidance_of_forced_mistakes>0.11</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.11</avoidance_of_mistakes>
+        <qualifying_skill>0.72</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - A. Suzuki" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.78</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - A. Suzuki" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - A. Suzuki" tracks="Kansai_GP,Kansai_Classic">
+        <aggression>0.98</aggression>
+        <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.15</avoidance_of_mistakes>
+        <qualifying_skill>0.82</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis">
+        <aggression>0.5</aggression>
+        <avoidance_of_forced_mistakes>0.44</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.44</avoidance_of_mistakes>
+        <blue_flag_conceding>0.31</blue_flag_conceding>
+        <consistency>0.8</consistency>
+        <country>FRA</country>
+        <defending>0.79</defending>
+        <fuel_management>0.69</fuel_management>
+        <name>Olivier Panis</name>
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.92</race_skill>
+        <stamina>0.79</stamina>
+        <start_reactions>0.7</start_reactions>
+        <tyre_management>0.6</tyre_management>
+        <vehicle_reliability>0.61</vehicle_reliability>
+        <weather_tyre_changes>0.45</weather_tyre_changes>
+        <wet_skill>0.51</wet_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.08</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.08</avoidance_of_mistakes>
+        <qualifying_skill>0.88</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.74</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Azure_Circuit_2021">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.17</avoidance_of_mistakes>
+        <qualifying_skill>0.84</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.99</stamina>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.82</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.99</stamina>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.84</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="HUNGARORING">
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Monza_1991,Monza_2020">
+        <aggression>0.93</aggression>
+        <avoidance_of_forced_mistakes>0.05</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.05</avoidance_of_mistakes>
+        <qualifying_skill>0.82</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <aggression>0.96</aggression>
+        <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.17</avoidance_of_mistakes>
+        <qualifying_skill>0.85</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <aggression>0.92</aggression>
+        <avoidance_of_forced_mistakes>0.13</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.13</avoidance_of_mistakes>
+        <qualifying_skill>0.81</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #26 - O. Panis" tracks="Adelaide_Historic,Adelaide_Modern">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.99</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi">
+        <aggression>0.93</aggression>
+        <avoidance_of_forced_mistakes>0.54</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.54</avoidance_of_mistakes>
+        <blue_flag_conceding>0.35</blue_flag_conceding>
+        <consistency>0.9</consistency>
+        <country>FRA</country>
+        <defending>0.75</defending>
+        <fuel_management>0.82</fuel_management>
+        <name>Jean Alesi</name>
+        <qualifying_skill>0.94</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.93</stamina>
+        <start_reactions>0.99</start_reactions>
+        <tyre_management>0.89</tyre_management>
+        <vehicle_reliability>0.82</vehicle_reliability>
+        <weather_tyre_changes>0.62</weather_tyre_changes>
+        <wet_skill>0.75</wet_skill>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.93</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <consistency>0.99</consistency>
+        <qualifying_skill>0.93</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.95</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.99</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Azure_Circuit_2021">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.13</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.13</avoidance_of_mistakes>
+        <qualifying_skill>0.95</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.95</qualifying_skill>
+        <race_skill>1.0</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.93</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.88</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="HUNGARORING">
+        <qualifying_skill>0.93</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.99</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.95</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.92</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <consistency>0.99</consistency>
+        <qualifying_skill>0.93</qualifying_skill>
+        <race_skill>0.98</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.99</qualifying_skill>
+        <vehicle_reliability>0.02</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #27 - J. Alesi" tracks="Adelaide_Historic,Adelaide_Modern">
+        <aggression>0.97</aggression>
+        <avoidance_of_forced_mistakes>0.16</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.16</avoidance_of_mistakes>
+        <qualifying_skill>0.95</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger">
+        <aggression>0.5</aggression>
+        <avoidance_of_forced_mistakes>0.59</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.59</avoidance_of_mistakes>
+        <blue_flag_conceding>0.33</blue_flag_conceding>
+        <consistency>0.94</consistency>
+        <country>AUT</country>
+        <defending>0.77</defending>
+        <fuel_management>0.83</fuel_management>
+        <name>Gerhard Berger</name>
+        <qualifying_skill>0.96</qualifying_skill>
+        <race_skill>0.96</race_skill>
+        <stamina>0.9</stamina>
+        <start_reactions>0.91</start_reactions>
+        <tyre_management>0.83</tyre_management>
+        <vehicle_reliability>0.83</vehicle_reliability>
+        <weather_tyre_changes>0.89</weather_tyre_changes>
+        <wet_skill>0.76</wet_skill>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.95</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.99</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.99</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.97</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Azure_Circuit_2021">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.96</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.07</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.07</avoidance_of_mistakes>
+        <qualifying_skill>0.96</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.96</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <consistency>0.96</consistency>
+        <qualifying_skill>0.96</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="HUNGARORING">
+        <consistency>0.99</consistency>
+        <qualifying_skill>0.96</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>1.0</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.97</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <consistency>0.97</consistency>
+        <qualifying_skill>0.96</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.97</stamina>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.96</qualifying_skill>
+        <vehicle_reliability>-0.8</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.95</qualifying_skill>
+        <vehicle_reliability>0.02</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ferrari #28 - G. Berger" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.96</qualifying_skill>
+        <vehicle_reliability>0.08</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - K. Wendlinger">
+        <aggression>0.4</aggression>
+        <avoidance_of_forced_mistakes>0.33</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.33</avoidance_of_mistakes>
+        <blue_flag_conceding>0.77</blue_flag_conceding>
+        <consistency>0.79</consistency>
+        <country>AUT</country>
+        <defending>0.33</defending>
+        <fuel_management>0.7</fuel_management>
+        <name>Karl Wendlinger</name>
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.78</race_skill>
+        <stamina>0.8</stamina>
+        <start_reactions>0.45</start_reactions>
+        <tyre_management>0.61</tyre_management>
+        <vehicle_reliability>0.66</vehicle_reliability>
+        <weather_tyre_changes>0.75</weather_tyre_changes>
+        <wet_skill>0.32</wet_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - K. Wendlinger" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.72</qualifying_skill>
+        <vehicle_reliability>0.09</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - K. Wendlinger" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <aggression>0.98</aggression>
+        <avoidance_of_forced_mistakes>0.1</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.1</avoidance_of_mistakes>
+        <qualifying_skill>0.69</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - K. Wendlinger" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.69</qualifying_skill>
+        <race_skill>0.75</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - K. Wendlinger" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.71</qualifying_skill>
+        <race_skill>0.75</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - K. Wendlinger" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.78</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - K. Wendlinger" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.74</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen">
+        <aggression>0.72</aggression>
+        <avoidance_of_forced_mistakes>0.6</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.6</avoidance_of_mistakes>
+        <blue_flag_conceding>0.38</blue_flag_conceding>
+        <consistency>0.86</consistency>
+        <country>DEU</country>
+        <defending>0.72</defending>
+        <fuel_management>0.78</fuel_management>
+        <name>Heinz-Harald Frentzen</name>
+        <qualifying_skill>0.87</qualifying_skill>
+        <race_skill>0.91</race_skill>
+        <stamina>0.88</stamina>
+        <start_reactions>0.83</start_reactions>
+        <tyre_management>0.76</tyre_management>
+        <vehicle_reliability>0.89</vehicle_reliability>
+        <weather_tyre_changes>0.48</weather_tyre_changes>
+        <wet_skill>0.53</wet_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.81</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.84</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.85</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="HUNGARORING">
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <consistency>0.99</consistency>
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.95</race_skill>
+        <stamina>0.98</stamina>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Monza_1991,Monza_2020">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.88</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.95</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.06</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.06</avoidance_of_mistakes>
+        <qualifying_skill>0.91</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.91</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #30 - H-H. Frentzen" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.93</qualifying_skill>
+        <vehicle_reliability>-0.0</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - G. Tarquini">
+        <aggression>0.53</aggression>
+        <avoidance_of_forced_mistakes>0.32</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.32</avoidance_of_mistakes>
+        <blue_flag_conceding>0.54</blue_flag_conceding>
+        <consistency>0.79</consistency>
+        <country>ITA</country>
+        <defending>0.56</defending>
+        <fuel_management>0.64</fuel_management>
+        <name>Gabriele Tarquini</name>
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.74</race_skill>
+        <stamina>0.81</stamina>
+        <start_reactions>0.68</start_reactions>
+        <tyre_management>0.69</tyre_management>
+        <vehicle_reliability>0.68</vehicle_reliability>
+        <weather_tyre_changes>0.66</weather_tyre_changes>
+        <wet_skill>0.36</wet_skill>
+    </driver>
+    <driver livery_name="1995 Tyrrell #3 - G. Tarquini" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.74</race_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - N. Mansell">
+        <aggression>0.73</aggression>
+        <avoidance_of_forced_mistakes>0.27</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.27</avoidance_of_mistakes>
+        <blue_flag_conceding>0.6</blue_flag_conceding>
+        <consistency>0.88</consistency>
+        <country>GBR</country>
+        <defending>0.5</defending>
+        <fuel_management>0.79</fuel_management>
+        <name>Nigel Mansell</name>
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.89</race_skill>
+        <stamina>0.88</stamina>
+        <start_reactions>0.65</start_reactions>
+        <tyre_management>0.7</tyre_management>
+        <vehicle_reliability>0.61</vehicle_reliability>
+        <weather_tyre_changes>0.7</weather_tyre_changes>
+        <wet_skill>0.51</wet_skill>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - N. Mansell" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.89</qualifying_skill>
+        <vehicle_reliability>0.06</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #7 - N. Mansell" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.88</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 McLaren #8 - J. Magnussen">
+        <aggression>0.56</aggression>
+        <avoidance_of_forced_mistakes>0.43</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.43</avoidance_of_mistakes>
+        <blue_flag_conceding>0.79</blue_flag_conceding>
+        <consistency>0.88</consistency>
+        <country>DNK</country>
+        <defending>0.31</defending>
+        <fuel_management>0.72</fuel_management>
+        <name>Jan Magnussen</name>
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.84</race_skill>
+        <stamina>0.86</stamina>
+        <start_reactions>0.68</start_reactions>
+        <tyre_management>0.77</tyre_management>
+        <vehicle_reliability>0.62</vehicle_reliability>
+        <weather_tyre_changes>0.59</weather_tyre_changes>
+        <wet_skill>0.51</wet_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli">
+        <aggression>0.58</aggression>
+        <avoidance_of_forced_mistakes>0.39</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.39</avoidance_of_mistakes>
+        <blue_flag_conceding>0.76</blue_flag_conceding>
+        <consistency>0.79</consistency>
+        <country>ITA</country>
+        <defending>0.34</defending>
+        <fuel_management>0.68</fuel_management>
+        <name>Gianni Morbidelli</name>
+        <qualifying_skill>0.82</qualifying_skill>
+        <race_skill>0.87</race_skill>
+        <stamina>0.81</stamina>
+        <start_reactions>0.49</start_reactions>
+        <tyre_management>0.68</tyre_management>
+        <vehicle_reliability>0.49</vehicle_reliability>
+        <weather_tyre_changes>0.73</weather_tyre_changes>
+        <wet_skill>0.37</wet_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+        <qualifying_skill>0.82</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli" tracks="Buenos_Aires_Circuito_6,Buenos_Aires_Circuito_6T,Buenos_Aires_Circuito_7,Buenos_Aires_Circuito_8,Buenos_Aires_Circuito_9,Buenos_Aires_Circuito_12,Buenos_Aires_Circuito_15">
+        <qualifying_skill>0.84</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli" tracks="Imola_GP_2018,Imola_GP_1972,Imola_GP_1988,Imola_GP_2001">
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.82</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.82</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.82</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <qualifying_skill>0.82</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli" tracks="Kansai_GP,Kansai_Classic">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.2</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.2</avoidance_of_mistakes>
+        <qualifying_skill>0.79</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Footwork #9 - G. Morbidelli" tracks="Adelaide_Historic,Adelaide_Modern">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.82</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - G. Lavaggi">
+        <aggression>0.11</aggression>
+        <avoidance_of_forced_mistakes>0.23</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.23</avoidance_of_mistakes>
+        <blue_flag_conceding>0.99</blue_flag_conceding>
+        <consistency>0.75</consistency>
+        <country>ITA</country>
+        <defending>0.11</defending>
+        <fuel_management>0.59</fuel_management>
+        <name>Giovanni Lavaggi</name>
+        <qualifying_skill>0.66</qualifying_skill>
+        <race_skill>0.77</race_skill>
+        <stamina>0.73</stamina>
+        <start_reactions>0.3</start_reactions>
+        <tyre_management>0.57</tyre_management>
+        <vehicle_reliability>0.28</vehicle_reliability>
+        <weather_tyre_changes>0.53</weather_tyre_changes>
+        <wet_skill>0.12</wet_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - G. Lavaggi" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.65</qualifying_skill>
+        <vehicle_reliability>-0.4</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - G. Lavaggi" tracks="HUNGARORING">
+        <aggression>0.98</aggression>
+        <avoidance_of_forced_mistakes>0.18</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.18</avoidance_of_mistakes>
+        <qualifying_skill>0.65</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - G. Lavaggi" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.67</qualifying_skill>
+        <vehicle_reliability>-0.8</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - G. Lavaggi" tracks="Monza_1991,Monza_2020">
+        <aggression>0.91</aggression>
+        <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.15</avoidance_of_mistakes>
+        <qualifying_skill>0.65</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - J-D. Delétraz">
+        <aggression>0.17</aggression>
+        <avoidance_of_forced_mistakes>0.21</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.21</avoidance_of_mistakes>
+        <blue_flag_conceding>0.92</blue_flag_conceding>
+        <consistency>0.74</consistency>
+        <country>CHE</country>
+        <defending>0.18</defending>
+        <fuel_management>0.59</fuel_management>
+        <name>Jean-Denis Delétraz</name>
+        <qualifying_skill>0.65</qualifying_skill>
+        <race_skill>0.73</race_skill>
+        <stamina>0.76</stamina>
+        <start_reactions>0.29</start_reactions>
+        <tyre_management>0.57</tyre_management>
+        <vehicle_reliability>0.26</vehicle_reliability>
+        <weather_tyre_changes>0.7</weather_tyre_changes>
+        <wet_skill>0.17</wet_skill>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - J-D. Delétraz" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.65</qualifying_skill>
+        <vehicle_reliability>-0.3</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Pacific #16 - J-D. Delétraz" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.65</qualifying_skill>
+        <race_skill>0.73</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Lamy">
+        <aggression>0.52</aggression>
+        <avoidance_of_forced_mistakes>0.36</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.36</avoidance_of_mistakes>
+        <blue_flag_conceding>0.52</blue_flag_conceding>
+        <consistency>0.8</consistency>
+        <country>PRT</country>
+        <defending>0.58</defending>
+        <fuel_management>0.69</fuel_management>
+        <name>Pedro Lamy</name>
+        <qualifying_skill>0.76</qualifying_skill>
+        <race_skill>0.85</race_skill>
+        <stamina>0.8</stamina>
+        <start_reactions>0.63</start_reactions>
+        <tyre_management>0.66</tyre_management>
+        <vehicle_reliability>0.44</vehicle_reliability>
+        <weather_tyre_changes>0.69</weather_tyre_changes>
+        <wet_skill>0.4</wet_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Lamy" tracks="HUNGARORING">
+        <qualifying_skill>0.79</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Lamy" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Lamy" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.72</qualifying_skill>
+        <vehicle_reliability>-0.1</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Lamy" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.75</qualifying_skill>
+        <vehicle_reliability>-0.2</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Lamy" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.78</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Lamy" tracks="Kansai_GP,Kansai_Classic">
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.82</race_skill>
+    </driver>
+    <driver livery_name="1995 Minardi #23 - P. Lamy" tracks="Adelaide_Historic,Adelaide_Modern">
+        <qualifying_skill>0.75</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle">
+        <aggression>0.59</aggression>
+        <avoidance_of_forced_mistakes>0.55</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.55</avoidance_of_mistakes>
+        <blue_flag_conceding>0.52</blue_flag_conceding>
+        <consistency>0.85</consistency>
+        <country>GBR</country>
+        <defending>0.58</defending>
+        <fuel_management>0.72</fuel_management>
+        <name>Martin Brundle</name>
+        <qualifying_skill>0.86</qualifying_skill>
+        <race_skill>0.88</race_skill>
+        <stamina>0.87</stamina>
+        <start_reactions>0.86</start_reactions>
+        <tyre_management>0.76</tyre_management>
+        <vehicle_reliability>0.61</vehicle_reliability>
+        <weather_tyre_changes>0.82</weather_tyre_changes>
+        <wet_skill>0.78</wet_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Barcelona_1991,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+        <qualifying_skill>0.85</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Azure_Circuit_2021">
+        <aggression>0.92</aggression>
+        <avoidance_of_forced_mistakes>0.16</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.16</avoidance_of_mistakes>
+        <qualifying_skill>0.91</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <aggression>0.99</aggression>
+        <avoidance_of_forced_mistakes>0.2</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.2</avoidance_of_mistakes>
+        <qualifying_skill>0.81</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <aggression>1.0</aggression>
+        <avoidance_of_forced_mistakes>0.19</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.19</avoidance_of_mistakes>
+        <qualifying_skill>0.85</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="HUNGARORING">
+        <qualifying_skill>0.91</qualifying_skill>
+        <vehicle_reliability>-0.5</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <consistency>0.98</consistency>
+        <qualifying_skill>0.82</qualifying_skill>
+        <race_skill>0.97</race_skill>
+        <stamina>0.96</stamina>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.85</qualifying_skill>
+        <vehicle_reliability>-0.7</vehicle_reliability>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.89</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <qualifying_skill>0.84</qualifying_skill>
+        <race_skill>0.88</race_skill>
+    </driver>
+    <driver livery_name="1995 Ligier #25 - M. Brundle" tracks="Adelaide_Historic,Adelaide_Modern">
+        <aggression>0.93</aggression>
+        <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.15</avoidance_of_mistakes>
+        <qualifying_skill>0.85</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion">
+        <aggression>0.31</aggression>
+        <avoidance_of_forced_mistakes>0.34</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.34</avoidance_of_mistakes>
+        <blue_flag_conceding>0.73</blue_flag_conceding>
+        <consistency>0.8</consistency>
+        <country>FRA</country>
+        <defending>0.37</defending>
+        <fuel_management>0.66</fuel_management>
+        <name>Jean-Christophe Boullion</name>
+        <qualifying_skill>0.78</qualifying_skill>
+        <race_skill>0.86</race_skill>
+        <stamina>0.8</stamina>
+        <start_reactions>0.44</start_reactions>
+        <tyre_management>0.66</tyre_management>
+        <vehicle_reliability>0.61</vehicle_reliability>
+        <weather_tyre_changes>0.4</weather_tyre_changes>
+        <wet_skill>0.32</wet_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="Azure_Circuit_2021">
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.86</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+        <aggression>0.93</aggression>
+        <avoidance_of_forced_mistakes>0.18</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.18</avoidance_of_mistakes>
+        <qualifying_skill>0.74</qualifying_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_2001_International,Silverstone_GP,Silverstone_Intl_2019">
+        <qualifying_skill>0.78</qualifying_skill>
+        <race_skill>0.85</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.94</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="HUNGARORING">
+        <qualifying_skill>0.72</qualifying_skill>
+        <race_skill>0.83</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="Spa_Francorchamps_1993,Spa_Francorchamps_2005,Spa_Francorchamps_2020,Spa_Francorchamps_2022">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.82</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="Monza_1991,Monza_2020">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.92</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="Cascais,Cascais_1988,Cascais_Alternate">
+        <qualifying_skill>0.81</qualifying_skill>
+        <race_skill>0.8</race_skill>
+    </driver>
+    <driver livery_name="1995 Sauber #29 - J-C. Boullion" tracks="Nurb_GP_2020,Nurb_GP_2020_Veedol,Nurb_GP_2025">
+        <aggression>0.94</aggression>
+        <avoidance_of_forced_mistakes>0.12</avoidance_of_forced_mistakes>
+        <avoidance_of_mistakes>0.12</avoidance_of_mistakes>
+        <qualifying_skill>0.82</qualifying_skill>
+    </driver>
+</custom_ai_drivers>

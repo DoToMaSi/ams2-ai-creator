@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--NAMeS: Real Drivers for AMS2 by John B. Ellis-->
+<custom_ai_drivers>
+	<!-- Porsche 963 -->
+	<driver livery_name="Porsche 963 #5 (IMSA 2024)">
+		<name>Gianmaria Bruni</name>
+		<country>ITA</country>
+		<race_skill>0.95</race_skill>
+		<qualifying_skill>0.96</qualifying_skill>
+		<aggression>0.48</aggression>
+		<defending>0.58</defending>
+		<stamina>0.89</stamina>
+		<consistency>0.82</consistency>
+		<start_reactions>0.59</start_reactions>
+		<wet_skill>0.81</wet_skill>
+		<tyre_management>0.81</tyre_management>
+		<fuel_management>0.83</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.56</weather_tyre_changes>
+		<avoidance_of_mistakes>0.52</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.58</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.68</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Porsche 963 #6 (IMSA 2024)">
+		<name>Nick Tandy</name>
+		<country>GBR</country>
+		<race_skill>0.97</race_skill>
+		<qualifying_skill>0.96</qualifying_skill>
+		<aggression>0.44</aggression>
+		<defending>0.52</defending>
+		<stamina>0.86</stamina>
+		<consistency>0.85</consistency>
+		<start_reactions>0.57</start_reactions>
+		<wet_skill>0.83</wet_skill>
+		<tyre_management>0.86</tyre_management>
+		<fuel_management>0.87</fuel_management>
+		<blue_flag_conceding>0.94</blue_flag_conceding>
+		<weather_tyre_changes>0.54</weather_tyre_changes>
+		<avoidance_of_mistakes>0.53</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.58</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.69</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Porsche 963 #7 (IMSA 2024)">
+		<name>Felipe Nasr</name>
+		<country>BRA</country>
+		<race_skill>0.98</race_skill>
+		<qualifying_skill>0.97</qualifying_skill>
+		<aggression>0.52</aggression>
+		<defending>0.54</defending>
+		<stamina>0.85</stamina>
+		<consistency>0.79</consistency>
+		<start_reactions>0.56</start_reactions>
+		<wet_skill>0.78</wet_skill>
+		<tyre_management>0.76</tyre_management>
+		<fuel_management>0.78</fuel_management>
+		<blue_flag_conceding>0.91</blue_flag_conceding>
+		<weather_tyre_changes>0.59</weather_tyre_changes>
+		<avoidance_of_mistakes>0.46</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.53</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.71</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Porsche 963 #85 (IMSA 2024)">
+		<name>Tijmen van der Helm</name>
+		<country>NLD</country>
+		<race_skill>0.89</race_skill>
+		<qualifying_skill>0.89</qualifying_skill>
+		<aggression>0.42</aggression>
+		<defending>0.41</defending>
+		<stamina>0.78</stamina>
+		<consistency>0.76</consistency>
+		<start_reactions>0.51</start_reactions>
+		<wet_skill>0.71</wet_skill>
+		<tyre_management>0.83</tyre_management>
+		<fuel_management>0.81</fuel_management>
+		<blue_flag_conceding>0.93</blue_flag_conceding>
+		<weather_tyre_changes>0.62</weather_tyre_changes>
+		<avoidance_of_mistakes>0.45</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.49</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.52</vehicle_reliability>
+	</driver>
+
+	<!-- Cadillac V-Series.R -->
+	<driver livery_name="Cadillac V-Series.R #01 (IMSA 2024)">
+		<name>Sébastien Bourdais</name>
+		<country>FRA</country>
+		<race_skill>0.96</race_skill>
+		<qualifying_skill>0.96</qualifying_skill>
+		<aggression>0.58</aggression>
+		<defending>0.64</defending>
+		<stamina>0.87</stamina>
+		<consistency>0.83</consistency>
+		<start_reactions>0.58</start_reactions>
+		<wet_skill>0.82</wet_skill>
+		<tyre_management>0.73</tyre_management>
+		<fuel_management>0.74</fuel_management>
+		<blue_flag_conceding>0.87</blue_flag_conceding>
+		<weather_tyre_changes>0.52</weather_tyre_changes>
+		<avoidance_of_mistakes>0.49</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.59</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.64</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Whelen Engineering Racing #31">
+		<name>Pipo Derani</name>
+		<country>BRA</country>
+		<race_skill>0.95</race_skill>
+		<qualifying_skill>0.95</qualifying_skill>
+		<aggression>0.55</aggression>
+		<defending>0.59</defending>
+		<stamina>0.85</stamina>
+		<consistency>0.76</consistency>
+		<start_reactions>0.56</start_reactions>
+		<wet_skill>0.85</wet_skill>
+		<tyre_management>0.75</tyre_management>
+		<fuel_management>0.77</fuel_management>
+		<blue_flag_conceding>0.89</blue_flag_conceding>
+		<weather_tyre_changes>0.43</weather_tyre_changes>
+		<avoidance_of_mistakes>0.45</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.58</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.62</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Hertz Team Jota #12">
+		<name>Earl Bamber</name>
+		<country>NZL</country>
+		<race_skill>0.94</race_skill>
+		<qualifying_skill>0.98</qualifying_skill>
+		<aggression>0.49</aggression>
+		<defending>0.58</defending>
+		<stamina>0.88</stamina>
+		<consistency>0.84</consistency>
+		<start_reactions>0.58</start_reactions>
+		<wet_skill>0.82</wet_skill>
+		<tyre_management>0.79</tyre_management>
+		<fuel_management>0.81</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.55</weather_tyre_changes>
+		<avoidance_of_mistakes>0.51</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.57</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.67</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Hertz Team Jota #38">
+		<name>Alex Lynn</name>
+		<country>GBR</country>
+		<race_skill>0.92</race_skill>
+		<qualifying_skill>0.96</qualifying_skill>
+		<aggression>0.61</aggression>
+		<defending>0.63</defending>
+		<stamina>0.84</stamina>
+		<consistency>0.72</consistency>
+		<start_reactions>0.55</start_reactions>
+		<wet_skill>0.74</wet_skill>
+		<tyre_management>0.69</tyre_management>
+		<fuel_management>0.71</fuel_management>
+		<blue_flag_conceding>0.85</blue_flag_conceding>
+		<weather_tyre_changes>0.64</weather_tyre_changes>
+		<avoidance_of_mistakes>0.38</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.55</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.58</vehicle_reliability>
+	</driver>
+
+	<!-- BMW M Hybrid V8 -->
+	<driver livery_name="BMW M Hybrid V8 #24 (IMSA 2024)">
+		<name>Philipp Eng</name>
+		<country>AUT</country>
+		<race_skill>0.92</race_skill>
+		<qualifying_skill>0.94</qualifying_skill>
+		<aggression>0.51</aggression>
+		<defending>0.58</defending>
+		<stamina>0.86</stamina>
+		<consistency>0.78</consistency>
+		<start_reactions>0.56</start_reactions>
+		<wet_skill>0.77</wet_skill>
+		<tyre_management>0.77</tyre_management>
+		<fuel_management>0.79</fuel_management>
+		<blue_flag_conceding>0.90</blue_flag_conceding>
+		<weather_tyre_changes>0.58</weather_tyre_changes>
+		<avoidance_of_mistakes>0.47</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.53</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.59</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="BMW M Hybrid V8 #25 (IMSA 2024)">
+		<name>Nick Yelloly</name>
+		<country>GBR</country>
+		<race_skill>0.9</race_skill>
+		<qualifying_skill>0.9</qualifying_skill>
+		<aggression>0.39</aggression>
+		<defending>0.36</defending>
+		<stamina>0.78</stamina>
+		<consistency>0.78</consistency>
+		<start_reactions>0.52</start_reactions>
+		<wet_skill>0.72</wet_skill>
+		<tyre_management>0.86</tyre_management>
+		<fuel_management>0.84</fuel_management>
+		<blue_flag_conceding>0.96</blue_flag_conceding>
+		<weather_tyre_changes>0.61</weather_tyre_changes>
+		<avoidance_of_mistakes>0.47</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.49</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.51</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="BMW M WRT #15">
+		<name>Dries Vanthoor</name>
+		<country>BEL</country>
+		<race_skill>0.94</race_skill>
+		<qualifying_skill>0.9</qualifying_skill>
+		<aggression>0.47</aggression>
+		<defending>0.51</defending>
+		<stamina>0.82</stamina>
+		<consistency>0.81</consistency>
+		<start_reactions>0.55</start_reactions>
+		<wet_skill>0.77</wet_skill>
+		<tyre_management>0.81</tyre_management>
+		<fuel_management>0.79</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.59</weather_tyre_changes>
+		<avoidance_of_mistakes>0.46</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.51</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.54</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="BMW M WRT #20">
+		<name>René Rast</name>
+		<country>DEU</country>
+		<race_skill>0.9</race_skill>
+		<qualifying_skill>0.88</qualifying_skill>
+		<aggression>0.43</aggression>
+		<defending>0.46</defending>
+		<stamina>0.81</stamina>
+		<consistency>0.79</consistency>
+		<start_reactions>0.54</start_reactions>
+		<wet_skill>0.75</wet_skill>
+		<tyre_management>0.84</tyre_management>
+		<fuel_management>0.81</fuel_management>
+		<blue_flag_conceding>0.93</blue_flag_conceding>
+		<weather_tyre_changes>0.57</weather_tyre_changes>
+		<avoidance_of_mistakes>0.48</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.52</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.48</vehicle_reliability>
+	</driver>
+
+	<!-- Aston Martin Valkyrie Hypercar -->
+	<driver livery_name="THOR #23">
+		<name>Ross Gunn</name>
+		<country>GBR</country>
+		<race_skill>0.82</race_skill>
+		<qualifying_skill>0.88</qualifying_skill>
+		<aggression>0.52</aggression>
+		<defending>0.56</defending>
+		<stamina>0.84</stamina>
+		<consistency>0.71</consistency>
+		<start_reactions>0.55</start_reactions>
+		<wet_skill>0.73</wet_skill>
+		<tyre_management>0.74</tyre_management>
+		<fuel_management>0.76</fuel_management>
+		<blue_flag_conceding>0.89</blue_flag_conceding>
+		<weather_tyre_changes>0.67</weather_tyre_changes>
+		<avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.51</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.38</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="THOR Team #007">
+		<name>Tom Gamble</name>
+		<country>GBR</country>
+		<race_skill>0.82</race_skill>
+		<qualifying_skill>0.84</qualifying_skill>
+		<aggression>0.54</aggression>
+		<defending>0.47</defending>
+		<stamina>0.75</stamina>
+		<consistency>0.67</consistency>
+		<start_reactions>0.49</start_reactions>
+		<wet_skill>0.64</wet_skill>
+		<tyre_management>0.76</tyre_management>
+		<fuel_management>0.74</fuel_management>
+		<blue_flag_conceding>0.88</blue_flag_conceding>
+		<weather_tyre_changes>0.72</weather_tyre_changes>
+		<avoidance_of_mistakes>0.38</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.44</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.29</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="THOR Team #009">
+		<name>Alex Riberas</name>
+		<country>ESP</country>
+		<race_skill>0.84</race_skill>
+		<qualifying_skill>0.87</qualifying_skill>
+		<aggression>0.48</aggression>
+		<defending>0.42</defending>
+		<stamina>0.77</stamina>
+		<consistency>0.69</consistency>
+		<start_reactions>0.51</start_reactions>
+		<wet_skill>0.66</wet_skill>
+		<tyre_management>0.79</tyre_management>
+		<fuel_management>0.77</fuel_management>
+		<blue_flag_conceding>0.90</blue_flag_conceding>
+		<weather_tyre_changes>0.69</weather_tyre_changes>
+		<avoidance_of_mistakes>0.41</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.46</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.31</vehicle_reliability>
+	</driver>
+
+	<!-- Alpine A424 -->
+	<driver livery_name="Alpine A424 #36">
+		<name>Mick Schumacher</name>
+		<country>DEU</country>
+		<race_skill>0.82</race_skill>
+		<qualifying_skill>0.82</qualifying_skill>
+		<aggression>0.42</aggression>
+		<defending>0.48</defending>
+		<stamina>0.79</stamina>
+		<consistency>0.68</consistency>
+		<start_reactions>0.52</start_reactions>
+		<wet_skill>0.71</wet_skill>
+		<tyre_management>0.83</tyre_management>
+		<fuel_management>0.81</fuel_management>
+		<blue_flag_conceding>0.91</blue_flag_conceding>
+		<weather_tyre_changes>0.64</weather_tyre_changes>
+		<avoidance_of_mistakes>0.43</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.41</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.52</vehicle_reliability>
+	</driver>
+	
+	<driver livery_name="Alpine Endurance Team #36">
+		<name>Jules Gounon</name>
+		<country>FRA</country>
+		<race_skill>0.85</race_skill>
+		<qualifying_skill>0.84</qualifying_skill>
+		<aggression>0.49</aggression>
+		<defending>0.43</defending>
+		<stamina>0.82</stamina>
+		<consistency>0.86</consistency>
+		<start_reactions>0.57</start_reactions>
+		<wet_skill>0.79</wet_skill>
+		<tyre_management>0.88</tyre_management>
+		<fuel_management>0.84</fuel_management>
+		<blue_flag_conceding>0.93</blue_flag_conceding>
+		<weather_tyre_changes>0.53</weather_tyre_changes>
+		<avoidance_of_mistakes>0.48</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.52</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.62</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Alpine Endurance Team #35">
+		<name>Ferdinand Habsburg</name>
+		<country>AUT</country>
+		<race_skill>0.78</race_skill>
+		<qualifying_skill>0.8</qualifying_skill>
+		<aggression>0.46</aggression>
+		<defending>0.41</defending>
+		<stamina>0.78</stamina>
+		<consistency>0.73</consistency>
+		<start_reactions>0.51</start_reactions>
+		<wet_skill>0.68</wet_skill>
+		<tyre_management>0.81</tyre_management>
+		<fuel_management>0.79</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.61</weather_tyre_changes>
+		<avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.45</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.58</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Alpine A424 #39">
+		<name>Charles Milesi</name>
+		<country>FRA</country>
+		<race_skill>0.76</race_skill>
+		<qualifying_skill>0.82</qualifying_skill>
+		<aggression>0.38</aggression>
+		<defending>0.39</defending>
+		<stamina>0.81</stamina>
+		<consistency>0.76</consistency>
+		<start_reactions>0.54</start_reactions>
+		<wet_skill>0.72</wet_skill>
+		<tyre_management>0.84</tyre_management>
+		<fuel_management>0.82</fuel_management>
+		<blue_flag_conceding>0.95</blue_flag_conceding>
+		<weather_tyre_changes>0.59</weather_tyre_changes>
+		<avoidance_of_mistakes>0.46</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.48</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.61</vehicle_reliability>
+	</driver>
+
+	<!-- Lamborghini SC63 -->
+	<driver livery_name="Lamborghini SC63 #63 (IMSA 2024)">
+		<name>Matteo Cairoli</name>
+		<country>ITA</country>
+		<race_skill>0.75</race_skill>
+		<qualifying_skill>0.8</qualifying_skill>
+		<aggression>0.52</aggression>
+		<defending>0.48</defending>
+		<stamina>0.78</stamina>
+		<consistency>0.71</consistency>
+		<start_reactions>0.52</start_reactions>
+		<wet_skill>0.69</wet_skill>
+		<tyre_management>0.76</tyre_management>
+		<fuel_management>0.74</fuel_management>
+		<blue_flag_conceding>0.89</blue_flag_conceding>
+		<weather_tyre_changes>0.67</weather_tyre_changes>
+		<avoidance_of_mistakes>0.41</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.47</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.42</vehicle_reliability>
+	</driver>
+	
+	<driver livery_name="Squadra Corsa #63">
+		<name>Romain Grosjean</name>
+		<country>FRA</country>
+		<race_skill>0.8</race_skill>
+		<qualifying_skill>0.8</qualifying_skill>
+		<aggression>0.56</aggression>
+		<defending>0.51</defending>
+		<stamina>0.82</stamina>
+		<consistency>0.67</consistency>
+		<start_reactions>0.54</start_reactions>
+		<wet_skill>0.76</wet_skill>
+		<tyre_management>0.73</tyre_management>
+		<fuel_management>0.74</fuel_management>
+		<blue_flag_conceding>0.87</blue_flag_conceding>
+		<weather_tyre_changes>0.59</weather_tyre_changes>
+		<avoidance_of_mistakes>0.39</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.46</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.39</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Wayne Taylor Racing #46">
+		<name>Filipe Albuquerque</name>
+		<country>PRT</country>
+		<race_skill>0.77</race_skill>
+		<qualifying_skill>0.85</qualifying_skill>
+		<aggression>0.41</aggression>
+		<defending>0.44</defending>
+		<stamina>0.81</stamina>
+		<consistency>0.78</consistency>
+		<start_reactions>0.53</start_reactions>
+		<wet_skill>0.73</wet_skill>
+		<tyre_management>0.84</tyre_management>
+		<fuel_management>0.82</fuel_management>
+		<blue_flag_conceding>0.95</blue_flag_conceding>
+		<weather_tyre_changes>0.61</weather_tyre_changes>
+		<avoidance_of_mistakes>0.46</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.51</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.44</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Wayne Taylor Racing #47">
+		<name>Louis Delétraz</name>
+		<country>CHE</country>
+		<race_skill>0.78</race_skill>
+		<qualifying_skill>0.78</qualifying_skill>
+		<aggression>0.53</aggression>
+		<defending>0.49</defending>
+		<stamina>0.81</stamina>
+		<consistency>0.71</consistency>
+		<start_reactions>0.54</start_reactions>
+		<wet_skill>0.73</wet_skill>
+		<tyre_management>0.75</tyre_management>
+		<fuel_management>0.76</fuel_management>
+		<blue_flag_conceding>0.88</blue_flag_conceding>
+		<weather_tyre_changes>0.63</weather_tyre_changes>
+		<avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.47</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.41</vehicle_reliability>
+	</driver>
+
+	<!-- Replaced Liveries -->
+	<driver livery_name="Alpine A424 #37">
+		<name>Nicolas Lapierre</name>
+		<country>FRA</country>
+		<race_skill>0.85</race_skill>
+		<qualifying_skill>0.84</qualifying_skill>
+		<aggression>0.49</aggression>
+		<defending>0.43</defending>
+		<stamina>0.82</stamina>
+		<consistency>0.86</consistency>
+		<start_reactions>0.57</start_reactions>
+		<wet_skill>0.79</wet_skill>
+		<tyre_management>0.88</tyre_management>
+		<fuel_management>0.84</fuel_management>
+		<blue_flag_conceding>0.93</blue_flag_conceding>
+		<weather_tyre_changes>0.53</weather_tyre_changes>
+		<avoidance_of_mistakes>0.48</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.52</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.62</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Alpine A424 #38">
+		<name>Ferdinand Habsburg</name>
+		<country>AUT</country>
+		<race_skill>0.78</race_skill>
+		<qualifying_skill>0.8</qualifying_skill>
+		<aggression>0.46</aggression>
+		<defending>0.41</defending>
+		<stamina>0.78</stamina>
+		<consistency>0.73</consistency>
+		<start_reactions>0.51</start_reactions>
+		<wet_skill>0.68</wet_skill>
+		<tyre_management>0.81</tyre_management>
+		<fuel_management>0.79</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.61</weather_tyre_changes>
+		<avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.45</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.58</vehicle_reliability>
+	</driver>
+	
+	<driver livery_name="Aston Martin Valkyrie Hypercar #23 (IMSA 2025)">
+		<name>Ross Gunn</name>
+		<country>GBR</country>
+		<race_skill>0.82</race_skill>
+		<qualifying_skill>0.88</qualifying_skill>
+		<aggression>0.52</aggression>
+		<defending>0.56</defending>
+		<stamina>0.84</stamina>
+		<consistency>0.71</consistency>
+		<start_reactions>0.55</start_reactions>
+		<wet_skill>0.73</wet_skill>
+		<tyre_management>0.74</tyre_management>
+		<fuel_management>0.76</fuel_management>
+		<blue_flag_conceding>0.89</blue_flag_conceding>
+		<weather_tyre_changes>0.67</weather_tyre_changes>
+		<avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.51</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.38</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Aston Martin Valkyrie Hypercar #007">
+		<name>Tom Gamble</name>
+		<country>GBR</country>
+		<race_skill>0.82</race_skill>
+		<qualifying_skill>0.84</qualifying_skill>
+		<aggression>0.54</aggression>
+		<defending>0.47</defending>
+		<stamina>0.75</stamina>
+		<consistency>0.67</consistency>
+		<start_reactions>0.49</start_reactions>
+		<wet_skill>0.64</wet_skill>
+		<tyre_management>0.76</tyre_management>
+		<fuel_management>0.74</fuel_management>
+		<blue_flag_conceding>0.88</blue_flag_conceding>
+		<weather_tyre_changes>0.72</weather_tyre_changes>
+		<avoidance_of_mistakes>0.38</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.44</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.29</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Aston Martin Valkyrie Hypercar #009">
+		<name>Alex Riberas</name>
+		<country>ESP</country>
+		<race_skill>0.84</race_skill>
+		<qualifying_skill>0.87</qualifying_skill>
+		<aggression>0.48</aggression>
+		<defending>0.42</defending>
+		<stamina>0.77</stamina>
+		<consistency>0.69</consistency>
+		<start_reactions>0.51</start_reactions>
+		<wet_skill>0.66</wet_skill>
+		<tyre_management>0.79</tyre_management>
+		<fuel_management>0.77</fuel_management>
+		<blue_flag_conceding>0.90</blue_flag_conceding>
+		<weather_tyre_changes>0.69</weather_tyre_changes>
+		<avoidance_of_mistakes>0.41</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.46</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.31</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Aston Martin Valkyrie Hypercar #909">
+		<name>Roman De Angelis</name>
+		<country>CAN</country>
+		<race_skill>0.8</race_skill>
+		<qualifying_skill>0.8</qualifying_skill>
+		<aggression>0.44</aggression>
+		<defending>0.45</defending>
+		<stamina>0.79</stamina>
+		<consistency>0.74</consistency>
+		<start_reactions>0.53</start_reactions>
+		<wet_skill>0.71</wet_skill>
+		<tyre_management>0.82</tyre_management>
+		<fuel_management>0.79</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.63</weather_tyre_changes>
+		<avoidance_of_mistakes>0.44</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.47</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.36</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Cadillac V-Series.R #31 (IMSA 2024)">
+		<name>Pipo Derani</name>
+		<country>BRA</country>
+		<race_skill>0.95</race_skill>
+		<qualifying_skill>0.95</qualifying_skill>
+		<aggression>0.55</aggression>
+		<defending>0.59</defending>
+		<stamina>0.85</stamina>
+		<consistency>0.76</consistency>
+		<start_reactions>0.56</start_reactions>
+		<wet_skill>0.85</wet_skill>
+		<tyre_management>0.75</tyre_management>
+		<fuel_management>0.77</fuel_management>
+		<blue_flag_conceding>0.89</blue_flag_conceding>
+		<weather_tyre_changes>0.43</weather_tyre_changes>
+		<avoidance_of_mistakes>0.45</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.58</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.62</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Cadillac V-Series.R #5">
+		<name>Earl Bamber</name>
+		<country>NZL</country>
+		<race_skill>0.94</race_skill>
+		<qualifying_skill>0.98</qualifying_skill>
+		<aggression>0.49</aggression>
+		<defending>0.58</defending>
+		<stamina>0.88</stamina>
+		<consistency>0.84</consistency>
+		<start_reactions>0.58</start_reactions>
+		<wet_skill>0.82</wet_skill>
+		<tyre_management>0.79</tyre_management>
+		<fuel_management>0.81</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.55</weather_tyre_changes>
+		<avoidance_of_mistakes>0.51</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.57</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.67</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Cadillac V-Series.R #9">
+		<name>Renger van der Zande</name>
+		<country>NLD</country>
+		<race_skill>0.92</race_skill>
+		<qualifying_skill>0.96</qualifying_skill>
+		<aggression>0.61</aggression>
+		<defending>0.63</defending>
+		<stamina>0.84</stamina>
+		<consistency>0.72</consistency>
+		<start_reactions>0.55</start_reactions>
+		<wet_skill>0.74</wet_skill>
+		<tyre_management>0.69</tyre_management>
+		<fuel_management>0.71</fuel_management>
+		<blue_flag_conceding>0.85</blue_flag_conceding>
+		<weather_tyre_changes>0.64</weather_tyre_changes>
+		<avoidance_of_mistakes>0.38</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.55</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.58</vehicle_reliability>
+	</driver>
+	
+	<driver livery_name="Lamborghini SC63 #64">
+		<name>Romain Grosjean</name>
+		<country>FRA</country>
+		<race_skill>0.8</race_skill>
+		<qualifying_skill>0.8</qualifying_skill>
+		<aggression>0.56</aggression>
+		<defending>0.51</defending>
+		<stamina>0.82</stamina>
+		<consistency>0.67</consistency>
+		<start_reactions>0.54</start_reactions>
+		<wet_skill>0.76</wet_skill>
+		<tyre_management>0.73</tyre_management>
+		<fuel_management>0.74</fuel_management>
+		<blue_flag_conceding>0.87</blue_flag_conceding>
+		<weather_tyre_changes>0.59</weather_tyre_changes>
+		<avoidance_of_mistakes>0.39</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.46</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.39</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Lamborghini SC63 #36">
+		<name>Andrea Caldarelli</name>
+		<country>ITA</country>
+		<race_skill>0.77</race_skill>
+		<qualifying_skill>0.85</qualifying_skill>
+		<aggression>0.41</aggression>
+		<defending>0.44</defending>
+		<stamina>0.81</stamina>
+		<consistency>0.78</consistency>
+		<start_reactions>0.53</start_reactions>
+		<wet_skill>0.73</wet_skill>
+		<tyre_management>0.84</tyre_management>
+		<fuel_management>0.82</fuel_management>
+		<blue_flag_conceding>0.95</blue_flag_conceding>
+		<weather_tyre_changes>0.61</weather_tyre_changes>
+		<avoidance_of_mistakes>0.46</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.51</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.44</vehicle_reliability>
+	</driver>
+
+	<driver livery_name="Lamborghini SC63 #37">
+		<name>Daniil Kvyat</name>
+		<country>RUS</country>
+		<race_skill>0.78</race_skill>
+		<qualifying_skill>0.78</qualifying_skill>
+		<aggression>0.53</aggression>
+		<defending>0.49</defending>
+		<stamina>0.81</stamina>
+		<consistency>0.71</consistency>
+		<start_reactions>0.54</start_reactions>
+		<wet_skill>0.73</wet_skill>
+		<tyre_management>0.75</tyre_management>
+		<fuel_management>0.76</fuel_management>
+		<blue_flag_conceding>0.88</blue_flag_conceding>
+		<weather_tyre_changes>0.63</weather_tyre_changes>
+		<avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.47</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.41</vehicle_reliability>
+	</driver>
+</custom_ai_drivers>

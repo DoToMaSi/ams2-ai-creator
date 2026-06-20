@@ -1,0 +1,2625 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<custom_ai_drivers>
+  <driver livery_name="Fernando Alonso #1">
+    <name>Fernando Alonso</name>
+    <country>ESP</country>
+    <weight_scalar>1.000</weight_scalar>
+    <power_scalar>1.000</power_scalar>
+    <drag_scalar>1.000</drag_scalar>
+    <aggression>0.94</aggression>
+    <avoidance_of_forced_mistakes>0.79</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.84</avoidance_of_mistakes>
+    <blue_flag_conceding>0.98</blue_flag_conceding>
+    <consistency>0.98</consistency>
+    <defending>0.91</defending>
+    <fuel_management>0.92</fuel_management>
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <stamina>0.99</stamina>
+    <start_reactions>0.96</start_reactions>
+    <tyre_management>0.97</tyre_management>
+    <vehicle_reliability>0.87</vehicle_reliability>
+    <weather_tyre_changes>0.34</weather_tyre_changes>
+    <wet_skill>0.91</wet_skill>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2">
+    <name>Giancarlo Fisichella</name>
+    <country>ITA</country>
+    <weight_scalar>1.000</weight_scalar>
+    <power_scalar>1.000</power_scalar>
+    <drag_scalar>1.000</drag_scalar>
+    <aggression>0.51</aggression>
+    <avoidance_of_forced_mistakes>0.62</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.78</avoidance_of_mistakes>
+    <blue_flag_conceding>0.79</blue_flag_conceding>
+    <consistency>0.96</consistency>
+    <defending>0.52</defending>
+    <fuel_management>0.90</fuel_management>
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <stamina>0.96</stamina>
+    <start_reactions>0.89</start_reactions>
+    <tyre_management>0.84</tyre_management>
+    <vehicle_reliability>0.87</vehicle_reliability>
+    <weather_tyre_changes>0.38</weather_tyre_changes>
+    <wet_skill>0.37</wet_skill>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3">
+    <name>Kimi Räikkönen</name>
+    <country>FIN</country>
+    <weight_scalar>1.002</weight_scalar>
+    <power_scalar>0.985</power_scalar>
+    <drag_scalar>1.005</drag_scalar>
+    <aggression>0.74</aggression>
+    <avoidance_of_forced_mistakes>0.79</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+    <blue_flag_conceding>0.98</blue_flag_conceding>
+    <consistency>0.98</consistency>
+    <defending>0.71</defending>
+    <fuel_management>0.97</fuel_management>
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <stamina>0.98</stamina>
+    <start_reactions>0.89</start_reactions>
+    <tyre_management>0.96</tyre_management>
+    <vehicle_reliability>0.63</vehicle_reliability>
+    <weather_tyre_changes>0.83</weather_tyre_changes>
+    <wet_skill>0.73</wet_skill>
+  </driver>
+  <driver livery_name="Juan Pablo Montoya #4">
+    <name>Juan-Pablo Montoya</name>
+    <country>COL</country>
+    <weight_scalar>1.002</weight_scalar>
+    <power_scalar>0.985</power_scalar>
+    <drag_scalar>1.005</drag_scalar>
+    <aggression>0.98</aggression>
+    <avoidance_of_forced_mistakes>0.40</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.63</avoidance_of_mistakes>
+    <blue_flag_conceding>0.58</blue_flag_conceding>
+    <consistency>0.95</consistency>
+    <defending>0.76</defending>
+    <fuel_management>0.83</fuel_management>
+    <qualifying_skill>0.90</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <stamina>0.95</stamina>
+    <start_reactions>0.65</start_reactions>
+    <tyre_management>0.88</tyre_management>
+    <vehicle_reliability>0.42</vehicle_reliability>
+    <weather_tyre_changes>0.51</weather_tyre_changes>
+    <wet_skill>0.36</wet_skill>
+  </driver>
+  <driver livery_name="Michael Schumacher #5">
+    <name>Michael Schumacher</name>
+    <country>DEU</country>
+    <weight_scalar>1.000</weight_scalar>
+    <power_scalar>1.000</power_scalar>
+    <drag_scalar>1.000</drag_scalar>
+    <aggression>0.97</aggression>
+    <avoidance_of_forced_mistakes>0.79</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.84</avoidance_of_mistakes>
+    <blue_flag_conceding>0.95</blue_flag_conceding>
+    <consistency>0.97</consistency>
+    <defending>0.96</defending>
+    <fuel_management>0.95</fuel_management>
+    <qualifying_skill>0.94</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <stamina>0.98</stamina>
+    <start_reactions>0.96</start_reactions>
+    <tyre_management>0.93</tyre_management>
+    <vehicle_reliability>0.86</vehicle_reliability>
+    <weather_tyre_changes>0.28</weather_tyre_changes>
+    <wet_skill>0.93</wet_skill>
+  </driver>
+  <driver livery_name="Felipe Massa #6">
+    <name>Felipe Massa</name>
+    <country>BRA</country>
+    <weight_scalar>1.000</weight_scalar>
+    <power_scalar>1.000</power_scalar>
+    <drag_scalar>1.000</drag_scalar>
+    <aggression>0.92</aggression>
+    <avoidance_of_forced_mistakes>0.59</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.79</avoidance_of_mistakes>
+    <blue_flag_conceding>0.73</blue_flag_conceding>
+    <consistency>0.96</consistency>
+    <defending>0.51</defending>
+    <fuel_management>0.86</fuel_management>
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <stamina>0.95</stamina>
+    <start_reactions>0.90</start_reactions>
+    <tyre_management>0.82</tyre_management>
+    <vehicle_reliability>0.62</vehicle_reliability>
+    <weather_tyre_changes>0.39</weather_tyre_changes>
+    <wet_skill>0.39</wet_skill>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7">
+    <name>Ralf Schumacher</name>
+    <country>DEU</country>
+    <weight_scalar>1.007</weight_scalar>
+    <power_scalar>0.978</power_scalar>
+    <drag_scalar>1.010</drag_scalar>
+    <aggression>0.53</aggression>
+    <avoidance_of_forced_mistakes>0.67</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.72</avoidance_of_mistakes>
+    <blue_flag_conceding>0.70</blue_flag_conceding>
+    <consistency>0.94</consistency>
+    <defending>0.53</defending>
+    <fuel_management>0.86</fuel_management>
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <stamina>0.94</stamina>
+    <start_reactions>0.64</start_reactions>
+    <tyre_management>0.82</tyre_management>
+    <vehicle_reliability>0.65</vehicle_reliability>
+    <weather_tyre_changes>0.77</weather_tyre_changes>
+    <wet_skill>0.57</wet_skill>
+  </driver>
+  <driver livery_name="Jarno Trulli #8">
+    <name>Jarno Trulli</name>
+    <country>ITA</country>
+    <weight_scalar>1.007</weight_scalar>
+    <power_scalar>0.978</power_scalar>
+    <drag_scalar>1.010</drag_scalar>
+    <aggression>0.77</aggression>
+    <avoidance_of_forced_mistakes>0.66</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.70</avoidance_of_mistakes>
+    <blue_flag_conceding>0.70</blue_flag_conceding>
+    <consistency>0.96</consistency>
+    <defending>0.95</defending>
+    <fuel_management>0.83</fuel_management>
+    <qualifying_skill>0.86</qualifying_skill>
+    <race_skill>0.93</race_skill>
+    <stamina>0.93</stamina>
+    <start_reactions>0.65</start_reactions>
+    <tyre_management>0.81</tyre_management>
+    <vehicle_reliability>0.66</vehicle_reliability>
+    <weather_tyre_changes>0.78</weather_tyre_changes>
+    <wet_skill>0.51</wet_skill>
+  </driver>
+  <driver livery_name="Mark Webber #9">
+    <name>Mark Webber</name>
+    <country>AUS</country>
+    <weight_scalar>1.011</weight_scalar>
+    <power_scalar>0.965</power_scalar>
+    <drag_scalar>1.016</drag_scalar>
+    <aggression>0.75</aggression>
+    <avoidance_of_forced_mistakes>0.62</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.79</avoidance_of_mistakes>
+    <blue_flag_conceding>0.72</blue_flag_conceding>
+    <consistency>0.93</consistency>
+    <defending>0.98</defending>
+    <fuel_management>0.80</fuel_management>
+    <qualifying_skill>0.83</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <stamina>0.95</stamina>
+    <start_reactions>0.45</start_reactions>
+    <tyre_management>0.89</tyre_management>
+    <vehicle_reliability>0.44</vehicle_reliability>
+    <weather_tyre_changes>0.57</weather_tyre_changes>
+    <wet_skill>0.76</wet_skill>
+  </driver>
+  <driver livery_name="Nico Rosberg #10">
+    <name>Nico Rosberg</name>
+    <country>DEU</country>
+    <weight_scalar>1.011</weight_scalar>
+    <power_scalar>0.965</power_scalar>
+    <drag_scalar>1.016</drag_scalar>
+    <aggression>0.51</aggression>
+    <avoidance_of_forced_mistakes>0.38</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.61</avoidance_of_mistakes>
+    <blue_flag_conceding>0.56</blue_flag_conceding>
+    <consistency>0.90</consistency>
+    <defending>0.53</defending>
+    <fuel_management>0.74</fuel_management>
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <stamina>0.89</stamina>
+    <start_reactions>0.43</start_reactions>
+    <tyre_management>0.71</tyre_management>
+    <vehicle_reliability>0.50</vehicle_reliability>
+    <weather_tyre_changes>0.56</weather_tyre_changes>
+    <wet_skill>0.56</wet_skill>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11">
+    <name>Rubens Barrichello</name>
+    <country>BRA</country>
+    <weight_scalar>1.004</weight_scalar>
+    <power_scalar>0.983</power_scalar>
+    <drag_scalar>1.007</drag_scalar>
+    <aggression>0.53</aggression>
+    <avoidance_of_forced_mistakes>0.70</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.72</avoidance_of_mistakes>
+    <blue_flag_conceding>0.79</blue_flag_conceding>
+    <consistency>0.95</consistency>
+    <defending>0.59</defending>
+    <fuel_management>0.89</fuel_management>
+    <qualifying_skill>0.94</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <stamina>0.96</stamina>
+    <start_reactions>0.68</start_reactions>
+    <tyre_management>0.89</tyre_management>
+    <vehicle_reliability>0.67</vehicle_reliability>
+    <weather_tyre_changes>0.37</weather_tyre_changes>
+    <wet_skill>0.53</wet_skill>
+  </driver>
+  <driver livery_name="Jenson Button #12">
+    <name>Jenson Button</name>
+    <country>GBR</country>
+    <weight_scalar>1.004</weight_scalar>
+    <power_scalar>0.983</power_scalar>
+    <drag_scalar>1.007</drag_scalar>
+    <aggression>0.56</aggression>
+    <avoidance_of_forced_mistakes>0.50</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.71</avoidance_of_mistakes>
+    <blue_flag_conceding>0.79</blue_flag_conceding>
+    <consistency>0.94</consistency>
+    <defending>0.54</defending>
+    <fuel_management>0.89</fuel_management>
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <stamina>0.95</stamina>
+    <start_reactions>0.66</start_reactions>
+    <tyre_management>0.82</tyre_management>
+    <vehicle_reliability>0.60</vehicle_reliability>
+    <weather_tyre_changes>0.34</weather_tyre_changes>
+    <wet_skill>0.74</wet_skill>
+  </driver>
+  <driver livery_name="David Coulthard #14">
+    <name>David Coulthard</name>
+    <country>GBR</country>
+    <weight_scalar>1.010</weight_scalar>
+    <power_scalar>0.971</power_scalar>
+    <drag_scalar>1.014</drag_scalar>
+    <aggression>0.35</aggression>
+    <avoidance_of_forced_mistakes>0.60</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.73</avoidance_of_mistakes>
+    <blue_flag_conceding>0.70</blue_flag_conceding>
+    <consistency>0.90</consistency>
+    <defending>0.31</defending>
+    <fuel_management>0.72</fuel_management>
+    <qualifying_skill>0.80</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <stamina>0.91</stamina>
+    <start_reactions>0.67</start_reactions>
+    <tyre_management>0.71</tyre_management>
+    <vehicle_reliability>0.50</vehicle_reliability>
+    <weather_tyre_changes>0.27</weather_tyre_changes>
+    <wet_skill>0.50</wet_skill>
+  </driver>
+  <driver livery_name="Christian Klien #15">
+    <name>Christian Klien</name>
+    <country>AUT</country>
+    <weight_scalar>1.010</weight_scalar>
+    <power_scalar>0.971</power_scalar>
+    <drag_scalar>1.014</drag_scalar>
+    <aggression>0.39</aggression>
+    <avoidance_of_forced_mistakes>0.33</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.61</avoidance_of_mistakes>
+    <blue_flag_conceding>0.55</blue_flag_conceding>
+    <consistency>0.88</consistency>
+    <defending>0.38</defending>
+    <fuel_management>0.69</fuel_management>
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <stamina>0.87</stamina>
+    <start_reactions>0.46</start_reactions>
+    <tyre_management>0.68</tyre_management>
+    <vehicle_reliability>0.46</vehicle_reliability>
+    <weather_tyre_changes>0.72</weather_tyre_changes>
+    <wet_skill>0.31</wet_skill>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16">
+    <name>Nick Heidfeld</name>
+    <country>DEU</country>
+    <weight_scalar>1.009</weight_scalar>
+    <power_scalar>0.975</power_scalar>
+    <drag_scalar>1.012</drag_scalar>
+    <aggression>0.55</aggression>
+    <avoidance_of_forced_mistakes>0.33</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.69</avoidance_of_mistakes>
+    <blue_flag_conceding>0.59</blue_flag_conceding>
+    <consistency>0.90</consistency>
+    <defending>0.51</defending>
+    <fuel_management>0.77</fuel_management>
+    <qualifying_skill>0.87</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <stamina>0.90</stamina>
+    <start_reactions>0.66</start_reactions>
+    <tyre_management>0.76</tyre_management>
+    <vehicle_reliability>0.69</vehicle_reliability>
+    <weather_tyre_changes>0.60</weather_tyre_changes>
+    <wet_skill>0.59</wet_skill>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17">
+    <name>Jacques Villeneuve</name>
+    <country>CAN</country>
+    <weight_scalar>1.009</weight_scalar>
+    <power_scalar>0.975</power_scalar>
+    <drag_scalar>1.012</drag_scalar>
+    <aggression>0.39</aggression>
+    <avoidance_of_forced_mistakes>0.26</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.55</avoidance_of_mistakes>
+    <blue_flag_conceding>0.39</blue_flag_conceding>
+    <consistency>0.91</consistency>
+    <defending>0.38</defending>
+    <fuel_management>0.80</fuel_management>
+    <qualifying_skill>0.83</qualifying_skill>
+    <race_skill>0.90</race_skill>
+    <stamina>0.91</stamina>
+    <start_reactions>0.42</start_reactions>
+    <tyre_management>0.72</tyre_management>
+    <vehicle_reliability>0.66</vehicle_reliability>
+    <weather_tyre_changes>0.49</weather_tyre_changes>
+    <wet_skill>0.38</wet_skill>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18">
+    <name>Tiago Monteiro</name>
+    <country>PRT</country>
+    <weight_scalar>1.019</weight_scalar>
+    <power_scalar>0.959</power_scalar>
+    <drag_scalar>1.021</drag_scalar>
+    <aggression>0.18</aggression>
+    <avoidance_of_forced_mistakes>0.46</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.66</avoidance_of_mistakes>
+    <blue_flag_conceding>0.54</blue_flag_conceding>
+    <consistency>0.88</consistency>
+    <defending>0.15</defending>
+    <fuel_management>0.60</fuel_management>
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <stamina>0.85</stamina>
+    <start_reactions>0.49</start_reactions>
+    <tyre_management>0.67</tyre_management>
+    <vehicle_reliability>0.47</vehicle_reliability>
+    <weather_tyre_changes>0.37</weather_tyre_changes>
+    <wet_skill>0.32</wet_skill>
+  </driver>
+  <driver livery_name="Christijan Albers #19">
+    <name>Christijan Albers</name>
+    <country>NLD</country>
+    <weight_scalar>1.019</weight_scalar>
+    <power_scalar>0.959</power_scalar>
+    <drag_scalar>1.021</drag_scalar>
+    <aggression>0.14</aggression>
+    <avoidance_of_forced_mistakes>0.43</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.63</avoidance_of_mistakes>
+    <blue_flag_conceding>0.52</blue_flag_conceding>
+    <consistency>0.85</consistency>
+    <defending>0.16</defending>
+    <fuel_management>0.68</fuel_management>
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <stamina>0.87</stamina>
+    <start_reactions>0.48</start_reactions>
+    <tyre_management>0.63</tyre_management>
+    <vehicle_reliability>0.46</vehicle_reliability>
+    <weather_tyre_changes>0.68</weather_tyre_changes>
+    <wet_skill>0.37</wet_skill>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20">
+    <name>Vitantonio Liuzzi</name>
+    <country>ITA</country>
+    <weight_scalar>1.016</weight_scalar>
+    <power_scalar>0.963</power_scalar>
+    <drag_scalar>1.019</drag_scalar>
+    <aggression>0.33</aggression>
+    <avoidance_of_forced_mistakes>0.38</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.54</avoidance_of_mistakes>
+    <blue_flag_conceding>0.37</blue_flag_conceding>
+    <consistency>0.90</consistency>
+    <defending>0.33</defending>
+    <fuel_management>0.78</fuel_management>
+    <qualifying_skill>0.79</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <stamina>0.91</stamina>
+    <start_reactions>0.42</start_reactions>
+    <tyre_management>0.74</tyre_management>
+    <vehicle_reliability>0.42</vehicle_reliability>
+    <weather_tyre_changes>0.80</weather_tyre_changes>
+    <wet_skill>0.37</wet_skill>
+  </driver>
+  <driver livery_name="Scott Speed #21">
+    <name>Scott Speed</name>
+    <country>USA</country>
+    <weight_scalar>1.016</weight_scalar>
+    <power_scalar>0.963</power_scalar>
+    <drag_scalar>1.019</drag_scalar>
+    <aggression>0.59</aggression>
+    <avoidance_of_forced_mistakes>0.24</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.52</avoidance_of_mistakes>
+    <blue_flag_conceding>0.31</blue_flag_conceding>
+    <consistency>0.87</consistency>
+    <defending>0.16</defending>
+    <fuel_management>0.66</fuel_management>
+    <qualifying_skill>0.76</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <stamina>0.86</stamina>
+    <start_reactions>0.45</start_reactions>
+    <tyre_management>0.70</tyre_management>
+    <vehicle_reliability>0.46</vehicle_reliability>
+    <weather_tyre_changes>0.43</weather_tyre_changes>
+    <wet_skill>0.14</wet_skill>
+  </driver>
+  <driver livery_name="Takuma Sato #22">
+    <name>Takuma Sato</name>
+    <country>JPN</country>
+    <weight_scalar>1.022</weight_scalar>
+    <power_scalar>0.953</power_scalar>
+    <drag_scalar>1.024</drag_scalar>
+    <aggression>0.73</aggression>
+    <avoidance_of_forced_mistakes>0.33</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.61</avoidance_of_mistakes>
+    <blue_flag_conceding>0.54</blue_flag_conceding>
+    <consistency>0.92</consistency>
+    <defending>0.16</defending>
+    <fuel_management>0.77</fuel_management>
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <stamina>0.90</stamina>
+    <start_reactions>0.49</start_reactions>
+    <tyre_management>0.77</tyre_management>
+    <vehicle_reliability>0.28</vehicle_reliability>
+    <weather_tyre_changes>0.80</weather_tyre_changes>
+    <wet_skill>0.19</wet_skill>
+  </driver>
+  <driver livery_name="Yuji Ide #23">
+    <name>Yuji Ide</name>
+    <country>JPN</country>
+    <weight_scalar>1.022</weight_scalar>
+    <power_scalar>0.953</power_scalar>
+    <drag_scalar>1.024</drag_scalar>
+    <aggression>0.10</aggression>
+    <avoidance_of_forced_mistakes>0.22</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+    <blue_flag_conceding>0.13</blue_flag_conceding>
+    <consistency>0.83</consistency>
+    <defending>0.15</defending>
+    <fuel_management>0.54</fuel_management>
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.79</race_skill>
+    <stamina>0.83</stamina>
+    <start_reactions>0.20</start_reactions>
+    <tyre_management>0.55</tyre_management>
+    <vehicle_reliability>0.21</vehicle_reliability>
+    <weather_tyre_changes>0.57</weather_tyre_changes>
+    <wet_skill>0.18</wet_skill>
+  </driver>
+  <driver livery_name="Pedro De La Rosa #4">
+    <name>Pedro de la Rosa</name>
+    <country>ESP</country>
+    <weight_scalar>1.002</weight_scalar>
+    <power_scalar>0.985</power_scalar>
+    <drag_scalar>1.005</drag_scalar>
+    <aggression>0.72</aggression>
+    <avoidance_of_forced_mistakes>0.55</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.78</avoidance_of_mistakes>
+    <blue_flag_conceding>0.80</blue_flag_conceding>
+    <consistency>0.90</consistency>
+    <defending>0.55</defending>
+    <fuel_management>0.77</fuel_management>
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <stamina>0.90</stamina>
+    <start_reactions>0.63</start_reactions>
+    <tyre_management>0.70</tyre_management>
+    <vehicle_reliability>0.62</vehicle_reliability>
+    <weather_tyre_changes>0.44</weather_tyre_changes>
+    <wet_skill>0.56</wet_skill>
+  </driver>
+  <driver livery_name="Robert Doornbos #15">
+    <name>Robert Doornbos</name>
+    <country>NLD</country>
+    <weight_scalar>1.010</weight_scalar>
+    <power_scalar>0.971</power_scalar>
+    <drag_scalar>1.014</drag_scalar>
+    <aggression>0.40</aggression>
+    <avoidance_of_forced_mistakes>0.38</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.68</avoidance_of_mistakes>
+    <blue_flag_conceding>0.51</blue_flag_conceding>
+    <consistency>0.87</consistency>
+    <defending>0.39</defending>
+    <fuel_management>0.66</fuel_management>
+    <qualifying_skill>0.77</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <stamina>0.85</stamina>
+    <start_reactions>0.44</start_reactions>
+    <tyre_management>0.69</tyre_management>
+    <vehicle_reliability>0.49</vehicle_reliability>
+    <weather_tyre_changes>0.89</weather_tyre_changes>
+    <wet_skill>0.16</wet_skill>
+  </driver>
+  <driver livery_name="Robert Kubica #17">
+    <name>Robert Kubica</name>
+    <country>POL</country>
+    <weight_scalar>1.009</weight_scalar>
+    <power_scalar>0.975</power_scalar>
+    <drag_scalar>1.012</drag_scalar>
+    <aggression>0.77</aggression>
+    <avoidance_of_forced_mistakes>0.42</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.63</avoidance_of_mistakes>
+    <blue_flag_conceding>0.52</blue_flag_conceding>
+    <consistency>0.91</consistency>
+    <defending>0.36</defending>
+    <fuel_management>0.70</fuel_management>
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.93</race_skill>
+    <stamina>0.90</stamina>
+    <start_reactions>0.64</start_reactions>
+    <tyre_management>0.74</tyre_management>
+    <vehicle_reliability>0.62</vehicle_reliability>
+    <weather_tyre_changes>0.76</weather_tyre_changes>
+    <wet_skill>0.55</wet_skill>
+  </driver>
+  <driver livery_name="Franck Montagny #23">
+    <name>Franck Montagny</name>
+    <country>FRA</country>
+    <weight_scalar>1.022</weight_scalar>
+    <power_scalar>0.953</power_scalar>
+    <drag_scalar>1.024</drag_scalar>
+    <aggression>0.30</aggression>
+    <avoidance_of_forced_mistakes>0.23</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.58</avoidance_of_mistakes>
+    <blue_flag_conceding>0.32</blue_flag_conceding>
+    <consistency>0.92</consistency>
+    <defending>0.16</defending>
+    <fuel_management>0.74</fuel_management>
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <stamina>0.92</stamina>
+    <start_reactions>0.23</start_reactions>
+    <tyre_management>0.77</tyre_management>
+    <vehicle_reliability>0.23</vehicle_reliability>
+    <weather_tyre_changes>0.34</weather_tyre_changes>
+    <wet_skill>0.11</wet_skill>
+  </driver>
+  <driver livery_name="Sakon Yamamoto #23">
+    <name>Sakon Yamamoto</name>
+    <country>JPN</country>
+    <weight_scalar>1.022</weight_scalar>
+    <power_scalar>0.953</power_scalar>
+    <drag_scalar>1.024</drag_scalar>
+    <aggression>0.15</aggression>
+    <avoidance_of_forced_mistakes>0.30</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+    <blue_flag_conceding>0.16</blue_flag_conceding>
+    <consistency>0.86</consistency>
+    <defending>0.14</defending>
+    <fuel_management>0.66</fuel_management>
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <stamina>0.88</stamina>
+    <start_reactions>0.23</start_reactions>
+    <tyre_management>0.68</tyre_management>
+    <vehicle_reliability>0.28</vehicle_reliability>
+    <weather_tyre_changes>0.32</weather_tyre_changes>
+    <wet_skill>0.18</wet_skill>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.81</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.91</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.91</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Azure_Circuit_2021">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.94</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.87</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.80</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.95</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.94</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.92</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.80</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="HUNGARORING">
+    <qualifying_skill>0.79</qualifying_skill>
+    <vehicle_reliability>-1.84</vehicle_reliability>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.88</qualifying_skill>
+    <vehicle_reliability>-0.11</vehicle_reliability>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="SHANGHAI">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.77</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.81</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Fernando Alonso #1" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.83</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.85</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.85</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.82</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.91</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.77</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.83</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.84</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.92</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.85</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.89</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.83</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="HUNGARORING">
+    <qualifying_skill>0.92</qualifying_skill>
+    <aggression>0.91</aggression>
+    <avoidance_of_forced_mistakes>0.09</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.20</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.85</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="SHANGHAI">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.86</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.83</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Giancarlo Fisichella #2" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.87</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.93</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.77</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.88</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.89</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.97</qualifying_skill>
+    <vehicle_reliability>-1.36</vehicle_reliability>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.86</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.85</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.89</qualifying_skill>
+    <aggression>0.93</aggression>
+    <avoidance_of_forced_mistakes>0.06</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.84</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="HUNGARORING">
+    <qualifying_skill>1.00</qualifying_skill>
+    <aggression>0.99</aggression>
+    <avoidance_of_forced_mistakes>0.16</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.09</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.76</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="SHANGHAI">
+    <qualifying_skill>0.95</qualifying_skill>
+    <vehicle_reliability>-0.52</vehicle_reliability>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.85</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.80</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Kimi Raikkonen #3" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.92</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.91</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Juan Pablo Montoya #4" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.92</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.86</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Juan Pablo Montoya #4" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.91</qualifying_skill>
+    <vehicle_reliability>-0.82</vehicle_reliability>
+  </driver>
+  <driver livery_name="Juan Pablo Montoya #4" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.84</qualifying_skill>
+    <aggression>0.94</aggression>
+    <avoidance_of_forced_mistakes>0.19</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.07</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Juan Pablo Montoya #4" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.78</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Juan Pablo Montoya #4" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.76</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Juan Pablo Montoya #4" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.92</qualifying_skill>
+    <aggression>0.95</aggression>
+    <avoidance_of_forced_mistakes>0.19</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.13</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Juan Pablo Montoya #4" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.85</qualifying_skill>
+    <aggression>0.94</aggression>
+    <avoidance_of_forced_mistakes>0.18</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.17</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.82</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.83</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.85</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.93</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.86</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.85</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.91</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.76</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="HUNGARORING">
+    <qualifying_skill>0.85</qualifying_skill>
+    <vehicle_reliability>-0.51</vehicle_reliability>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.77</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="SHANGHAI">
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.86</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.99</qualifying_skill>
+    <vehicle_reliability>-1.14</vehicle_reliability>
+  </driver>
+  <driver livery_name="Michael Schumacher #5" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.93</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.75</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.91</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.82</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.92</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.77</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.94</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.85</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.93</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="HUNGARORING">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.90</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.57</defending>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="SHANGHAI">
+    <qualifying_skill>0.71</qualifying_skill>
+    <aggression>0.93</aggression>
+    <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.06</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.82</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.95</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Felipe Massa #6" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>1.00</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.93</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.88</qualifying_skill>
+    <vehicle_reliability>-0.70</vehicle_reliability>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.93</qualifying_skill>
+    <vehicle_reliability>-1.27</vehicle_reliability>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.57</defending>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.92</qualifying_skill>
+    <aggression>0.95</aggression>
+    <avoidance_of_forced_mistakes>0.11</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.07</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.81</qualifying_skill>
+    <vehicle_reliability>-1.51</vehicle_reliability>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.91</qualifying_skill>
+    <vehicle_reliability>-0.80</vehicle_reliability>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.92</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.57</defending>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="HUNGARORING">
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.90</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.82</stamina>
+    <defending>0.41</defending>
+    <avoidance_of_forced_mistakes>0.37</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.59</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="SHANGHAI">
+    <qualifying_skill>0.78</qualifying_skill>
+    <vehicle_reliability>-1.29</vehicle_reliability>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.85</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Ralf Schumacher #7" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.92</qualifying_skill>
+    <vehicle_reliability>-0.37</vehicle_reliability>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.89</qualifying_skill>
+    <vehicle_reliability>-1.55</vehicle_reliability>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.92</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.92</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.93</qualifying_skill>
+    <vehicle_reliability>-1.51</vehicle_reliability>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.83</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.78</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.91</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.77</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.95</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="HUNGARORING">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.64</defending>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.85</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.76</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="SHANGHAI">
+    <qualifying_skill>0.75</qualifying_skill>
+    <vehicle_reliability>-0.58</vehicle_reliability>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.86</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jarno Trulli #8" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.97</qualifying_skill>
+    <vehicle_reliability>-0.92</vehicle_reliability>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.77</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.72</qualifying_skill>
+    <vehicle_reliability>-0.30</vehicle_reliability>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.85</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.99</qualifying_skill>
+    <vehicle_reliability>-1.19</vehicle_reliability>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.75</qualifying_skill>
+    <aggression>0.95</aggression>
+    <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.18</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.84</qualifying_skill>
+    <aggression>0.94</aggression>
+    <avoidance_of_forced_mistakes>0.07</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.85</qualifying_skill>
+    <vehicle_reliability>-1.86</vehicle_reliability>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="HUNGARORING">
+    <qualifying_skill>0.95</qualifying_skill>
+    <aggression>0.92</aggression>
+    <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.13</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.72</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.60</defending>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="SHANGHAI">
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.81</qualifying_skill>
+    <aggression>0.98</aggression>
+    <avoidance_of_forced_mistakes>0.18</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.17</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Mark Webber #9" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.85</qualifying_skill>
+    <aggression>0.92</aggression>
+    <avoidance_of_forced_mistakes>0.07</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.05</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.57</defending>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.90</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.91</qualifying_skill>
+    <aggression>0.98</aggression>
+    <avoidance_of_forced_mistakes>0.17</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.10</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.93</qualifying_skill>
+    <aggression>0.96</aggression>
+    <avoidance_of_forced_mistakes>0.08</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.08</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.81</qualifying_skill>
+    <aggression>0.95</aggression>
+    <avoidance_of_forced_mistakes>0.11</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="HUNGARORING">
+    <qualifying_skill>0.74</qualifying_skill>
+    <vehicle_reliability>-1.95</vehicle_reliability>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.84</qualifying_skill>
+    <vehicle_reliability>-0.99</vehicle_reliability>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="SHANGHAI">
+    <qualifying_skill>0.79</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.64</defending>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.92</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Nico Rosberg #10" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.82</qualifying_skill>
+    <aggression>0.98</aggression>
+    <avoidance_of_forced_mistakes>0.20</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.09</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.55</defending>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.95</defending>
+    <avoidance_of_forced_mistakes>0.77</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.81</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.93</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.92</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.89</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.89</qualifying_skill>
+    <vehicle_reliability>-0.21</vehicle_reliability>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.87</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.93</qualifying_skill>
+    <vehicle_reliability>-1.16</vehicle_reliability>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="HUNGARORING">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.93</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.95</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.93</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="SHANGHAI">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.85</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.93</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.92</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.60</defending>
+  </driver>
+  <driver livery_name="Rubens Barrichello #11" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.89</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.99</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.87</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.90</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.93</qualifying_skill>
+    <vehicle_reliability>-0.86</vehicle_reliability>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.75</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.72</qualifying_skill>
+    <vehicle_reliability>-0.53</vehicle_reliability>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.56</defending>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.92</qualifying_skill>
+    <aggression>0.93</aggression>
+    <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.13</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.90</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.91</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="HUNGARORING">
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>1.00</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.76</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.95</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.89</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.93</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="SHANGHAI">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.79</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.91</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.92</qualifying_skill>
+    <race_skill>0.97</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.75</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jenson Button #12" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.97</stamina>
+    <defending>0.99</defending>
+    <avoidance_of_forced_mistakes>0.76</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.81</qualifying_skill>
+    <vehicle_reliability>-0.92</vehicle_reliability>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.84</qualifying_skill>
+    <aggression>0.98</aggression>
+    <avoidance_of_forced_mistakes>0.06</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.06</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.92</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.81</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.85</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.75</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.89</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.92</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.56</defending>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="HUNGARORING">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.79</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.87</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="SHANGHAI">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.62</defending>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.75</qualifying_skill>
+    <vehicle_reliability>-0.55</vehicle_reliability>
+  </driver>
+  <driver livery_name="David Coulthard #14" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.74</qualifying_skill>
+    <vehicle_reliability>-0.58</vehicle_reliability>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.75</qualifying_skill>
+    <vehicle_reliability>-1.45</vehicle_reliability>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.79</qualifying_skill>
+    <vehicle_reliability>-0.45</vehicle_reliability>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.83</consistency>
+    <stamina>0.84</stamina>
+    <defending>0.22</defending>
+    <avoidance_of_forced_mistakes>0.32</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.61</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.85</qualifying_skill>
+    <vehicle_reliability>-1.36</vehicle_reliability>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.78</qualifying_skill>
+    <aggression>0.98</aggression>
+    <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.11</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.65</defending>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="HUNGARORING">
+    <qualifying_skill>0.82</qualifying_skill>
+    <aggression>0.98</aggression>
+    <avoidance_of_forced_mistakes>0.11</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.12</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christian Klien #15" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.55</defending>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.62</defending>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.79</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.78</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.87</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.99</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.78</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.88</qualifying_skill>
+    <aggression>0.91</aggression>
+    <avoidance_of_forced_mistakes>0.12</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.12</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.79</qualifying_skill>
+    <vehicle_reliability>-0.89</vehicle_reliability>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="HUNGARORING">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.82</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.93</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.97</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="SHANGHAI">
+    <qualifying_skill>0.91</qualifying_skill>
+    <race_skill>0.95</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.98</stamina>
+    <defending>0.96</defending>
+    <avoidance_of_forced_mistakes>0.93</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.88</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Nick Heidfeld #16" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.91</qualifying_skill>
+    <aggression>0.97</aggression>
+    <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.16</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.79</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.60</defending>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.60</defending>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.81</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.55</defending>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.62</defending>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.85</qualifying_skill>
+    <aggression>0.92</aggression>
+    <avoidance_of_forced_mistakes>0.08</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.11</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.93</qualifying_skill>
+    <vehicle_reliability>-1.86</vehicle_reliability>
+  </driver>
+  <driver livery_name="Jacques Villeneuve #17" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.82</qualifying_skill>
+    <aggression>0.96</aggression>
+    <avoidance_of_forced_mistakes>0.16</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.12</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.72</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.82</stamina>
+    <defending>0.36</defending>
+    <avoidance_of_forced_mistakes>0.29</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.55</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.92</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.60</defending>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.75</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.83</consistency>
+    <stamina>0.83</stamina>
+    <defending>0.40</defending>
+    <avoidance_of_forced_mistakes>0.29</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.60</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.75</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.84</consistency>
+    <stamina>0.83</stamina>
+    <defending>0.27</defending>
+    <avoidance_of_forced_mistakes>0.34</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.58</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.83</stamina>
+    <defending>0.31</defending>
+    <avoidance_of_forced_mistakes>0.36</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.61</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.79</qualifying_skill>
+    <aggression>0.91</aggression>
+    <avoidance_of_forced_mistakes>0.09</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.19</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="HUNGARORING">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.57</defending>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.71</qualifying_skill>
+    <vehicle_reliability>-1.64</vehicle_reliability>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="SHANGHAI">
+    <qualifying_skill>0.74</qualifying_skill>
+    <aggression>0.94</aggression>
+    <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.09</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.83</consistency>
+    <stamina>0.83</stamina>
+    <defending>0.33</defending>
+    <avoidance_of_forced_mistakes>0.27</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.55</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Tiago Monteiro #18" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.81</consistency>
+    <stamina>0.82</stamina>
+    <defending>0.27</defending>
+    <avoidance_of_forced_mistakes>0.37</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.58</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.71</qualifying_skill>
+    <aggression>0.98</aggression>
+    <avoidance_of_forced_mistakes>0.18</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.13</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.74</qualifying_skill>
+    <vehicle_reliability>-1.73</vehicle_reliability>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.84</stamina>
+    <defending>0.19</defending>
+    <avoidance_of_forced_mistakes>0.36</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.61</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.72</qualifying_skill>
+    <aggression>0.96</aggression>
+    <avoidance_of_forced_mistakes>0.15</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.18</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.81</qualifying_skill>
+    <vehicle_reliability>-1.86</vehicle_reliability>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="HUNGARORING">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.84</stamina>
+    <defending>0.22</defending>
+    <avoidance_of_forced_mistakes>0.40</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.64</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="SHANGHAI">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.84</stamina>
+    <defending>0.44</defending>
+    <avoidance_of_forced_mistakes>0.42</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.60</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.78</qualifying_skill>
+    <vehicle_reliability>-0.79</vehicle_reliability>
+  </driver>
+  <driver livery_name="Christijan Albers #19" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.75</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.81</qualifying_skill>
+    <aggression>0.91</aggression>
+    <avoidance_of_forced_mistakes>0.13</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.06</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.79</qualifying_skill>
+    <vehicle_reliability>-1.32</vehicle_reliability>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.65</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.79</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.62</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="HUNGARORING">
+    <qualifying_skill>0.75</qualifying_skill>
+    <aggression>0.92</aggression>
+    <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.16</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.75</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="SHANGHAI">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.92</consistency>
+    <stamina>0.92</stamina>
+    <defending>0.57</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.79</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Vitantonio Liuzzi #20" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.79</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.91</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.60</defending>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.81</consistency>
+    <stamina>0.84</stamina>
+    <defending>0.20</defending>
+    <avoidance_of_forced_mistakes>0.37</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.62</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.75</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.62</defending>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.78</qualifying_skill>
+    <vehicle_reliability>-0.54</vehicle_reliability>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.60</defending>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.79</qualifying_skill>
+    <aggression>0.96</aggression>
+    <avoidance_of_forced_mistakes>0.06</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.11</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.75</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.58</defending>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.82</qualifying_skill>
+    <aggression>1.00</aggression>
+    <avoidance_of_forced_mistakes>0.14</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.09</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.72</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.56</defending>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="HUNGARORING">
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.64</defending>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.79</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.60</defending>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="SHANGHAI">
+    <qualifying_skill>0.85</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.72</qualifying_skill>
+    <vehicle_reliability>-1.55</vehicle_reliability>
+  </driver>
+  <driver livery_name="Scott Speed #21" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.78</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.69</qualifying_skill>
+    <aggression>0.95</aggression>
+    <avoidance_of_forced_mistakes>0.18</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.11</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.71</qualifying_skill>
+    <vehicle_reliability>-0.90</vehicle_reliability>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.72</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.81</stamina>
+    <defending>0.18</defending>
+    <avoidance_of_forced_mistakes>0.28</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.56</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.72</qualifying_skill>
+    <vehicle_reliability>-0.58</vehicle_reliability>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.81</stamina>
+    <defending>0.16</defending>
+    <avoidance_of_forced_mistakes>0.39</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.63</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.83</consistency>
+    <stamina>0.83</stamina>
+    <defending>0.45</defending>
+    <avoidance_of_forced_mistakes>0.35</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.56</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.74</qualifying_skill>
+    <aggression>0.96</aggression>
+    <avoidance_of_forced_mistakes>0.10</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.09</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.75</qualifying_skill>
+    <vehicle_reliability>-0.73</vehicle_reliability>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="HUNGARORING">
+    <qualifying_skill>0.72</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.57</defending>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.69</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.84</consistency>
+    <stamina>0.81</stamina>
+    <defending>0.27</defending>
+    <avoidance_of_forced_mistakes>0.37</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.60</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="SHANGHAI">
+    <qualifying_skill>0.69</qualifying_skill>
+    <vehicle_reliability>-0.63</vehicle_reliability>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.87</race_skill>
+    <consistency>0.81</consistency>
+    <stamina>0.82</stamina>
+    <defending>0.15</defending>
+    <avoidance_of_forced_mistakes>0.41</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.64</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Takuma Sato #22" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.72</qualifying_skill>
+    <race_skill>0.91</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.90</stamina>
+    <defending>0.65</defending>
+  </driver>
+  <driver livery_name="Yuji Ide #23" tracks="Imola_GP_2018,Imola_GP_1988,Imola_GP_2001,Imola_GP_2005">
+    <qualifying_skill>0.68</qualifying_skill>
+    <aggression>0.92</aggression>
+    <avoidance_of_forced_mistakes>0.11</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.10</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Pedro De La Rosa #4" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.89</qualifying_skill>
+  </driver>
+  <driver livery_name="Pedro De La Rosa #4" tracks="HUNGARORING">
+    <qualifying_skill>0.96</qualifying_skill>
+    <race_skill>0.99</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.86</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.86</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Pedro De La Rosa #4" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.92</qualifying_skill>
+    <vehicle_reliability>-0.31</vehicle_reliability>
+  </driver>
+  <driver livery_name="Pedro De La Rosa #4" tracks="SHANGHAI">
+    <qualifying_skill>0.92</qualifying_skill>
+    <race_skill>0.96</race_skill>
+    <consistency>0.97</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.98</defending>
+    <avoidance_of_forced_mistakes>0.80</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.94</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Pedro De La Rosa #4" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.82</qualifying_skill>
+    <race_skill>0.89</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.59</defending>
+  </driver>
+  <driver livery_name="Pedro De La Rosa #4" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.94</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="Robert Doornbos #15" tracks="SHANGHAI">
+    <qualifying_skill>0.88</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.63</defending>
+  </driver>
+  <driver livery_name="Robert Doornbos #15" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.74</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.56</defending>
+  </driver>
+  <driver livery_name="Robert Doornbos #15" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.65</defending>
+  </driver>
+  <driver livery_name="Robert Kubica #17" tracks="HUNGARORING">
+    <qualifying_skill>0.89</qualifying_skill>
+    <vehicle_reliability>-1.61</vehicle_reliability>
+  </driver>
+  <driver livery_name="Robert Kubica #17" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.93</qualifying_skill>
+    <race_skill>0.98</race_skill>
+    <consistency>0.98</consistency>
+    <stamina>0.99</stamina>
+    <defending>0.97</defending>
+    <avoidance_of_forced_mistakes>0.80</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.93</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Robert Kubica #17" tracks="SHANGHAI">
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.88</race_skill>
+    <consistency>0.89</consistency>
+    <stamina>0.89</stamina>
+    <defending>0.65</defending>
+  </driver>
+  <driver livery_name="Robert Kubica #17" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.84</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.92</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.65</defending>
+  </driver>
+  <driver livery_name="Robert Kubica #17" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.89</qualifying_skill>
+    <race_skill>0.92</race_skill>
+    <consistency>0.90</consistency>
+    <stamina>0.91</stamina>
+    <defending>0.61</defending>
+  </driver>
+  <driver livery_name="2006 Super Aguri #23 - F. Montagny" tracks="Nurb_GP_2020,Nurb_GP_2025">
+    <qualifying_skill>0.69</qualifying_skill>
+    <vehicle_reliability>-0.17</vehicle_reliability>
+  </driver>
+  <driver livery_name="2006 Super Aguri #23 - F. Montagny" tracks="Barcelona_1991,Barcelona_GP_1999,Barcelona_GP_2001,Circuit_de_Catalunya_GP,Circuit_de_Catalunya_GP_NC">
+    <qualifying_skill>0.71</qualifying_skill>
+    <vehicle_reliability>-1.23</vehicle_reliability>
+  </driver>
+  <driver livery_name="2006 Super Aguri #23 - F. Montagny" tracks="Azure_Circuit_2021">
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.81</consistency>
+    <stamina>0.84</stamina>
+    <defending>0.20</defending>
+    <avoidance_of_forced_mistakes>0.30</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.61</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="2006 Super Aguri #23 - F. Montagny" tracks="Silverstone_1975,Silverstone_1975_No_Chicane,Silverstone_1991,Silverstone_2001,Silverstone_GP">
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.85</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.83</stamina>
+    <defending>0.43</defending>
+    <avoidance_of_forced_mistakes>0.36</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.65</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="2006 Super Aguri #23 - F. Montagny" tracks="Montreal_Historic,Montreal_Historic_1991,Montreal_Modern">
+    <qualifying_skill>0.69</qualifying_skill>
+    <vehicle_reliability>-0.57</vehicle_reliability>
+  </driver>
+  <driver livery_name="2006 Super Aguri #23 - F. Montagny" tracks="Indianapolis_2001_RC">
+    <qualifying_skill>0.72</qualifying_skill>
+    <aggression>0.94</aggression>
+    <avoidance_of_forced_mistakes>0.16</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.14</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Sakon Yamamoto #23" tracks="Hockenheim_GP,Hockenheim_2001,Hockenheim_1988,Hockenheim_1977">
+    <qualifying_skill>0.68</qualifying_skill>
+    <vehicle_reliability>-1.19</vehicle_reliability>
+  </driver>
+  <driver livery_name="Sakon Yamamoto #23" tracks="HUNGARORING">
+    <qualifying_skill>0.69</qualifying_skill>
+    <vehicle_reliability>-1.96</vehicle_reliability>
+  </driver>
+  <driver livery_name="Sakon Yamamoto #23" tracks="Monza_1991,Monza_2020,Monza_2005">
+    <qualifying_skill>0.68</qualifying_skill>
+    <vehicle_reliability>-1.98</vehicle_reliability>
+  </driver>
+  <driver livery_name="Sakon Yamamoto #23" tracks="SHANGHAI">
+    <qualifying_skill>0.72</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.82</stamina>
+    <defending>0.26</defending>
+    <avoidance_of_forced_mistakes>0.38</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.57</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Sakon Yamamoto #23" tracks="Kansai_GP,Kansai_Classic">
+    <qualifying_skill>0.68</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.82</consistency>
+    <stamina>0.81</stamina>
+    <defending>0.44</defending>
+    <avoidance_of_forced_mistakes>0.30</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.56</avoidance_of_mistakes>
+  </driver>
+  <driver livery_name="Sakon Yamamoto #23" tracks="Interlagos_1991,Interlagos_1993,Interlagos_GP,Interlagos_Historic">
+    <qualifying_skill>0.71</qualifying_skill>
+    <race_skill>0.86</race_skill>
+    <consistency>0.83</consistency>
+    <stamina>0.83</stamina>
+    <defending>0.23</defending>
+    <avoidance_of_forced_mistakes>0.41</avoidance_of_forced_mistakes>
+    <avoidance_of_mistakes>0.64</avoidance_of_mistakes>
+  </driver>
+</custom_ai_drivers>

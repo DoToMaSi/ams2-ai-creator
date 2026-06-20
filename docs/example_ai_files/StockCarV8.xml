@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--NAMeS: Real Drivers for AMS2 by John B. Ellis-->
+<custom_ai_drivers>
+	<driver livery_name="CIMED Racing - C.Bueno #00">
+		<name>Cacá Bueno</name>
+		<country>BRA</country>
+		<race_skill>0.97</race_skill>
+		<qualifying_skill>0.99</qualifying_skill>
+		<aggression>0.35</aggression>
+		<defending>0.20</defending>
+		<stamina>0.50</stamina>
+		<consistency>0.95</consistency>
+		<start_reactions>0.95</start_reactions>
+		<wet_skill>0.95</wet_skill>
+		<tyre_management>0.65</tyre_management>
+		<fuel_management>0.65</fuel_management>
+		<blue_flag_conceding>0.85</blue_flag_conceding>
+		<weather_tyre_changes>0.45</weather_tyre_changes>
+		<avoidance_of_mistakes>0.30</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.20</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.99</vehicle_reliability>
+	</driver>
+	<driver livery_name="CIMED Racing - F.Fraga #88">
+		<name>Felipe Fraga</name>
+		<country>BRA</country>
+		<race_skill>0.95</race_skill>
+		<qualifying_skill>0.97</qualifying_skill>
+		<aggression>0.36</aggression>
+		<defending>0.22</defending>
+		<stamina>0.51</stamina>
+		<consistency>0.94</consistency>
+		<start_reactions>0.94</start_reactions>
+		<wet_skill>0.93</wet_skill>
+		<tyre_management>0.66</tyre_management>
+		<fuel_management>0.64</fuel_management>
+		<blue_flag_conceding>0.86</blue_flag_conceding>
+		<weather_tyre_changes>0.47</weather_tyre_changes>
+		<avoidance_of_mistakes>0.31</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.22</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.98</vehicle_reliability>
+	</driver>
+	<driver livery_name="Ipiranga Racing - B.Figueiredo #3">
+		<name>Bia Figueiredo</name>
+		<country>BRA</country>
+		<race_skill>0.93</race_skill>
+		<qualifying_skill>0.95</qualifying_skill>
+		<aggression>0.38</aggression>
+		<defending>0.23</defending>
+		<stamina>0.53</stamina>
+		<consistency>0.92</consistency>
+		<start_reactions>0.93</start_reactions>
+		<wet_skill>0.91</wet_skill>
+		<tyre_management>0.67</tyre_management>
+		<fuel_management>0.63</fuel_management>
+		<blue_flag_conceding>0.86</blue_flag_conceding>
+		<weather_tyre_changes>0.49</weather_tyre_changes>
+		<avoidance_of_mistakes>0.33</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.23</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.96</vehicle_reliability>
+	</driver>
+	<driver livery_name="Ipiranga Racing - T.Camilo #21">
+		<name>Thiago Camilo</name>
+		<country>BRA</country>
+		<race_skill>0.91</race_skill>
+		<qualifying_skill>0.94</qualifying_skill>
+		<aggression>0.39</aggression>
+		<defending>0.25</defending>
+		<stamina>0.54</stamina>
+		<consistency>0.91</consistency>
+		<start_reactions>0.92</start_reactions>
+		<wet_skill>0.89</wet_skill>
+		<tyre_management>0.68</tyre_management>
+		<fuel_management>0.62</fuel_management>
+		<blue_flag_conceding>0.87</blue_flag_conceding>
+		<weather_tyre_changes>0.51</weather_tyre_changes>
+		<avoidance_of_mistakes>0.34</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.25</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.95</vehicle_reliability>
+	</driver>
+	<driver livery_name="Prati-Donaduzzi Racing - J.Campos #4">
+		<name>Júlio Campos</name>
+		<country>BRA</country>
+		<race_skill>0.89</race_skill>
+		<qualifying_skill>0.92</qualifying_skill>
+		<aggression>0.40</aggression>
+		<defending>0.27</defending>
+		<stamina>0.56</stamina>
+		<consistency>0.89</consistency>
+		<start_reactions>0.91</start_reactions>
+		<wet_skill>0.88</wet_skill>
+		<tyre_management>0.69</tyre_management>
+		<fuel_management>0.61</fuel_management>
+		<blue_flag_conceding>0.87</blue_flag_conceding>
+		<weather_tyre_changes>0.53</weather_tyre_changes>
+		<avoidance_of_mistakes>0.36</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.27</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.93</vehicle_reliability>
+	</driver>
+	<driver livery_name="Prati-Donaduzzi Racing - V.Brito #77">
+		<name>Valdeno Brito</name>
+		<country>BRA</country>
+		<race_skill>0.87</race_skill>
+		<qualifying_skill>0.90</qualifying_skill>
+		<aggression>0.41</aggression>
+		<defending>0.28</defending>
+		<stamina>0.57</stamina>
+		<consistency>0.88</consistency>
+		<start_reactions>0.89</start_reactions>
+		<wet_skill>0.86</wet_skill>
+		<tyre_management>0.71</tyre_management>
+		<fuel_management>0.59</fuel_management>
+		<blue_flag_conceding>0.88</blue_flag_conceding>
+		<weather_tyre_changes>0.55</weather_tyre_changes>
+		<avoidance_of_mistakes>0.37</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.28</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.92</vehicle_reliability>
+	</driver>
+	<driver livery_name="Cavaleiro Sports - D.Navarro #5">
+		<name>Denis Navarro</name>
+		<country>BRA</country>
+		<race_skill>0.85</race_skill>
+		<qualifying_skill>0.88</qualifying_skill>
+		<aggression>0.43</aggression>
+		<defending>0.30</defending>
+		<stamina>0.59</stamina>
+		<consistency>0.86</consistency>
+		<start_reactions>0.88</start_reactions>
+		<wet_skill>0.84</wet_skill>
+		<tyre_management>0.72</tyre_management>
+		<fuel_management>0.58</fuel_management>
+		<blue_flag_conceding>0.88</blue_flag_conceding>
+		<weather_tyre_changes>0.57</weather_tyre_changes>
+		<avoidance_of_mistakes>0.39</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.30</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.90</vehicle_reliability>
+	</driver>
+	<driver livery_name="Cavaleiro Sports - F.Lapenna #110">
+		<name>Felipe Lapenna</name>
+		<country>BRA</country>
+		<race_skill>0.84</race_skill>
+		<qualifying_skill>0.86</qualifying_skill>
+		<aggression>0.44</aggression>
+		<defending>0.32</defending>
+		<stamina>0.60</stamina>
+		<consistency>0.85</consistency>
+		<start_reactions>0.87</start_reactions>
+		<wet_skill>0.82</wet_skill>
+		<tyre_management>0.73</tyre_management>
+		<fuel_management>0.57</fuel_management>
+		<blue_flag_conceding>0.89</blue_flag_conceding>
+		<weather_tyre_changes>0.59</weather_tyre_changes>
+		<avoidance_of_mistakes>0.40</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.32</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.89</vehicle_reliability>
+	</driver>
+	<driver livery_name="Hot Car Competicoes - R.Suzuki #8">
+		<name>Rafael Suzuki</name>
+		<country>BRA</country>
+		<race_skill>0.82</race_skill>
+		<qualifying_skill>0.84</qualifying_skill>
+		<aggression>0.45</aggression>
+		<defending>0.33</defending>
+		<stamina>0.62</stamina>
+		<consistency>0.83</consistency>
+		<start_reactions>0.86</start_reactions>
+		<wet_skill>0.80</wet_skill>
+		<tyre_management>0.74</tyre_management>
+		<fuel_management>0.56</fuel_management>
+		<blue_flag_conceding>0.89</blue_flag_conceding>
+		<weather_tyre_changes>0.61</weather_tyre_changes>
+		<avoidance_of_mistakes>0.42</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.33</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.87</vehicle_reliability>
+	</driver>
+	<driver livery_name="Hot Car Competicoes - P.Cardoso #143">
+		<name>Pedro Cardoso</name>
+		<country>BRA</country>
+		<race_skill>0.80</race_skill>
+		<qualifying_skill>0.83</qualifying_skill>
+		<aggression>0.47</aggression>
+		<defending>0.35</defending>
+		<stamina>0.63</stamina>
+		<consistency>0.82</consistency>
+		<start_reactions>0.85</start_reactions>
+		<wet_skill>0.78</wet_skill>
+		<tyre_management>0.75</tyre_management>
+		<fuel_management>0.55</fuel_management>
+		<blue_flag_conceding>0.90</blue_flag_conceding>
+		<weather_tyre_changes>0.63</weather_tyre_changes>
+		<avoidance_of_mistakes>0.43</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.35</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.86</vehicle_reliability>
+	</driver>
+	<driver livery_name="Vogel Motorsport - G.Lima #9">
+		<name>Gustavo Lima</name>
+		<country>BRA</country>
+		<race_skill>0.78</race_skill>
+		<qualifying_skill>0.81</qualifying_skill>
+		<aggression>0.48</aggression>
+		<defending>0.37</defending>
+		<stamina>0.65</stamina>
+		<consistency>0.80</consistency>
+		<start_reactions>0.84</start_reactions>
+		<wet_skill>0.76</wet_skill>
+		<tyre_management>0.76</tyre_management>
+		<fuel_management>0.54</fuel_management>
+		<blue_flag_conceding>0.91</blue_flag_conceding>
+		<weather_tyre_changes>0.65</weather_tyre_changes>
+		<avoidance_of_mistakes>0.45</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.37</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.85</vehicle_reliability>
+	</driver>
+	<driver livery_name="Vogel Motorsport - L.Foresti #12">
+		<name>Lucas Foresti</name>
+		<country>BRA</country>
+		<race_skill>0.76</race_skill>
+		<qualifying_skill>0.79</qualifying_skill>
+		<aggression>0.49</aggression>
+		<defending>0.38</defending>
+		<stamina>0.66</stamina>
+		<consistency>0.79</consistency>
+		<start_reactions>0.83</start_reactions>
+		<wet_skill>0.75</wet_skill>
+		<tyre_management>0.77</tyre_management>
+		<fuel_management>0.53</fuel_management>
+		<blue_flag_conceding>0.91</blue_flag_conceding>
+		<weather_tyre_changes>0.67</weather_tyre_changes>
+		<avoidance_of_mistakes>0.46</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.38</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.83</vehicle_reliability>
+	</driver>
+	<driver livery_name="Shell V-Power - R.Zonta #10">
+		<name>Ricardo Zonta</name>
+		<country>BRA</country>
+		<race_skill>0.74</race_skill>
+		<qualifying_skill>0.77</qualifying_skill>
+		<aggression>0.51</aggression>
+		<defending>0.40</defending>
+		<stamina>0.68</stamina>
+		<consistency>0.77</consistency>
+		<start_reactions>0.82</start_reactions>
+		<wet_skill>0.73</wet_skill>
+		<tyre_management>0.78</tyre_management>
+		<fuel_management>0.52</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.69</weather_tyre_changes>
+		<avoidance_of_mistakes>0.48</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.40</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.82</vehicle_reliability>
+	</driver>
+	<driver livery_name="Shell V-Power - A.Abreu #51">
+		<name>Átila Abreu</name>
+		<country>BRA</country>
+		<race_skill>0.72</race_skill>
+		<qualifying_skill>0.75</qualifying_skill>
+		<aggression>0.52</aggression>
+		<defending>0.42</defending>
+		<stamina>0.69</stamina>
+		<consistency>0.76</consistency>
+		<start_reactions>0.81</start_reactions>
+		<wet_skill>0.71</wet_skill>
+		<tyre_management>0.79</tyre_management>
+		<fuel_management>0.51</fuel_management>
+		<blue_flag_conceding>0.92</blue_flag_conceding>
+		<weather_tyre_changes>0.71</weather_tyre_changes>
+		<avoidance_of_mistakes>0.49</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.42</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.80</vehicle_reliability>
+	</driver>
+	<driver livery_name="Shell Helix Ultra - G.di Mauro #11">
+		<name>Gaetano di Mauro</name>
+		<country>BRA</country>
+		<race_skill>0.70</race_skill>
+		<qualifying_skill>0.74</qualifying_skill>
+		<aggression>0.53</aggression>
+		<defending>0.43</defending>
+		<stamina>0.71</stamina>
+		<consistency>0.74</consistency>
+		<start_reactions>0.79</start_reactions>
+		<wet_skill>0.69</wet_skill>
+		<tyre_management>0.81</tyre_management>
+		<fuel_management>0.49</fuel_management>
+		<blue_flag_conceding>0.93</blue_flag_conceding>
+		<weather_tyre_changes>0.73</weather_tyre_changes>
+		<avoidance_of_mistakes>0.51</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.43</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.79</vehicle_reliability>
+	</driver>
+	<driver livery_name="Shell Helix Ultra - G.Osman #28">
+		<name>Galid Osman</name>
+		<country>BRA</country>
+		<race_skill>0.68</race_skill>
+		<qualifying_skill>0.72</qualifying_skill>
+		<aggression>0.54</aggression>
+		<defending>0.45</defending>
+		<stamina>0.72</stamina>
+		<consistency>0.73</consistency>
+		<start_reactions>0.78</start_reactions>
+		<wet_skill>0.67</wet_skill>
+		<tyre_management>0.82</tyre_management>
+		<fuel_management>0.48</fuel_management>
+		<blue_flag_conceding>0.93</blue_flag_conceding>
+		<weather_tyre_changes>0.75</weather_tyre_changes>
+		<avoidance_of_mistakes>0.52</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.45</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.77</vehicle_reliability>
+	</driver>
+	<driver livery_name="Blau Motorsport - A.Khodair #18">
+		<name>Allam Khodair</name>
+		<country>BRA</country>
+		<race_skill>0.66</race_skill>
+		<qualifying_skill>0.70</qualifying_skill>
+		<aggression>0.56</aggression>
+		<defending>0.47</defending>
+		<stamina>0.74</stamina>
+		<consistency>0.71</consistency>
+		<start_reactions>0.77</start_reactions>
+		<wet_skill>0.65</wet_skill>
+		<tyre_management>0.83</tyre_management>
+		<fuel_management>0.47</fuel_management>
+		<blue_flag_conceding>0.94</blue_flag_conceding>
+		<weather_tyre_changes>0.77</weather_tyre_changes>
+		<avoidance_of_mistakes>0.54</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.47</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.76</vehicle_reliability>
+	</driver>
+	<driver livery_name="Blau Motorsport - C.Ramos #30">
+		<name>César Ramos</name>
+		<country>BRA</country>
+		<race_skill>0.64</race_skill>
+		<qualifying_skill>0.68</qualifying_skill>
+		<aggression>0.57</aggression>
+		<defending>0.48</defending>
+		<stamina>0.75</stamina>
+		<consistency>0.70</consistency>
+		<start_reactions>0.76</start_reactions>
+		<wet_skill>0.64</wet_skill>
+		<tyre_management>0.84</tyre_management>
+		<fuel_management>0.46</fuel_management>
+		<blue_flag_conceding>0.94</blue_flag_conceding>
+		<weather_tyre_changes>0.79</weather_tyre_changes>
+		<avoidance_of_mistakes>0.55</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.48</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.74</vehicle_reliability>
+	</driver>
+	<driver livery_name="Eurofarma RC - D.Serra #29">
+		<name>Daniel Serra</name>
+		<country>BRA</country>
+		<race_skill>0.62</race_skill>
+		<qualifying_skill>0.66</qualifying_skill>
+		<aggression>0.58</aggression>
+		<defending>0.50</defending>
+		<stamina>0.77</stamina>
+		<consistency>0.68</consistency>
+		<start_reactions>0.75</start_reactions>
+		<wet_skill>0.62</wet_skill>
+		<tyre_management>0.85</tyre_management>
+		<fuel_management>0.45</fuel_management>
+		<blue_flag_conceding>0.95</blue_flag_conceding>
+		<weather_tyre_changes>0.81</weather_tyre_changes>
+		<avoidance_of_mistakes>0.57</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.50</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.73</vehicle_reliability>
+	</driver>
+	<driver livery_name="Eurofarma RC - R.Mauricio #90">
+		<name>Ricardo Maurício</name>
+		<country>BRA</country>
+		<race_skill>0.60</race_skill>
+		<qualifying_skill>0.65</qualifying_skill>
+		<aggression>0.60</aggression>
+		<defending>0.52</defending>
+		<stamina>0.78</stamina>
+		<consistency>0.67</consistency>
+		<start_reactions>0.74</start_reactions>
+		<wet_skill>0.60</wet_skill>
+		<tyre_management>0.86</tyre_management>
+		<fuel_management>0.44</fuel_management>
+		<blue_flag_conceding>0.96</blue_flag_conceding>
+		<weather_tyre_changes>0.83</weather_tyre_changes>
+		<avoidance_of_mistakes>0.58</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.52</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.72</vehicle_reliability>
+	</driver>
+	<driver livery_name="Full Time Sports - N.Piquet Jr #33">
+		<name>Nelson Piquet Jr.</name>
+		<country>BRA</country>
+		<race_skill>0.58</race_skill>
+		<qualifying_skill>0.63</qualifying_skill>
+		<aggression>0.61</aggression>
+		<defending>0.53</defending>
+		<stamina>0.80</stamina>
+		<consistency>0.65</consistency>
+		<start_reactions>0.73</start_reactions>
+		<wet_skill>0.58</wet_skill>
+		<tyre_management>0.87</tyre_management>
+		<fuel_management>0.43</fuel_management>
+		<blue_flag_conceding>0.96</blue_flag_conceding>
+		<weather_tyre_changes>0.85</weather_tyre_changes>
+		<avoidance_of_mistakes>0.60</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.53</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.70</vehicle_reliability>
+	</driver>
+	<driver livery_name="Full Time Sports - R.Barrichello #111">
+		<name>Rubens Barrichello</name>
+		<country>BRA</country>
+		<race_skill>0.57</race_skill>
+		<qualifying_skill>0.61</qualifying_skill>
+		<aggression>0.62</aggression>
+		<defending>0.55</defending>
+		<stamina>0.81</stamina>
+		<consistency>0.64</consistency>
+		<start_reactions>0.72</start_reactions>
+		<wet_skill>0.56</wet_skill>
+		<tyre_management>0.88</tyre_management>
+		<fuel_management>0.42</fuel_management>
+		<blue_flag_conceding>0.97</blue_flag_conceding>
+		<weather_tyre_changes>0.87</weather_tyre_changes>
+		<avoidance_of_mistakes>0.61</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.55</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.69</vehicle_reliability>
+	</driver>
+	<driver livery_name="RCM - M.Wilson #65">
+		<name>Max Wilson</name>
+		<country>BRA</country>
+		<race_skill>0.55</race_skill>
+		<qualifying_skill>0.59</qualifying_skill>
+		<aggression>0.64</aggression>
+		<defending>0.57</defending>
+		<stamina>0.83</stamina>
+		<consistency>0.62</consistency>
+		<start_reactions>0.71</start_reactions>
+		<wet_skill>0.54</wet_skill>
+		<tyre_management>0.89</tyre_management>
+		<fuel_management>0.41</fuel_management>
+		<blue_flag_conceding>0.97</blue_flag_conceding>
+		<weather_tyre_changes>0.89</weather_tyre_changes>
+		<avoidance_of_mistakes>0.63</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.57</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.67</vehicle_reliability>
+	</driver>
+	<driver livery_name="RCM - B.Baptista #44">
+		<name>Bruno Baptista</name>
+		<country>BRA</country>
+		<race_skill>0.53</race_skill>
+		<qualifying_skill>0.57</qualifying_skill>
+		<aggression>0.65</aggression>
+		<defending>0.58</defending>
+		<stamina>0.84</stamina>
+		<consistency>0.61</consistency>
+		<start_reactions>0.69</start_reactions>
+		<wet_skill>0.52</wet_skill>
+		<tyre_management>0.91</tyre_management>
+		<fuel_management>0.39</fuel_management>
+		<blue_flag_conceding>0.98</blue_flag_conceding>
+		<weather_tyre_changes>0.91</weather_tyre_changes>
+		<avoidance_of_mistakes>0.64</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.58</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.66</vehicle_reliability>
+	</driver>
+	<driver livery_name="KTF Sports - D.Nunes #70">
+		<name>Diego Nunes</name>
+		<country>BRA</country>
+		<race_skill>0.51</race_skill>
+		<qualifying_skill>0.55</qualifying_skill>
+		<aggression>0.66</aggression>
+		<defending>0.60</defending>
+		<stamina>0.86</stamina>
+		<consistency>0.59</consistency>
+		<start_reactions>0.68</start_reactions>
+		<wet_skill>0.51</wet_skill>
+		<tyre_management>0.92</tyre_management>
+		<fuel_management>0.38</fuel_management>
+		<blue_flag_conceding>0.98</blue_flag_conceding>
+		<weather_tyre_changes>0.93</weather_tyre_changes>
+		<avoidance_of_mistakes>0.66</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.60</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.64</vehicle_reliability>
+	</driver>
+	<driver livery_name="KTF Sports - M.Gomes #80">
+		<name>Marcos Gomes</name>
+		<country>BRA</country>
+		<race_skill>0.49</race_skill>
+		<qualifying_skill>0.54</qualifying_skill>
+		<aggression>0.67</aggression>
+		<defending>0.62</defending>
+		<stamina>0.87</stamina>
+		<consistency>0.58</consistency>
+		<start_reactions>0.67</start_reactions>
+		<wet_skill>0.49</wet_skill>
+		<tyre_management>0.93</tyre_management>
+		<fuel_management>0.37</fuel_management>
+		<blue_flag_conceding>0.99</blue_flag_conceding>
+		<weather_tyre_changes>0.95</weather_tyre_changes>
+		<avoidance_of_mistakes>0.67</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.62</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.63</vehicle_reliability>
+	</driver>
+	<driver livery_name="Crown Racing - G.Casagrande #83">
+		<name>Guilherme Salas</name>
+		<country>BRA</country>
+		<race_skill>0.47</race_skill>
+		<qualifying_skill>0.52</qualifying_skill>
+		<aggression>0.69</aggression>
+		<defending>0.63</defending>
+		<stamina>0.89</stamina>
+		<consistency>0.56</consistency>
+		<start_reactions>0.66</start_reactions>
+		<wet_skill>0.47</wet_skill>
+		<tyre_management>0.94</tyre_management>
+		<fuel_management>0.36</fuel_management>
+		<blue_flag_conceding>0.99</blue_flag_conceding>
+		<weather_tyre_changes>0.97</weather_tyre_changes>
+		<avoidance_of_mistakes>0.69</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.63</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.61</vehicle_reliability>
+	</driver>
+	<driver livery_name="Crown Racing - M.Colleta #177">
+		<name>Marcel Colleta</name>
+		<country>BRA</country>
+		<race_skill>0.45</race_skill>
+		<qualifying_skill>0.50</qualifying_skill>
+		<aggression>0.70</aggression>
+		<defending>0.65</defending>
+		<stamina>0.90</stamina>
+		<consistency>0.55</consistency>
+		<start_reactions>0.65</start_reactions>
+		<wet_skill>0.45</wet_skill>
+		<tyre_management>0.95</tyre_management>
+		<fuel_management>0.35</fuel_management>
+		<blue_flag_conceding>1.00</blue_flag_conceding>
+		<weather_tyre_changes>0.99</weather_tyre_changes>
+		<avoidance_of_mistakes>0.70</avoidance_of_mistakes>
+		<avoidance_of_forced_mistakes>0.65</avoidance_of_forced_mistakes>
+		<vehicle_reliability>0.60</vehicle_reliability>
+	</driver>
+</custom_ai_drivers>
