@@ -37,13 +37,9 @@ jobs:
         env:
           QT_QPA_PLATFORM: offscreen
 
-      - name: Build executable
+      - name: Build executable and zip archive
         shell: pwsh
         run: ./scripts/build_windows.ps1
-
-      - name: Create release archive
-        shell: pwsh
-        run: Compress-Archive -Path dist/AMS2-AI-Creator -DestinationPath dist/AMS2-AI-Creator-windows.zip
 
       - name: Upload release asset
         uses: softprops/action-gh-release@v2

@@ -21,7 +21,16 @@ if errorlevel 1 (
   exit /b 1
 )
 
+echo Creating release archive...
+powershell -NoProfile -Command "Compress-Archive -Path 'dist\AMS2-AI-Creator' -DestinationPath 'dist\AMS2-AI-Creator-windows.zip' -Force"
+if errorlevel 1 (
+  echo.
+  echo Failed to create zip archive.
+  exit /b 1
+)
+
 echo.
 echo Build complete: dist\AMS2-AI-Creator\
+echo Archive: dist\AMS2-AI-Creator-windows.zip
 echo Run: dist\AMS2-AI-Creator\AMS2-AI-Creator.exe
 endlocal

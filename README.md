@@ -169,7 +169,10 @@ ams2-ai-creator
 
 ### Pre-built Windows release
 
-Download `AMS2-AI-Creator-windows.zip` from [GitHub Releases](https://github.com/USER/ams2-ai-creator/releases) (available after tagging `v*`).
+Download `AMS2-AI-Creator-windows.zip` from:
+
+- **[GitHub Releases](https://github.com/USER/ams2-ai-creator/releases)** after tagging `v*` on `master`
+- **GitHub Actions artifacts** on the latest successful `master` push (CI workflow → `AMS2-AI-Creator-windows` artifact)
 
 Extract and run `AMS2-AI-Creator.exe`.
 
@@ -230,7 +233,7 @@ pip install -e ".[dev]"
 scripts\build_windows.bat
 ```
 
-Output: `dist/AMS2-AI-Creator/`
+Output: `dist/AMS2-AI-Creator/` and `dist/AMS2-AI-Creator-windows.zip`
 
 ---
 
@@ -241,13 +244,13 @@ Output: `dist/AMS2-AI-Creator/`
 | Branch | Purpose | Pipelines |
 |--------|---------|-----------|
 | `develop` | Day-to-day development | None |
-| `master` | Stable releases | CI on push/PR; release artifacts on version tags |
+| `master` | Stable releases | CI on push/PR; Windows zip artifact on push; GitHub Release on version tags |
 
 Workflow: commit on `develop` → open PR to `master` → CI runs on the PR → merge → tag `v*` on `master` for a release build.
 
 | Workflow | Trigger | Actions |
 |----------|---------|---------|
-| `ci.yml` | Push or PR to `master` | ruff lint, format check, pytest (Windows + Linux core tests) |
+| `ci.yml` | Push or PR to `master` | ruff lint, format check, pytest (Windows + Linux core tests); on push to `master`, PyInstaller build + zip artifact |
 | `release.yml` | Tag `v*` on `master` | lint/test → PyInstaller build → GitHub Release zip |
 
 ---
