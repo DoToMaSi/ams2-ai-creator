@@ -3,13 +3,21 @@
 from __future__ import annotations
 
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QFrame, QHBoxLayout, QToolButton, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QFrame, QHBoxLayout, QLabel, QToolButton, QVBoxLayout, QWidget
 
 
 class CollapsibleSection(QWidget):
-    """Expand/collapse container with a clickable header."""
+    """Expand/collapse container with index, title toggle, and optional header actions."""
 
-    def __init__(self, title: str, content: QWidget, parent: QWidget | None = None):
+    def __init__(
+        self,
+        title: str,
+        content: QWidget,
+        *,
+        index: int = 1,
+        header_actions: list[QWidget] | None = None,
+        parent: QWidget | None = None,
+    ):
         super().__init__(parent)
         self._content = content
 
@@ -21,6 +29,12 @@ class CollapsibleSection(QWidget):
         header.setFrameShape(QFrame.Shape.StyledPanel)
         header_layout = QHBoxLayout(header)
         header_layout.setContentsMargins(8, 4, 8, 4)
+        header_layout.setSpacing(8)
+
+        self.index_label = QLabel()
+        self.index_label.setMinimumWidth(24)
+        self.set_index(index)
+        header_layout.addWidget(self.index_label)
 
         self.toggle_btn = QToolButton()
         self.toggle_btn.setText(title)
@@ -30,10 +44,18 @@ class CollapsibleSection(QWidget):
         self.toggle_btn.setArrowType(Qt.ArrowType.DownArrow)
         self.toggle_btn.setStyleSheet("QToolButton { font-weight: bold; }")
         self.toggle_btn.toggled.connect(self._on_toggled)
-        header_layout.addWidget(self.toggle_btn, stretch=1)
+        header_layout.addWidget(self.toggle_btn)
+
+        header_layout.addStretch()
+
+        for action in header_actions or []:
+            header_layout.addWidget(action)
 
         layout.addWidget(header)
         layout.addWidget(content)
+
+    def set_index(self, index: int) -> None:
+        self.index_label.setText(f"{index}.")
 
     def set_title(self, title: str) -> None:
         self.toggle_btn.setText(title)

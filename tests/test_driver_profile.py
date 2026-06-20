@@ -1,0 +1,30 @@
+from ams2_ai.models.driver import DriverEntry
+from ams2_ai.models.driver_profile import DriverProfile, flatten_profiles, group_drivers
+
+
+def test_group_base_and_track_override():
+    base = DriverEntry(livery_name="Team #1", name="Driver A", mode="custom")
+    override = DriverEntry(
+        livery_name="Team #1",
+        tracks="Interlagos_GP",
+        is_track_override=True,
+        mode="custom",
+    )
+    override.set_ui_value("race_skill", 90)
+
+    profiles = group_drivers([base, override])
+    assert len(profiles) == 1
+    assert profiles[0].base.entry_id == base.entry_id
+    assert len(profiles[0].track_overrides) == 1
+
+
+def test_flatten_skips_empty_track_override():
+    base = DriverEntry(livery_name="Team #1")
+    empty_override = DriverEntry(
+        livery_name="Team #1",
+        tracks="Spa_Francorchamps_2020",
+        is_track_override=True,
+    )
+    profile = DriverProfile(base=base, track_overrides=[empty_override])
+    flat = flatten_profiles([profile])
+    assert len(flat) == 1

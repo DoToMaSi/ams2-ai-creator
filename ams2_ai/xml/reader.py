@@ -9,6 +9,7 @@ from pathlib import Path
 
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver import DriverEntry
+from ams2_ai.models.driver_profile import normalize_document_drivers
 from ams2_ai.models.parameters import PARAMETER_BY_KEY
 
 logger = logging.getLogger("ams2_ai.xml.reader")
@@ -50,6 +51,8 @@ def load_document(path: Path) -> AIDocument:
     for driver_el in root.findall(DRIVER_TAG):
         entry = _parse_driver_element(driver_el)
         document.drivers.append(entry)
+
+    document.drivers = normalize_document_drivers(document.drivers)
 
     logger.info("Loaded %d driver entries from %s", len(document.drivers), path.name)
     document.mark_clean()

@@ -162,6 +162,49 @@ class TrackPickerDialog(QDialog):
         return self.manual_edit.text().strip()
 
 
+class SingleTrackPickerDialog(QDialog):
+    def __init__(
+        self,
+        tracks: list[str],
+        existing: set[str] | None = None,
+        parent: QWidget | None = None,
+    ):
+        super().__init__(parent)
+        self.setWindowTitle("Add Track Override")
+        self.resize(420, 480)
+        self._selected = ""
+        existing = existing or set()
+
+        layout = QVBoxLayout(self)
+        layout.addWidget(QLabel("Select a track for per-track AI overrides:"))
+
+        from PySide6.QtWidgets import QListWidget, QListWidgetItem
+
+        self.track_list = QListWidget()
+        for track in tracks:
+            if track in existing:
+                continue
+            self.track_list.addItem(QListWidgetItem(track))
+        self.track_list.itemDoubleClicked.connect(self._accept_current)
+        layout.addWidget(self.track_list)
+
+        buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttons.accepted.connect(self._accept_current)
+        buttons.rejected.connect(self.reject)
+        layout.addWidget(buttons)
+
+    def _accept_current(self) -> None:
+        item = self.track_list.currentItem()
+        if not item:
+            QMessageBox.warning(self, "Add Track", "Select a track from the list.")
+            return
+        self._selected = item.text()
+        self.accept()
+
+    def selected_track(self) -> str:
+        return self._selected
+
+
 def confirm_unsaved(parent: QWidget, filename: str) -> QMessageBox.StandardButton:
     return QMessageBox.question(
         parent,

@@ -19,6 +19,8 @@ from PySide6.QtWidgets import (
 
 from ams2_ai import __version__
 from ams2_ai.models.document import AIDocument
+from ams2_ai.models.driver import DriverEntry
+from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.smart.derivation import apply_smart_derivation
 from ams2_ai.ui.dialogs import (
     NewFileDialog,
@@ -104,7 +106,6 @@ class MainWindow(QMainWindow):
         self.sidebar.openDocumentRequested.connect(self.open_files)
         self.sidebar.documentSelected.connect(self._select_document)
         self.driver_panel.addDriverRequested.connect(self.add_driver)
-        self.driver_panel.addOverrideRequested.connect(self.add_track_override)
         self.driver_panel.removeDriverRequested.connect(self.remove_driver)
         self.driver_panel.duplicateDriverRequested.connect(self.duplicate_driver)
         self.driver_panel.driverChanged.connect(self._on_driver_edited)
@@ -120,10 +121,10 @@ class MainWindow(QMainWindow):
         self.sidebar.set_documents(self._documents)
         return doc_id
 
-    def _sync_driver_panel(self, *, expand_entry_id: str | None = None) -> None:
+    def _sync_driver_panel(self, *, expand_profile_id: str | None = None) -> None:
         document = self._active_document()
         self.driver_panel.setEnabled(document is not None)
-        self.driver_panel.set_document(document, expand_entry_id=expand_entry_id)
+        self.driver_panel.set_document(document, expand_profile_id=expand_profile_id)
 
     def new_file(self) -> None:
         dialog = NewFileDialog(self)
@@ -152,8 +153,8 @@ class MainWindow(QMainWindow):
                 logger.warning("Failed to open %s: %s", path, exc)
                 QMessageBox.warning(self, "Open Failed", str(exc))
                 continue
-            for driver in document.drivers:
-                driver.mode = "custom"
+            for profile in document.profiles():
+                profile.base.mode = "custom"
             doc_id = self._register_document(document)
             self._select_document(doc_id)
             self.statusBar().showMessage(f"Opened {document.display_name}", 3000)
@@ -233,45 +234,31 @@ class MainWindow(QMainWindow):
         document = self._active_document()
         if not document:
             return
-        driver = document.add_driver()
-        driver.mode = "smart"
-        apply_smart_derivation(driver, preserve_independent=False)
-        self._refresh_after_driver_change(driver.entry_id)
+        profile = DriverProfile(base=DriverEntry())
+        profile.base.mode = "smart"
+        apply_smart_derivation(profile.base, preserve_independent=False)
+        document.add_profile(profile)
+        self._refresh_after_profile_change(profile.profile_id)
 
-    def add_track_override(self) -> None:
+    def remove_driver(self, profile_id: str) -> None:
         document = self._active_document()
         if not document:
             return
-        base_id = self.driver_panel.current_driver_id()
-        base = document.get_driver(base_id) if base_id else None
-        driver = document.add_driver()
-        driver.mode = base.mode if base else "smart"
-        driver.is_track_override = True
-        if base:
-            driver.livery_name = base.livery_name
-        if driver.mode == "smart":
-            apply_smart_derivation(driver, preserve_independent=False)
-        self._refresh_after_driver_change(driver.entry_id)
-
-    def remove_driver(self, entry_id: str) -> None:
-        document = self._active_document()
-        if not document:
-            return
-        document.remove_driver(entry_id)
+        document.remove_profile(profile_id)
         self._sync_driver_panel()
         self.sidebar.refresh_file_labels()
         self.statusBar().showMessage("Driver removed", 2000)
 
-    def duplicate_driver(self, entry_id: str) -> None:
+    def duplicate_driver(self, profile_id: str) -> None:
         document = self._active_document()
         if not document:
             return
-        cloned = document.duplicate_driver(entry_id)
+        cloned = document.duplicate_profile(profile_id)
         if cloned:
-            self._refresh_after_driver_change(cloned.entry_id)
+            self._refresh_after_profile_change(cloned.profile_id)
 
-    def _refresh_after_driver_change(self, entry_id: str) -> None:
-        self._sync_driver_panel(expand_entry_id=entry_id)
+    def _refresh_after_profile_change(self, profile_id: str) -> None:
+        self._sync_driver_panel(expand_profile_id=profile_id)
         self.sidebar.refresh_file_labels()
 
     def _select_document(self, doc_id: str) -> None:

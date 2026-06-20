@@ -7,6 +7,12 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from ams2_ai.models.driver import DriverEntry
+from ams2_ai.models.driver_profile import (
+    DriverProfile,
+    flatten_profiles,
+    group_drivers,
+    replace_profile_entries,
+)
 
 
 @dataclass
@@ -41,30 +47,42 @@ class AIDocument:
     def mark_dirty(self) -> None:
         self.dirty = True
 
-    def add_driver(self, driver: DriverEntry | None = None) -> DriverEntry:
-        entry = driver or DriverEntry()
-        self.drivers.append(entry)
-        self.mark_dirty()
-        return entry
+    def profiles(self) -> list[DriverProfile]:
+        return group_drivers(self.drivers)
 
-    def remove_driver(self, entry_id: str) -> None:
-        self.drivers = [d for d in self.drivers if d.entry_id != entry_id]
-        self.mark_dirty()
-
-    def get_driver(self, entry_id: str) -> DriverEntry | None:
-        for driver in self.drivers:
-            if driver.entry_id == entry_id:
-                return driver
+    def get_profile(self, profile_id: str) -> DriverProfile | None:
+        for profile in self.profiles():
+            if profile.profile_id == profile_id:
+                return profile
         return None
 
-    def duplicate_driver(self, entry_id: str) -> DriverEntry | None:
-        driver = self.get_driver(entry_id)
-        if not driver:
+    def replace_profile(self, profile: DriverProfile) -> None:
+        replace_profile_entries(self.drivers, profile)
+        self.mark_dirty()
+
+    def remove_profile(self, profile_id: str) -> None:
+        profile = self.get_profile(profile_id)
+        if not profile:
+            return
+        remove_ids = {profile.base.entry_id, *(o.entry_id for o in profile.track_overrides)}
+        self.drivers = [d for d in self.drivers if d.entry_id not in remove_ids]
+        self.mark_dirty()
+
+    def duplicate_profile(self, profile_id: str) -> DriverProfile | None:
+        profile = self.get_profile(profile_id)
+        if not profile:
             return None
-        cloned = driver.clone()
-        self.drivers.append(cloned)
+        cloned = profile.clone()
+        self.drivers.extend(flatten_profiles([cloned]))
         self.mark_dirty()
         return cloned
+
+    def add_profile(self, profile: DriverProfile | None = None) -> DriverProfile:
+        if profile is None:
+            profile = DriverProfile(base=DriverEntry())
+        self.drivers.extend(flatten_profiles([profile]))
+        self.mark_dirty()
+        return profile
 
     def clone(self) -> AIDocument:
         return copy.deepcopy(self)

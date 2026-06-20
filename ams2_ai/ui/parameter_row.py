@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from PySide6.QtCore import Qt, Signal
-from PySide6.QtWidgets import QHBoxLayout, QLabel, QSlider, QSpinBox, QWidget
+from PySide6.QtWidgets import QCheckBox, QHBoxLayout, QLabel, QSlider, QSpinBox, QWidget
 
 from ams2_ai.models.parameters import ParameterDef
 
@@ -68,3 +68,33 @@ class ParameterRow(QWidget):
     def set_enabled_editable(self, enabled: bool) -> None:
         self.slider.setEnabled(enabled)
         self.spinbox.setEnabled(enabled)
+
+
+class OverrideParameterRow(ParameterRow):
+    """Parameter row with an override checkbox (per-track tabs)."""
+
+    overrideToggled = Signal(str, bool)
+
+    def __init__(self, param: ParameterDef, parent: QWidget | None = None):
+        super().__init__(param, parent)
+        layout = self.layout()
+        self.override_check = QCheckBox()
+        self.override_check.setToolTip("Enable this override for this track")
+        self.override_check.toggled.connect(self._on_override_toggled)
+        layout.insertWidget(0, self.override_check)
+        self.set_controls_enabled(False)
+
+    def _on_override_toggled(self, checked: bool) -> None:
+        if self._blocked:
+            return
+        self.overrideToggled.emit(self.param.key, checked)
+        if checked:
+            self.valueChanged.emit(self.param.key, self.value())
+
+    def set_override_enabled(self, enabled: bool) -> None:
+        self._blocked = True
+        self.override_check.setChecked(enabled)
+        self._blocked = False
+
+    def set_controls_enabled(self, enabled: bool) -> None:
+        self.set_enabled_editable(enabled)

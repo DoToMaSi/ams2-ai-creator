@@ -1,4 +1,4 @@
-"""Main panel with collapsible driver editors."""
+"""Main panel with collapsible driver profile editors."""
 
 from __future__ import annotations
 
@@ -13,17 +13,16 @@ from PySide6.QtWidgets import (
 )
 
 from ams2_ai.models.document import AIDocument
-from ams2_ai.models.driver import DriverEntry
+from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.ui.collapsible_section import CollapsibleSection
 from ams2_ai.ui.driver_editor import DriverEditor
 
 
 class DriverAccordionPanel(QWidget):
-    """Scrollable accordion list of driver editors for the active document."""
+    """Scrollable accordion list of driver profile editors."""
 
     driverChanged = Signal()
     addDriverRequested = Signal()
-    addOverrideRequested = Signal()
     removeDriverRequested = Signal(str)
     duplicateDriverRequested = Signal(str)
 
@@ -41,9 +40,6 @@ class DriverAccordionPanel(QWidget):
         add_driver_btn = QPushButton("+ Driver")
         add_driver_btn.clicked.connect(self.addDriverRequested.emit)
         toolbar.addWidget(add_driver_btn)
-        add_override_btn = QPushButton("+ Override")
-        add_override_btn.clicked.connect(self.addOverrideRequested.emit)
-        toolbar.addWidget(add_override_btn)
         root.addLayout(toolbar)
 
         self.empty_label = QLabel("No drivers yet. Add a driver or open an XML file.")
@@ -62,12 +58,12 @@ class DriverAccordionPanel(QWidget):
         self,
         document: AIDocument | None,
         *,
-        expand_entry_id: str | None = None,
+        expand_profile_id: str | None = None,
     ) -> None:
         self._clear_sections()
         self._document = document
 
-        if not document or not document.drivers:
+        if not document or not document.profiles():
             self.empty_label.setVisible(True)
             self.scroll.setVisible(False)
             return
@@ -75,76 +71,77 @@ class DriverAccordionPanel(QWidget):
         self.empty_label.setVisible(False)
         self.scroll.setVisible(True)
 
-        for driver in document.drivers:
-            self._add_section(driver, expanded=driver.entry_id == expand_entry_id)
+        for index, profile in enumerate(document.profiles(), start=1):
+            expanded = profile.profile_id == expand_profile_id
+            self._add_section(profile, index=index, expanded=expanded)
 
-        if expand_entry_id is None and document.drivers:
-            first = self._sections.get(document.drivers[0].entry_id)
-            if first:
-                first.set_expanded(True)
+        if expand_profile_id is None:
+            profiles = document.profiles()
+            if profiles:
+                first = self._sections.get(profiles[0].profile_id)
+                if first:
+                    first.set_expanded(True)
 
     def refresh_titles(self) -> None:
         if not self._document:
             return
-        for driver in self._document.drivers:
-            section = self._sections.get(driver.entry_id)
+        for index, profile in enumerate(self._document.profiles(), start=1):
+            section = self._sections.get(profile.profile_id)
             if section:
-                section.set_title(self._section_title(driver))
+                section.set_index(index)
+                section.set_title(profile.display_name())
 
-    def expand_driver(self, entry_id: str) -> None:
-        section = self._sections.get(entry_id)
-        if section:
-            section.set_expanded(True)
-
-    def current_driver_id(self) -> str | None:
-        for entry_id, section in self._sections.items():
+    def current_profile_id(self) -> str | None:
+        for profile_id, section in self._sections.items():
             if section.is_expanded():
-                return entry_id
-        if self._document and self._document.drivers:
-            return self._document.drivers[0].entry_id
+                return profile_id
+        profiles = self._document.profiles() if self._document else []
+        if profiles:
+            return profiles[0].profile_id
         return None
 
-    def _section_title(self, driver: DriverEntry) -> str:
-        suffix = " (track override)" if driver.is_track_override else ""
-        return f"{driver.display_name()}{suffix}"
-
-    def _add_section(self, driver: DriverEntry, *, expanded: bool = False) -> None:
+    def _add_section(
+        self,
+        profile: DriverProfile,
+        *,
+        index: int = 1,
+        expanded: bool = False,
+    ) -> None:
         editor = DriverEditor()
-        editor.set_driver(driver)
-        editor.driverChanged.connect(lambda _eid=driver.entry_id: self._on_editor_changed(_eid))
+        editor.set_profile(profile, self._document)
+        editor.driverChanged.connect(
+            lambda _pid=profile.profile_id: self._on_editor_changed(_pid)
+        )
 
-        section_widget = QWidget()
-        section_layout = QVBoxLayout(section_widget)
-        section_layout.setContentsMargins(4, 4, 4, 8)
-        section_layout.addWidget(editor)
-
-        action_row = QHBoxLayout()
-        action_row.addStretch()
         dup_btn = QPushButton("Duplicate")
         dup_btn.clicked.connect(
-            lambda _checked=False, eid=driver.entry_id: self.duplicateDriverRequested.emit(eid)
+            lambda _checked=False, pid=profile.profile_id: self.duplicateDriverRequested.emit(
+                pid
+            )
         )
-        action_row.addWidget(dup_btn)
         remove_btn = QPushButton("Remove")
         remove_btn.clicked.connect(
-            lambda _checked=False, eid=driver.entry_id: self.removeDriverRequested.emit(eid)
+            lambda _checked=False, pid=profile.profile_id: self.removeDriverRequested.emit(pid)
         )
-        action_row.addWidget(remove_btn)
-        section_layout.addLayout(action_row)
 
-        section = CollapsibleSection(self._section_title(driver), section_widget)
+        section = CollapsibleSection(
+            profile.display_name(),
+            editor,
+            index=index,
+            header_actions=[dup_btn, remove_btn],
+        )
         section.set_expanded(expanded)
 
-        self._sections[driver.entry_id] = section
-        self._editors[driver.entry_id] = editor
+        self._sections[profile.profile_id] = section
+        self._editors[profile.profile_id] = editor
         self.scroll_layout.addWidget(section)
 
-    def _on_editor_changed(self, entry_id: str) -> None:
-        section = self._sections.get(entry_id)
+    def _on_editor_changed(self, profile_id: str) -> None:
+        section = self._sections.get(profile_id)
         if self._document:
-            driver = self._document.get_driver(entry_id)
-            if driver and section:
-                section.set_title(self._section_title(driver))
+            profile = self._document.get_profile(profile_id)
+            if profile and section:
+                section.set_title(profile.display_name())
         self.driverChanged.emit()
 
     def _clear_sections(self) -> None:
