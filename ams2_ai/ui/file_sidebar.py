@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
 )
 
 from ams2_ai.models.document import AIDocument
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
 
 
 class FileSidebar(QWidget):
@@ -27,9 +28,14 @@ class FileSidebar(QWidget):
         self._active_doc_id: str | None = None
 
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(SPACING_INNER, SPACING_INNER, SPACING_INNER, SPACING_INNER)
+        layout.setSpacing(SPACING_SECTION)
 
         files_header = QHBoxLayout()
-        files_header.addWidget(QLabel("XML Files"))
+        files_header.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
+        title = QLabel("XML Files")
+        title.setObjectName("sectionTitle")
+        files_header.addWidget(title)
         files_header.addStretch()
         new_btn = QPushButton("+ New")
         new_btn.clicked.connect(self.newDocumentRequested.emit)

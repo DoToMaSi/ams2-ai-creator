@@ -1,47 +1,85 @@
 # AMS2 AI Creator
 
-[![CI](https://github.com/USER/ams2-ai-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/USER/ams2-ai-creator/actions/workflows/ci.yml)
+[![CI](https://github.com/DoToMaSi/ams2-ai-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/DoToMaSi/ams2-ai-creator/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/DoToMaSi/ams2-ai-creator?label=release)](https://github.com/DoToMaSi/ams2-ai-creator/releases)
+[![License: MIT](https://img.shields.io/github/license/DoToMaSi/ams2-ai-creator)](https://github.com/DoToMaSi/ams2-ai-creator/blob/master/LICENSE)
 
-Desktop tool for creating and managing **Automobilista 2 custom AI driver XML files**. Edit driver names, nationalities, and personality parameters with a visual editor, then save or export directly to your AMS2 installation.
+**Version 1.0** — a desktop editor for **Automobilista 2 custom AI driver XML files**.
 
-## Overview
+Create and tune AI opponents without hand-editing XML: driver names, countries, personality sliders, optional vehicle scalars, setup bias, per-track overrides, and more. Built for the AMS2 modding community by **[Douglas Tomacheski de Abreu e Silva (RockettSally)](https://github.com/DoToMaSi)**.
 
-Automobilista 2 allows overriding AI driver names, personalities, and nationalities via XML files placed in:
+> **Repository:** [github.com/DoToMaSi/ams2-ai-creator](https://github.com/DoToMaSi/ams2-ai-creator)
+
+---
+
+## What it does
+
+Automobilista 2 reads custom AI definitions from XML files in:
 
 ```
 {Steam AMS2 Folder}/UserData/CustomAIDrivers/
 ```
 
-Each vehicle class uses its own file (for example `GT3.xml`, `StockCarV8.xml`, `F-Classic_Gen4.xml`). This application helps you:
+Each **vehicle class** has its own file (for example `GT3.xml`, `StockCarV8.xml`, `F-Classic_Gen4.xml`). AMS2 AI Creator gives you a visual workflow to:
 
-- Create and edit custom AI XML files visually
-- Work on **multiple XML files** at once via a left sidebar
-- Use **Smart mode** (Skill + Aggression only) or **Custom mode** (full control)
-- Apply **presets** (Junior → Master) with randomized realistic values
-- Add **track-specific overrides** for the same livery
-- Load existing community XML files and save/export them
+| Feature | Description |
+|---------|-------------|
+| **Multi-file editing** | Open several XML files at once; switch between them in the sidebar |
+| **XML Properties** | Set display name, vehicle class, and optional custom filename per file |
+| **Driver editor** | Livery name, driver name, country (with flags), Smart/Custom modes |
+| **Smart mode** | Tune **Race Skill** + **Aggression**; other personality traits are derived automatically |
+| **Custom mode** | Full manual control over every parameter |
+| **Presets** | Junior → Master tiers with realistic randomized values |
+| **Track overrides** | Per-track tabs for the same livery; searchable track picker grouped by venue |
+| **Optional groups** | Vehicle Performance & Setup scalars — off by default, neutral defaults when unset |
+| **Parameter help** | Every slider has a **?** icon explaining what it does and low vs high values |
+| **Pretty XML** | Exported files are indented and readable; header comments carry file metadata |
+| **Internal save** | **Save** validates and stores a snapshot in memory; **Export AI XML** writes the file |
 
-Official AMS2 documentation: [Information for Customizing AI drivers in AMS2](https://forum.reizastudios.com/threads/information-for-customizing-ai-drivers-in-ams2.21758/)
+Official AMS2 reference: [Information for Customizing AI drivers in AMS2](https://forum.reizastudios.com/threads/information-for-customizing-ai-drivers-in-ams2.21758/)
 
 ---
 
-## AMS2 Custom AI Context
+## Download (Windows)
 
-### File naming
+No Python install required.
 
-The XML filename must match the **vehicle class name** exactly (case-sensitive). Examples:
+1. Download **`AMS2-AI-Creator-windows.zip`** from:
+   - **[GitHub Releases](https://github.com/DoToMaSi/ams2-ai-creator/releases)** (recommended — versioned builds from `v*` tags)
+   - **[GitHub Actions artifacts](https://github.com/DoToMaSi/ams2-ai-creator/actions/workflows/ci.yml)** on the latest successful `master` push (CI job **build-windows** → artifact `AMS2-AI-Creator-windows`)
+2. Extract the zip.
+3. Run **`AMS2-AI-Creator.exe`** inside the extracted folder (keep the `_internal` folder beside the exe).
 
-| Class | Filename |
-|-------|----------|
-| GT3 | `GT3.xml` |
-| Stock Car V8 | `StockCarV8.xml` |
-| Formula Classic Gen4 | `F-Classic_Gen4.xml` |
+Copy exported XML files into your AMS2 `CustomAIDrivers` folder, or use **File → Export to AMS2…** from the app.
 
-The app includes the full official class list in the **New File** dialog.
+---
 
-### Driver entries
+## Quick start
 
-Each `<driver>` element targets a **livery name** (case-sensitive, as shown in the AMS2 car selection screen):
+1. **Launch** the app.
+2. **+ New** or **+ Open** in the sidebar to create or load an XML file.
+3. Expand **XML Properties** if you need to set the class name or custom filename.
+4. **+ Driver** → enter livery name (exact in-game spelling), driver name, and country.
+5. On the **Global** tab, choose **Smart** or **Custom**, adjust sliders or click a **preset**.
+6. Optionally add **track override** tabs (+ on the tab bar) for venue-specific values.
+7. **Save** to validate and mark the file clean in the editor.
+8. **Export AI XML** to write the `.xml` file to disk.
+9. **File → Export to AMS2…** to copy directly into your AMS2 `CustomAIDrivers` folder.
+10. In AMS2, use **enough AI opponents** (≤ number of customized drivers in the file) for overrides to apply.
+
+Example community files live in [`docs/example_ai_files/`](docs/example_ai_files/).
+
+---
+
+## AMS2 file format (essentials)
+
+### Filename
+
+Must match the **vehicle class** exactly (case-sensitive). The **New File** dialog includes the official class list; you can also use a **Custom…** filename for modded classes.
+
+### Driver entry
+
+Each `<driver>` targets a **livery name** (case-sensitive, as shown on the car select screen):
 
 ```xml
 <driver livery_name="Ministry Motorsport #51">
@@ -51,11 +89,11 @@ Each `<driver>` element targets a **livery name** (case-sensitive, as shown in t
 </driver>
 ```
 
-You can define **partial entries** — only specified fields override the default AI. Missing fields keep the game's original values.
+Partial entries are supported — only specified fields override the default AI.
 
 ### Track overrides
 
-Multiple entries can share the same livery with a `tracks` attribute:
+Same livery, different track — use the `tracks` attribute:
 
 ```xml
 <driver livery_name="Ministry Motorsport #51" tracks="Azure_Circuit_2021,Long_Beach">
@@ -63,61 +101,70 @@ Multiple entries can share the same livery with a `tracks` attribute:
 </driver>
 ```
 
-Fields not present in a track override inherit from the base driver entry for that livery.
+Unset fields in a track override inherit from the base driver for that livery.
+
+### Exported header comment
+
+Each file includes structured metadata and attribution:
+
+```xml
+<!--
+Name: My Season Pack
+Class: GT3
+Custom Name:
+Created with the AMS2 AI Tool by RockettSally
+-->
+```
 
 ---
 
-## Parameter Reference
+## Parameter reference
 
-Most personality values range **0.0–1.0** in XML. The UI displays them as **0–100** for easier editing. Value **50** (~0.5) represents an average driver; extremes are valid but should be tested in-game.
+Most personality values are **0.0–1.0** in XML; the UI shows **0–100**. Value **50** (~0.5) is a typical average driver.
 
-| Parameter | UI Range | XML Range | Description |
-|-----------|----------|-----------|-------------|
-| `race_skill` | 0–100 | 0–1 | Race session skill (scaled by Opponent Skill Level) |
-| `qualifying_skill` | 0–100 | 0–1 | Qualifying/practice skill (independent from race skill) |
-| `wet_skill` | 0–100 | 0–1 | Wet track performance |
-| `aggression` | 0–100 | 0–1 | Aggression (scaled by Opponent Aggression setting) |
-| `defending` | 0–100 | 0–1 | Position defense intensity |
-| `consistency` | 0–100 | 0–1 | Lap-to-lap skill variation |
+| Parameter | UI | XML | Notes |
+|-----------|----|-----|-------|
+| `race_skill` | 0–100 | 0–1 | Race skill; scaled by Opponent Skill Level in AMS2 |
+| `qualifying_skill` | 0–100 | 0–1 | Qualifying/practice skill |
+| `wet_skill` | 0–100 | 0–1 | Wet performance |
+| `aggression` | 0–100 | 0–1 | Scaled by Opponent Aggression in AMS2 |
+| `defending` | 0–100 | 0–1 | Defending intensity |
+| `consistency` | 0–100 | 0–1 | Lap-to-lap variation |
 | `stamina` | 0–100 | 0–1 | Fatigue resistance |
-| `start_reactions` | 0–100 | 0–1 | Race start reaction speed |
-| `tyre_management` | 0–100 | 0–1 | Tyre wear reduction |
-| `fuel_management` | 0–100 | 0–1 | Fuel saving (ovals only for now) |
+| `start_reactions` | 0–100 | 0–1 | Start reaction speed |
+| `tyre_management` | 0–100 | 0–1 | Tyre wear |
+| `fuel_management` | 0–100 | 0–1 | Fuel saving (ovals) |
 | `blue_flag_conceding` | 0–100 | 0–1 | Blue flag compliance |
-| `weather_tyre_changes` | 0–100 | 0–1 | Tyre change likelihood in changing weather |
-| `avoidance_of_mistakes` | 0–100 | 0–1 | General mistake avoidance |
-| `avoidance_of_forced_mistakes` | 0–100 | 0–1 | Mistakes under defending pressure |
-| `weight_scalar` | 90–110 | 0.900–1.100 | Vehicle mass multiplier (**also affects player** on that livery) |
-| `power_scalar` | 90–110 | 0.900–1.100 | Engine power multiplier (**also affects player**) |
-| `drag_scalar` | 90–110 | 0.900–1.100 | Aerodynamic drag multiplier (**also affects player**) |
-| `setup_downforce` | 0–100 | 0–1 | Downforce preference (50 = neutral) |
-| `setup_downforce_randomness` | 0–100 | 0–1 | Weekend setup variation |
-| `vehicle_reliability` | 0–100+ | unbounded | Reliability ratio; values above 0.6 are generally good |
+| `weather_tyre_changes` | 0–100 | 0–1 | Weather tyre strategy |
+| `avoidance_of_mistakes` | 0–100 | 0–1 | General mistakes |
+| `avoidance_of_forced_mistakes` | 0–100 | 0–1 | Mistakes under pressure |
+| `weight_scalar` | 90–110 | 0.900–1.100 | Mass multiplier (**affects player** on that livery) |
+| `power_scalar` | 90–110 | 0.900–1.100 | Power multiplier (**affects player**) |
+| `drag_scalar` | 90–110 | 0.900–1.100 | Drag multiplier (**affects player**) |
+| `setup_downforce` | 0–100 | 0–1 | Downforce bias (50 = neutral) |
+| `setup_downforce_randomness` | 0–100 | 0–1 | Setup variation |
+| `vehicle_reliability` | 0–100+ | float | Can exceed 1.0; see Reiza forum for class norms |
 
-**Notes from Reiza:**
-- `weight_scalar`, `power_scalar`, and `drag_scalar` affect the **player car** if you drive that livery
-- `vehicle_reliability` can exceed 1.0; see the [forum post formula](https://forum.reizastudios.com/threads/information-for-customizing-ai-drivers-in-ams2.21758/) for class-specific reliability ranges
-- Custom AI is **disabled in multiplayer**
+Hover or click **?** on any parameter row in the app for plain-language low/high guidance.
+
+**Reiza notes:** scalars affect the player car on that livery; custom AI is **disabled in multiplayer**.
 
 ---
 
-## Smart vs Custom Modes
+## Smart vs Custom
 
-### Smart mode
+| | Smart | Custom |
+|---|--------|--------|
+| **Primary controls** | Race Skill, Aggression | All parameters |
+| **Other personality fields** | Auto-derived from skill/aggression | Manual |
+| **Vehicle / setup / reliability** | Editable when their optional groups are enabled | Same |
+| **Best for** | Fast, believable drivers | Full control, unusual profiles |
 
-Only **Race Skill** and **Aggression** are editable. All other parameters are **derived automatically** using correlations based on real community AI files (consistency, wet skill, tyre management, mistake avoidance, etc.).
-
-Ideal for quickly creating believable drivers without tuning every slider.
-
-### Custom mode
-
-Every parameter is editable. Presets still randomize values, but nothing is auto-derived when you change skill or aggression.
+Use the **?** beside the mode radios in the app for a short in-editor explanation.
 
 ---
 
 ## Presets
-
-Click a preset button to randomize values within a skill tier:
 
 | Preset | Skill (UI) | Aggression (UI) |
 |--------|------------|-----------------|
@@ -128,162 +175,122 @@ Click a preset button to randomize values within a skill tier:
 | Elite | 75–90 | 40–72 |
 | Master | 88–100 | 50–85 |
 
-- **Smart + preset**: randomizes Skill/Aggression, then derives all other fields
-- **Custom + preset**: randomizes all fields within tier-appropriate ranges
+- **Smart + preset:** randomizes skill/aggression, then derives the rest  
+- **Custom + preset:** randomizes all fields within tier ranges  
 
 ---
 
-## Usage Guide
+## Install from source
 
-1. **Launch** the app (`python main.py` or `ams2-ai-creator`)
-2. **New File** → pick a vehicle class filename (e.g. `GT3.xml`)
-3. **+ Driver** → set livery name, driver name, and country
-4. Choose **Smart** or **Custom** mode; adjust sliders or click a **preset**
-5. Optionally **+ Override** to add track-specific values for the same livery
-6. **Save** or **Save As** to write the XML file
-7. **Export to AMS2** → select your `CustomAIDrivers` folder to copy the file in place
-8. In AMS2, start an event with AI opponents ≤ number of customized drivers
-
-Example files are included in [`docs/example_ai_files/`](docs/example_ai_files/) for reference.
-
----
-
-## Installation
-
-### From source (recommended for development)
-
-Requirements: **Python 3.11+**
+Requirements: **Python 3.11+**, **Windows** recommended for the full GUI (Linux/macOS: core tests only in CI).
 
 ```bash
-git clone https://github.com/USER/ams2-ai-creator.git
+git clone https://github.com/DoToMaSi/ams2-ai-creator.git
 cd ams2-ai-creator
-pip install -e ".[dev]"
+pip install -e ".[dev,dev-gui]"
 python main.py
 ```
 
-Or use the console entry point:
+Console entry point:
 
 ```bash
 ams2-ai-creator
 ```
 
-### Pre-built Windows release
+Debug logging:
 
-Download `AMS2-AI-Creator-windows.zip` from [GitHub Releases](https://github.com/USER/ams2-ai-creator/releases) (available after tagging `v*`).
-
-Extract and run `AMS2-AI-Creator.exe`.
-
----
-
-## Development
-
-### Project structure
-
-```
-ams2-ai-creator/
-├── main.py                 # Entry point
-├── ams2_ai/
-│   ├── models/             # Driver/document models, parameter registry
-│   ├── xml/                # XML reader/writer
-│   ├── smart/              # Smart derivation + presets
-│   ├── data/               # Vehicle classes, tracks, countries JSON
-│   └── ui/                 # PySide6 interface
-├── tests/
-├── scripts/build_windows.ps1
-├── scripts/build_windows.bat
-└── .github/workflows/
-```
-
-### Commands
-
-```bash
-pip install -e ".[dev]"
-pytest
-ruff check .
-ruff format .
-```
-
-### Debug logging
-
-Set `AMS2_AI_DEBUG=1` for verbose console output:
-
-```bash
-# Windows PowerShell
+```powershell
 $env:AMS2_AI_DEBUG=1; python main.py
 ```
 
+Logs: `%APPDATA%\ams2-ai-creator\logs\` (Windows) — or **Help → Open Log Folder**.
+
 ---
 
-## Build
-
-Build a Windows distributable with PyInstaller:
+## Build locally
 
 ```powershell
 pip install -e ".[dev]"
 ./scripts/build_windows.ps1
 ```
 
-Or on Windows Command Prompt:
-
 ```bat
-pip install -e ".[dev]"
 scripts\build_windows.bat
 ```
 
-Output: `dist/AMS2-AI-Creator/`
+Output:
+
+- `dist/AMS2-AI-Creator/` — runnable folder  
+- `dist/AMS2-AI-Creator-windows.zip` — distributable archive  
+
+---
+
+## Development
+
+```
+ams2-ai-creator/
+├── main.py
+├── ams2_ai/
+│   ├── models/          # Documents, drivers, parameters, header metadata
+│   ├── xml/             # Reader / pretty-print writer
+│   ├── smart/           # Smart derivation + presets
+│   ├── identity/        # Name generation / romanization
+│   ├── data/            # Classes, tracks, countries, flags
+│   └── ui/              # PySide6 interface + AMS2 theme
+├── assets/              # Icon, fonts
+├── tests/
+├── scripts/             # build_windows.*, build_icon.py, build_track_meta.py
+└── .github/workflows/   # ci.yml, release.yml
+```
+
+```bash
+pytest
+ruff check .
+ruff format .
+```
 
 ---
 
 ## CI/CD
 
-### Branching
+| Branch | Role |
+|--------|------|
+| `develop` | Day-to-day development |
+| `master` | Stable line; CI on push/PR; Windows zip artifact on every push |
 
-| Branch | Purpose | Pipelines |
-|--------|---------|-----------|
-| `develop` | Day-to-day development | None |
-| `master` | Stable releases | CI on push/PR; release artifacts on version tags |
+| Workflow | Trigger | Result |
+|----------|---------|--------|
+| [`ci.yml`](.github/workflows/ci.yml) | Push or PR → `master` | Lint, test, **Windows zip artifact** on push to `master` |
+| [`release.yml`](.github/workflows/release.yml) | Tag `v*` on `master` | Lint, test, build, **GitHub Release** with zip |
 
-Workflow: commit on `develop` → open PR to `master` → CI runs on the PR → merge → tag `v*` on `master` for a release build.
-
-| Workflow | Trigger | Actions |
-|----------|---------|---------|
-| `ci.yml` | Push or PR to `master` | ruff lint, format check, pytest (Windows + Linux core tests) |
-| `release.yml` | Tag `v*` on `master` | lint/test → PyInstaller build → GitHub Release zip |
+Typical release flow: merge to `master` → tag `v1.0.0` (etc.) → Release workflow publishes the zip.
 
 ---
 
-## Logging & Troubleshooting
+## Troubleshooting
 
-### Log file location
-
-| Platform | Path |
-|----------|------|
-| Windows | `%APPDATA%\ams2-ai-creator\logs\ams2-ai-creator.log` |
-| Linux/macOS | `~/.local/share/ams2-ai-creator/logs/ams2-ai-creator.log` |
-
-Open the log folder from **Help → Open Log Folder** in the app.
-
-Logs rotate at 5 MB (3 backups). Unhandled errors show a dialog with a **Copy Log Path** button.
-
-### Common issues
-
-| Problem | Solution |
-|---------|----------|
-| AI not appearing in-game | Verify filename matches vehicle class exactly; livery name is case-sensitive |
-| Invalid XML on load | Check log for parse errors; validate against example files in `docs/example_ai_files/` |
-| Scalar out of range | Weight/power/drag must be 0.900–1.100 in XML (90–110 in UI) |
-| Export failed | Ensure AMS2 folder is writable; save the file first |
-| Driver not customized | Set number of AI opponents ≤ number of customized drivers in the XML |
+| Problem | What to check |
+|---------|----------------|
+| AI not appearing in-game | Filename matches class exactly; livery name spelling/case |
+| Overrides ignored | AI opponent count ≤ customized drivers in the XML |
+| Invalid XML on load | See log; compare with `docs/example_ai_files/` |
+| Scalar rejected | Weight/power/drag must be 0.900–1.100 in XML |
+| Export failed | Save first; ensure target folder is writable |
 
 ---
 
-## License
+## License & disclaimer
 
-MIT (placeholder — update as needed)
+- **Source code:** [MIT License](LICENSE) — Copyright Douglas Tomacheski de Abreu e Silva (RockettSally)
+- **Disclaimer:** This tool is **not affiliated with, endorsed by, or sponsored by** Reiza Studios or Automobilista 2. See **Help → Legal** in the app.
+
+---
 
 ## Contributing
 
-1. Branch from `develop` for new work.
-2. Open pull requests into `master` when ready for review and release.
-3. CI runs only on PRs targeting `master` — ensure checks pass before merge.
-4. Create version tags (`v*`) on `master` to publish release artifacts.
+1. Branch from `develop`.
+2. Open a pull request into `master`.
+3. Ensure CI passes (lint, tests, Windows build on merge).
+4. Tag `v*` on `master` for a public GitHub Release.
+
+Issues and feature requests: [GitHub Issues](https://github.com/DoToMaSi/ams2-ai-creator/issues)

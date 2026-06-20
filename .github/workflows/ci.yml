@@ -1,48 +1,75 @@
-name: CI
-
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-
-jobs:
-  test-windows:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install -e ".[dev,dev-gui]"
-
-      - name: Ruff check
-        run: ruff check .
-
-      - name: Ruff format check
-        run: ruff format --check .
-
-      - name: Run tests
-        run: pytest --tb=short
-        env:
-          QT_QPA_PLATFORM: offscreen
-
-  test-core-linux:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install -e ".[dev]"
-
-      - name: Run core tests
-        run: pytest tests/test_parameters.py tests/test_derivation.py tests/test_presets.py tests/test_xml_roundtrip.py tests/test_data.py -p no:pytest-qt --tb=short
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -e ".[dev,dev-gui]"
+
+      - name: Ruff check
+        run: ruff check .
+
+      - name: Ruff format check
+        run: ruff format --check .
+
+      - name: Run tests
+        run: pytest --tb=short
+        env:
+          QT_QPA_PLATFORM: offscreen
+
+  test-core-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Run core tests
+        run: pytest tests/test_parameters.py tests/test_derivation.py tests/test_presets.py tests/test_xml_roundtrip.py tests/test_data.py -p no:pytest-qt --tb=short
+
+  build-windows:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: [test-windows, test-core-linux]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -e ".[dev,dev-gui]"
+
+      - name: Build Windows distributable
+        shell: pwsh
+        run: ./scripts/build_windows.ps1
+
+      - name: Upload Windows zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AMS2-AI-Creator-windows
+          path: dist/AMS2-AI-Creator-windows.zip
+          if-no-files-found: error
+          retention-days: 90

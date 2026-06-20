@@ -3,26 +3,31 @@
 from __future__ import annotations
 
 import logging
-import shutil
 import uuid
 from pathlib import Path
 
-from PySide6.QtCore import QSettings
-from PySide6.QtGui import QAction, QKeySequence
+from PySide6.QtCore import QSettings, QThread
+from PySide6.QtGui import QAction, QGuiApplication, QIcon, QKeySequence
 from PySide6.QtWidgets import (
     QFileDialog,
+    QHBoxLayout,
     QMainWindow,
     QMessageBox,
+    QPushButton,
     QSplitter,
     QStatusBar,
+    QVBoxLayout,
+    QWidget,
 )
 
 from ams2_ai import __version__
+from ams2_ai.identity.generator import randomize_new_driver
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.driver_profile import DriverProfile
-from ams2_ai.smart.derivation import apply_smart_derivation
 from ams2_ai.ui.dialogs import (
+    AboutDialog,
+    LegalDialog,
     NewFileDialog,
     confirm_unsaved,
     open_log_folder,
@@ -30,22 +35,42 @@ from ams2_ai.ui.dialogs import (
 )
 from ams2_ai.ui.driver_accordion import DriverAccordionPanel
 from ams2_ai.ui.file_sidebar import FileSidebar
+from ams2_ai.ui.load_worker import DocumentLoadWorker
+from ams2_ai.ui.loading_dialog import LoadingDialog
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_OUTER
+from ams2_ai.util.assets import icon_ico_path, icon_png_path
 from ams2_ai.validation import validate_document
-from ams2_ai.xml.reader import load_document
-from ams2_ai.xml.writer import save_document
+from ams2_ai.xml.writer import save_document, serialize_document
 
 logger = logging.getLogger("ams2_ai.ui.main_window")
+
+LARGE_DOCUMENT_THRESHOLD = 25
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle(f"AMS2 AI Creator v{__version__}")
-        self.resize(1200, 780)
+        screen = QGuiApplication.primaryScreen()
+        if screen is not None:
+            available = screen.availableGeometry()
+            self.setGeometry(available)
+        else:
+            self.resize(1400, 1000)
+        self.setMinimumSize(1080, 800)
+        for icon_path in (icon_ico_path(), icon_png_path()):
+            if icon_path.is_file():
+                self.setWindowIcon(QIcon(str(icon_path)))
+                break
 
         self._documents: dict[str, AIDocument] = {}
         self._active_doc_id: str | None = None
         self._settings = QSettings()
+        self._open_paths_queue: list[Path] = []
+        self._loading_dialog: LoadingDialog | None = None
+        self._load_thread: QThread | None = None
+        self._load_worker: DocumentLoadWorker | None = None
+        self._pending_open_doc_id: str | None = None
 
         self.sidebar = FileSidebar()
         self.driver_panel = DriverAccordionPanel()
@@ -55,13 +80,37 @@ class MainWindow(QMainWindow):
         splitter.addWidget(self.driver_panel)
         splitter.setStretchFactor(0, 0)
         splitter.setStretchFactor(1, 1)
-        splitter.setSizes([280, 920])
-        self.setCentralWidget(splitter)
+        splitter.setSizes([280, 1120])
+
+        footer_widget = QWidget()
+        footer_widget.setObjectName("footerBar")
+        footer = QHBoxLayout(footer_widget)
+        footer.setContentsMargins(SPACING_OUTER, SPACING_INNER, SPACING_OUTER, SPACING_INNER)
+        footer.setSpacing(SPACING_INNER)
+        footer.addStretch()
+        self.save_btn = QPushButton("Save")
+        self.save_btn.setObjectName("primaryButton")
+        self.save_btn.setShortcut(QKeySequence.Save)
+        self.save_btn.clicked.connect(self.save_active)
+        footer.addWidget(self.save_btn)
+        self.export_xml_btn = QPushButton("Export AI XML")
+        self.export_xml_btn.setObjectName("secondaryButton")
+        self.export_xml_btn.clicked.connect(self.export_ai_xml)
+        footer.addWidget(self.export_xml_btn)
+
+        central = QWidget()
+        central_layout = QVBoxLayout(central)
+        central_layout.setContentsMargins(0, 0, 0, 0)
+        central_layout.setSpacing(0)
+        central_layout.addWidget(splitter, stretch=1)
+        central_layout.addWidget(footer_widget)
+        self.setCentralWidget(central)
 
         self.setStatusBar(QStatusBar())
         self._build_menu()
         self._connect_signals()
         self._sync_driver_panel()
+        self._refresh_save_state()
 
     def _build_menu(self) -> None:
         file_menu = self.menuBar().addMenu("&File")
@@ -81,12 +130,11 @@ class MainWindow(QMainWindow):
         save_action.triggered.connect(self.save_active)
         file_menu.addAction(save_action)
 
-        save_as_action = QAction("Save &As…", self)
-        save_as_action.setShortcut(QKeySequence.SaveAs)
-        save_as_action.triggered.connect(self.save_active_as)
-        file_menu.addAction(save_as_action)
+        export_xml_action = QAction("Export AI &XML…", self)
+        export_xml_action.triggered.connect(self.export_ai_xml)
+        file_menu.addAction(export_xml_action)
 
-        export_action = QAction("&Export to AMS2…", self)
+        export_action = QAction("Export to &AMS2…", self)
         export_action.triggered.connect(self.export_to_ams2)
         file_menu.addAction(export_action)
 
@@ -97,6 +145,16 @@ class MainWindow(QMainWindow):
         file_menu.addAction(exit_action)
 
         help_menu = self.menuBar().addMenu("&Help")
+
+        about_action = QAction("&About…", self)
+        about_action.triggered.connect(self._show_about)
+        help_menu.addAction(about_action)
+
+        legal_action = QAction("&Legal…", self)
+        legal_action.triggered.connect(self._show_legal)
+        help_menu.addAction(legal_action)
+
+        help_menu.addSeparator()
         log_action = QAction("Open &Log Folder", self)
         log_action.triggered.connect(lambda: open_log_folder(self))
         help_menu.addAction(log_action)
@@ -109,6 +167,7 @@ class MainWindow(QMainWindow):
         self.driver_panel.removeDriverRequested.connect(self.remove_driver)
         self.driver_panel.duplicateDriverRequested.connect(self.duplicate_driver)
         self.driver_panel.driverChanged.connect(self._on_driver_edited)
+        self.driver_panel.documentPropertiesChanged.connect(self._on_document_properties_changed)
 
     def _active_document(self) -> AIDocument | None:
         if not self._active_doc_id:
@@ -124,7 +183,47 @@ class MainWindow(QMainWindow):
     def _sync_driver_panel(self, *, expand_profile_id: str | None = None) -> None:
         document = self._active_document()
         self.driver_panel.setEnabled(document is not None)
-        self.driver_panel.set_document(document, expand_profile_id=expand_profile_id)
+        self._populate_driver_panel(document, expand_profile_id=expand_profile_id)
+
+    def _populate_driver_panel(
+        self,
+        document: AIDocument | None,
+        *,
+        expand_profile_id: str | None = None,
+    ) -> None:
+        if document is None:
+            self.driver_panel.set_document(None)
+            return
+
+        if len(document.profiles()) <= LARGE_DOCUMENT_THRESHOLD:
+            self.driver_panel.set_document(document, expand_profile_id=expand_profile_id)
+            return
+
+        self._show_loading_dialog(f"Building driver list for {document.display_name}…")
+        self.driver_panel.set_document(
+            document,
+            expand_profile_id=expand_profile_id,
+            progress=self._loading_dialog.set_message if self._loading_dialog else None,
+            finished=self._finish_loading_dialog,
+        )
+
+    def _show_loading_dialog(self, message: str) -> None:
+        self._loading_dialog = LoadingDialog(self, title="Loading")
+        self._loading_dialog.show(message)
+        self.setEnabled(False)
+
+    def _finish_loading_dialog(self) -> None:
+        if self._loading_dialog:
+            self._loading_dialog.close()
+            self._loading_dialog = None
+        self.setEnabled(True)
+
+    def _cleanup_load_thread(self) -> None:
+        if self._load_thread is not None:
+            self._load_thread.quit()
+            self._load_thread.wait()
+        self._load_thread = None
+        self._load_worker = None
 
     def new_file(self) -> None:
         dialog = NewFileDialog(self)
@@ -133,6 +232,10 @@ class MainWindow(QMainWindow):
         filename = dialog.selected_filename()
         path = Path(filename)
         document = AIDocument(path=path, set_name=dialog.set_name())
+        if dialog.is_custom_class():
+            document.custom_class_name = path.name
+        else:
+            document.vehicle_class = path.stem
         document.sync_header_comment()
         doc_id = self._register_document(document)
         self._select_document(doc_id)
@@ -145,56 +248,146 @@ class MainWindow(QMainWindow):
             "",
             "XML Files (*.xml)",
         )
-        for path_str in paths:
-            path = Path(path_str)
-            try:
-                document = load_document(path)
-            except ValueError as exc:
-                logger.warning("Failed to open %s: %s", path, exc)
-                QMessageBox.warning(self, "Open Failed", str(exc))
-                continue
-            for profile in document.profiles():
-                profile.base.mode = "custom"
-            doc_id = self._register_document(document)
-            self._select_document(doc_id)
-            self.statusBar().showMessage(f"Opened {document.display_name}", 3000)
+        if not paths:
+            return
+
+        if self._active_doc_id:
+            previous = self._active_document()
+            if previous and previous.dirty:
+                result = confirm_unsaved(self, previous.display_name)
+                if result == QMessageBox.Save:
+                    if not self.save_active():
+                        return
+                elif result == QMessageBox.Cancel:
+                    return
+
+        self._open_paths_queue = [Path(path_str) for path_str in paths]
+        remaining = len(self._open_paths_queue)
+        self._show_loading_dialog(
+            f"Preparing to open {remaining} file{'s' if remaining != 1 else ''}…"
+        )
+        self._load_next_open_path()
+
+    def _load_next_open_path(self) -> None:
+        if not self._open_paths_queue:
+            self._finish_open_sequence()
+            return
+
+        path = self._open_paths_queue[0]
+        if self._loading_dialog:
+            self._loading_dialog.set_message(f"Reading {path.name}…")
+
+        self._cleanup_load_thread()
+        self._load_thread = QThread(self)
+        self._load_worker = DocumentLoadWorker(path)
+        self._load_worker.moveToThread(self._load_thread)
+        self._load_thread.started.connect(self._load_worker.run)
+        self._load_worker.finished.connect(self._on_document_loaded)
+        self._load_worker.failed.connect(self._on_document_load_failed)
+        self._load_thread.start()
+
+    def _on_document_loaded(self, document: AIDocument, path: Path) -> None:
+        self._cleanup_load_thread()
+        if not self._open_paths_queue or self._open_paths_queue[0] != path:
+            return
+
+        self._open_paths_queue.pop(0)
+        for profile in document.profiles():
+            profile.base.mode = "custom"
+        document.commit_saved_state(serialize_document(document))
+        doc_id = self._register_document(document)
+
+        if self._open_paths_queue:
+            if self._loading_dialog:
+                remaining = len(self._open_paths_queue)
+                suffix = "s" if remaining != 1 else ""
+                self._loading_dialog.set_message(
+                    f"Loaded {path.name}. {remaining} file{suffix} remaining…"
+                )
+            self._load_next_open_path()
+            return
+
+        self._pending_open_doc_id = doc_id
+        if self._loading_dialog:
+            driver_count = len(document.profiles())
+            self._loading_dialog.set_message(
+                f"Building driver list for {path.name} ({driver_count} drivers)…"
+            )
+        self.driver_panel.set_document(
+            document,
+            progress=self._loading_dialog.set_message if self._loading_dialog else None,
+            finished=self._finish_open_sequence,
+        )
+
+    def _on_document_load_failed(self, message: str, path: Path) -> None:
+        self._cleanup_load_thread()
+        if self._open_paths_queue and self._open_paths_queue[0] == path:
+            self._open_paths_queue.pop(0)
+        logger.warning("Failed to open %s: %s", path, message)
+        QMessageBox.warning(self, "Open Failed", f"{path.name}: {message}")
+        if self._open_paths_queue:
+            self._load_next_open_path()
+            return
+        self._finish_open_sequence()
+
+    def _finish_open_sequence(self) -> None:
+        doc_id = self._pending_open_doc_id
+        self._pending_open_doc_id = None
+        self._open_paths_queue = []
+        self._finish_loading_dialog()
+
+        if doc_id:
+            document = self._documents.get(doc_id)
+            self._apply_active_document(doc_id, sync_panel=False)
+            if document:
+                self.statusBar().showMessage(f"Opened {document.display_name}", 3000)
 
     def save_active(self) -> bool:
+        """Validate and store the current document state in memory."""
         document = self._active_document()
         if not document:
             return False
-        if not document.path:
-            return self.save_active_as()
-        return self._save_document(document, document.path)
+        errors = validate_document(document)
+        if errors:
+            warn_validation_errors(self, errors)
+            return False
+        document.commit_saved_state(serialize_document(document))
+        self._refresh_save_state()
+        self.statusBar().showMessage(f"Saved {document.display_name}", 3000)
+        logger.info("Internally saved document: %s", document.display_name)
+        return True
 
-    def save_active_as(self) -> bool:
+    def export_ai_xml(self) -> bool:
+        """Write the active document to an AI XML file on disk."""
         document = self._active_document()
         if not document:
             return False
+        default_name = document.effective_filename()
         path_str, _ = QFileDialog.getSaveFileName(
             self,
-            "Save AI XML File",
-            document.path.name if document.path else "custom_ai.xml",
+            "Export AI XML File",
+            default_name,
             "XML Files (*.xml)",
         )
         if not path_str:
             return False
-        return self._save_document(document, Path(path_str))
+        return self._export_document_to_path(document, Path(path_str))
 
-    def _save_document(self, document: AIDocument, path: Path) -> bool:
+    def _export_document_to_path(self, document: AIDocument, path: Path) -> bool:
         errors = validate_document(document)
         if errors:
             warn_validation_errors(self, errors)
             return False
         try:
             save_document(document, path)
+            document.commit_saved_state(serialize_document(document))
         except OSError as exc:
-            logger.exception("Save failed: %s", path)
-            QMessageBox.critical(self, "Save Failed", str(exc))
+            logger.exception("Export failed: %s", path)
+            QMessageBox.critical(self, "Export Failed", str(exc))
             return False
-        self.sidebar.refresh_file_labels()
-        self.statusBar().showMessage(f"Saved {path.name}", 3000)
-        logger.info("Saved document: %s", path)
+        self._refresh_save_state()
+        self.statusBar().showMessage(f"Exported {path.name}", 3000)
+        logger.info("Exported document: %s", path)
         return True
 
     def export_to_ams2(self) -> bool:
@@ -212,15 +405,14 @@ class MainWindow(QMainWindow):
             return False
         self._settings.setValue("ams2/custom_ai_dir", folder)
 
-        if not self.save_active():
+        errors = validate_document(document)
+        if errors:
+            warn_validation_errors(self, errors)
             return False
 
-        if document.path:
-            target = Path(folder) / document.path.name
-        else:
-            target = Path(folder) / "custom_ai.xml"
+        target = Path(folder) / document.effective_filename()
         try:
-            shutil.copy2(document.path, target)
+            target.write_text(serialize_document(document), encoding="utf-8")
         except OSError as exc:
             logger.exception("Export failed")
             QMessageBox.critical(self, "Export Failed", str(exc))
@@ -236,7 +428,7 @@ class MainWindow(QMainWindow):
             return
         profile = DriverProfile(base=DriverEntry())
         profile.base.mode = "smart"
-        apply_smart_derivation(profile.base, preserve_independent=False)
+        randomize_new_driver(profile.base)
         document.add_profile(profile)
         self._refresh_after_profile_change(profile.profile_id)
 
@@ -246,7 +438,7 @@ class MainWindow(QMainWindow):
             return
         document.remove_profile(profile_id)
         self._sync_driver_panel()
-        self.sidebar.refresh_file_labels()
+        self._refresh_save_state()
         self.statusBar().showMessage("Driver removed", 2000)
 
     def duplicate_driver(self, profile_id: str) -> None:
@@ -259,7 +451,7 @@ class MainWindow(QMainWindow):
 
     def _refresh_after_profile_change(self, profile_id: str) -> None:
         self._sync_driver_panel(expand_profile_id=profile_id)
-        self.sidebar.refresh_file_labels()
+        self._refresh_save_state()
 
     def _select_document(self, doc_id: str) -> None:
         if doc_id == self._active_doc_id:
@@ -275,19 +467,51 @@ class MainWindow(QMainWindow):
                 self.sidebar.set_active_document(self._active_doc_id)
                 return
 
+        self._apply_active_document(doc_id, sync_panel=True)
+
+    def _apply_active_document(
+        self,
+        doc_id: str,
+        *,
+        sync_panel: bool = True,
+        expand_profile_id: str | None = None,
+    ) -> None:
         self._active_doc_id = doc_id
         self.sidebar.set_active_document(doc_id)
         document = self._active_document()
-        self._sync_driver_panel()
+        self.driver_panel.setEnabled(document is not None)
+        if sync_panel:
+            self._populate_driver_panel(document, expand_profile_id=expand_profile_id)
         title = document.display_name if document else "No file"
         self.setWindowTitle(f"AMS2 AI Creator v{__version__} — {title}")
+        self._refresh_save_state()
+
+    def _refresh_save_state(self) -> None:
+        has_document = self._active_document() is not None
+        self.save_btn.setEnabled(has_document)
+        self.export_xml_btn.setEnabled(has_document)
+        self.sidebar.refresh_file_labels()
+
+    def _on_document_properties_changed(self) -> None:
+        document = self._active_document()
+        if document:
+            document.mark_dirty()
+            self._refresh_save_state()
+            title = document.display_name
+            self.setWindowTitle(f"AMS2 AI Creator v{__version__} — {title}")
 
     def _on_driver_edited(self) -> None:
         document = self._active_document()
         if document:
             document.mark_dirty()
             self.driver_panel.refresh_titles()
-            self.sidebar.refresh_file_labels()
+            self._refresh_save_state()
+
+    def _show_about(self) -> None:
+        AboutDialog(self).exec()
+
+    def _show_legal(self) -> None:
+        LegalDialog(self).exec()
 
     def closeEvent(self, event) -> None:
         dirty_docs = [doc for doc in self._documents.values() if doc.dirty]

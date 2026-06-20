@@ -7,6 +7,8 @@ import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from ams2_ai.data import normalize_country_code
+from ams2_ai.identity.romanize import romanize_name
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.driver_profile import normalize_document_drivers
@@ -47,12 +49,13 @@ def load_document(path: Path) -> AIDocument:
         raise ValueError(f"Expected root element <{ROOT_TAG}>, got <{root.tag}>")
 
     document = AIDocument(path=path, header_comment=header_comment)
-    document.set_name = document._set_name_from_comment()
+    document.apply_header_meta(path_stem=path.stem)
     for driver_el in root.findall(DRIVER_TAG):
         entry = _parse_driver_element(driver_el)
         document.drivers.append(entry)
 
     document.drivers = normalize_document_drivers(document.drivers)
+    document.invalidate_profiles()
 
     logger.info("Loaded %d driver entries from %s", len(document.drivers), path.name)
     document.mark_clean()
@@ -75,7 +78,11 @@ def _parse_driver_element(element: ET.Element) -> DriverEntry:
         if not text:
             continue
         if tag in TEXT_FIELDS:
-            setattr(entry, tag, text)
+            if tag == "country":
+                value = normalize_country_code(text)
+            else:
+                value = romanize_name(text)
+            setattr(entry, tag, value)
             entry.set_fields.add(tag)
         elif tag in PARAMETER_BY_KEY:
             try:

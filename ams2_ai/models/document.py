@@ -13,6 +13,7 @@ from ams2_ai.models.driver_profile import (
     group_drivers,
     replace_profile_entries,
 )
+from ams2_ai.models.header_meta import HeaderMeta, build_header_comment, parse_header_comment
 
 
 @dataclass
@@ -21,7 +22,20 @@ class AIDocument:
     drivers: list[DriverEntry] = field(default_factory=list)
     header_comment: str = ""
     set_name: str = ""
+    vehicle_class: str = ""
+    custom_class_name: str = ""
+    header_comment_body: str = ""
     dirty: bool = False
+    saved_xml: str | None = field(default=None, repr=False, compare=False)
+    _profiles: list[DriverProfile] | None = field(default=None, repr=False, compare=False)
+
+    def invalidate_profiles(self) -> None:
+        self._profiles = None
+
+    def profiles(self) -> list[DriverProfile]:
+        if self._profiles is None:
+            self._profiles = group_drivers(self.drivers)
+        return self._profiles
 
     @property
     def display_name(self) -> str:
@@ -32,23 +46,54 @@ class AIDocument:
         return filename
 
     def _set_name_from_comment(self) -> str:
-        if not self.header_comment:
-            return ""
-        return self.header_comment.splitlines()[0].strip()
+        meta = parse_header_comment(self.header_comment)
+        return meta.name
+
+    def apply_header_meta(self, *, path_stem: str = "") -> None:
+        """Load structured header fields and infer class from filename when needed."""
+        meta = parse_header_comment(self.header_comment)
+        self.set_name = meta.name
+        self.vehicle_class = meta.vehicle_class or path_stem
+        self.custom_class_name = meta.custom_class_name
+        self.header_comment_body = meta.body
+
+    def header_meta(self) -> HeaderMeta:
+        return HeaderMeta(
+            name=self.set_name.strip(),
+            vehicle_class=self.vehicle_class.strip(),
+            custom_class_name=self.custom_class_name.strip(),
+            body=self.header_comment_body.strip(),
+        )
 
     def sync_header_comment(self) -> None:
-        """Write set_name into the XML header comment."""
-        if self.set_name.strip():
-            self.header_comment = self.set_name.strip()
+        """Write document metadata into the XML header comment."""
+        self.header_comment = build_header_comment(self.header_meta())
+
+    def effective_filename(self) -> str:
+        """Return the export filename for this document."""
+        if self.custom_class_name.strip():
+            filename = self.custom_class_name.strip()
+        elif self.vehicle_class.strip():
+            filename = self.vehicle_class.strip()
+        elif self.path:
+            return self.path.name
+        else:
+            return "custom_ai.xml"
+        if not filename.lower().endswith(".xml"):
+            filename = f"{filename}.xml"
+        return filename
 
     def mark_clean(self) -> None:
         self.dirty = False
 
+    def commit_saved_state(self, xml_content: str) -> None:
+        """Store a validated XML snapshot and clear the dirty flag."""
+        self.saved_xml = xml_content
+        self.mark_clean()
+
     def mark_dirty(self) -> None:
         self.dirty = True
-
-    def profiles(self) -> list[DriverProfile]:
-        return group_drivers(self.drivers)
+        self.invalidate_profiles()
 
     def get_profile(self, profile_id: str) -> DriverProfile | None:
         for profile in self.profiles():

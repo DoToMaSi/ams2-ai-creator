@@ -41,6 +41,20 @@ def test_setup_and_reliability_are_independent_defaults():
     assert result["vehicle_reliability"] == 0.5
 
 
+def test_smart_derivation_skips_optional_groups_when_disabled():
+    from ams2_ai.models.driver import DriverEntry
+    from ams2_ai.smart.derivation import apply_smart_derivation
+
+    driver = DriverEntry(mode="smart")
+    driver.set_ui_value("race_skill", 85)
+    driver.set_ui_value("aggression", 90)
+    apply_smart_derivation(driver)
+
+    assert "weight_scalar" not in driver.set_fields
+    assert "setup_downforce" not in driver.set_fields
+    assert "vehicle_reliability" in driver.set_fields
+
+
 def test_aggressive_low_skill_penalizes_mistakes():
     calm_skilled = calculate_smart_ai(0.90, 0.20)
     hot_rookie = calculate_smart_ai(0.20, 0.90)

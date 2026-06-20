@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from PySide6.QtCore import Qt, Signal
+from PySide6.QtCore import QSize, Qt, Signal
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (
     QButtonGroup,
     QComboBox,
@@ -11,21 +12,52 @@ from PySide6.QtWidgets import (
     QHBoxLayout,
     QLabel,
     QLineEdit,
+    QMessageBox,
     QPushButton,
     QRadioButton,
+    QSizePolicy,
     QTabWidget,
     QToolButton,
     QVBoxLayout,
     QWidget,
 )
 
-from ams2_ai.data import load_countries, load_tracks
+from ams2_ai.data import (
+    country_display_label,
+    flag_icon_path,
+    load_country_codes,
+    load_tracks,
+    normalize_country_code,
+    parse_country_selection,
+    track_display_label,
+    track_tab_label,
+)
+from ams2_ai.identity.romanize import romanize_name
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.smart.derivation import apply_smart_derivation
 from ams2_ai.smart.presets import PRESET_NAMES, apply_preset
 from ams2_ai.ui.dialogs import SingleTrackPickerDialog
 from ams2_ai.ui.parameter_panel import ParameterPanel
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
+
+MODE_HELP_HTML = (
+    "<b>Smart</b><br>"
+    "Race Skill and Aggression are your main controls. Other personality parameters "
+    "are calculated automatically from them using AMS2-style formulas.<br><br>"
+    "<b>Custom</b><br>"
+    "Every parameter is editable independently. Nothing is auto-calculated — "
+    "you set each slider yourself."
+)
+
+MODE_HELP_PLAIN = (
+    "Smart\n"
+    "Race Skill and Aggression are your main controls. Other personality parameters "
+    "are calculated automatically from them using AMS2-style formulas.\n\n"
+    "Custom\n"
+    "Every parameter is editable independently. Nothing is auto-calculated — "
+    "you set each slider yourself."
+)
 
 
 class DriverEditor(QWidget):
@@ -39,10 +71,20 @@ class DriverEditor(QWidget):
         self._track_panels: dict[str, ParameterPanel] = {}
         self._track_tabs: dict[str, QWidget] = {}
 
+        self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
+
         root = QVBoxLayout(self)
+        root.setContentsMargins(0, 0, 0, 0)
+        root.setSpacing(SPACING_SECTION)
 
         identity_box = QGroupBox("Identity")
         identity_form = QFormLayout(identity_box)
+        identity_form.setContentsMargins(
+            SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION
+        )
+        identity_form.setHorizontalSpacing(SPACING_SECTION)
+        identity_form.setVerticalSpacing(SPACING_INNER)
+        identity_form.setLabelAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
         self.livery_edit = QLineEdit()
         self.livery_edit.textChanged.connect(self._on_identity_changed)
         identity_form.addRow("Livery Name:", self.livery_edit)
@@ -53,17 +95,27 @@ class DriverEditor(QWidget):
 
         self.country_combo = QComboBox()
         self.country_combo.setEditable(True)
-        self.country_combo.addItems(load_countries())
-        self.country_combo.currentTextChanged.connect(self._on_identity_changed)
-        identity_form.addRow("Country:", self.country_combo)
+        self.country_combo.setIconSize(QSize(24, 16))
+        self._populate_country_combo()
+        self.country_combo.currentIndexChanged.connect(self._on_country_index_changed)
+        line_edit = self.country_combo.lineEdit()
+        if line_edit is not None:
+            line_edit.textChanged.connect(self._on_country_text_edited)
+        identity_form.addRow("Country Name (code):", self.country_combo)
         root.addWidget(identity_box)
 
         self.tabs = QTabWidget()
 
         self.global_tab = QWidget()
         global_layout = QVBoxLayout(self.global_tab)
+        global_layout.setContentsMargins(
+            SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION
+        )
+        global_layout.setSpacing(SPACING_SECTION)
 
         mode_row = QHBoxLayout()
+        mode_row.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
+        mode_row.setSpacing(SPACING_INNER)
         mode_row.addWidget(QLabel("Mode:"))
         self.smart_radio = QRadioButton("Smart")
         self.custom_radio = QRadioButton("Custom")
@@ -73,13 +125,23 @@ class DriverEditor(QWidget):
         self.mode_group.addButton(self.custom_radio)
         mode_row.addWidget(self.smart_radio)
         mode_row.addWidget(self.custom_radio)
+        mode_help = QToolButton()
+        mode_help.setObjectName("helpButton")
+        mode_help.setText("?")
+        mode_help.setToolTip(MODE_HELP_HTML)
+        mode_help.setAutoRaise(True)
+        mode_help.clicked.connect(self._show_mode_help)
+        mode_row.addWidget(mode_help)
         mode_row.addStretch()
         global_layout.addLayout(mode_row)
 
         preset_row = QHBoxLayout()
+        preset_row.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
+        preset_row.setSpacing(SPACING_INNER)
         preset_row.addWidget(QLabel("Presets:"))
         for name in PRESET_NAMES:
             btn = QPushButton(name)
+            btn.setObjectName("secondaryButton")
             btn.clicked.connect(lambda _checked=False, n=name: self._apply_preset(n))
             preset_row.addWidget(btn)
         preset_row.addStretch()
@@ -102,6 +164,51 @@ class DriverEditor(QWidget):
         self.smart_radio.toggled.connect(self._on_mode_changed)
         self.custom_radio.toggled.connect(self._on_mode_changed)
 
+    def _show_mode_help(self) -> None:
+        QMessageBox.information(self, "Smart vs Custom Mode", MODE_HELP_PLAIN)
+
+    def _populate_country_combo(self) -> None:
+        self.country_combo.blockSignals(True)
+        self.country_combo.clear()
+        for code in load_country_codes():
+            icon_path = flag_icon_path(code)
+            icon = QIcon(str(icon_path)) if icon_path else QIcon()
+            self.country_combo.addItem(icon, country_display_label(code), code)
+        self.country_combo.blockSignals(False)
+
+    def _on_country_index_changed(self, _index: int) -> None:
+        if self._loading:
+            return
+        self._on_identity_changed()
+
+    def _on_country_text_edited(self, _text: str) -> None:
+        if self._loading:
+            return
+        self._on_identity_changed()
+
+    def _set_country_code(self, code: str) -> None:
+        normalized = normalize_country_code(code) if code.strip() else ""
+        self.country_combo.blockSignals(True)
+        if not normalized:
+            self.country_combo.setCurrentIndex(-1)
+            self.country_combo.setEditText("")
+        else:
+            index = self.country_combo.findData(normalized)
+            if index >= 0:
+                self.country_combo.setCurrentIndex(index)
+            else:
+                self.country_combo.setCurrentIndex(-1)
+                self.country_combo.setEditText(country_display_label(normalized))
+        self.country_combo.blockSignals(False)
+
+    def _current_country_code(self) -> str:
+        index = self.country_combo.currentIndex()
+        if index >= 0:
+            data = self.country_combo.itemData(index)
+            if data:
+                return normalize_country_code(str(data))
+        return parse_country_selection(self.country_combo.currentText())
+
     def set_profile(
         self,
         profile: DriverProfile | None,
@@ -120,8 +227,8 @@ class DriverEditor(QWidget):
             return
 
         self.livery_edit.setText(profile.base.livery_name)
-        self.name_edit.setText(profile.base.name)
-        self.country_combo.setCurrentText(profile.base.country)
+        self.name_edit.setText(romanize_name(profile.base.name))
+        self._set_country_code(profile.base.country)
 
         if profile.base.mode == "smart":
             self.smart_radio.setChecked(True)
@@ -150,9 +257,14 @@ class DriverEditor(QWidget):
     def _create_track_tab(self, override) -> None:
         tab = QWidget()
         tab_layout = QVBoxLayout(tab)
+        tab_layout.setContentsMargins(
+            SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION
+        )
+        tab_layout.setSpacing(SPACING_SECTION)
 
         header = QHBoxLayout()
-        header.addWidget(QLabel(f"Track: {override.tracks}"))
+        header.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
+        header.addWidget(QLabel(f"Track: {track_display_label(override.tracks)}"))
         header.addStretch()
         remove_btn = QPushButton("Remove track")
         remove_btn.clicked.connect(
@@ -168,7 +280,7 @@ class DriverEditor(QWidget):
 
         self._track_panels[override.entry_id] = panel
         self._track_tabs[override.entry_id] = tab
-        self.tabs.addTab(tab, override.tracks)
+        self.tabs.addTab(tab, track_tab_label(override.tracks))
 
     def _add_track_tab(self) -> None:
         if not self._profile:
@@ -201,8 +313,13 @@ class DriverEditor(QWidget):
             return
         base = self._profile.base
         base.livery_name = self.livery_edit.text()
-        base.name = self.name_edit.text()
-        base.country = self.country_combo.currentText().strip().upper()
+        name = romanize_name(self.name_edit.text())
+        if name != self.name_edit.text():
+            self.name_edit.blockSignals(True)
+            self.name_edit.setText(name)
+            self.name_edit.blockSignals(False)
+        base.name = name
+        base.country = self._current_country_code()
         if base.name:
             base.set_fields.add("name")
         else:

@@ -13,10 +13,20 @@ logger = logging.getLogger("ams2_ai.xml.writer")
 
 ROOT_TAG = "custom_ai_drivers"
 DRIVER_TAG = "driver"
+INDENT = "\t"
 
 
-def save_document(document: AIDocument, path: Path) -> None:
-    logger.info("Saving document: %s (%d drivers)", path, len(document.drivers))
+def _format_header_comment(comment: str) -> str:
+    text = comment.strip()
+    if not text:
+        return ""
+    if "\n" in text:
+        return f"<!--\n{text}\n-->"
+    return f"<!--{text}-->"
+
+
+def serialize_document(document: AIDocument) -> str:
+    """Build valid AI XML text in memory without writing a file."""
     root = ET.Element(ROOT_TAG)
 
     for driver in document.drivers:
@@ -40,13 +50,18 @@ def save_document(document: AIDocument, path: Path) -> None:
             child = ET.SubElement(driver_el, key)
             child.text = format_xml_value(key, driver.values[key])
 
-    xml_body = ET.tostring(root, encoding="unicode")
+    ET.indent(root, space=INDENT)
+
     lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     if document.header_comment:
-        lines.append(f"<!--{document.header_comment}-->")
-    lines.append(xml_body)
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        lines.append(_format_header_comment(document.header_comment))
+    lines.append(ET.tostring(root, encoding="unicode"))
+    return "\n".join(lines) + "\n"
+
+
+def save_document(document: AIDocument, path: Path) -> None:
+    logger.info("Saving document: %s (%d drivers)", path, len(document.drivers))
+    path.write_text(serialize_document(document), encoding="utf-8")
     document.path = path
     document.sync_header_comment()
-    document.mark_clean()
     logger.info("Saved document: %s", path)

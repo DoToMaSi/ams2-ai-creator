@@ -6,7 +6,7 @@ import random
 from dataclasses import dataclass
 
 from ams2_ai.models.driver import DriverEntry
-from ams2_ai.models.parameters import NUMERIC_KEYS, clamp
+from ams2_ai.models.parameters import NUMERIC_KEYS, OPTIONAL_PARAMETER_KEYS, clamp
 from ams2_ai.smart.derivation import apply_smart_derivation
 
 PRESET_NAMES = ["Junior", "Amateur", "Pro-Am", "Pro", "Elite", "Master"]
@@ -60,15 +60,8 @@ def apply_preset(driver: DriverEntry, preset_name: str) -> None:
             driver.set_ui_value(key, skill)
         elif key == "aggression":
             driver.set_ui_value(key, aggression)
-        elif key in {"weight_scalar", "power_scalar", "drag_scalar"}:
-            if preset_name == "Junior":
-                driver.set_ui_value(key, _rand_int(97, 103))
-            else:
-                driver.set_ui_value(key, _rand_int(98, 102))
-        elif key == "setup_downforce":
-            driver.set_ui_value(key, _rand_int(40, 60))
-        elif key == "setup_downforce_randomness":
-            driver.set_ui_value(key, _rand_int(10, 35))
+        elif key in OPTIONAL_PARAMETER_KEYS:
+            continue
         elif key == "vehicle_reliability":
             rel = clamp(center_skill + random.randint(-10, 10), 40, 100)
             driver.set_ui_value(key, rel)

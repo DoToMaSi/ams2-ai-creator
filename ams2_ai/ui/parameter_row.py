@@ -3,9 +3,31 @@
 from __future__ import annotations
 
 from PySide6.QtCore import Qt, Signal
-from PySide6.QtWidgets import QCheckBox, QHBoxLayout, QLabel, QSlider, QSpinBox, QWidget
+from PySide6.QtWidgets import (
+    QCheckBox,
+    QHBoxLayout,
+    QLabel,
+    QMessageBox,
+    QSlider,
+    QSpinBox,
+    QToolButton,
+    QWidget,
+)
 
 from ams2_ai.models.parameters import ParameterDef
+
+
+def param_help_html(param: ParameterDef) -> str:
+    return (
+        f"<b>{param.label}</b><br>"
+        f"{param.description}<br><br>"
+        f"<b>Low:</b> {param.low_hint}<br>"
+        f"<b>High:</b> {param.high_hint}"
+    )
+
+
+def param_help_plain(param: ParameterDef) -> str:
+    return f"{param.description}\n\nLow: {param.low_hint}\nHigh: {param.high_hint}"
 
 
 class ParameterRow(QWidget):
@@ -15,30 +37,48 @@ class ParameterRow(QWidget):
         super().__init__(parent)
         self.param = param
         self._blocked = False
+        self.setObjectName("parameterRow")
+        self.setProperty("editable", True)
+        self.setMinimumHeight(32)
 
         layout = QHBoxLayout(self)
-        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setContentsMargins(0, 2, 0, 2)
+        layout.setSpacing(8)
 
-        label = QLabel(param.label)
-        label.setMinimumWidth(180)
-        label.setToolTip(param.tooltip)
-        layout.addWidget(label)
+        self.label = QLabel(param.label)
+        self.label.setMinimumWidth(200)
+        layout.addWidget(self.label)
 
         self.slider = QSlider()
         self.slider.setOrientation(Qt.Orientation.Horizontal)
         self.slider.setMinimum(param.ui_min)
         self.slider.setMaximum(param.ui_max)
-        self.slider.setToolTip(param.tooltip)
         layout.addWidget(self.slider, stretch=1)
 
         self.spinbox = QSpinBox()
         self.spinbox.setMinimum(param.ui_min)
         self.spinbox.setMaximum(param.ui_max)
-        self.spinbox.setToolTip(param.tooltip)
+        self.spinbox.setFixedWidth(88)
+        self.spinbox.setObjectName("paramSpinBox")
         layout.addWidget(self.spinbox)
+
+        self._help_btn = self._make_help_button(param)
+        layout.addWidget(self._help_btn)
 
         self.slider.valueChanged.connect(self._on_slider_changed)
         self.spinbox.valueChanged.connect(self._on_spinbox_changed)
+
+    def _make_help_button(self, param: ParameterDef) -> QToolButton:
+        btn = QToolButton()
+        btn.setObjectName("helpButton")
+        btn.setText("?")
+        btn.setToolTip(param_help_html(param))
+        btn.setAutoRaise(True)
+        btn.clicked.connect(lambda: self._show_help_dialog(param))
+        return btn
+
+    def _show_help_dialog(self, param: ParameterDef) -> None:
+        QMessageBox.information(self, param.label, param_help_plain(param))
 
     def _on_slider_changed(self, value: int) -> None:
         if self._blocked:
@@ -68,6 +108,9 @@ class ParameterRow(QWidget):
     def set_enabled_editable(self, enabled: bool) -> None:
         self.slider.setEnabled(enabled)
         self.spinbox.setEnabled(enabled)
+        self.setProperty("editable", enabled)
+        self.style().unpolish(self)
+        self.style().polish(self)
 
 
 class OverrideParameterRow(ParameterRow):

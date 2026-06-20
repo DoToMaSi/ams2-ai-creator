@@ -3,14 +3,58 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
+from dataclasses import dataclass
 from functools import lru_cache
 from importlib import resources
 from pathlib import Path
 
 
+@dataclass(frozen=True)
+class CountryMeta:
+    code: str
+    name: str
+    iso2: str
+    locale: str
+
+
+@dataclass(frozen=True)
+class TrackMeta:
+    code: str
+    venue: str
+    layout: str
+
+
+# Non-NATO legacy codes seen in older XML or informal usage → STANAG 1059 trigrams.
+LEGACY_COUNTRY_ALIASES: dict[str, str] = {
+    "GER": "DEU",
+    "UK": "GBR",
+    "POR": "PRT",
+    "MON": "MCO",
+    "UAE": "ARE",
+}
+
+
+def normalize_country_code(code: str) -> str:
+    """Return the NATO STANAG 1059 trigram for a country code."""
+    normalized = code.strip().upper()
+    return LEGACY_COUNTRY_ALIASES.get(normalized, normalized)
+
+
 def _data_file(name: str) -> Path:
-    """Resolve a bundled JSON file in dev and PyInstaller builds."""
+    """Resolve a bundled file under ams2_ai/data in dev and PyInstaller builds."""
+    if getattr(sys, "frozen", False):
+        frozen_path = Path(sys._MEIPASS) / "ams2_ai" / "data" / name
+        if frozen_path.is_file():
+            return frozen_path
+
+    package_path = resources.files("ams2_ai.data").joinpath(name)
+    return Path(package_path)
+
+
+def _flag_file(iso2: str) -> Path:
+    name = f"flags/{iso2.lower()}.png"
     if getattr(sys, "frozen", False):
         frozen_path = Path(sys._MEIPASS) / "ams2_ai" / "data" / name
         if frozen_path.is_file():
@@ -35,5 +79,114 @@ def load_tracks() -> list[str]:
 
 
 @lru_cache(maxsize=1)
+def _track_meta_by_code() -> dict[str, TrackMeta]:
+    raw = _read_json("track_meta.json")
+    return {
+        code: TrackMeta(code=code, venue=entry["venue"], layout=entry["layout"])
+        for code, entry in raw.items()
+    }
+
+
+def get_track_meta(code: str) -> TrackMeta | None:
+    stripped = code.strip()
+    if not stripped:
+        return None
+    return _track_meta_by_code().get(stripped)
+
+
+def track_tab_label(code: str) -> str:
+    """Short label for tabs: 'Venue Layout'."""
+    meta = get_track_meta(code)
+    if meta:
+        return f"{meta.venue} {meta.layout}"
+    return code
+
+
+def track_display_label(code: str) -> str:
+    """Format as 'Venue Layout (code)' for pickers and lists."""
+    meta = get_track_meta(code)
+    if meta:
+        return f"{meta.venue} {meta.layout} ({meta.code})"
+    return code
+
+
+def track_search_blob(code: str) -> str:
+    """Lowercase text used for case-insensitive track search."""
+    meta = get_track_meta(code)
+    if meta:
+        parts = (meta.venue, meta.layout, meta.code, track_display_label(code))
+        return " ".join(parts).casefold()
+    return code.casefold()
+
+
+def group_tracks_by_venue(codes: list[str]) -> dict[str, list[str]]:
+    groups: dict[str, list[str]] = {}
+    for code in codes:
+        meta = get_track_meta(code)
+        venue = meta.venue if meta else code
+        groups.setdefault(venue, []).append(code)
+    for venue in groups:
+        groups[venue].sort(key=lambda c: track_display_label(c).casefold())
+    return dict(sorted(groups.items(), key=lambda item: item[0].casefold()))
+
+
+@lru_cache(maxsize=1)
+def _load_country_meta_list() -> list[CountryMeta]:
+    raw = _read_json("country_meta.json")
+    return [CountryMeta(**entry) for entry in raw]
+
+
+@lru_cache(maxsize=1)
+def _country_meta_by_code() -> dict[str, CountryMeta]:
+    return {entry.code: entry for entry in _load_country_meta_list()}
+
+
+@lru_cache(maxsize=1)
+def load_country_codes() -> list[str]:
+    return [entry.code for entry in _load_country_meta_list()]
+
+
+@lru_cache(maxsize=1)
 def load_countries() -> list[str]:
-    return _read_json("countries.json")
+    """Backward-compatible alias for load_country_codes()."""
+    return load_country_codes()
+
+
+def get_country_meta(code: str) -> CountryMeta | None:
+    normalized = normalize_country_code(code)
+    if not normalized:
+        return None
+    return _country_meta_by_code().get(normalized)
+
+
+def country_display_label(code: str) -> str:
+    """Format as 'Country Name (CODE)' for UI lists."""
+    normalized = normalize_country_code(code)
+    if not normalized:
+        return ""
+    meta = get_country_meta(normalized)
+    if meta:
+        return f"{meta.name} ({meta.code})"
+    return f"{normalized} ({normalized})"
+
+
+_COUNTRY_CODE_SUFFIX = re.compile(r"\(([A-Za-z]{3})\)\s*$")
+
+
+def parse_country_selection(text: str) -> str:
+    """Extract a NATO country code from combo text or raw input."""
+    stripped = text.strip()
+    if not stripped:
+        return ""
+    match = _COUNTRY_CODE_SUFFIX.search(stripped)
+    if match:
+        return normalize_country_code(match.group(1))
+    return normalize_country_code(stripped)
+
+
+def flag_icon_path(code: str) -> Path | None:
+    meta = get_country_meta(code)
+    if meta is None:
+        return None
+    path = _flag_file(meta.iso2)
+    return path if path.is_file() else None
