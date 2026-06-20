@@ -41,15 +41,17 @@ class ParameterRow(QWidget):
         super().__init__(parent)
         self.param = param
         self._blocked = False
+        self.setObjectName("parameterRow")
+        self.setProperty("editable", True)
         self.setMinimumHeight(32)
 
         layout = QHBoxLayout(self)
         layout.setContentsMargins(0, 2, 0, 2)
         layout.setSpacing(8)
 
-        label = QLabel(param.label)
-        label.setMinimumWidth(200)
-        layout.addWidget(label)
+        self.label = QLabel(param.label)
+        self.label.setMinimumWidth(200)
+        layout.addWidget(self.label)
 
         self.slider = QSlider()
         self.slider.setOrientation(Qt.Orientation.Horizontal)
@@ -110,6 +112,9 @@ class ParameterRow(QWidget):
     def set_enabled_editable(self, enabled: bool) -> None:
         self.slider.setEnabled(enabled)
         self.spinbox.setEnabled(enabled)
+        self.setProperty("editable", enabled)
+        self.style().unpolish(self)
+        self.style().polish(self)
 
 
 class OverrideParameterRow(ParameterRow):

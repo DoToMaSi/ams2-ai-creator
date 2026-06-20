@@ -185,6 +185,11 @@ QSlider::groove:horizontal {
     border-radius: 3px;
 }
 
+QSlider::groove:horizontal:disabled {
+    background: #14181F;
+    border-color: #232936;
+}
+
 QSlider::handle:horizontal {
     background: #E10600;
     border: 1px solid #FF2A1A;
@@ -194,13 +199,33 @@ QSlider::handle:horizontal {
 }
 
 QSlider::handle:horizontal:disabled {
-    background: #2A3140;
+    background: #3A4255;
     border-color: #2A3140;
 }
 
 QSlider::sub-page:horizontal {
     background: #E10600;
     border-radius: 3px;
+}
+
+QSlider::sub-page:horizontal:disabled {
+    background: #3A4255;
+    border-radius: 3px;
+}
+
+QSlider::add-page:horizontal:disabled {
+    background: #14181F;
+    border-radius: 3px;
+}
+
+QWidget#parameterRow[editable="false"] QLabel {
+    color: #8B95A8;
+}
+
+QSpinBox#paramSpinBox:disabled {
+    background-color: #14181F;
+    color: #8B95A8;
+    border-color: #232936;
 }
 
 QListWidget, QTreeWidget {
