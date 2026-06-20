@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from dataclasses import dataclass
 from functools import lru_cache
@@ -13,6 +14,7 @@ from pathlib import Path
 @dataclass(frozen=True)
 class CountryMeta:
     code: str
+    name: str
     iso2: str
     locale: str
 
@@ -96,6 +98,31 @@ def get_country_meta(code: str) -> CountryMeta | None:
     if not normalized:
         return None
     return _country_meta_by_code().get(normalized)
+
+
+def country_display_label(code: str) -> str:
+    """Format as 'Country Name (CODE)' for UI lists."""
+    normalized = normalize_country_code(code)
+    if not normalized:
+        return ""
+    meta = get_country_meta(normalized)
+    if meta:
+        return f"{meta.name} ({meta.code})"
+    return f"{normalized} ({normalized})"
+
+
+_COUNTRY_CODE_SUFFIX = re.compile(r"\(([A-Za-z]{3})\)\s*$")
+
+
+def parse_country_selection(text: str) -> str:
+    """Extract a NATO country code from combo text or raw input."""
+    stripped = text.strip()
+    if not stripped:
+        return ""
+    match = _COUNTRY_CODE_SUFFIX.search(stripped)
+    if match:
+        return normalize_country_code(match.group(1))
+    return normalize_country_code(stripped)
 
 
 def flag_icon_path(code: str) -> Path | None:

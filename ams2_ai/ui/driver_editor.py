@@ -21,7 +21,14 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ams2_ai.data import flag_icon_path, load_country_codes, load_tracks, normalize_country_code
+from ams2_ai.data import (
+    country_display_label,
+    flag_icon_path,
+    load_country_codes,
+    load_tracks,
+    normalize_country_code,
+    parse_country_selection,
+)
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.smart.derivation import apply_smart_derivation
@@ -59,8 +66,11 @@ class DriverEditor(QWidget):
         self.country_combo.setEditable(True)
         self.country_combo.setIconSize(QSize(24, 16))
         self._populate_country_combo()
-        self.country_combo.currentTextChanged.connect(self._on_country_changed)
-        identity_form.addRow("Country:", self.country_combo)
+        self.country_combo.currentIndexChanged.connect(self._on_country_index_changed)
+        line_edit = self.country_combo.lineEdit()
+        if line_edit is not None:
+            line_edit.textChanged.connect(self._on_country_text_edited)
+        identity_form.addRow("Country Name (code):", self.country_combo)
         root.addWidget(identity_box)
 
         self.tabs = QTabWidget()
@@ -109,24 +119,46 @@ class DriverEditor(QWidget):
         self.custom_radio.toggled.connect(self._on_mode_changed)
 
     def _populate_country_combo(self) -> None:
+        self.country_combo.blockSignals(True)
         self.country_combo.clear()
         for code in load_country_codes():
             icon_path = flag_icon_path(code)
             icon = QIcon(str(icon_path)) if icon_path else QIcon()
-            self.country_combo.addItem(icon, code)
+            self.country_combo.addItem(icon, country_display_label(code), code)
+        self.country_combo.blockSignals(False)
 
-    def _on_country_changed(self, text: str) -> None:
-        self._update_country_icon(text)
+    def _on_country_index_changed(self, _index: int) -> None:
+        if self._loading:
+            return
         self._on_identity_changed()
 
-    def _update_country_icon(self, text: str) -> None:
-        code = normalize_country_code(text)
-        index = self.country_combo.currentIndex()
-        if index < 0:
+    def _on_country_text_edited(self, _text: str) -> None:
+        if self._loading:
             return
-        icon_path = flag_icon_path(code)
-        icon = QIcon(str(icon_path)) if icon_path else QIcon()
-        self.country_combo.setItemIcon(index, icon)
+        self._on_identity_changed()
+
+    def _set_country_code(self, code: str) -> None:
+        normalized = normalize_country_code(code) if code.strip() else ""
+        self.country_combo.blockSignals(True)
+        if not normalized:
+            self.country_combo.setCurrentIndex(-1)
+            self.country_combo.setEditText("")
+        else:
+            index = self.country_combo.findData(normalized)
+            if index >= 0:
+                self.country_combo.setCurrentIndex(index)
+            else:
+                self.country_combo.setCurrentIndex(-1)
+                self.country_combo.setEditText(country_display_label(normalized))
+        self.country_combo.blockSignals(False)
+
+    def _current_country_code(self) -> str:
+        index = self.country_combo.currentIndex()
+        if index >= 0:
+            data = self.country_combo.itemData(index)
+            if data:
+                return normalize_country_code(str(data))
+        return parse_country_selection(self.country_combo.currentText())
 
     def set_profile(
         self,
@@ -147,7 +179,7 @@ class DriverEditor(QWidget):
 
         self.livery_edit.setText(profile.base.livery_name)
         self.name_edit.setText(profile.base.name)
-        self.country_combo.setCurrentText(profile.base.country)
+        self._set_country_code(profile.base.country)
 
         if profile.base.mode == "smart":
             self.smart_radio.setChecked(True)
@@ -229,7 +261,7 @@ class DriverEditor(QWidget):
         base = self._profile.base
         base.livery_name = self.livery_edit.text()
         base.name = self.name_edit.text()
-        base.country = normalize_country_code(self.country_combo.currentText())
+        base.country = self._current_country_code()
         if base.name:
             base.set_fields.add("name")
         else:

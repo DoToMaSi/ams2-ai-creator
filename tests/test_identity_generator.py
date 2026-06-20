@@ -1,10 +1,12 @@
 import random
 
 from ams2_ai.data import (
+    country_display_label,
     flag_icon_path,
     get_country_meta,
     load_country_codes,
     normalize_country_code,
+    parse_country_selection,
 )
 from ams2_ai.identity.generator import randomize_new_driver
 from ams2_ai.models.driver import DriverEntry
@@ -41,13 +43,22 @@ def test_every_country_has_meta_and_flag():
         meta = get_country_meta(code)
         assert meta is not None, code
         assert meta.code == code
+        assert meta.name.strip()
         assert len(meta.iso2) == 2
         assert meta.locale
+        assert country_display_label(code).endswith(f"({code})")
         flag = flag_icon_path(code)
         assert flag is not None, code
         assert flag.is_file(), code
         seen_iso2.add(meta.iso2)
     assert len(seen_iso2) == 34
+
+
+def test_country_display_and_parse():
+    assert country_display_label("BRA") == "Brazil (BRA)"
+    assert parse_country_selection("Brazil (BRA)") == "BRA"
+    assert parse_country_selection("GER") == "DEU"
+    assert parse_country_selection("United Kingdom (GBR)") == "GBR"
 
 
 def test_randomize_new_driver_sets_identity_and_skills():
