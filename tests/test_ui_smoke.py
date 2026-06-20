@@ -15,5 +15,5 @@ def qapp():
 def test_main_window_smoke(qapp):
     window = MainWindow()
     assert window.sidebar is not None
-    assert window.editor is not None
+    assert window.driver_panel is not None
     window.close()

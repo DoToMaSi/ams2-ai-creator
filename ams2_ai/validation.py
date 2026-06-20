@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from ams2_ai.models.document import AIDocument
-from ams2_ai.models.parameters import PARAMETER_BY_KEY, validate_country
+from ams2_ai.models.parameters import NUMERIC_KEYS, PARAMETER_BY_KEY, validate_country
 
 
 def validate_document(document: AIDocument) -> list[str]:
@@ -18,7 +18,9 @@ def validate_document(document: AIDocument) -> list[str]:
         if driver.country and not validate_country(driver.country):
             errors.append(f"{label}: country must be a 3-letter code.")
         if driver.is_track_override and not driver.tracks.strip():
-            errors.append(f"{label}: track override requires at least one track.")
+            errors.append(f"{label}: track override requires a track name.")
+        if driver.is_track_override and not any(key in driver.set_fields for key in NUMERIC_KEYS):
+            continue
 
         for key in driver.set_fields:
             if key not in PARAMETER_BY_KEY or key not in driver.values:
