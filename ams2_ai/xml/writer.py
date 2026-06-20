@@ -13,6 +13,16 @@ logger = logging.getLogger("ams2_ai.xml.writer")
 
 ROOT_TAG = "custom_ai_drivers"
 DRIVER_TAG = "driver"
+INDENT = "\t"
+
+
+def _format_header_comment(comment: str) -> str:
+    text = comment.strip()
+    if not text:
+        return ""
+    if "\n" in text:
+        return f"<!--\n{text}\n-->"
+    return f"<!--{text}-->"
 
 
 def serialize_document(document: AIDocument) -> str:
@@ -40,11 +50,12 @@ def serialize_document(document: AIDocument) -> str:
             child = ET.SubElement(driver_el, key)
             child.text = format_xml_value(key, driver.values[key])
 
-    xml_body = ET.tostring(root, encoding="unicode")
+    ET.indent(root, space=INDENT)
+
     lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     if document.header_comment:
-        lines.append(f"<!--{document.header_comment}-->")
-    lines.append(xml_body)
+        lines.append(_format_header_comment(document.header_comment))
+    lines.append(ET.tostring(root, encoding="unicode"))
     return "\n".join(lines) + "\n"
 
 

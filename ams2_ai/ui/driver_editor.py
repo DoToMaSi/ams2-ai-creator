@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
     QLineEdit,
     QPushButton,
     QRadioButton,
+    QMessageBox,
     QSizePolicy,
     QTabWidget,
     QToolButton,
@@ -40,6 +41,24 @@ from ams2_ai.ui.dialogs import SingleTrackPickerDialog
 from ams2_ai.ui.parameter_panel import ParameterPanel
 from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
 
+MODE_HELP_HTML = (
+    "<b>Smart</b><br>"
+    "Race Skill and Aggression are your main controls. Other personality parameters "
+    "are calculated automatically from them using AMS2-style formulas.<br><br>"
+    "<b>Custom</b><br>"
+    "Every parameter is editable independently. Nothing is auto-calculated — "
+    "you set each slider yourself."
+)
+
+MODE_HELP_PLAIN = (
+    "Smart\n"
+    "Race Skill and Aggression are your main controls. Other personality parameters "
+    "are calculated automatically from them using AMS2-style formulas.\n\n"
+    "Custom\n"
+    "Every parameter is editable independently. Nothing is auto-calculated — "
+    "you set each slider yourself."
+)
+
 
 class DriverEditor(QWidget):
     driverChanged = Signal()
@@ -60,7 +79,9 @@ class DriverEditor(QWidget):
 
         identity_box = QGroupBox("Identity")
         identity_form = QFormLayout(identity_box)
-        identity_form.setContentsMargins(SPACING_INNER, SPACING_INNER, SPACING_INNER, SPACING_INNER)
+        identity_form.setContentsMargins(
+            SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION
+        )
         identity_form.setHorizontalSpacing(SPACING_SECTION)
         identity_form.setVerticalSpacing(SPACING_INNER)
         identity_form.setLabelAlignment(
@@ -89,9 +110,14 @@ class DriverEditor(QWidget):
 
         self.global_tab = QWidget()
         global_layout = QVBoxLayout(self.global_tab)
-        global_layout.setContentsMargins(0, 0, 0, 0)
+        global_layout.setContentsMargins(
+            SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION
+        )
+        global_layout.setSpacing(SPACING_SECTION)
 
         mode_row = QHBoxLayout()
+        mode_row.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
+        mode_row.setSpacing(SPACING_INNER)
         mode_row.addWidget(QLabel("Mode:"))
         self.smart_radio = QRadioButton("Smart")
         self.custom_radio = QRadioButton("Custom")
@@ -101,10 +127,18 @@ class DriverEditor(QWidget):
         self.mode_group.addButton(self.custom_radio)
         mode_row.addWidget(self.smart_radio)
         mode_row.addWidget(self.custom_radio)
+        mode_help = QToolButton()
+        mode_help.setObjectName("helpButton")
+        mode_help.setText("?")
+        mode_help.setToolTip(MODE_HELP_HTML)
+        mode_help.setAutoRaise(True)
+        mode_help.clicked.connect(self._show_mode_help)
+        mode_row.addWidget(mode_help)
         mode_row.addStretch()
         global_layout.addLayout(mode_row)
 
         preset_row = QHBoxLayout()
+        preset_row.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
         preset_row.setSpacing(SPACING_INNER)
         preset_row.addWidget(QLabel("Presets:"))
         for name in PRESET_NAMES:
@@ -131,6 +165,9 @@ class DriverEditor(QWidget):
 
         self.smart_radio.toggled.connect(self._on_mode_changed)
         self.custom_radio.toggled.connect(self._on_mode_changed)
+
+    def _show_mode_help(self) -> None:
+        QMessageBox.information(self, "Smart vs Custom Mode", MODE_HELP_PLAIN)
 
     def _populate_country_combo(self) -> None:
         self.country_combo.blockSignals(True)
@@ -222,9 +259,13 @@ class DriverEditor(QWidget):
     def _create_track_tab(self, override) -> None:
         tab = QWidget()
         tab_layout = QVBoxLayout(tab)
-        tab_layout.setContentsMargins(0, 0, 0, 0)
+        tab_layout.setContentsMargins(
+            SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION
+        )
+        tab_layout.setSpacing(SPACING_SECTION)
 
         header = QHBoxLayout()
+        header.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
         header.addWidget(QLabel(f"Track: {track_display_label(override.tracks)}"))
         header.addStretch()
         remove_btn = QPushButton("Remove track")

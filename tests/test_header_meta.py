@@ -38,6 +38,21 @@ def test_build_header_preserves_body():
     assert meta.name == "SEX"
     assert meta.vehicle_class == "F-V8_Gen1"
     assert meta.body == "Notes line"
+    assert "Created with the AMS2 AI Tool by RockettSally" in document.header_comment
+
+
+def test_build_header_includes_tool_attribution():
+    document = AIDocument(
+        set_name="F1 2005",
+        vehicle_class="F-V10_Gen2",
+        custom_class_name="F1 2005.xml",
+    )
+    document.sync_header_comment()
+    lines = document.header_comment.splitlines()
+    assert lines[0] == "Name: F1 2005"
+    assert lines[1] == "Class: F-V10_Gen2"
+    assert lines[2] == "Custom Name: F1 2005.xml"
+    assert lines[3] == "Created with the AMS2 AI Tool by RockettSally"
 
 
 def test_effective_filename_prefers_custom_name():

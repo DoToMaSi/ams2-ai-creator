@@ -7,6 +7,7 @@ from collections.abc import Callable
 from PySide6.QtCore import Qt, QTimer, Signal
 from PySide6.QtWidgets import (
     QApplication,
+    QFrame,
     QHBoxLayout,
     QLabel,
     QPushButton,
@@ -24,7 +25,7 @@ from ams2_ai.ui.theme import SPACING_INNER, SPACING_OUTER, SPACING_SECTION
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.ui.collapsible_section import CollapsibleSection
 from ams2_ai.ui.driver_editor import DriverEditor
-from ams2_ai.ui.icons import duplicate_icon
+from ams2_ai.ui.icons import duplicate_icon, empty_drivers_icon
 from ams2_ai.ui.xml_properties_panel import XmlPropertiesPanel
 
 BUILD_BATCH_SIZE = 30
@@ -74,16 +75,50 @@ class DriverAccordionPanel(QWidget):
         toolbar.addWidget(self.add_driver_btn)
         root.addWidget(self.drivers_toolbar, 0)
 
-        self.empty_label = QLabel("No drivers yet. Add a driver or open an XML file.")
-        self.empty_label.setObjectName("mutedLabel")
-        self.empty_label.setAlignment(
-            Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignTop
+        self.empty_state = QFrame()
+        self.empty_state.setObjectName("emptyDriversState")
+        empty_outer = QVBoxLayout(self.empty_state)
+        empty_outer.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        empty_outer.addStretch(1)
+
+        empty_card = QFrame()
+        empty_card.setObjectName("emptyDriversCard")
+        card_layout = QVBoxLayout(empty_card)
+        card_layout.setContentsMargins(SPACING_OUTER, SPACING_OUTER, SPACING_OUTER, SPACING_OUTER)
+        card_layout.setSpacing(SPACING_SECTION)
+        card_layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        icon_label = QLabel()
+        icon_label.setPixmap(empty_drivers_icon(56).pixmap(56, 56))
+        icon_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        card_layout.addWidget(icon_label)
+
+        title = QLabel("No Drivers Added")
+        title.setObjectName("emptyStateTitle")
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        card_layout.addWidget(title)
+
+        subtitle = QLabel(
+            "This file has no AI drivers yet.\n"
+            "Add a driver to set names, countries, and personality parameters."
         )
-        self.empty_label.setContentsMargins(
-            SPACING_SECTION, SPACING_INNER, SPACING_SECTION, SPACING_INNER
-        )
-        self.empty_label.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        root.addWidget(self.empty_label, 0)
+        subtitle.setObjectName("emptyStateSubtitle")
+        subtitle.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        subtitle.setWordWrap(True)
+        card_layout.addWidget(subtitle)
+
+        empty_add_btn = QPushButton("+ Add Driver")
+        empty_add_btn.setObjectName("primaryButton")
+        empty_add_btn.clicked.connect(self.addDriverRequested.emit)
+        btn_row = QHBoxLayout()
+        btn_row.addStretch()
+        btn_row.addWidget(empty_add_btn)
+        btn_row.addStretch()
+        card_layout.addLayout(btn_row)
+
+        empty_outer.addWidget(empty_card, 0, Qt.AlignmentFlag.AlignHCenter)
+        empty_outer.addStretch(2)
+        root.addWidget(self.empty_state, stretch=1)
 
         self.splitter = QSplitter(Qt.Orientation.Vertical)
 
@@ -109,7 +144,7 @@ class DriverAccordionPanel(QWidget):
         self.editor_container = self.splitter
         self.editor_container.setVisible(False)
         self.drivers_toolbar.setVisible(False)
-        self.empty_label.setVisible(False)
+        self.empty_state.setVisible(False)
 
     def _make_driver_action_buttons(self, profile_id: str) -> list[QToolButton]:
         style = QApplication.style()
@@ -159,20 +194,20 @@ class DriverAccordionPanel(QWidget):
         self.xml_properties.set_document(document)
 
         if document is None:
-            self.empty_label.setVisible(False)
+            self.empty_state.setVisible(False)
             self.editor_container.setVisible(False)
             self.editor.set_profile(None, None)
             self._emit_finished()
             return
 
         if not document.profiles():
-            self.empty_label.setVisible(True)
+            self.empty_state.setVisible(True)
             self.editor_container.setVisible(False)
             self.editor.set_profile(None, None)
             self._emit_finished()
             return
 
-        self.empty_label.setVisible(False)
+        self.empty_state.setVisible(False)
         self.editor_container.setVisible(True)
 
         profiles = document.profiles()

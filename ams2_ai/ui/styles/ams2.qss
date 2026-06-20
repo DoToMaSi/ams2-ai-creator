@@ -15,7 +15,7 @@ QGroupBox {
     border: 1px solid #2A3140;
     border-radius: 6px;
     margin-top: 14px;
-    padding: 8px 10px 10px 10px;
+    padding: 12px 14px 14px 14px;
     background-color: #14181F;
 }
 
@@ -27,8 +27,8 @@ QGroupBox#compactGroup {
 QGroupBox::title {
     subcontrol-origin: margin;
     subcontrol-position: top left;
-    left: 10px;
-    padding: 0 6px;
+    left: 12px;
+    padding: 0 8px;
     color: #E8ECF1;
     font-size: 12pt;
     font-weight: bold;
@@ -143,6 +143,7 @@ QToolButton#helpButton:hover {
 QRadioButton, QCheckBox {
     spacing: 8px;
     color: #E8ECF1;
+    padding: 2px 4px;
 }
 
 QRadioButton::indicator, QCheckBox::indicator {
@@ -150,11 +151,41 @@ QRadioButton::indicator, QCheckBox::indicator {
     height: 16px;
 }
 
+QRadioButton::indicator:unchecked {
+    border: 2px solid #8B95A8;
+    border-radius: 9px;
+    background-color: #1C2230;
+}
+
+QRadioButton::indicator:checked {
+    border: 2px solid #E10600;
+    border-radius: 9px;
+    background-color: #E10600;
+}
+
+QRadioButton::indicator:checked:hover {
+    border-color: #FF2A1A;
+    background-color: #FF2A1A;
+}
+
+QCheckBox::indicator:unchecked {
+    border: 2px solid #8B95A8;
+    border-radius: 3px;
+    background-color: #1C2230;
+}
+
+QCheckBox::indicator:checked {
+    border: 2px solid #E10600;
+    border-radius: 3px;
+    background-color: #E10600;
+}
+
 QTabWidget::pane {
     border: 1px solid #2A3140;
     border-radius: 4px;
     background-color: #14181F;
     top: -1px;
+    padding: 4px;
 }
 
 QTabBar::tab {
@@ -163,8 +194,9 @@ QTabBar::tab {
     border-bottom: none;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    padding: 8px 14px;
+    padding: 8px 16px;
     margin-right: 2px;
+    margin-left: 2px;
     color: #8B95A8;
 }
 
@@ -401,4 +433,28 @@ QSpinBox#paramSpinBox {
 QWidget#footerBar {
     background-color: #14181F;
     border-top: 1px solid #2A3140;
+}
+
+QFrame#emptyDriversState {
+    background-color: transparent;
+}
+
+QFrame#emptyDriversCard {
+    background-color: #14181F;
+    border: 1px dashed #2A3140;
+    border-radius: 10px;
+    min-width: 360px;
+    max-width: 520px;
+}
+
+QLabel#emptyStateTitle {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #E8ECF1;
+}
+
+QLabel#emptyStateSubtitle {
+    color: #8B95A8;
+    line-height: 1.4;
+    padding: 0 8px;
 }

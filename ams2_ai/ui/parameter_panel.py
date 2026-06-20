@@ -49,7 +49,9 @@ class ParameterPanel(QWidget):
         scroll.setFrameShape(QFrame.Shape.NoFrame)
         content = QWidget()
         content_layout = QVBoxLayout(content)
-        content_layout.setContentsMargins(SPACING_INNER, SPACING_INNER, SPACING_INNER, SPACING_INNER)
+        content_layout.setContentsMargins(
+            SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION
+        )
         content_layout.setSpacing(SPACING_INNER)
 
         grouped: dict[str, list[ParameterDef]] = {g: [] for g in PARAMETER_GROUPS}

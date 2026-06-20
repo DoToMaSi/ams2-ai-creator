@@ -30,6 +30,8 @@ def test_internal_save_stores_xml_without_writing_file(tmp_path: Path):
     assert not validate_document(document)
 
     xml = serialize_document(document)
+    assert "\n\t<driver" in xml
+    assert "\n\t\t<name>" in xml
     document.commit_saved_state(xml)
 
     assert document.saved_xml == xml

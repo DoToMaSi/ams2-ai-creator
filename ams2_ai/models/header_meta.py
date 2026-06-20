@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+TOOL_ATTRIBUTION = "Created with the AMS2 AI Tool by RockettSally"
+
 
 @dataclass
 class HeaderMeta:
@@ -30,7 +32,9 @@ def parse_header_comment(comment: str) -> HeaderMeta:
                 meta.vehicle_class = line[6:].strip()
             elif line.startswith("Custom Name:"):
                 meta.custom_class_name = line[12:].strip()
-            elif not line.strip() and index < 4:
+            elif line.strip() == TOOL_ATTRIBUTION:
+                continue
+            elif not line.strip() and index < 6:
                 continue
             else:
                 body_start = index
@@ -47,6 +51,7 @@ def build_header_comment(meta: HeaderMeta) -> str:
         f"Name: {meta.name.strip()}",
         f"Class: {meta.vehicle_class.strip()}",
         f"Custom Name: {meta.custom_class_name.strip()}",
+        TOOL_ATTRIBUTION,
     ]
     if meta.body.strip():
         lines.extend(["", meta.body.strip()])
