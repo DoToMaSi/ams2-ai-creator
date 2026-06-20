@@ -26,15 +26,15 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from ams2_ai import __version__
 from ams2_ai.data import (
     group_tracks_by_venue,
     load_vehicle_classes,
     track_display_label,
     track_search_blob,
 )
-from ams2_ai import __version__
 from ams2_ai.logging_config import get_log_dir, get_log_file_path
-from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
+from ams2_ai.ui.theme import MARGINS_DIALOG, SPACING_INNER, SPACING_SECTION
 from ams2_ai.util.assets import icon_png_path, license_path
 from ams2_ai.util.filenames import xml_filename_from_label
 
@@ -50,7 +50,7 @@ class ErrorDialog(QDialog):
         self.resize(560, 360)
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setContentsMargins(*MARGINS_DIALOG)
         layout.setSpacing(SPACING_INNER)
         layout.addWidget(QLabel("An unexpected error occurred:"))
         layout.addWidget(QLabel(summary))
@@ -171,7 +171,7 @@ class TrackPickerDialog(QDialog):
         self.resize(480, 420)
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setContentsMargins(*MARGINS_DIALOG)
         layout.setSpacing(SPACING_INNER)
         layout.addWidget(QLabel("Enter comma-separated track IDs (case-sensitive):"))
 
@@ -219,7 +219,7 @@ class SingleTrackPickerDialog(QDialog):
         available = [track for track in tracks if track not in existing]
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setContentsMargins(*MARGINS_DIALOG)
         layout.setSpacing(SPACING_INNER)
         layout.addWidget(QLabel("Select a track for per-track AI overrides:"))
 
@@ -324,7 +324,7 @@ class AboutDialog(QDialog):
         self.setMinimumWidth(440)
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setContentsMargins(*MARGINS_DIALOG)
         layout.setSpacing(SPACING_SECTION)
 
         header = QHBoxLayout()
@@ -340,7 +340,7 @@ class AboutDialog(QDialog):
             icon_label.setPixmap(pixmap)
             header.addWidget(icon_label)
         title_col = QVBoxLayout()
-        title_col.addWidget(QLabel(f"<b>AMS2 AI Creator</b>"))
+        title_col.addWidget(QLabel("<b>AMS2 AI Creator</b>"))
         title_col.addWidget(QLabel(f"Version {__version__}"))
         header.addLayout(title_col)
         header.addStretch()
@@ -353,16 +353,9 @@ class AboutDialog(QDialog):
             )
         )
         layout.addWidget(
-            QLabel(
-                "<b>Created by:</b> Douglas Tomacheski de Abreu e Silva "
-                "(<b>RockettSally</b>)"
-            )
+            QLabel("<b>Created by:</b> Douglas Tomacheski de Abreu e Silva (<b>RockettSally</b>)")
         )
-        layout.addWidget(
-            QLabel(
-                "<b>Built with:</b> Python, PySide6, Faker, Unidecode"
-            )
-        )
+        layout.addWidget(QLabel("<b>Built with:</b> Python, PySide6, Faker, Unidecode"))
 
         doc_link = QLabel(
             f'<a href="{AMS2_AI_FORUM_URL}">Official AMS2 AI customization forum thread</a>'
@@ -383,7 +376,7 @@ class LegalDialog(QDialog):
         self.resize(520, 420)
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setContentsMargins(*MARGINS_DIALOG)
         layout.setSpacing(SPACING_INNER)
 
         body = QTextEdit()

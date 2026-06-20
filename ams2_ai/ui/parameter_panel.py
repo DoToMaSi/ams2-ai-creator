@@ -107,9 +107,7 @@ class ParameterPanel(QWidget):
             for key in keys:
                 row = self._rows[key]
                 row.set_value(self._display_ui_value(key))
-                row.set_enabled_editable(
-                    group_enabled and self._is_row_editable(key, smart)
-                )
+                row.set_enabled_editable(group_enabled and self._is_row_editable(key, smart))
 
         for key, row in self._rows.items():
             if key in OPTIONAL_PARAMETER_KEYS and not self._per_track:

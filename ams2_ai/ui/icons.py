@@ -66,7 +66,12 @@ def empty_drivers_icon(size: int = 56) -> QIcon:
     cx = size * 0.5
     painter.setPen(Qt.PenStyle.NoPen)
     painter.setBrush(muted)
-    painter.drawEllipse(int(cx - head_radius), int(size * 0.28), int(head_radius * 2), int(head_radius * 2))
+    painter.drawEllipse(
+        int(cx - head_radius),
+        int(size * 0.28),
+        int(head_radius * 2),
+        int(head_radius * 2),
+    )
 
     body_w = size * 0.34
     body_h = size * 0.22

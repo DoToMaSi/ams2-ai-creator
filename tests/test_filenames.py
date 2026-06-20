@@ -8,7 +8,7 @@ def test_xml_filename_from_label():
 
 
 def test_xml_filename_sanitizes_invalid_characters():
-    assert xml_filename_from_label('Bad:Name?') == "Bad_Name_.xml"
+    assert xml_filename_from_label("Bad:Name?") == "Bad_Name_.xml"
 
 
 def test_xml_filename_from_empty_label():

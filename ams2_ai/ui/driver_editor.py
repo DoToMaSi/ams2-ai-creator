@@ -12,9 +12,9 @@ from PySide6.QtWidgets import (
     QHBoxLayout,
     QLabel,
     QLineEdit,
+    QMessageBox,
     QPushButton,
     QRadioButton,
-    QMessageBox,
     QSizePolicy,
     QTabWidget,
     QToolButton,
@@ -84,9 +84,7 @@ class DriverEditor(QWidget):
         )
         identity_form.setHorizontalSpacing(SPACING_SECTION)
         identity_form.setVerticalSpacing(SPACING_INNER)
-        identity_form.setLabelAlignment(
-            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter
-        )
+        identity_form.setLabelAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
         self.livery_edit = QLineEdit()
         self.livery_edit.textChanged.connect(self._on_identity_changed)
         identity_form.addRow("Livery Name:", self.livery_edit)

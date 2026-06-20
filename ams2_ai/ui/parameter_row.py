@@ -27,11 +27,7 @@ def param_help_html(param: ParameterDef) -> str:
 
 
 def param_help_plain(param: ParameterDef) -> str:
-    return (
-        f"{param.description}\n\n"
-        f"Low: {param.low_hint}\n"
-        f"High: {param.high_hint}"
-    )
+    return f"{param.description}\n\nLow: {param.low_hint}\nHigh: {param.high_hint}"
 
 
 class ParameterRow(QWidget):

@@ -12,7 +12,6 @@ from PySide6.QtWidgets import (
     QLabel,
     QPushButton,
     QScrollArea,
-    QSizePolicy,
     QSplitter,
     QStyle,
     QToolButton,
@@ -21,11 +20,11 @@ from PySide6.QtWidgets import (
 )
 
 from ams2_ai.models.document import AIDocument
-from ams2_ai.ui.theme import SPACING_INNER, SPACING_OUTER, SPACING_SECTION
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.ui.collapsible_section import CollapsibleSection
 from ams2_ai.ui.driver_editor import DriverEditor
 from ams2_ai.ui.icons import duplicate_icon, empty_drivers_icon
+from ams2_ai.ui.theme import MARGINS_DIALOG, SPACING_INNER, SPACING_OUTER, SPACING_SECTION
 from ams2_ai.ui.xml_properties_panel import XmlPropertiesPanel
 
 BUILD_BATCH_SIZE = 30
@@ -78,7 +77,7 @@ class DriverAccordionPanel(QWidget):
         self.empty_state = QFrame()
         self.empty_state.setObjectName("emptyDriversState")
         empty_outer = QVBoxLayout(self.empty_state)
-        empty_outer.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        empty_outer.setContentsMargins(*MARGINS_DIALOG)
         empty_outer.addStretch(1)
 
         empty_card = QFrame()

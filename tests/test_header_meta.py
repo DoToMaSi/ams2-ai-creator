@@ -1,5 +1,5 @@
 from ams2_ai.models.document import AIDocument
-from ams2_ai.models.header_meta import build_header_comment, parse_header_comment
+from ams2_ai.models.header_meta import parse_header_comment
 
 
 def test_parse_structured_header():

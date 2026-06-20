@@ -21,8 +21,6 @@ from PySide6.QtWidgets import (
 )
 
 from ams2_ai import __version__
-from ams2_ai.ui.theme import SPACING_INNER, SPACING_OUTER
-from ams2_ai.util.assets import icon_ico_path, icon_png_path
 from ams2_ai.identity.generator import randomize_new_driver
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver import DriverEntry
@@ -39,6 +37,8 @@ from ams2_ai.ui.driver_accordion import DriverAccordionPanel
 from ams2_ai.ui.file_sidebar import FileSidebar
 from ams2_ai.ui.load_worker import DocumentLoadWorker
 from ams2_ai.ui.loading_dialog import LoadingDialog
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_OUTER
+from ams2_ai.util.assets import icon_ico_path, icon_png_path
 from ams2_ai.validation import validate_document
 from ams2_ai.xml.writer import save_document, serialize_document
 

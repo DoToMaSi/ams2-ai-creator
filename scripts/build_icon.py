@@ -41,7 +41,6 @@ def _dib_from_rgba(width: int, height: int, rgba_bytes: bytes) -> bytes:
 def _image_payload(image) -> bytes:
     width, height = image.size
     rgba = image.convert("RGBA")
-    row_bytes = width * 4
     rows = []
     for y in range(height - 1, -1, -1):
         row = bytearray()

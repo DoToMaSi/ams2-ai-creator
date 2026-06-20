@@ -35,9 +35,7 @@ class XmlPropertiesPanel(QWidget):
         form.setHorizontalSpacing(SPACING_SECTION)
         form.setVerticalSpacing(SPACING_INNER)
         form.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.ExpandingFieldsGrow)
-        form.setLabelAlignment(
-            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter
-        )
+        form.setLabelAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
 
         self.name_edit = QLineEdit()
         self.name_edit.setPlaceholderText("Set name shown in the file list")
@@ -53,7 +51,9 @@ class XmlPropertiesPanel(QWidget):
         form.addRow("Class:", self.class_combo)
 
         self.custom_name_edit = QLineEdit()
-        self.custom_name_edit.setPlaceholderText("Optional modded class filename, e.g. MyMod_GT3.xml")
+        self.custom_name_edit.setPlaceholderText(
+            "Optional modded class filename, e.g. MyMod_GT3.xml"
+        )
         self.custom_name_edit.textChanged.connect(self._on_changed)
         form.addRow("Custom Name:", self.custom_name_edit)
 

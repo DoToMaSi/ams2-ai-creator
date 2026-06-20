@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
+from ams2_ai.ui.theme import MARGINS_HEADER, SPACING_INNER
 
 
 class CollapsibleBlock(QWidget):
@@ -39,7 +39,7 @@ class CollapsibleBlock(QWidget):
         self.header = QFrame()
         self.header.setObjectName("collapsibleHeader")
         header_layout = QHBoxLayout(self.header)
-        header_layout.setContentsMargins(SPACING_SECTION, SPACING_INNER, SPACING_SECTION, SPACING_INNER)
+        header_layout.setContentsMargins(*MARGINS_HEADER)
         header_layout.setSpacing(SPACING_INNER)
 
         self.toggle_btn = QToolButton()
@@ -103,7 +103,7 @@ class CollapsibleSection(QWidget):
         self.header = QFrame()
         self.header.setObjectName("driverHeader")
         header_layout = QHBoxLayout(self.header)
-        header_layout.setContentsMargins(SPACING_SECTION, SPACING_INNER, SPACING_SECTION, SPACING_INNER)
+        header_layout.setContentsMargins(*MARGINS_HEADER)
         header_layout.setSpacing(SPACING_INNER)
 
         self.index_label = QLabel()
