@@ -33,6 +33,7 @@ from ams2_ai.data import (
     track_search_blob,
 )
 from ams2_ai.logging_config import get_log_dir, get_log_file_path
+from ams2_ai.util.filenames import xml_filename_from_label
 
 
 class ErrorDialog(QDialog):
@@ -79,6 +80,7 @@ class NewFileDialog(QDialog):
 
         self.set_name_edit = QLineEdit()
         self.set_name_edit.setPlaceholderText('e.g. "F1 2005" — shown in the file list')
+        self.set_name_edit.textChanged.connect(self._on_name_changed)
         layout.addRow("Name:", self.set_name_edit)
 
         self.class_combo = QComboBox()
@@ -91,7 +93,8 @@ class NewFileDialog(QDialog):
         custom_row_layout = QFormLayout(self.custom_file_row)
         custom_row_layout.setContentsMargins(0, 0, 0, 0)
         self.custom_file_edit = QLineEdit()
-        self.custom_file_edit.setPlaceholderText("Modded class filename, e.g. MyMod_GT3.xml")
+        self.custom_file_edit.setPlaceholderText("Defaults from Name; edit if needed")
+        self.custom_file_edit.textEdited.connect(self._on_custom_filename_edited)
         custom_row_layout.addRow("Custom filename:", self.custom_file_edit)
         layout.addRow(self.custom_file_row)
 
@@ -100,10 +103,28 @@ class NewFileDialog(QDialog):
         buttons.rejected.connect(self.reject)
         layout.addRow(buttons)
 
+        self._custom_filename_edited = False
         self._on_class_changed(self.class_combo.currentText())
 
+    def _on_custom_filename_edited(self, _text: str) -> None:
+        self._custom_filename_edited = True
+
+    def _on_name_changed(self, _text: str) -> None:
+        if self.is_custom_class() and not self._custom_filename_edited:
+            self._sync_custom_filename_from_name()
+
+    def _sync_custom_filename_from_name(self) -> None:
+        suggested = xml_filename_from_label(self.set_name_edit.text())
+        self.custom_file_edit.blockSignals(True)
+        self.custom_file_edit.setText(suggested)
+        self.custom_file_edit.blockSignals(False)
+
     def _on_class_changed(self, text: str) -> None:
-        self.custom_file_row.setVisible(text == CUSTOM_CLASS_OPTION)
+        is_custom = text == CUSTOM_CLASS_OPTION
+        self.custom_file_row.setVisible(is_custom)
+        if is_custom:
+            self._custom_filename_edited = False
+            self._sync_custom_filename_from_name()
 
     def _validate_and_accept(self) -> None:
         if self.is_custom_class() and not self.custom_file_edit.text().strip():
