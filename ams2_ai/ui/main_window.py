@@ -137,6 +137,7 @@ class MainWindow(QMainWindow):
         self.driver_panel.removeDriverRequested.connect(self.remove_driver)
         self.driver_panel.duplicateDriverRequested.connect(self.duplicate_driver)
         self.driver_panel.driverChanged.connect(self._on_driver_edited)
+        self.driver_panel.documentPropertiesChanged.connect(self._on_document_properties_changed)
 
     def _active_document(self) -> AIDocument | None:
         if not self._active_doc_id:
@@ -201,6 +202,10 @@ class MainWindow(QMainWindow):
         filename = dialog.selected_filename()
         path = Path(filename)
         document = AIDocument(path=path, set_name=dialog.set_name())
+        if dialog.is_custom_class():
+            document.custom_class_name = path.name
+        else:
+            document.vehicle_class = path.stem
         document.sync_header_comment()
         doc_id = self._register_document(document)
         self._select_document(doc_id)
@@ -327,7 +332,7 @@ class MainWindow(QMainWindow):
         document = self._active_document()
         if not document:
             return False
-        default_name = document.path.name if document.path else "custom_ai.xml"
+        default_name = document.effective_filename()
         path_str, _ = QFileDialog.getSaveFileName(
             self,
             "Export AI XML File",
@@ -375,10 +380,7 @@ class MainWindow(QMainWindow):
             warn_validation_errors(self, errors)
             return False
 
-        if document.path:
-            target = Path(folder) / document.path.name
-        else:
-            target = Path(folder) / "custom_ai.xml"
+        target = Path(folder) / document.effective_filename()
         try:
             target.write_text(serialize_document(document), encoding="utf-8")
         except OSError as exc:
@@ -459,6 +461,14 @@ class MainWindow(QMainWindow):
         self.save_btn.setEnabled(has_document)
         self.export_xml_btn.setEnabled(has_document)
         self.sidebar.refresh_file_labels()
+
+    def _on_document_properties_changed(self) -> None:
+        document = self._active_document()
+        if document:
+            document.mark_dirty()
+            self._refresh_save_state()
+            title = document.display_name
+            self.setWindowTitle(f"AMS2 AI Creator v{__version__} — {title}")
 
     def _on_driver_edited(self) -> None:
         document = self._active_document()

@@ -49,7 +49,7 @@ def load_document(path: Path) -> AIDocument:
         raise ValueError(f"Expected root element <{ROOT_TAG}>, got <{root.tag}>")
 
     document = AIDocument(path=path, header_comment=header_comment)
-    document.set_name = document._set_name_from_comment()
+    document.apply_header_meta(path_stem=path.stem)
     for driver_el in root.findall(DRIVER_TAG):
         entry = _parse_driver_element(driver_el)
         document.drivers.append(entry)

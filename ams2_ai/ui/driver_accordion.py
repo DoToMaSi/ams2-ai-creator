@@ -20,6 +20,7 @@ from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.ui.collapsible_section import CollapsibleSection
 from ams2_ai.ui.driver_editor import DriverEditor
+from ams2_ai.ui.xml_properties_panel import XmlPropertiesPanel
 
 BUILD_BATCH_SIZE = 30
 SYNC_BUILD_THRESHOLD = 25
@@ -29,6 +30,7 @@ class DriverAccordionPanel(QWidget):
     """Compact driver list above a shared full-height editor."""
 
     driverChanged = Signal()
+    documentPropertiesChanged = Signal()
     addDriverRequested = Signal()
     removeDriverRequested = Signal(str)
     duplicateDriverRequested = Signal(str)
@@ -48,6 +50,10 @@ class DriverAccordionPanel(QWidget):
 
         root = QVBoxLayout(self)
         root.setContentsMargins(0, 0, 0, 0)
+
+        self.xml_properties = XmlPropertiesPanel()
+        self.xml_properties.propertiesChanged.connect(self.documentPropertiesChanged.emit)
+        root.addWidget(self.xml_properties)
 
         toolbar = QHBoxLayout()
         toolbar.addWidget(QLabel("Drivers"))
@@ -99,6 +105,7 @@ class DriverAccordionPanel(QWidget):
         self._progress = progress
         self._finished = finished
         self._expand_profile_id = expand_profile_id
+        self.xml_properties.set_document(document)
 
         if not document or not document.profiles():
             self.empty_label.setVisible(True)
