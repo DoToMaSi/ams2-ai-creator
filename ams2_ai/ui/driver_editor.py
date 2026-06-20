@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ams2_ai.data import flag_icon_path, load_country_codes, load_tracks
+from ams2_ai.data import flag_icon_path, load_country_codes, load_tracks, normalize_country_code
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.smart.derivation import apply_smart_derivation
@@ -120,7 +120,7 @@ class DriverEditor(QWidget):
         self._on_identity_changed()
 
     def _update_country_icon(self, text: str) -> None:
-        code = text.strip().upper()
+        code = normalize_country_code(text)
         index = self.country_combo.currentIndex()
         if index < 0:
             return
@@ -229,7 +229,7 @@ class DriverEditor(QWidget):
         base = self._profile.base
         base.livery_name = self.livery_edit.text()
         base.name = self.name_edit.text()
-        base.country = self.country_combo.currentText().strip().upper()
+        base.country = normalize_country_code(self.country_combo.currentText())
         if base.name:
             base.set_fields.add("name")
         else:

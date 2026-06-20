@@ -17,6 +17,22 @@ class CountryMeta:
     locale: str
 
 
+# Non-NATO legacy codes seen in older XML or informal usage → STANAG 1059 trigrams.
+LEGACY_COUNTRY_ALIASES: dict[str, str] = {
+    "GER": "DEU",
+    "UK": "GBR",
+    "POR": "PRT",
+    "MON": "MCO",
+    "UAE": "ARE",
+}
+
+
+def normalize_country_code(code: str) -> str:
+    """Return the NATO STANAG 1059 trigram for a country code."""
+    normalized = code.strip().upper()
+    return LEGACY_COUNTRY_ALIASES.get(normalized, normalized)
+
+
 def _data_file(name: str) -> Path:
     """Resolve a bundled file under ams2_ai/data in dev and PyInstaller builds."""
     if getattr(sys, "frozen", False):
@@ -76,7 +92,7 @@ def load_countries() -> list[str]:
 
 
 def get_country_meta(code: str) -> CountryMeta | None:
-    normalized = code.strip().upper()
+    normalized = normalize_country_code(code)
     if not normalized:
         return None
     return _country_meta_by_code().get(normalized)

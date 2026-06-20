@@ -1,16 +1,38 @@
 import random
 
-from ams2_ai.data import flag_icon_path, get_country_meta, load_country_codes
+from ams2_ai.data import (
+    flag_icon_path,
+    get_country_meta,
+    load_country_codes,
+    normalize_country_code,
+)
 from ams2_ai.identity.generator import randomize_new_driver
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.smart.presets import PRESET_TIERS
 
 
-def test_load_country_codes_matches_legacy_count():
+def test_load_country_codes_are_nato_trigrams():
     codes = load_country_codes()
-    assert len(codes) == 36
+    assert len(codes) == 34
     assert "BRA" in codes
     assert "USA" in codes
+    assert "DEU" in codes
+    assert "PRT" in codes
+    assert "ARE" in codes
+    assert "GER" not in codes
+    assert "UK" not in codes
+    assert "POR" not in codes
+    assert "MON" not in codes
+    assert "UAE" not in codes
+
+
+def test_normalize_legacy_country_codes():
+    assert normalize_country_code("ger") == "DEU"
+    assert normalize_country_code("UK") == "GBR"
+    assert normalize_country_code("POR") == "PRT"
+    assert normalize_country_code("MON") == "MCO"
+    assert normalize_country_code("UAE") == "ARE"
+    assert normalize_country_code("BRA") == "BRA"
 
 
 def test_every_country_has_meta_and_flag():
