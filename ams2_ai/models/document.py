@@ -22,6 +22,15 @@ class AIDocument:
     header_comment: str = ""
     set_name: str = ""
     dirty: bool = False
+    _profiles: list[DriverProfile] | None = field(default=None, repr=False, compare=False)
+
+    def invalidate_profiles(self) -> None:
+        self._profiles = None
+
+    def profiles(self) -> list[DriverProfile]:
+        if self._profiles is None:
+            self._profiles = group_drivers(self.drivers)
+        return self._profiles
 
     @property
     def display_name(self) -> str:
@@ -46,9 +55,7 @@ class AIDocument:
 
     def mark_dirty(self) -> None:
         self.dirty = True
-
-    def profiles(self) -> list[DriverProfile]:
-        return group_drivers(self.drivers)
+        self.invalidate_profiles()
 
     def get_profile(self, profile_id: str) -> DriverProfile | None:
         for profile in self.profiles():

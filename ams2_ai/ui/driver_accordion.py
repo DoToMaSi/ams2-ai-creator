@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
-from PySide6.QtCore import Qt, Signal
+from collections.abc import Callable
+
+from PySide6.QtCore import Qt, QTimer, Signal
 from PySide6.QtWidgets import (
+    QApplication,
     QHBoxLayout,
     QLabel,
     QPushButton,
@@ -17,6 +20,9 @@ from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.ui.collapsible_section import CollapsibleSection
 from ams2_ai.ui.driver_editor import DriverEditor
+
+BUILD_BATCH_SIZE = 30
+SYNC_BUILD_THRESHOLD = 25
 
 
 class DriverAccordionPanel(QWidget):
@@ -32,6 +38,13 @@ class DriverAccordionPanel(QWidget):
         self._document: AIDocument | None = None
         self._active_profile_id: str | None = None
         self._sections: dict[str, CollapsibleSection] = {}
+        self._build_queue: list[tuple[int, DriverProfile]] = []
+        self._build_total = 0
+        self._expand_profile_id: str | None = None
+        self._progress: Callable[[str], None] | None = None
+        self._finished: Callable[[], None] | None = None
+        self._build_timer = QTimer(self)
+        self._build_timer.timeout.connect(self._build_next_batch)
 
         root = QVBoxLayout(self)
         root.setContentsMargins(0, 0, 0, 0)
@@ -76,31 +89,38 @@ class DriverAccordionPanel(QWidget):
         document: AIDocument | None,
         *,
         expand_profile_id: str | None = None,
+        progress: Callable[[str], None] | None = None,
+        finished: Callable[[], None] | None = None,
     ) -> None:
+        self._stop_build()
         self._clear_sections()
         self._document = document
         self._active_profile_id = None
+        self._progress = progress
+        self._finished = finished
+        self._expand_profile_id = expand_profile_id
 
         if not document or not document.profiles():
             self.empty_label.setVisible(True)
             self.editor_container.setVisible(False)
             self.editor.set_profile(None, None)
+            self._emit_finished()
             return
 
         self.empty_label.setVisible(False)
         self.editor_container.setVisible(True)
 
-        for index, profile in enumerate(document.profiles(), start=1):
-            self._add_section(profile, index=index)
+        profiles = document.profiles()
+        if len(profiles) <= SYNC_BUILD_THRESHOLD:
+            for index, profile in enumerate(profiles, start=1):
+                self._add_section(profile, index=index)
+            self._finish_set_document()
+            return
 
-        selected_id = expand_profile_id
-        if selected_id is None:
-            profiles = document.profiles()
-            if profiles:
-                selected_id = profiles[0].profile_id
-
-        if selected_id:
-            self._select_profile(selected_id)
+        self._build_total = len(profiles)
+        self._build_queue = [(index, profile) for index, profile in enumerate(profiles, start=1)]
+        self._report_progress(f"Building driver list (0/{self._build_total})…")
+        self._build_timer.start(0)
 
     def refresh_titles(self) -> None:
         if not self._document:
@@ -113,6 +133,48 @@ class DriverAccordionPanel(QWidget):
 
     def current_profile_id(self) -> str | None:
         return self._active_profile_id
+
+    def _stop_build(self) -> None:
+        self._build_timer.stop()
+        self._build_queue.clear()
+        self._progress = None
+        self._finished = None
+
+    def _build_next_batch(self) -> None:
+        for _ in range(BUILD_BATCH_SIZE):
+            if not self._build_queue:
+                self._build_timer.stop()
+                self._finish_set_document()
+                return
+            index, profile = self._build_queue.pop(0)
+            self._add_section(profile, index=index)
+
+        done = self._build_total - len(self._build_queue)
+        self._report_progress(f"Building driver list ({done}/{self._build_total})…")
+        QApplication.processEvents()
+
+    def _finish_set_document(self) -> None:
+        selected_id = self._expand_profile_id
+        if selected_id is None and self._document:
+            profiles = self._document.profiles()
+            if profiles:
+                selected_id = profiles[0].profile_id
+
+        if selected_id:
+            self._select_profile(selected_id)
+
+        self._emit_finished()
+
+    def _emit_finished(self) -> None:
+        if self._finished:
+            callback = self._finished
+            self._finished = None
+            self._progress = None
+            callback()
+
+    def _report_progress(self, message: str) -> None:
+        if self._progress:
+            self._progress(message)
 
     def _add_section(self, profile: DriverProfile, *, index: int = 1) -> None:
         dup_btn = QPushButton("Duplicate")

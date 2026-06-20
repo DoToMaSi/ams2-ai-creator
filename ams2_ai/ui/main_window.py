@@ -7,7 +7,7 @@ import shutil
 import uuid
 from pathlib import Path
 
-from PySide6.QtCore import QSettings
+from PySide6.QtCore import QSettings, QThread
 from PySide6.QtGui import QAction, QKeySequence
 from PySide6.QtWidgets import (
     QFileDialog,
@@ -30,11 +30,14 @@ from ams2_ai.ui.dialogs import (
 )
 from ams2_ai.ui.driver_accordion import DriverAccordionPanel
 from ams2_ai.ui.file_sidebar import FileSidebar
+from ams2_ai.ui.load_worker import DocumentLoadWorker
+from ams2_ai.ui.loading_dialog import LoadingDialog
 from ams2_ai.validation import validate_document
-from ams2_ai.xml.reader import load_document
 from ams2_ai.xml.writer import save_document
 
 logger = logging.getLogger("ams2_ai.ui.main_window")
+
+LARGE_DOCUMENT_THRESHOLD = 25
 
 
 class MainWindow(QMainWindow):
@@ -47,6 +50,11 @@ class MainWindow(QMainWindow):
         self._documents: dict[str, AIDocument] = {}
         self._active_doc_id: str | None = None
         self._settings = QSettings()
+        self._open_paths_queue: list[Path] = []
+        self._loading_dialog: LoadingDialog | None = None
+        self._load_thread: QThread | None = None
+        self._load_worker: DocumentLoadWorker | None = None
+        self._pending_open_doc_id: str | None = None
 
         self.sidebar = FileSidebar()
         self.driver_panel = DriverAccordionPanel()
@@ -125,7 +133,47 @@ class MainWindow(QMainWindow):
     def _sync_driver_panel(self, *, expand_profile_id: str | None = None) -> None:
         document = self._active_document()
         self.driver_panel.setEnabled(document is not None)
-        self.driver_panel.set_document(document, expand_profile_id=expand_profile_id)
+        self._populate_driver_panel(document, expand_profile_id=expand_profile_id)
+
+    def _populate_driver_panel(
+        self,
+        document: AIDocument | None,
+        *,
+        expand_profile_id: str | None = None,
+    ) -> None:
+        if document is None:
+            self.driver_panel.set_document(None)
+            return
+
+        if len(document.profiles()) <= LARGE_DOCUMENT_THRESHOLD:
+            self.driver_panel.set_document(document, expand_profile_id=expand_profile_id)
+            return
+
+        self._show_loading_dialog(f"Building driver list for {document.display_name}…")
+        self.driver_panel.set_document(
+            document,
+            expand_profile_id=expand_profile_id,
+            progress=self._loading_dialog.set_message if self._loading_dialog else None,
+            finished=self._finish_loading_dialog,
+        )
+
+    def _show_loading_dialog(self, message: str) -> None:
+        self._loading_dialog = LoadingDialog(self, title="Loading")
+        self._loading_dialog.show(message)
+        self.setEnabled(False)
+
+    def _finish_loading_dialog(self) -> None:
+        if self._loading_dialog:
+            self._loading_dialog.close()
+            self._loading_dialog = None
+        self.setEnabled(True)
+
+    def _cleanup_load_thread(self) -> None:
+        if self._load_thread is not None:
+            self._load_thread.quit()
+            self._load_thread.wait()
+        self._load_thread = None
+        self._load_worker = None
 
     def new_file(self) -> None:
         dialog = NewFileDialog(self)
@@ -146,19 +194,98 @@ class MainWindow(QMainWindow):
             "",
             "XML Files (*.xml)",
         )
-        for path_str in paths:
-            path = Path(path_str)
-            try:
-                document = load_document(path)
-            except ValueError as exc:
-                logger.warning("Failed to open %s: %s", path, exc)
-                QMessageBox.warning(self, "Open Failed", str(exc))
-                continue
-            for profile in document.profiles():
-                profile.base.mode = "custom"
-            doc_id = self._register_document(document)
-            self._select_document(doc_id)
-            self.statusBar().showMessage(f"Opened {document.display_name}", 3000)
+        if not paths:
+            return
+
+        if self._active_doc_id:
+            previous = self._active_document()
+            if previous and previous.dirty:
+                result = confirm_unsaved(self, previous.display_name)
+                if result == QMessageBox.Save:
+                    if not self.save_active():
+                        return
+                elif result == QMessageBox.Cancel:
+                    return
+
+        self._open_paths_queue = [Path(path_str) for path_str in paths]
+        remaining = len(self._open_paths_queue)
+        self._show_loading_dialog(
+            f"Preparing to open {remaining} file{'s' if remaining != 1 else ''}…"
+        )
+        self._load_next_open_path()
+
+    def _load_next_open_path(self) -> None:
+        if not self._open_paths_queue:
+            self._finish_open_sequence()
+            return
+
+        path = self._open_paths_queue[0]
+        if self._loading_dialog:
+            self._loading_dialog.set_message(f"Reading {path.name}…")
+
+        self._cleanup_load_thread()
+        self._load_thread = QThread(self)
+        self._load_worker = DocumentLoadWorker(path)
+        self._load_worker.moveToThread(self._load_thread)
+        self._load_thread.started.connect(self._load_worker.run)
+        self._load_worker.finished.connect(self._on_document_loaded)
+        self._load_worker.failed.connect(self._on_document_load_failed)
+        self._load_thread.start()
+
+    def _on_document_loaded(self, document: AIDocument, path: Path) -> None:
+        self._cleanup_load_thread()
+        if not self._open_paths_queue or self._open_paths_queue[0] != path:
+            return
+
+        self._open_paths_queue.pop(0)
+        for profile in document.profiles():
+            profile.base.mode = "custom"
+        doc_id = self._register_document(document)
+
+        if self._open_paths_queue:
+            if self._loading_dialog:
+                remaining = len(self._open_paths_queue)
+                suffix = "s" if remaining != 1 else ""
+                self._loading_dialog.set_message(
+                    f"Loaded {path.name}. {remaining} file{suffix} remaining…"
+                )
+            self._load_next_open_path()
+            return
+
+        self._pending_open_doc_id = doc_id
+        if self._loading_dialog:
+            driver_count = len(document.profiles())
+            self._loading_dialog.set_message(
+                f"Building driver list for {path.name} ({driver_count} drivers)…"
+            )
+        self.driver_panel.set_document(
+            document,
+            progress=self._loading_dialog.set_message if self._loading_dialog else None,
+            finished=self._finish_open_sequence,
+        )
+
+    def _on_document_load_failed(self, message: str, path: Path) -> None:
+        self._cleanup_load_thread()
+        if self._open_paths_queue and self._open_paths_queue[0] == path:
+            self._open_paths_queue.pop(0)
+        logger.warning("Failed to open %s: %s", path, message)
+        QMessageBox.warning(self, "Open Failed", f"{path.name}: {message}")
+        if self._open_paths_queue:
+            self._load_next_open_path()
+            return
+        self._finish_open_sequence()
+
+    def _finish_open_sequence(self) -> None:
+        doc_id = self._pending_open_doc_id
+        self._pending_open_doc_id = None
+        self._open_paths_queue = []
+        self._finish_loading_dialog()
+
+        if doc_id:
+            document = self._documents.get(doc_id)
+            self._apply_active_document(doc_id, sync_panel=False)
+            if document:
+                self.statusBar().showMessage(f"Opened {document.display_name}", 3000)
 
     def save_active(self) -> bool:
         document = self._active_document()
@@ -276,10 +403,21 @@ class MainWindow(QMainWindow):
                 self.sidebar.set_active_document(self._active_doc_id)
                 return
 
+        self._apply_active_document(doc_id, sync_panel=True)
+
+    def _apply_active_document(
+        self,
+        doc_id: str,
+        *,
+        sync_panel: bool = True,
+        expand_profile_id: str | None = None,
+    ) -> None:
         self._active_doc_id = doc_id
         self.sidebar.set_active_document(doc_id)
         document = self._active_document()
-        self._sync_driver_panel()
+        self.driver_panel.setEnabled(document is not None)
+        if sync_panel:
+            self._populate_driver_panel(document, expand_profile_id=expand_profile_id)
         title = document.display_name if document else "No file"
         self.setWindowTitle(f"AMS2 AI Creator v{__version__} — {title}")
 

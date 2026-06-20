@@ -53,6 +53,7 @@ def load_document(path: Path) -> AIDocument:
         document.drivers.append(entry)
 
     document.drivers = normalize_document_drivers(document.drivers)
+    document.invalidate_profiles()
 
     logger.info("Loaded %d driver entries from %s", len(document.drivers), path.name)
     document.mark_clean()
