@@ -38,6 +38,7 @@ from ams2_ai.smart.derivation import apply_smart_derivation
 from ams2_ai.smart.presets import PRESET_NAMES, apply_preset
 from ams2_ai.ui.dialogs import SingleTrackPickerDialog
 from ams2_ai.ui.parameter_panel import ParameterPanel
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
 
 
 class DriverEditor(QWidget):
@@ -54,9 +55,13 @@ class DriverEditor(QWidget):
         self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
 
         root = QVBoxLayout(self)
+        root.setContentsMargins(0, 0, 0, 0)
+        root.setSpacing(SPACING_SECTION)
 
         identity_box = QGroupBox("Identity")
         identity_form = QFormLayout(identity_box)
+        identity_form.setHorizontalSpacing(SPACING_SECTION)
+        identity_form.setVerticalSpacing(SPACING_INNER)
         self.livery_edit = QLineEdit()
         self.livery_edit.textChanged.connect(self._on_identity_changed)
         identity_form.addRow("Livery Name:", self.livery_edit)
@@ -96,9 +101,11 @@ class DriverEditor(QWidget):
         global_layout.addLayout(mode_row)
 
         preset_row = QHBoxLayout()
+        preset_row.setSpacing(SPACING_INNER)
         preset_row.addWidget(QLabel("Presets:"))
         for name in PRESET_NAMES:
             btn = QPushButton(name)
+            btn.setObjectName("secondaryButton")
             btn.clicked.connect(lambda _checked=False, n=name: self._apply_preset(n))
             preset_row.addWidget(btn)
         preset_row.addStretch()

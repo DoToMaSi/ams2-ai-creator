@@ -7,7 +7,7 @@ import uuid
 from pathlib import Path
 
 from PySide6.QtCore import QSettings, QThread
-from PySide6.QtGui import QAction, QKeySequence
+from PySide6.QtGui import QAction, QIcon, QKeySequence
 from PySide6.QtWidgets import (
     QFileDialog,
     QHBoxLayout,
@@ -21,11 +21,15 @@ from PySide6.QtWidgets import (
 )
 
 from ams2_ai import __version__
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_OUTER
+from ams2_ai.util.assets import icon_ico_path, icon_png_path
 from ams2_ai.identity.generator import randomize_new_driver
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.ui.dialogs import (
+    AboutDialog,
+    LegalDialog,
     NewFileDialog,
     confirm_unsaved,
     open_log_folder,
@@ -49,6 +53,10 @@ class MainWindow(QMainWindow):
         self.setWindowTitle(f"AMS2 AI Creator v{__version__}")
         self.resize(1200, 960)
         self.setMinimumSize(960, 720)
+        for icon_path in (icon_ico_path(), icon_png_path()):
+            if icon_path.is_file():
+                self.setWindowIcon(QIcon(str(icon_path)))
+                break
 
         self._documents: dict[str, AIDocument] = {}
         self._active_doc_id: str | None = None
@@ -67,23 +75,30 @@ class MainWindow(QMainWindow):
         splitter.addWidget(self.driver_panel)
         splitter.setStretchFactor(0, 0)
         splitter.setStretchFactor(1, 1)
-        splitter.setSizes([280, 920])
+        splitter.setSizes([260, 940])
 
-        footer = QHBoxLayout()
+        footer_widget = QWidget()
+        footer_widget.setObjectName("footerBar")
+        footer = QHBoxLayout(footer_widget)
+        footer.setContentsMargins(SPACING_OUTER, SPACING_INNER, SPACING_OUTER, SPACING_INNER)
+        footer.setSpacing(SPACING_INNER)
         footer.addStretch()
         self.save_btn = QPushButton("Save")
+        self.save_btn.setObjectName("primaryButton")
         self.save_btn.setShortcut(QKeySequence.Save)
         self.save_btn.clicked.connect(self.save_active)
         footer.addWidget(self.save_btn)
         self.export_xml_btn = QPushButton("Export AI XML")
+        self.export_xml_btn.setObjectName("secondaryButton")
         self.export_xml_btn.clicked.connect(self.export_ai_xml)
         footer.addWidget(self.export_xml_btn)
 
         central = QWidget()
         central_layout = QVBoxLayout(central)
         central_layout.setContentsMargins(0, 0, 0, 0)
+        central_layout.setSpacing(0)
         central_layout.addWidget(splitter, stretch=1)
-        central_layout.addLayout(footer)
+        central_layout.addWidget(footer_widget)
         self.setCentralWidget(central)
 
         self.setStatusBar(QStatusBar())
@@ -125,6 +140,16 @@ class MainWindow(QMainWindow):
         file_menu.addAction(exit_action)
 
         help_menu = self.menuBar().addMenu("&Help")
+
+        about_action = QAction("&About…", self)
+        about_action.triggered.connect(self._show_about)
+        help_menu.addAction(about_action)
+
+        legal_action = QAction("&Legal…", self)
+        legal_action.triggered.connect(self._show_legal)
+        help_menu.addAction(legal_action)
+
+        help_menu.addSeparator()
         log_action = QAction("Open &Log Folder", self)
         log_action.triggered.connect(lambda: open_log_folder(self))
         help_menu.addAction(log_action)
@@ -476,6 +501,12 @@ class MainWindow(QMainWindow):
             document.mark_dirty()
             self.driver_panel.refresh_titles()
             self._refresh_save_state()
+
+    def _show_about(self) -> None:
+        AboutDialog(self).exec()
+
+    def _show_legal(self) -> None:
+        LegalDialog(self).exec()
 
     def closeEvent(self, event) -> None:
         dirty_docs = [doc for doc in self._documents.values() if doc.dirty]

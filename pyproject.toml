@@ -27,6 +27,9 @@ packages = ["ams2_ai"]
 "ams2_ai/data/track_meta.json" = "ams2_ai/data/track_meta.json"
 "ams2_ai/data/vehicle_classes.json" = "ams2_ai/data/vehicle_classes.json"
 "ams2_ai/data/flags" = "ams2_ai/data/flags"
+"assets/fonts" = "assets/fonts"
+"assets/icon" = "assets/icon"
+"ams2_ai/ui/styles" = "ams2_ai/ui/styles"
 
 [tool.ruff]
 line-length = 100

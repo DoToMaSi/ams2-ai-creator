@@ -6,6 +6,14 @@ cd /d "%~dp0\.."
 echo Building AMS2 AI Creator for Windows...
 echo.
 
+echo Generating multi-size application icon...
+python scripts\build_icon.py
+if errorlevel 1 (
+  echo.
+  echo Icon generation failed.
+  exit /b 1
+)
+
 python -m PyInstaller --noconfirm AMS2-AI-Creator.spec
 
 if errorlevel 1 (

@@ -27,3 +27,12 @@ def test_optional_parameter_defaults_match_ams2_neutral():
     assert entry.get_ui_value("weight_scalar") == 100
     assert entry.get_ui_value("setup_downforce") == 50
     assert entry.get_ui_value("setup_downforce_randomness") == 0
+
+
+def test_every_parameter_has_help_text():
+    from ams2_ai.models.parameters import PARAMETERS
+
+    for param in PARAMETERS:
+        assert param.description.strip(), f"{param.key} missing description"
+        assert param.low_hint.strip(), f"{param.key} missing low_hint"
+        assert param.high_hint.strip(), f"{param.key} missing high_hint"

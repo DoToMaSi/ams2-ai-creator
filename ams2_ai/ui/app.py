@@ -13,6 +13,7 @@ from ams2_ai import __version__
 from ams2_ai.logging_config import setup_logging
 from ams2_ai.ui.dialogs import ErrorDialog
 from ams2_ai.ui.main_window import MainWindow
+from ams2_ai.ui.theme import apply_theme
 
 logger = logging.getLogger("ams2_ai.ui.app")
 
@@ -45,6 +46,7 @@ def main() -> int:
     app.setApplicationName("AMS2 AI Creator")
     app.setOrganizationName("ams2-ai-creator")
     app.setApplicationVersion(__version__)
+    apply_theme(app)
 
     install_exception_hooks()
 

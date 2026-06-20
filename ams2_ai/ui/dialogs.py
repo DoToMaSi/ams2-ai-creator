@@ -6,7 +6,7 @@ import subprocess
 import sys
 
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QDesktopServices, QFont
+from PySide6.QtGui import QDesktopServices, QFont, QPixmap
 from PySide6.QtWidgets import (
     QComboBox,
     QDialog,
@@ -32,8 +32,15 @@ from ams2_ai.data import (
     track_display_label,
     track_search_blob,
 )
+from ams2_ai import __version__
 from ams2_ai.logging_config import get_log_dir, get_log_file_path
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
+from ams2_ai.util.assets import icon_png_path, license_path
 from ams2_ai.util.filenames import xml_filename_from_label
+
+AMS2_AI_FORUM_URL = (
+    "https://forum.reizastudios.com/threads/information-for-customizing-ai-drivers-in-ams2.21758/"
+)
 
 
 class ErrorDialog(QDialog):
@@ -43,6 +50,8 @@ class ErrorDialog(QDialog):
         self.resize(560, 360)
 
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setSpacing(SPACING_INNER)
         layout.addWidget(QLabel("An unexpected error occurred:"))
         layout.addWidget(QLabel(summary))
 
@@ -77,6 +86,8 @@ class NewFileDialog(QDialog):
         self.resize(460, 200)
 
         layout = QFormLayout(self)
+        layout.setHorizontalSpacing(SPACING_SECTION)
+        layout.setVerticalSpacing(SPACING_INNER)
 
         self.set_name_edit = QLineEdit()
         self.set_name_edit.setPlaceholderText('e.g. "F1 2005" — shown in the file list')
@@ -160,6 +171,8 @@ class TrackPickerDialog(QDialog):
         self.resize(480, 420)
 
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setSpacing(SPACING_INNER)
         layout.addWidget(QLabel("Enter comma-separated track IDs (case-sensitive):"))
 
         self.track_list = QListWidget()
@@ -206,6 +219,8 @@ class SingleTrackPickerDialog(QDialog):
         available = [track for track in tracks if track not in existing]
 
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setSpacing(SPACING_INNER)
         layout.addWidget(QLabel("Select a track for per-track AI overrides:"))
 
         self.search_edit = QLineEdit()
@@ -300,3 +315,113 @@ def open_log_folder(parent: QWidget | None = None) -> None:
         subprocess.run(["explorer", str(log_dir)], check=False)
     else:
         QDesktopServices.openUrl(url)
+
+
+class AboutDialog(QDialog):
+    def __init__(self, parent: QWidget | None = None):
+        super().__init__(parent)
+        self.setWindowTitle("About AMS2 AI Creator")
+        self.setMinimumWidth(440)
+
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setSpacing(SPACING_SECTION)
+
+        header = QHBoxLayout()
+        icon_path = icon_png_path()
+        if icon_path.is_file():
+            icon_label = QLabel()
+            pixmap = QPixmap(str(icon_path)).scaled(
+                64,
+                64,
+                Qt.AspectRatioMode.KeepAspectRatio,
+                Qt.TransformationMode.SmoothTransformation,
+            )
+            icon_label.setPixmap(pixmap)
+            header.addWidget(icon_label)
+        title_col = QVBoxLayout()
+        title_col.addWidget(QLabel(f"<b>AMS2 AI Creator</b>"))
+        title_col.addWidget(QLabel(f"Version {__version__}"))
+        header.addLayout(title_col)
+        header.addStretch()
+        layout.addLayout(header)
+
+        layout.addWidget(
+            QLabel(
+                "A desktop editor for custom Automobilista 2 AI driver XML files — "
+                "names, nationalities, and personality parameters."
+            )
+        )
+        layout.addWidget(
+            QLabel(
+                "<b>Created by:</b> Douglas Tomacheski de Abreu e Silva "
+                "(<b>RockettSally</b>)"
+            )
+        )
+        layout.addWidget(
+            QLabel(
+                "<b>Built with:</b> Python, PySide6, Faker, Unidecode"
+            )
+        )
+
+        doc_link = QLabel(
+            f'<a href="{AMS2_AI_FORUM_URL}">Official AMS2 AI customization forum thread</a>'
+        )
+        doc_link.setOpenExternalLinks(True)
+        doc_link.setTextInteractionFlags(Qt.TextInteractionFlag.TextBrowserInteraction)
+        layout.addWidget(doc_link)
+
+        buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok)
+        buttons.accepted.connect(self.accept)
+        layout.addWidget(buttons)
+
+
+class LegalDialog(QDialog):
+    def __init__(self, parent: QWidget | None = None):
+        super().__init__(parent)
+        self.setWindowTitle("Legal")
+        self.resize(520, 420)
+
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(SPACING_SECTION, SPACING_SECTION, SPACING_SECTION, SPACING_SECTION)
+        layout.setSpacing(SPACING_INNER)
+
+        body = QTextEdit()
+        body.setReadOnly(True)
+        body.setPlainText(self._legal_text())
+        layout.addWidget(body)
+
+        button_row = QHBoxLayout()
+        license_btn = QPushButton("Open LICENSE File")
+        license_btn.clicked.connect(self._open_license)
+        button_row.addWidget(license_btn)
+        button_row.addStretch()
+        close_btn = QPushButton("Close")
+        close_btn.clicked.connect(self.accept)
+        button_row.addWidget(close_btn)
+        layout.addLayout(button_row)
+
+    def _legal_text(self) -> str:
+        return (
+            "AMS2 AI Creator is not affiliated with, endorsed by, or sponsored by "
+            "Reiza Studios or Automobilista 2.\n\n"
+            "Automobilista 2 and related names are trademarks of their respective owners.\n\n"
+            "This software is provided free of charge for personal use. It may not be sold "
+            "or redistributed for commercial purposes without the author's permission.\n\n"
+            "The application source code is licensed under the MIT License. See the LICENSE "
+            "file in the application directory for the full license text."
+        )
+
+    def _open_license(self) -> None:
+        path = license_path()
+        if not path.is_file():
+            QMessageBox.information(
+                self,
+                "LICENSE",
+                "LICENSE file not found beside the application.",
+            )
+            return
+        if sys.platform == "win32":
+            subprocess.run(["notepad", str(path)], check=False)
+        else:
+            QDesktopServices.openUrl(path.as_uri())

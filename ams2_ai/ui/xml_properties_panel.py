@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
 
 from ams2_ai.data import load_vehicle_classes
 from ams2_ai.models.document import AIDocument
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
 
 
 class XmlPropertiesPanel(QGroupBox):
@@ -25,6 +26,8 @@ class XmlPropertiesPanel(QGroupBox):
         self._loading = False
 
         form = QFormLayout()
+        form.setHorizontalSpacing(SPACING_SECTION)
+        form.setVerticalSpacing(SPACING_INNER)
         self.name_edit = QLineEdit()
         self.name_edit.setPlaceholderText("Set name shown in the file list")
         self.name_edit.textChanged.connect(self._on_changed)

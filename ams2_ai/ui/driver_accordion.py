@@ -17,6 +17,7 @@ from PySide6.QtWidgets import (
 )
 
 from ams2_ai.models.document import AIDocument
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_OUTER, SPACING_SECTION
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.ui.collapsible_section import CollapsibleSection
 from ams2_ai.ui.driver_editor import DriverEditor
@@ -49,14 +50,17 @@ class DriverAccordionPanel(QWidget):
         self._build_timer.timeout.connect(self._build_next_batch)
 
         root = QVBoxLayout(self)
-        root.setContentsMargins(0, 0, 0, 0)
+        root.setContentsMargins(SPACING_INNER, SPACING_INNER, SPACING_INNER, SPACING_INNER)
+        root.setSpacing(SPACING_SECTION)
 
         self.xml_properties = XmlPropertiesPanel()
         self.xml_properties.propertiesChanged.connect(self.documentPropertiesChanged.emit)
         root.addWidget(self.xml_properties)
 
         toolbar = QHBoxLayout()
-        toolbar.addWidget(QLabel("Drivers"))
+        drivers_label = QLabel("Drivers")
+        drivers_label.setObjectName("sectionTitle")
+        toolbar.addWidget(drivers_label)
         toolbar.addStretch()
         add_driver_btn = QPushButton("+ Driver")
         add_driver_btn.clicked.connect(self.addDriverRequested.emit)
@@ -64,7 +68,8 @@ class DriverAccordionPanel(QWidget):
         root.addLayout(toolbar)
 
         self.empty_label = QLabel("No drivers yet. Add a driver or open an XML file.")
-        self.empty_label.setStyleSheet("color: gray; padding: 16px;")
+        self.empty_label.setObjectName("mutedLabel")
+        self.empty_label.setContentsMargins(SPACING_INNER, SPACING_SECTION, SPACING_INNER, SPACING_SECTION)
         root.addWidget(self.empty_label)
 
         self.splitter = QSplitter(Qt.Orientation.Vertical)
@@ -76,6 +81,7 @@ class DriverAccordionPanel(QWidget):
         self.list_layout = QVBoxLayout(self.list_content)
         self.list_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.list_scroll.setWidget(self.list_content)
+        self.list_scroll.setMinimumHeight(200)
         self.splitter.addWidget(self.list_scroll)
 
         self.editor = DriverEditor()
@@ -84,7 +90,7 @@ class DriverAccordionPanel(QWidget):
 
         self.splitter.setStretchFactor(0, 0)
         self.splitter.setStretchFactor(1, 1)
-        self.splitter.setSizes([180, 720])
+        self.splitter.setSizes([200, 760])
         root.addWidget(self.splitter, stretch=1)
 
         self.editor_container = self.splitter
@@ -105,6 +111,7 @@ class DriverAccordionPanel(QWidget):
         self._progress = progress
         self._finished = finished
         self._expand_profile_id = expand_profile_id
+        self.xml_properties.setVisible(document is not None)
         self.xml_properties.set_document(document)
 
         if not document or not document.profiles():

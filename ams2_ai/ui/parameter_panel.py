@@ -16,6 +16,7 @@ from ams2_ai.models.parameters import (
 )
 from ams2_ai.smart.derivation import INDEPENDENT_KEYS, apply_smart_derivation
 from ams2_ai.ui.parameter_row import OverrideParameterRow, ParameterRow
+from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
 
 
 class ParameterPanel(QWidget):
@@ -48,6 +49,8 @@ class ParameterPanel(QWidget):
         scroll.setFrameShape(QFrame.Shape.NoFrame)
         content = QWidget()
         content_layout = QVBoxLayout(content)
+        content_layout.setContentsMargins(SPACING_INNER, SPACING_INNER, SPACING_INNER, SPACING_INNER)
+        content_layout.setSpacing(SPACING_INNER)
 
         grouped: dict[str, list[ParameterDef]] = {g: [] for g in PARAMETER_GROUPS}
         for param in PARAMETERS:
@@ -65,6 +68,7 @@ class ParameterPanel(QWidget):
                 self._group_boxes[group_name] = box
                 self._group_keys[group_name] = list(OPTIONAL_PARAMETER_GROUPS[group_name])
             box_layout = QVBoxLayout(box)
+            box_layout.setSpacing(SPACING_INNER)
             for param in grouped[group_name]:
                 if per_track:
                     row = OverrideParameterRow(param)
