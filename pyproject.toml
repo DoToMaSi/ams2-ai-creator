@@ -24,6 +24,7 @@ packages = ["ams2_ai"]
 "ams2_ai/data/countries.json" = "ams2_ai/data/countries.json"
 "ams2_ai/data/country_meta.json" = "ams2_ai/data/country_meta.json"
 "ams2_ai/data/tracks.json" = "ams2_ai/data/tracks.json"
+"ams2_ai/data/track_meta.json" = "ams2_ai/data/track_meta.json"
 "ams2_ai/data/vehicle_classes.json" = "ams2_ai/data/vehicle_classes.json"
 "ams2_ai/data/flags" = "ams2_ai/data/flags"
 

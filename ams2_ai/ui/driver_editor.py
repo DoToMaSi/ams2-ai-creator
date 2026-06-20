@@ -28,6 +28,8 @@ from ams2_ai.data import (
     load_tracks,
     normalize_country_code,
     parse_country_selection,
+    track_display_label,
+    track_tab_label,
 )
 from ams2_ai.models.document import AIDocument
 from ams2_ai.models.driver_profile import DriverProfile
@@ -211,7 +213,7 @@ class DriverEditor(QWidget):
         tab_layout.setContentsMargins(0, 0, 0, 0)
 
         header = QHBoxLayout()
-        header.addWidget(QLabel(f"Track: {override.tracks}"))
+        header.addWidget(QLabel(f"Track: {track_display_label(override.tracks)}"))
         header.addStretch()
         remove_btn = QPushButton("Remove track")
         remove_btn.clicked.connect(
@@ -227,7 +229,7 @@ class DriverEditor(QWidget):
 
         self._track_panels[override.entry_id] = panel
         self._track_tabs[override.entry_id] = tab
-        self.tabs.addTab(tab, override.tracks)
+        self.tabs.addTab(tab, track_tab_label(override.tracks))
 
     def _add_track_tab(self) -> None:
         if not self._profile:

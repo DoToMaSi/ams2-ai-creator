@@ -19,6 +19,13 @@ class CountryMeta:
     locale: str
 
 
+@dataclass(frozen=True)
+class TrackMeta:
+    code: str
+    venue: str
+    layout: str
+
+
 # Non-NATO legacy codes seen in older XML or informal usage → STANAG 1059 trigrams.
 LEGACY_COUNTRY_ALIASES: dict[str, str] = {
     "GER": "DEU",
@@ -69,6 +76,58 @@ def load_vehicle_classes() -> list[str]:
 @lru_cache(maxsize=1)
 def load_tracks() -> list[str]:
     return _read_json("tracks.json")
+
+
+@lru_cache(maxsize=1)
+def _track_meta_by_code() -> dict[str, TrackMeta]:
+    raw = _read_json("track_meta.json")
+    return {
+        code: TrackMeta(code=code, venue=entry["venue"], layout=entry["layout"])
+        for code, entry in raw.items()
+    }
+
+
+def get_track_meta(code: str) -> TrackMeta | None:
+    stripped = code.strip()
+    if not stripped:
+        return None
+    return _track_meta_by_code().get(stripped)
+
+
+def track_tab_label(code: str) -> str:
+    """Short label for tabs: 'Venue Layout'."""
+    meta = get_track_meta(code)
+    if meta:
+        return f"{meta.venue} {meta.layout}"
+    return code
+
+
+def track_display_label(code: str) -> str:
+    """Format as 'Venue Layout (code)' for pickers and lists."""
+    meta = get_track_meta(code)
+    if meta:
+        return f"{meta.venue} {meta.layout} ({meta.code})"
+    return code
+
+
+def track_search_blob(code: str) -> str:
+    """Lowercase text used for case-insensitive track search."""
+    meta = get_track_meta(code)
+    if meta:
+        parts = (meta.venue, meta.layout, meta.code, track_display_label(code))
+        return " ".join(parts).casefold()
+    return code.casefold()
+
+
+def group_tracks_by_venue(codes: list[str]) -> dict[str, list[str]]:
+    groups: dict[str, list[str]] = {}
+    for code in codes:
+        meta = get_track_meta(code)
+        venue = meta.venue if meta else code
+        groups.setdefault(venue, []).append(code)
+    for venue in groups:
+        groups[venue].sort(key=lambda c: track_display_label(c).casefold())
+    return dict(sorted(groups.items(), key=lambda item: item[0].casefold()))
 
 
 @lru_cache(maxsize=1)

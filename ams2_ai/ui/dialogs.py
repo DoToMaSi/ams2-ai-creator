@@ -5,7 +5,8 @@ from __future__ import annotations
 import subprocess
 import sys
 
-from PySide6.QtGui import QDesktopServices
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QDesktopServices, QFont
 from PySide6.QtWidgets import (
     QComboBox,
     QDialog,
@@ -14,14 +15,23 @@ from PySide6.QtWidgets import (
     QHBoxLayout,
     QLabel,
     QLineEdit,
+    QListWidget,
+    QListWidgetItem,
     QMessageBox,
     QPushButton,
     QTextEdit,
+    QTreeWidget,
+    QTreeWidgetItem,
     QVBoxLayout,
     QWidget,
 )
 
-from ams2_ai.data import load_vehicle_classes
+from ams2_ai.data import (
+    group_tracks_by_venue,
+    load_vehicle_classes,
+    track_display_label,
+    track_search_blob,
+)
 from ams2_ai.logging_config import get_log_dir, get_log_file_path
 
 
@@ -131,8 +141,6 @@ class TrackPickerDialog(QDialog):
         layout = QVBoxLayout(self)
         layout.addWidget(QLabel("Enter comma-separated track IDs (case-sensitive):"))
 
-        from PySide6.QtWidgets import QListWidget, QListWidgetItem
-
         self.track_list = QListWidget()
         self.track_list.setSelectionMode(QListWidget.MultiSelection)
         selected_set = {t.strip() for t in selected.split(",") if t.strip()}
@@ -171,34 +179,79 @@ class SingleTrackPickerDialog(QDialog):
     ):
         super().__init__(parent)
         self.setWindowTitle("Add Track Override")
-        self.resize(420, 480)
+        self.resize(520, 560)
         self._selected = ""
         existing = existing or set()
+        available = [track for track in tracks if track not in existing]
 
         layout = QVBoxLayout(self)
         layout.addWidget(QLabel("Select a track for per-track AI overrides:"))
 
-        from PySide6.QtWidgets import QListWidget, QListWidgetItem
+        self.search_edit = QLineEdit()
+        self.search_edit.setPlaceholderText("Search track name, layout, or code…")
+        self.search_edit.textChanged.connect(self._apply_filter)
+        layout.addWidget(self.search_edit)
 
-        self.track_list = QListWidget()
-        for track in tracks:
-            if track in existing:
-                continue
-            self.track_list.addItem(QListWidgetItem(track))
-        self.track_list.itemDoubleClicked.connect(self._accept_current)
-        layout.addWidget(self.track_list)
+        self.track_tree = QTreeWidget()
+        self.track_tree.setHeaderHidden(True)
+        self.track_tree.setRootIsDecorated(True)
+        self._populate_tree(available)
+        self.track_tree.itemDoubleClicked.connect(self._on_item_activated)
+        layout.addWidget(self.track_tree)
 
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         buttons.accepted.connect(self._accept_current)
         buttons.rejected.connect(self.reject)
         layout.addWidget(buttons)
 
+    def _populate_tree(self, tracks: list[str]) -> None:
+        self.track_tree.clear()
+        grouped = group_tracks_by_venue(tracks)
+        for venue, codes in grouped.items():
+            venue_item = QTreeWidgetItem([venue])
+            venue_item.setFlags(Qt.ItemFlag.ItemIsEnabled)
+            font = QFont(venue_item.font(0))
+            font.setBold(True)
+            venue_item.setFont(0, font)
+            for code in codes:
+                child = QTreeWidgetItem([track_display_label(code)])
+                child.setData(0, Qt.ItemDataRole.UserRole, code)
+                child.setToolTip(0, code)
+                venue_item.addChild(child)
+            self.track_tree.addTopLevelItem(venue_item)
+            venue_item.setExpanded(True)
+
+    def _apply_filter(self, text: str) -> None:
+        query = text.strip().casefold()
+        for index in range(self.track_tree.topLevelItemCount()):
+            venue_item = self.track_tree.topLevelItem(index)
+            if venue_item is None:
+                continue
+            any_visible = False
+            for child_index in range(venue_item.childCount()):
+                child = venue_item.child(child_index)
+                code = child.data(0, Qt.ItemDataRole.UserRole)
+                visible = not query or query in track_search_blob(str(code))
+                child.setHidden(not visible)
+                if visible:
+                    any_visible = True
+            venue_item.setHidden(not any_visible)
+
+    def _on_item_activated(self, item: QTreeWidgetItem, _column: int) -> None:
+        if item.data(0, Qt.ItemDataRole.UserRole):
+            self.track_tree.setCurrentItem(item)
+            self._accept_current()
+
     def _accept_current(self) -> None:
-        item = self.track_list.currentItem()
-        if not item:
-            QMessageBox.warning(self, "Add Track", "Select a track from the list.")
+        item = self.track_tree.currentItem()
+        if item is None:
+            QMessageBox.warning(self, "Add Track", "Select a track layout from the list.")
             return
-        self._selected = item.text()
+        code = item.data(0, Qt.ItemDataRole.UserRole)
+        if not code:
+            QMessageBox.warning(self, "Add Track", "Select a track layout, not the venue group.")
+            return
+        self._selected = str(code)
         self.accept()
 
     def selected_track(self) -> str:

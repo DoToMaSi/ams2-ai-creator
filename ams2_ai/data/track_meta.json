@@ -1,0 +1,922 @@
+{
+  "Adelaide_Historic": {
+    "venue": "Adelaide",
+    "layout": "Historic 1988"
+  },
+  "Adelaide_Modern": {
+    "venue": "Adelaide",
+    "layout": "Grand Prix"
+  },
+  "Adelaide_Modern_STT": {
+    "venue": "Adelaide",
+    "layout": "STT"
+  },
+  "Ascurra_Dirt": {
+    "venue": "Ascurra",
+    "layout": "Dirt"
+  },
+  "Ascurra_RX": {
+    "venue": "Ascurra",
+    "layout": "Rallycross"
+  },
+  "Azure_Circuit_2021": {
+    "venue": "Azure Circuit",
+    "layout": "Grand Prix"
+  },
+  "Bathurst_1983": {
+    "venue": "Bathurst",
+    "layout": "1983"
+  },
+  "Bathurst_2020": {
+    "venue": "Bathurst",
+    "layout": "2020"
+  },
+  "Barcelona_1991": {
+    "venue": "Barcelona",
+    "layout": "1991"
+  },
+  "Barcelona_GP_1999": {
+    "venue": "Barcelona",
+    "layout": "GP 1999"
+  },
+  "Barcelona_GP_2001": {
+    "venue": "Barcelona",
+    "layout": "GP 2001"
+  },
+  "BrandsHatch_GP": {
+    "venue": "Brands Hatch",
+    "layout": "Grand Prix"
+  },
+  "BrandsHatch_Indy": {
+    "venue": "Brands Hatch",
+    "layout": "Indy"
+  },
+  "Brasilia_Full": {
+    "venue": "Brasília",
+    "layout": "Full"
+  },
+  "Brasilia_Outer": {
+    "venue": "Brasília",
+    "layout": "Outer"
+  },
+  "Buenos_Aires_Circuito_6": {
+    "venue": "Buenos Aires",
+    "layout": "Circuito No. 6"
+  },
+  "Buenos_Aires_Circuito_6T": {
+    "venue": "Buenos Aires",
+    "layout": "Circuito No. 6S"
+  },
+  "Buenos_Aires_Circuito_7": {
+    "venue": "Buenos Aires",
+    "layout": "Circuito No. 7"
+  },
+  "Buenos_Aires_Circuito_8": {
+    "venue": "Buenos Aires",
+    "layout": "Circuito No. 8"
+  },
+  "Buenos_Aires_Circuito_9": {
+    "venue": "Buenos Aires",
+    "layout": "Circuito No. 9"
+  },
+  "Buenos_Aires_Circuito_12": {
+    "venue": "Buenos Aires",
+    "layout": "Circuito No. 12"
+  },
+  "Buenos_Aires_Circuito_15": {
+    "venue": "Buenos Aires",
+    "layout": "Circuito No. 15"
+  },
+  "Buskerud_Long": {
+    "venue": "Buskerud",
+    "layout": "Kart Long"
+  },
+  "Buskerud_Short": {
+    "venue": "Buskerud",
+    "layout": "Kart"
+  },
+  "CadwellPark": {
+    "venue": "Cadwell Park",
+    "layout": "Full"
+  },
+  "CampoGrande1": {
+    "venue": "Campo Grande",
+    "layout": "Full"
+  },
+  "Cascavel2": {
+    "venue": "Cascavel",
+    "layout": "Full"
+  },
+  "Cascais": {
+    "venue": "Cascais",
+    "layout": "Grand Prix"
+  },
+  "Cascais_1988": {
+    "venue": "Cascais",
+    "layout": "Historic 1988"
+  },
+  "Cascais_Alternate": {
+    "venue": "Cascais",
+    "layout": "Alternate"
+  },
+  "Circuit_de_Catalunya_GP": {
+    "venue": "Barcelona",
+    "layout": "Catalunya GP"
+  },
+  "Circuit_de_Catalunya_GP_NC": {
+    "venue": "Barcelona",
+    "layout": "Catalunya GP (No Chicane)"
+  },
+  "Circuit_de_Catalunya_NATL_NC": {
+    "venue": "Barcelona",
+    "layout": "Catalunya National"
+  },
+  "Circuit_de_Catalunya_RX": {
+    "venue": "Barcelona",
+    "layout": "Catalunya Rallycross"
+  },
+  "Cleveland_GP": {
+    "venue": "Cleveland",
+    "layout": "Grand Prix"
+  },
+  "Cleveland_STT": {
+    "venue": "Cleveland",
+    "layout": "STT"
+  },
+  "Cordoba_GP": {
+    "venue": "Córdoba",
+    "layout": "TC"
+  },
+  "Cordoba_International": {
+    "venue": "Córdoba",
+    "layout": "No. 4"
+  },
+  "Cordoba_NATL": {
+    "venue": "Córdoba",
+    "layout": "No. 2"
+  },
+  "CopaSaoPauloStage2": {
+    "venue": "Granja Viana",
+    "layout": "Copa São Paulo Stage 2"
+  },
+  "CuritibaInternacional": {
+    "venue": "Curitiba",
+    "layout": "Full"
+  },
+  "Curitiba_outer": {
+    "venue": "Curitiba",
+    "layout": "Outer"
+  },
+  "CurveloLong": {
+    "venue": "Curvelo",
+    "layout": "Long"
+  },
+  "CurveloShort": {
+    "venue": "Curvelo",
+    "layout": "Short"
+  },
+  "Daytona_Speedway_Tri_Oval": {
+    "venue": "Daytona",
+    "layout": "NASCAR Tri-Oval"
+  },
+  "Daytona_Road_Course": {
+    "venue": "Daytona",
+    "layout": "Sports Car Course"
+  },
+  "Daytona_Nascar_Road_Course": {
+    "venue": "Daytona",
+    "layout": "NASCAR Road Course"
+  },
+  "Donington_GP": {
+    "venue": "Donington Park",
+    "layout": "Grand Prix"
+  },
+  "Donington_Nat": {
+    "venue": "Donington Park",
+    "layout": "National"
+  },
+  "Fontana_OVAL": {
+    "venue": "Fontana",
+    "layout": "Oval"
+  },
+  "Fontana_OVAL_Historic": {
+    "venue": "Fontana",
+    "layout": "Oval Historic"
+  },
+  "Fontana_SCC": {
+    "venue": "Fontana",
+    "layout": "Sports Car Course"
+  },
+  "Foz_RX": {
+    "venue": "Foz",
+    "layout": "Rallycross"
+  },
+  "Galeao_Airport": {
+    "venue": "Galeão Airport",
+    "layout": "Full"
+  },
+  "Gateway_OVAL": {
+    "venue": "Gateway",
+    "layout": "Oval"
+  },
+  "Gateway_RC1": {
+    "venue": "Gateway",
+    "layout": "Road Course (Long)"
+  },
+  "Gateway_RC2": {
+    "venue": "Gateway",
+    "layout": "Road Course (Short)"
+  },
+  "GoianiaMixed": {
+    "venue": "Goiânia",
+    "layout": "Mixed"
+  },
+  "GoianiaOuter": {
+    "venue": "Goiânia",
+    "layout": "External"
+  },
+  "GoianiaShort": {
+    "venue": "Goiânia",
+    "layout": "Short"
+  },
+  "GranjaVianaKart101": {
+    "venue": "Granja Viana",
+    "layout": "Kart 101"
+  },
+  "GranjaVianaKart102": {
+    "venue": "Granja Viana",
+    "layout": "Kart 102"
+  },
+  "GranjaVianaKart121": {
+    "venue": "Granja Viana",
+    "layout": "Kart 121"
+  },
+  "Guapore": {
+    "venue": "Guaporé",
+    "layout": "Full"
+  },
+  "Guapore_STT": {
+    "venue": "Guaporé",
+    "layout": "STT"
+  },
+  "Hockenheim_GP": {
+    "venue": "Hockenheimring",
+    "layout": "Grand Prix"
+  },
+  "Hockenheim_ShortA": {
+    "venue": "Hockenheimring",
+    "layout": "Short A"
+  },
+  "Hockenheim_ShortB": {
+    "venue": "Hockenheimring",
+    "layout": "Short B"
+  },
+  "Hockenheim_National": {
+    "venue": "Hockenheimring",
+    "layout": "National"
+  },
+  "Hockenheim_2001": {
+    "venue": "Hockenheimring",
+    "layout": "Historic 2001"
+  },
+  "Hockenheim_1988": {
+    "venue": "Hockenheimring",
+    "layout": "Historic 1988"
+  },
+  "Hockenheim_1988_short": {
+    "venue": "Hockenheimring",
+    "layout": "Historic 1988 Short"
+  },
+  "Hockenheim_1977": {
+    "venue": "Hockenheimring",
+    "layout": "Historic 1977"
+  },
+  "Hockenheim_RX": {
+    "venue": "Hockenheimring",
+    "layout": "Rallycross"
+  },
+  "Hockenheim_STT": {
+    "venue": "Hockenheimring",
+    "layout": "STT"
+  },
+  "Hungaroring_GP_2025": {
+    "venue": "Hungaroring",
+    "layout": "Grand Prix"
+  },
+  "Ibarra2": {
+    "venue": "Ibarra",
+    "layout": "Yahuarcocha"
+  },
+  "Ibarra_Reverse": {
+    "venue": "Ibarra",
+    "layout": "Yahuarcocha Reverse"
+  },
+  "Ibarra_STT": {
+    "venue": "Ibarra",
+    "layout": "Yahuarcocha STT"
+  },
+  "Imola_GP_2018": {
+    "venue": "Imola",
+    "layout": "Grand Prix"
+  },
+  "Imola_GP_1972": {
+    "venue": "Imola",
+    "layout": "Historic 1972"
+  },
+  "Imola_GP_1988": {
+    "venue": "Imola",
+    "layout": "Historic 1988"
+  },
+  "Imola_GP_2001": {
+    "venue": "Imola",
+    "layout": "Historic 2001"
+  },
+  "Imola_GP_2005": {
+    "venue": "Imola",
+    "layout": "Historic 2005"
+  },
+  "Indianapolis_2001_Oval": {
+    "venue": "Indianapolis",
+    "layout": "Oval 2001"
+  },
+  "Indianapolis_2001_RC": {
+    "venue": "Indianapolis",
+    "layout": "Road Course 2001"
+  },
+  "Indianapolis_2022_Oval": {
+    "venue": "Indianapolis",
+    "layout": "Oval"
+  },
+  "Indianapolis_2022_RC": {
+    "venue": "Indianapolis",
+    "layout": "Road Course"
+  },
+  "Interlagos_1991": {
+    "venue": "Interlagos",
+    "layout": "1991"
+  },
+  "Interlagos_1993": {
+    "venue": "Interlagos",
+    "layout": "1993"
+  },
+  "Interlagos_GP": {
+    "venue": "Interlagos",
+    "layout": "Grand Prix"
+  },
+  "Interlagos_SCB": {
+    "venue": "Interlagos",
+    "layout": "Stock Car Brasil"
+  },
+  "Interlagos_Historic": {
+    "venue": "Interlagos",
+    "layout": "Historic 1976"
+  },
+  "Interlagos_Historic_Outer": {
+    "venue": "Interlagos",
+    "layout": "Historic 1976 Outer"
+  },
+  "InterlagosKart1": {
+    "venue": "Interlagos",
+    "layout": "Kart One"
+  },
+  "InterlagosKart2": {
+    "venue": "Interlagos",
+    "layout": "Kart Two"
+  },
+  "InterlagosKart3": {
+    "venue": "Interlagos",
+    "layout": "Kart Three"
+  },
+  "Jacarepagua_Historic": {
+    "venue": "Jacarepaguá",
+    "layout": "Historic 1988"
+  },
+  "Jacarepagua_2005": {
+    "venue": "Jacarepaguá",
+    "layout": "Historic 2005"
+  },
+  "Jacarepagua_OVAL": {
+    "venue": "Jacarepaguá",
+    "layout": "Historic 2005 Oval"
+  },
+  "Jacarepagua_SCB": {
+    "venue": "Jacarepaguá",
+    "layout": "Historic 2012 SCB"
+  },
+  "Jacarepagua_SHORT": {
+    "venue": "Jacarepaguá",
+    "layout": "Historic 2012 Short"
+  },
+  "Jerez_GP1988": {
+    "venue": "Jerez",
+    "layout": "Historic 1988"
+  },
+  "Jerez_GP2019": {
+    "venue": "Jerez",
+    "layout": "Moto"
+  },
+  "Jerez_Standard": {
+    "venue": "Jerez",
+    "layout": "Chicane"
+  },
+  "Kansai_GP": {
+    "venue": "Suzuka",
+    "layout": "Grand Prix"
+  },
+  "Kansai_Classic": {
+    "venue": "Suzuka",
+    "layout": "Classic"
+  },
+  "Kansai_East": {
+    "venue": "Suzuka",
+    "layout": "East"
+  },
+  "Kansai_West": {
+    "venue": "Suzuka",
+    "layout": "West"
+  },
+  "Kyalami_2019": {
+    "venue": "Kyalami",
+    "layout": "Grand Prix"
+  },
+  "Kyalami_Historic": {
+    "venue": "Kyalami",
+    "layout": "Historic 1976"
+  },
+  "Laguna_Seca_2020": {
+    "venue": "Laguna Seca",
+    "layout": "2020"
+  },
+  "Le_Mans_24h": {
+    "venue": "Le Mans",
+    "layout": "24 Hours"
+  },
+  "Le_Mans_24h_2005": {
+    "venue": "Le Mans",
+    "layout": "24 Hours 2005"
+  },
+  "Le_Mans_Circuit_Bugatti": {
+    "venue": "Le Mans",
+    "layout": "Circuit Bugatti"
+  },
+  "Londrina_short": {
+    "venue": "Londrina",
+    "layout": "Short"
+  },
+  "Londrina_long": {
+    "venue": "Londrina",
+    "layout": "Long"
+  },
+  "LondrinaKart1": {
+    "venue": "Londrina",
+    "layout": "Kart One"
+  },
+  "LondrinaKart2": {
+    "venue": "Londrina",
+    "layout": "Kart Two"
+  },
+  "Long_Beach": {
+    "venue": "Long Beach",
+    "layout": "Grand Prix"
+  },
+  "Long_Beach_STT": {
+    "venue": "Long Beach",
+    "layout": "STT"
+  },
+  "Montreal_Historic": {
+    "venue": "Montréal",
+    "layout": "Historic 1988"
+  },
+  "Montreal_Historic_1991": {
+    "venue": "Montréal",
+    "layout": "Historic 1991"
+  },
+  "Montreal_Modern": {
+    "venue": "Montréal",
+    "layout": "Grand Prix"
+  },
+  "Monza_1971_10k": {
+    "venue": "Monza",
+    "layout": "Historic 1971 10k"
+  },
+  "Monza_1971_10knc": {
+    "venue": "Monza",
+    "layout": "Historic 1971 10k (No Chicane)"
+  },
+  "Monza_1971": {
+    "venue": "Monza",
+    "layout": "Historic 1971"
+  },
+  "Monza_1991": {
+    "venue": "Monza",
+    "layout": "Historic 1991"
+  },
+  "Monza_1971_Junior": {
+    "venue": "Monza",
+    "layout": "Historic 1971 Junior"
+  },
+  "Monza_2005": {
+    "venue": "Monza",
+    "layout": "Historic 2005"
+  },
+  "Monza_2020": {
+    "venue": "Monza",
+    "layout": "Grand Prix"
+  },
+  "Monza_2020_Junior": {
+    "venue": "Monza",
+    "layout": "Junior"
+  },
+  "Monza_2020_STT": {
+    "venue": "Monza",
+    "layout": "STT"
+  },
+  "Mosport": {
+    "venue": "Mosport",
+    "layout": "Grand Prix"
+  },
+  "Nordschleife_2020": {
+    "venue": "Nürburgring",
+    "layout": "Nordschleife 2020"
+  },
+  "Nordschleife_2020_24hr": {
+    "venue": "Nürburgring",
+    "layout": "Nordschleife 24 Hour 2020"
+  },
+  "Nordschleife_2025": {
+    "venue": "Nürburgring",
+    "layout": "Nordschleife 2025"
+  },
+  "Nordschleife_2025_24hr": {
+    "venue": "Nürburgring",
+    "layout": "Nordschleife 24 Hour 2025"
+  },
+  "Nordschleife_2025_tourist": {
+    "venue": "Nürburgring",
+    "layout": "Nordschleife Tourist 2025"
+  },
+  "Nurb_GP_2020": {
+    "venue": "Nürburgring",
+    "layout": "GP 2020"
+  },
+  "Nurb_GP_2020_Veedol": {
+    "venue": "Nürburgring",
+    "layout": "Veedol 2020"
+  },
+  "Nurb_GP_2020_Sprint": {
+    "venue": "Nürburgring",
+    "layout": "Sprint 2020"
+  },
+  "Nurb_GP_2020_Sprint_S": {
+    "venue": "Nürburgring",
+    "layout": "Sprint S 2020"
+  },
+  "Nurb_GP_2025": {
+    "venue": "Nürburgring",
+    "layout": "GP 2025"
+  },
+  "Nurb_1971_Beton": {
+    "venue": "Nürburgring",
+    "layout": "Betonschleife Historic 1971"
+  },
+  "Nurb_1971_Gesamt": {
+    "venue": "Nürburgring",
+    "layout": "Gesamtstrecke Historic 1971"
+  },
+  "Nurb_1971_Nords": {
+    "venue": "Nürburgring",
+    "layout": "Nordschleife Historic 1971"
+  },
+  "Nurb_1971_Suds": {
+    "venue": "Nürburgring",
+    "layout": "Südscheleife Historic 1971"
+  },
+  "Nurb_2020_RX": {
+    "venue": "Nürburgring",
+    "layout": "Rallycross"
+  },
+  "Ortona1": {
+    "venue": "Ortona",
+    "layout": "Kart One"
+  },
+  "Ortona2": {
+    "venue": "Ortona",
+    "layout": "Kart Two"
+  },
+  "Ortona3": {
+    "venue": "Ortona",
+    "layout": "Kart Three"
+  },
+  "Ortona4": {
+    "venue": "Ortona",
+    "layout": "Kart Four"
+  },
+  "OultonPark_International": {
+    "venue": "Oulton Park",
+    "layout": "International"
+  },
+  "OultonPark_Classic": {
+    "venue": "Oulton Park",
+    "layout": "Classic"
+  },
+  "OultonPark_Fosters": {
+    "venue": "Oulton Park",
+    "layout": "Fosters"
+  },
+  "OultonPark_Island": {
+    "venue": "Oulton Park",
+    "layout": "Island"
+  },
+  "Pocono_OVAL": {
+    "venue": "Pocono",
+    "layout": "Oval"
+  },
+  "Pocono_RC1": {
+    "venue": "Pocono",
+    "layout": "East Course 1"
+  },
+  "Pocono_RC2": {
+    "venue": "Pocono",
+    "layout": "North/South Course 1"
+  },
+  "Pocono_RC3": {
+    "venue": "Pocono",
+    "layout": "North/South Course 1 (No Chicane)"
+  },
+  "Pocono_RC4": {
+    "venue": "Pocono",
+    "layout": "North/South Course 2"
+  },
+  "Pocono_RC5": {
+    "venue": "Pocono",
+    "layout": "Southeast Course 1"
+  },
+  "Pocono_RC6": {
+    "venue": "Pocono",
+    "layout": "Southeast Course 5"
+  },
+  "Road_America_RC": {
+    "venue": "Road America",
+    "layout": "Full"
+  },
+  "Road_America_RCB": {
+    "venue": "Road America",
+    "layout": "Bend"
+  },
+  "Road_America_STT": {
+    "venue": "Road America",
+    "layout": "STT"
+  },
+  "Road_Atlanta": {
+    "venue": "Road Atlanta",
+    "layout": "Full"
+  },
+  "Road_Atlanta_2005": {
+    "venue": "Road Atlanta",
+    "layout": "2005"
+  },
+  "Road_Atlanta_2005_short": {
+    "venue": "Road Atlanta",
+    "layout": "2005 Short"
+  },
+  "Road_Atlanta_Moto": {
+    "venue": "Road Atlanta",
+    "layout": "Moto"
+  },
+  "Salvador_Street_Circuit": {
+    "venue": "Salvador",
+    "layout": "Street Circuit"
+  },
+  "SantaCruzDoSul": {
+    "venue": "Santa Cruz do Sul",
+    "layout": "Full"
+  },
+  "Sebring": {
+    "venue": "Sebring",
+    "layout": "Full"
+  },
+  "Sebring_Club": {
+    "venue": "Sebring",
+    "layout": "Club"
+  },
+  "Sebring_School": {
+    "venue": "Sebring",
+    "layout": "School"
+  },
+  "Sebring_STT": {
+    "venue": "Sebring",
+    "layout": "STT"
+  },
+  "Silverstone_1975": {
+    "venue": "Silverstone",
+    "layout": "Historic 1975"
+  },
+  "Silverstone_1975_No_Chicane": {
+    "venue": "Silverstone",
+    "layout": "Historic 1975 (No Chicane)"
+  },
+  "Silverstone_1991": {
+    "venue": "Silverstone",
+    "layout": "Historic 1991"
+  },
+  "Silverstone_2001": {
+    "venue": "Silverstone",
+    "layout": "Historic 2001"
+  },
+  "Silverstone_2001_International": {
+    "venue": "Silverstone",
+    "layout": "International Historic 2001"
+  },
+  "Silverstone_2001_National": {
+    "venue": "Silverstone",
+    "layout": "National Historic 2001"
+  },
+  "Silverstone_GP": {
+    "venue": "Silverstone",
+    "layout": "Grand Prix"
+  },
+  "Silverstone_Intl_2019": {
+    "venue": "Silverstone",
+    "layout": "International"
+  },
+  "Silverstone_Natl_2019": {
+    "venue": "Silverstone",
+    "layout": "National"
+  },
+  "Snetterton_100": {
+    "venue": "Snetterton",
+    "layout": "100"
+  },
+  "Snetterton_200": {
+    "venue": "Snetterton",
+    "layout": "200"
+  },
+  "Snetterton_300": {
+    "venue": "Snetterton",
+    "layout": "300"
+  },
+  "Spa_Francorchamps_1970": {
+    "venue": "Spa-Francorchamps",
+    "layout": "1970"
+  },
+  "Spa_Francorchamps_1970_1000km": {
+    "venue": "Spa-Francorchamps",
+    "layout": "1970 1000km"
+  },
+  "Spa_Francorchamps_1993": {
+    "venue": "Spa-Francorchamps",
+    "layout": "1993"
+  },
+  "Spa_Francorchamps_2005": {
+    "venue": "Spa-Francorchamps",
+    "layout": "2005"
+  },
+  "Spa_Francorchamps_2005_EC": {
+    "venue": "Spa-Francorchamps",
+    "layout": "2005 Endurance"
+  },
+  "Spa_Francorchamps_2020": {
+    "venue": "Spa-Francorchamps",
+    "layout": "2020"
+  },
+  "Spa_Francorchamps_2022": {
+    "venue": "Spa-Francorchamps",
+    "layout": "2022"
+  },
+  "Spa_Francorchamps_2022_RX": {
+    "venue": "Spa-Francorchamps",
+    "layout": "Rallycross"
+  },
+  "Speedland1": {
+    "venue": "Speedland",
+    "layout": "Kart 1"
+  },
+  "Speedland2": {
+    "venue": "Speedland",
+    "layout": "Kart 2"
+  },
+  "Speedland3": {
+    "venue": "Speedland",
+    "layout": "Kart 3"
+  },
+  "Speedland4": {
+    "venue": "Speedland",
+    "layout": "Kart 4"
+  },
+  "Spielberg_2001": {
+    "venue": "Red Bull Ring",
+    "layout": "Historic 2001"
+  },
+  "Spielberg_Historic": {
+    "venue": "Red Bull Ring",
+    "layout": "Historic 1977"
+  },
+  "Spielberg_Vintage": {
+    "venue": "Red Bull Ring",
+    "layout": "Historic 1974"
+  },
+  "Spielberg_Modern": {
+    "venue": "Red Bull Ring",
+    "layout": "Grand Prix"
+  },
+  "Spielberg_Short": {
+    "venue": "Red Bull Ring",
+    "layout": "Short"
+  },
+  "Spielberg_STT": {
+    "venue": "Red Bull Ring",
+    "layout": "STT"
+  },
+  "Taruma_Internacional": {
+    "venue": "Tarumã",
+    "layout": "International"
+  },
+  "Taruma_Chicane": {
+    "venue": "Tarumã",
+    "layout": "Chicane"
+  },
+  "Termas_Rio_Hondo": {
+    "venue": "Termas de Río Hondo",
+    "layout": "Full"
+  },
+  "Tykki_Dirt1": {
+    "venue": "Tykki",
+    "layout": "Dirt 1"
+  },
+  "Tykki_Dirt2": {
+    "venue": "Tykki",
+    "layout": "Dirt 2"
+  },
+  "Tykki_RX": {
+    "venue": "Tykki",
+    "layout": "Rallycross"
+  },
+  "Tykki_Tarmac": {
+    "venue": "Tykki",
+    "layout": "Tarmac"
+  },
+  "VeloCitta1": {
+    "venue": "Velo Cittá",
+    "layout": "Full"
+  },
+  "VeloCittaTD": {
+    "venue": "Velo Cittá",
+    "layout": "Track Day"
+  },
+  "VeloCittaClubDay": {
+    "venue": "Velo Cittá",
+    "layout": "Club Day"
+  },
+  "Velopark_2010": {
+    "venue": "Velopark",
+    "layout": "2010"
+  },
+  "Velopark_2017": {
+    "venue": "Velopark",
+    "layout": "2017"
+  },
+  "Velopark_2017_STT": {
+    "venue": "Velopark",
+    "layout": "2017 STT"
+  },
+  "Virginia_Full": {
+    "venue": "Virginia International Raceway",
+    "layout": "Full"
+  },
+  "Virginia_Grand": {
+    "venue": "Virginia International Raceway",
+    "layout": "Grand"
+  },
+  "Virginia_North": {
+    "venue": "Virginia International Raceway",
+    "layout": "North"
+  },
+  "Virginia_Patriot": {
+    "venue": "Virginia International Raceway",
+    "layout": "Patriot"
+  },
+  "Virginia_South": {
+    "venue": "Virginia International Raceway",
+    "layout": "South"
+  },
+  "Watkins_Glen_GP": {
+    "venue": "Watkins Glen",
+    "layout": "Grand Prix"
+  },
+  "Watkins_Glen_GPIL": {
+    "venue": "Watkins Glen",
+    "layout": "GP (Inner Loop)"
+  },
+  "Watkins_Glen_S": {
+    "venue": "Watkins Glen",
+    "layout": "Short"
+  },
+  "Watkins_Glen_SIL": {
+    "venue": "Watkins Glen",
+    "layout": "Short (Inner Loop)"
+  },
+  "Watkins_Glen_STT": {
+    "venue": "Watkins Glen",
+    "layout": "STT"
+  }
+}
