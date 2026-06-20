@@ -2,74 +2,77 @@
 
 from __future__ import annotations
 
-import random
-
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.parameters import NUMERIC_KEYS, clamp, ui_to_xml
 
 
-def _noise(low: float, high: float) -> float:
-    return random.uniform(low, high)
+def _clamp01(value: float) -> float:
+    return clamp(value, 0.0, 1.0)
+
+# Vehicle performance scalars are not personality — editable independently in Smart mode.
+INDEPENDENT_KEYS = frozenset(
+    {
+        "weight_scalar",
+        "power_scalar",
+        "drag_scalar",
+    }
+)
+
+DERIVED_PERSONALITY_KEYS = frozenset(NUMERIC_KEYS) - INDEPENDENT_KEYS - {"race_skill", "aggression"}
+
+
+def calculate_smart_ai(skill: float, aggression: float) -> dict[str, float]:
+    """
+    Derive AMS2 AI personality parameters from Skill (S) and Aggression (A).
+
+    Both inputs are floats from 0.0 to 1.0. Output values are clamped to 0.0–1.0
+    and rounded to three decimal places for XML output.
+    """
+    s = _clamp01(skill)
+    a = _clamp01(aggression)
+    inv_penalty = a * (1.0 - s)
+
+    params = {
+        "qualifying_skill": _clamp01(s + (a - 0.5) * 0.1),
+        "start_reactions": _clamp01(s * 0.5 + a * 0.5),
+        "wet_skill": _clamp01(s - inv_penalty * 0.4),
+        "consistency": _clamp01(s - inv_penalty * 0.6),
+        "avoidance_of_mistakes": _clamp01(s - inv_penalty * 0.8),
+        "avoidance_of_forced_mistakes": _clamp01(s - inv_penalty * 0.5),
+        "defending": _clamp01(a * 0.8 + s * 0.2),
+        "blue_flag_conceding": _clamp01((1.0 - a) * 0.7 + s * 0.3),
+        "tyre_management": _clamp01(s * 0.5 + (1.0 - a) * 0.5),
+        "fuel_management": _clamp01(s * 0.6 + (1.0 - a) * 0.4),
+        "stamina": _clamp01(s * 0.7 + (1.0 - a) * 0.3),
+        "weather_tyre_changes": _clamp01(s * 0.7 + (1.0 - a) * 0.3),
+        "vehicle_reliability": _clamp01(s * 0.5 + (1.0 - a) * 0.5),
+        "setup_downforce": _clamp01(0.5 - (a - 0.5) * 0.3 + (s - 0.5) * 0.1),
+        "setup_downforce_randomness": _clamp01((1.0 - s) * 0.5),
+    }
+
+    return {key: round(value, 3) for key, value in params.items()}
 
 
 def derive_from_skill_aggression(
     skill_ui: int,
     aggression_ui: int,
     *,
-    apply_randomness: bool = True,
+    apply_randomness: bool = False,
 ) -> dict[str, float]:
-    """Return XML values for all numeric parameters derived from skill/aggression."""
-    n = _noise if apply_randomness else lambda _l, _h: 0.0
+    """Return XML values for all numeric parameters derived from skill/aggression UI (0–100)."""
+    del apply_randomness  # deterministic formulas; presets randomize inputs only
 
-    qualifying_ui = clamp(skill_ui + n(-5, 8), 0, 100)
-    defending_ui = clamp(0.6 * aggression_ui + 0.25 * skill_ui + n(-5, 5), 0, 100)
-    consistency_ui = clamp(20 + 0.75 * skill_ui + n(-8, 8), 0, 100)
-    stamina_ui = clamp(30 + 0.65 * skill_ui + n(-5, 5), 0, 100)
-    start_reactions_ui = clamp(25 + 0.70 * skill_ui + n(-5, 5), 0, 100)
-    wet_skill_ui = clamp(15 + 0.75 * skill_ui + n(-10, 10), 0, 100)
-    tyre_mgmt_ui = clamp(40 + 0.50 * skill_ui + n(-5, 5), 0, 100)
-    fuel_mgmt_ui = clamp(50 + n(-15, 15), 0, 100)
-    blue_flag_ui = clamp(50 + 0.40 * skill_ui + n(-10, 10), 0, 100)
-    weather_tyre_ui = clamp(20 + n(0, 50), 0, 100)
-    avoid_mistakes_ui = clamp(20 + 0.60 * skill_ui + n(-5, 5), 0, 100)
-    avoid_forced_ui = clamp(15 + 0.50 * skill_ui + 0.20 * aggression_ui + n(-5, 5), 0, 100)
-    reliability_ui = clamp(50 + 0.45 * skill_ui + n(-5, 5), 0, 100)
+    s = _clamp01(skill_ui / 100.0)
+    a = _clamp01(aggression_ui / 100.0)
 
-    ui_values = {
-        "race_skill": skill_ui,
-        "qualifying_skill": int(round(qualifying_ui)),
-        "aggression": aggression_ui,
-        "defending": int(round(defending_ui)),
-        "consistency": int(round(consistency_ui)),
-        "stamina": int(round(stamina_ui)),
-        "start_reactions": int(round(start_reactions_ui)),
-        "wet_skill": int(round(wet_skill_ui)),
-        "tyre_management": int(round(tyre_mgmt_ui)),
-        "fuel_management": int(round(fuel_mgmt_ui)),
-        "blue_flag_conceding": int(round(blue_flag_ui)),
-        "weather_tyre_changes": int(round(weather_tyre_ui)),
-        "avoidance_of_mistakes": int(round(avoid_mistakes_ui)),
-        "avoidance_of_forced_mistakes": int(round(avoid_forced_ui)),
-        "vehicle_reliability": int(round(reliability_ui)),
-        "weight_scalar": 100,
-        "power_scalar": 100,
-        "drag_scalar": 100,
-        "setup_downforce": 50,
-        "setup_downforce_randomness": 20,
-    }
+    derived = calculate_smart_ai(s, a)
+    derived["race_skill"] = round(s, 3)
+    derived["aggression"] = round(a, 3)
+    derived["weight_scalar"] = 1.0
+    derived["power_scalar"] = 1.0
+    derived["drag_scalar"] = 1.0
 
-    return {key: ui_to_xml(key, ui_values[key]) for key in NUMERIC_KEYS}
-
-
-INDEPENDENT_KEYS = frozenset(
-    {
-        "weight_scalar",
-        "power_scalar",
-        "drag_scalar",
-        "setup_downforce",
-        "setup_downforce_randomness",
-    }
-)
+    return {key: derived[key] for key in NUMERIC_KEYS}
 
 
 def apply_smart_derivation(
@@ -82,15 +85,7 @@ def apply_smart_derivation(
     aggression = driver.get_aggression_ui()
     derived = derive_from_skill_aggression(skill, aggression, apply_randomness=apply_randomness)
 
-    preserved: dict[str, float] = {}
-    if preserve_independent:
-        for key in INDEPENDENT_KEYS:
-            if key in driver.values:
-                preserved[key] = driver.values[key]
-
     for key, xml_value in derived.items():
-        if preserve_independent and key in INDEPENDENT_KEYS:
-            if key not in driver.set_fields:
-                driver.set_xml_value(key, xml_value)
+        if preserve_independent and key in INDEPENDENT_KEYS and key in driver.set_fields:
             continue
         driver.set_xml_value(key, xml_value)

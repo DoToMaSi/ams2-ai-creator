@@ -1,15 +1,32 @@
 from ams2_ai.models.parameters import xml_to_ui
-from ams2_ai.smart.derivation import derive_from_skill_aggression
+from ams2_ai.smart.derivation import calculate_smart_ai, derive_from_skill_aggression
 
 
 def test_derive_clamps_to_valid_ranges():
     result = derive_from_skill_aggression(50, 50, apply_randomness=False)
     for key, value in result.items():
-        ui = xml_to_ui(key, value)
-        assert 0 <= ui <= 110
+        if key in {"weight_scalar", "power_scalar", "drag_scalar"}:
+            assert 0.9 <= value <= 1.1
+        else:
+            assert 0.0 <= value <= 1.0
 
 
 def test_high_skill_produces_high_consistency():
     low = derive_from_skill_aggression(20, 30, apply_randomness=False)
     high = derive_from_skill_aggression(90, 50, apply_randomness=False)
     assert high["consistency"] > low["consistency"]
+
+
+def test_calculate_smart_ai_example_values():
+    result = calculate_smart_ai(0.85, 0.90)
+    assert result["qualifying_skill"] == 0.89
+    assert result["start_reactions"] == 0.875
+    assert result["defending"] == 0.89
+    assert result["setup_downforce_randomness"] == 0.075
+
+
+def test_aggressive_low_skill_penalizes_mistakes():
+    calm_skilled = calculate_smart_ai(0.90, 0.20)
+    hot_rookie = calculate_smart_ai(0.20, 0.90)
+    assert calm_skilled["avoidance_of_mistakes"] > hot_rookie["avoidance_of_mistakes"]
+    assert calm_skilled["consistency"] > hot_rookie["consistency"]

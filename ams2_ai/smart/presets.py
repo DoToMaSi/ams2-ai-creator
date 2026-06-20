@@ -49,7 +49,7 @@ def apply_preset(driver: DriverEntry, preset_name: str) -> None:
     if driver.mode == "smart":
         driver.set_ui_value("race_skill", skill)
         driver.set_ui_value("aggression", aggression)
-        apply_smart_derivation(driver, apply_randomness=True)
+        apply_smart_derivation(driver)
         return
 
     center_skill, center_aggression = _tier_center(tier)
