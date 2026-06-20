@@ -135,6 +135,12 @@ class DriverEditor(QWidget):
 
         self._loading = False
 
+    def _refresh_track_panels(self) -> None:
+        if not self._profile:
+            return
+        for panel in self._track_panels.values():
+            panel.refresh_from_base(self._profile.base)
+
     def _clear_track_tabs(self) -> None:
         while self.tabs.count() > 1:
             self.tabs.removeTab(1)
@@ -156,7 +162,7 @@ class DriverEditor(QWidget):
         tab_layout.addLayout(header)
 
         panel = ParameterPanel(per_track=True)
-        panel.set_entry(override)
+        panel.set_entry(override, self._profile.base if self._profile else None)
         panel.changed.connect(self._on_track_changed)
         tab_layout.addWidget(panel, stretch=1)
 
@@ -217,13 +223,21 @@ class DriverEditor(QWidget):
             apply_smart_derivation(base, preserve_independent=True)
             self.global_panel.refresh_values()
         self.global_panel.apply_smart_locks(base.mode == "smart")
+        self._sync_track_panels_from_global()
         self._sync_profile()
 
     def _on_global_changed(self) -> None:
         if self._loading or not self._profile:
             return
         self.global_panel.apply_smart_locks(self._profile.base.mode == "smart")
+        self._sync_track_panels_from_global()
         self._sync_profile()
+
+    def _sync_track_panels_from_global(self) -> None:
+        if not self._profile:
+            return
+        self._profile.sync_track_overrides_from_base()
+        self._refresh_track_panels()
 
     def _on_track_changed(self) -> None:
         if self._loading:
@@ -236,6 +250,7 @@ class DriverEditor(QWidget):
         apply_preset(self._profile.base, preset_name)
         self.global_panel.set_entry(self._profile.base)
         self.global_panel.apply_smart_locks(self._profile.base.mode == "smart")
+        self._sync_track_panels_from_global()
         self._sync_profile()
 
     def _sync_profile(self) -> None:

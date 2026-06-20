@@ -27,6 +27,7 @@ class ParameterPanel(QWidget):
         super().__init__(parent)
         self._per_track = per_track
         self._entry: DriverEntry | None = None
+        self._base_entry: DriverEntry | None = None
         self._loading = False
         self._rows: dict[str, ParameterRow | OverrideParameterRow] = {}
 
@@ -60,15 +61,21 @@ class ParameterPanel(QWidget):
         scroll.setWidget(content)
         layout.addWidget(scroll)
 
-    def set_entry(self, entry: DriverEntry | None) -> None:
+    def set_entry(
+        self,
+        entry: DriverEntry | None,
+        base_entry: DriverEntry | None = None,
+    ) -> None:
         self._loading = True
         self._entry = entry
+        if self._per_track:
+            self._base_entry = base_entry
         if not entry:
             self._loading = False
             return
 
         for key, row in self._rows.items():
-            row.set_value(entry.get_ui_value(key))
+            row.set_value(self._display_ui_value(key))
             if self._per_track and isinstance(row, OverrideParameterRow):
                 enabled = key in entry.set_fields and key in entry.values
                 row.set_override_enabled(enabled)
@@ -78,13 +85,24 @@ class ParameterPanel(QWidget):
             self._update_smart_locks()
         self._loading = False
 
-    def refresh_values(self) -> None:
+    def refresh_from_base(self, base_entry: DriverEntry) -> None:
+        """Reload per-track rows after global settings change."""
+        if not self._per_track or not self._entry:
+            return
+        self.set_entry(self._entry, base_entry)
         if not self._entry:
             return
         self._loading = True
         for key, row in self._rows.items():
-            row.set_value(self._entry.get_ui_value(key))
+            row.set_value(self._display_ui_value(key))
         self._loading = False
+
+    def _display_ui_value(self, key: str) -> int:
+        if not self._entry:
+            return 50
+        if self._per_track and key not in self._entry.set_fields and self._base_entry:
+            return self._base_entry.get_ui_value(key)
+        return self._entry.get_ui_value(key)
 
     def apply_smart_locks(self, smart: bool) -> None:
         if self._per_track:
@@ -119,9 +137,12 @@ class ParameterPanel(QWidget):
             return
         row = self._rows[key]
         if enabled:
-            self._entry.set_ui_value(key, row.value())
+            ui_value = self._display_ui_value(key)
+            self._entry.set_ui_value(key, ui_value)
+            row.set_value(ui_value)
         else:
             self._entry.clear_field(key)
+            row.set_value(self._display_ui_value(key))
         if isinstance(row, OverrideParameterRow):
             row.set_controls_enabled(enabled)
         self.changed.emit()

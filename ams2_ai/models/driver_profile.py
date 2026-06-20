@@ -44,8 +44,28 @@ class DriverProfile:
             is_track_override=True,
             mode="custom",
         )
+        self.copy_base_values_to_override(entry)
         self.track_overrides.append(entry)
         return entry
+
+    def copy_base_values_to_override(self, override: DriverEntry) -> None:
+        """Copy global AI values into a track entry for display (not exported until checked)."""
+        for key in NUMERIC_KEYS:
+            if key in self.base.values:
+                override.values[key] = self.base.values[key]
+            else:
+                override.values.pop(key, None)
+
+    def sync_track_overrides_from_base(self) -> None:
+        """Update checked track overrides to match global settings."""
+        for override in self.track_overrides:
+            for key in list(override.set_fields):
+                if key not in NUMERIC_KEYS:
+                    continue
+                if key in self.base.values:
+                    override.values[key] = self.base.values[key]
+                else:
+                    override.clear_field(key)
 
     def remove_track(self, entry_id: str) -> None:
         self.track_overrides = [o for o in self.track_overrides if o.entry_id != entry_id]

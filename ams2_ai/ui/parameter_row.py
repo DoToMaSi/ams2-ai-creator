@@ -79,7 +79,9 @@ class OverrideParameterRow(ParameterRow):
         super().__init__(param, parent)
         layout = self.layout()
         self.override_check = QCheckBox()
-        self.override_check.setToolTip("Enable this override for this track")
+        self.override_check.setToolTip(
+            "Enable override for this track; checked fields follow Global when it changes"
+        )
         self.override_check.toggled.connect(self._on_override_toggled)
         layout.insertWidget(0, self.override_check)
         self.set_controls_enabled(False)
