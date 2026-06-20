@@ -11,6 +11,7 @@ from PySide6.QtWidgets import (
     QLabel,
     QPushButton,
     QScrollArea,
+    QSizePolicy,
     QSplitter,
     QVBoxLayout,
     QWidget,
@@ -55,22 +56,25 @@ class DriverAccordionPanel(QWidget):
 
         self.xml_properties = XmlPropertiesPanel()
         self.xml_properties.propertiesChanged.connect(self.documentPropertiesChanged.emit)
-        root.addWidget(self.xml_properties)
+        root.addWidget(self.xml_properties, 0)
 
-        toolbar = QHBoxLayout()
-        drivers_label = QLabel("Drivers")
-        drivers_label.setObjectName("sectionTitle")
-        toolbar.addWidget(drivers_label)
+        self.drivers_toolbar = QWidget()
+        toolbar = QHBoxLayout(self.drivers_toolbar)
+        toolbar.setContentsMargins(0, 0, 0, 0)
+        self.drivers_label = QLabel("Drivers")
+        self.drivers_label.setObjectName("sectionTitle")
+        toolbar.addWidget(self.drivers_label)
         toolbar.addStretch()
-        add_driver_btn = QPushButton("+ Driver")
-        add_driver_btn.clicked.connect(self.addDriverRequested.emit)
-        toolbar.addWidget(add_driver_btn)
-        root.addLayout(toolbar)
+        self.add_driver_btn = QPushButton("+ Driver")
+        self.add_driver_btn.clicked.connect(self.addDriverRequested.emit)
+        toolbar.addWidget(self.add_driver_btn)
+        root.addWidget(self.drivers_toolbar, 0)
 
         self.empty_label = QLabel("No drivers yet. Add a driver or open an XML file.")
         self.empty_label.setObjectName("mutedLabel")
         self.empty_label.setContentsMargins(SPACING_INNER, SPACING_SECTION, SPACING_INNER, SPACING_SECTION)
-        root.addWidget(self.empty_label)
+        self.empty_label.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        root.addWidget(self.empty_label, 0)
 
         self.splitter = QSplitter(Qt.Orientation.Vertical)
 
@@ -95,6 +99,13 @@ class DriverAccordionPanel(QWidget):
 
         self.editor_container = self.splitter
         self.editor_container.setVisible(False)
+        self.drivers_toolbar.setVisible(False)
+        self.empty_label.setVisible(False)
+
+    def _set_document_ui_visible(self, document: AIDocument | None) -> None:
+        has_document = document is not None
+        self.xml_properties.setVisible(has_document)
+        self.drivers_toolbar.setVisible(has_document)
 
     def set_document(
         self,
@@ -111,10 +122,17 @@ class DriverAccordionPanel(QWidget):
         self._progress = progress
         self._finished = finished
         self._expand_profile_id = expand_profile_id
-        self.xml_properties.setVisible(document is not None)
+        self._set_document_ui_visible(document)
         self.xml_properties.set_document(document)
 
-        if not document or not document.profiles():
+        if document is None:
+            self.empty_label.setVisible(False)
+            self.editor_container.setVisible(False)
+            self.editor.set_profile(None, None)
+            self._emit_finished()
+            return
+
+        if not document.profiles():
             self.empty_label.setVisible(True)
             self.editor_container.setVisible(False)
             self.editor.set_profile(None, None)

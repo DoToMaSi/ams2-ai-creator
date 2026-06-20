@@ -8,6 +8,7 @@ from PySide6.QtWidgets import (
     QFormLayout,
     QGroupBox,
     QLineEdit,
+    QSizePolicy,
     QVBoxLayout,
     QWidget,
 )
@@ -22,12 +23,16 @@ class XmlPropertiesPanel(QGroupBox):
 
     def __init__(self, parent: QWidget | None = None):
         super().__init__("XML Properties", parent)
+        self.setObjectName("compactGroup")
         self._document: AIDocument | None = None
         self._loading = False
+        self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
 
         form = QFormLayout()
+        form.setContentsMargins(0, 0, 0, 0)
         form.setHorizontalSpacing(SPACING_SECTION)
         form.setVerticalSpacing(SPACING_INNER)
+        form.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.ExpandingFieldsGrow)
         self.name_edit = QLineEdit()
         self.name_edit.setPlaceholderText("Set name shown in the file list")
         self.name_edit.textChanged.connect(self._on_changed)
@@ -47,6 +52,8 @@ class XmlPropertiesPanel(QGroupBox):
         form.addRow("Custom Name:", self.custom_name_edit)
 
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(SPACING_INNER, SPACING_SECTION, SPACING_INNER, SPACING_INNER)
+        layout.setSpacing(0)
         layout.addLayout(form)
 
     def set_document(self, document: AIDocument | None) -> None:

@@ -51,8 +51,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle(f"AMS2 AI Creator v{__version__}")
-        self.resize(1200, 960)
-        self.setMinimumSize(960, 720)
+        self.resize(1400, 1000)
+        self.setMinimumSize(1080, 800)
         for icon_path in (icon_ico_path(), icon_png_path()):
             if icon_path.is_file():
                 self.setWindowIcon(QIcon(str(icon_path)))
@@ -75,7 +75,7 @@ class MainWindow(QMainWindow):
         splitter.addWidget(self.driver_panel)
         splitter.setStretchFactor(0, 0)
         splitter.setStretchFactor(1, 1)
-        splitter.setSizes([260, 940])
+        splitter.setSizes([280, 1120])
 
         footer_widget = QWidget()
         footer_widget.setObjectName("footerBar")
