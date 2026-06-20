@@ -6,13 +6,7 @@ cd /d "%~dp0\.."
 echo Building AMS2 AI Creator for Windows...
 echo.
 
-python -m PyInstaller ^
-  --name AMS2-AI-Creator ^
-  --windowed ^
-  --onedir ^
-  --noconfirm ^
-  --add-data "ams2_ai/data;ams2_ai/data" ^
-  main.py
+python -m PyInstaller --noconfirm AMS2-AI-Creator.spec
 
 if errorlevel 1 (
   echo.

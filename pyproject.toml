@@ -14,10 +14,16 @@ dependencies = ["PySide6>=6.6"]
 ams2-ai-creator = "ams2_ai.ui.app:main"
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "pytest-qt>=4", "ruff>=0.8", "pyinstaller>=6"]
+dev = ["pytest>=8", "ruff>=0.8", "pyinstaller>=6"]
+dev-gui = ["pytest-qt>=4"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["ams2_ai"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"ams2_ai/data/countries.json" = "ams2_ai/data/countries.json"
+"ams2_ai/data/tracks.json" = "ams2_ai/data/tracks.json"
+"ams2_ai/data/vehicle_classes.json" = "ams2_ai/data/vehicle_classes.json"
 
 [tool.ruff]
 line-length = 100
@@ -28,4 +34,3 @@ select = ["E", "F", "I", "W"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-qt_api = "pyside6"

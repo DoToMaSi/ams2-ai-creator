@@ -19,9 +19,7 @@ def validate_document(document: AIDocument) -> list[str]:
             errors.append(f"{label}: country must be a 3-letter code.")
         if driver.is_track_override and not driver.tracks.strip():
             errors.append(f"{label}: track override requires a track name.")
-        if driver.is_track_override and not any(
-            key in driver.set_fields for key in NUMERIC_KEYS
-        ):
+        if driver.is_track_override and not any(key in driver.set_fields for key in NUMERIC_KEYS):
             continue
 
         for key in driver.set_fields:

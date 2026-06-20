@@ -109,15 +109,11 @@ class DriverAccordionPanel(QWidget):
     ) -> None:
         editor = DriverEditor()
         editor.set_profile(profile, self._document)
-        editor.driverChanged.connect(
-            lambda _pid=profile.profile_id: self._on_editor_changed(_pid)
-        )
+        editor.driverChanged.connect(lambda _pid=profile.profile_id: self._on_editor_changed(_pid))
 
         dup_btn = QPushButton("Duplicate")
         dup_btn.clicked.connect(
-            lambda _checked=False, pid=profile.profile_id: self.duplicateDriverRequested.emit(
-                pid
-            )
+            lambda _checked=False, pid=profile.profile_id: self.duplicateDriverRequested.emit(pid)
         )
         remove_btn = QPushButton("Remove")
         remove_btn.clicked.connect(
