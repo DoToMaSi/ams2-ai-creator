@@ -36,12 +36,14 @@ class DriverEntry:
             return f"{base} [{track_count} track(s)]"
         return base
 
-    def get_ui_value(self, key: str, default: int = 50) -> int:
-        from ams2_ai.models.parameters import xml_to_ui
+    def get_ui_value(self, key: str, default: int | None = None) -> int:
+        from ams2_ai.models.parameters import default_ui_value, xml_to_ui
 
         if key in self.values:
             return xml_to_ui(key, self.values[key])
-        return default
+        if default is not None:
+            return default
+        return default_ui_value(key)
 
     def set_ui_value(self, key: str, ui_value: int | float) -> None:
         from ams2_ai.models.parameters import ui_to_xml

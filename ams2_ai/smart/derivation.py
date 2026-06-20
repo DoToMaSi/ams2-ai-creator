@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from ams2_ai.models.driver import DriverEntry
-from ams2_ai.models.parameters import NUMERIC_KEYS, clamp
+from ams2_ai.models.parameters import NUMERIC_KEYS, OPTIONAL_PARAMETER_KEYS, clamp
 
 
 def _clamp01(value: float) -> float:
@@ -91,6 +91,8 @@ def apply_smart_derivation(
     derived = derive_from_skill_aggression(skill, aggression, apply_randomness=apply_randomness)
 
     for key, xml_value in derived.items():
+        if key in OPTIONAL_PARAMETER_KEYS and key not in driver.set_fields:
+            continue
         if preserve_independent and key in INDEPENDENT_KEYS and key in driver.set_fields:
             continue
         driver.set_xml_value(key, xml_value)
