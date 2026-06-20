@@ -87,7 +87,7 @@ class DriverEditor(QWidget):
 
         self.global_panel = ParameterPanel(per_track=False)
         self.global_panel.changed.connect(self._on_global_changed)
-        global_layout.addWidget(self.global_panel, stretch=1)
+        global_layout.addWidget(self.global_panel)
 
         self.tabs.addTab(self.global_tab, "Global")
 
@@ -97,7 +97,7 @@ class DriverEditor(QWidget):
         add_track_btn.clicked.connect(self._add_track_tab)
         self.tabs.setCornerWidget(add_track_btn, Qt.Corner.TopRightCorner)
 
-        root.addWidget(self.tabs, stretch=1)
+        root.addWidget(self.tabs)
 
         self.smart_radio.toggled.connect(self._on_mode_changed)
         self.custom_radio.toggled.connect(self._on_mode_changed)
@@ -164,7 +164,7 @@ class DriverEditor(QWidget):
         panel = ParameterPanel(per_track=True)
         panel.set_entry(override, self._profile.base if self._profile else None)
         panel.changed.connect(self._on_track_changed)
-        tab_layout.addWidget(panel, stretch=1)
+        tab_layout.addWidget(panel)
 
         self._track_panels[override.entry_id] = panel
         self._track_tabs[override.entry_id] = tab

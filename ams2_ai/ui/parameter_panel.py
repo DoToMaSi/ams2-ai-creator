@@ -1,9 +1,9 @@
-"""Scrollable grouped parameter editor."""
+"""Grouped parameter editor."""
 
 from __future__ import annotations
 
 from PySide6.QtCore import Signal
-from PySide6.QtWidgets import QGroupBox, QScrollArea, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QGroupBox, QVBoxLayout, QWidget
 
 from ams2_ai.models.driver import DriverEntry
 from ams2_ai.models.parameters import PARAMETER_GROUPS, PARAMETERS, ParameterDef
@@ -34,11 +34,6 @@ class ParameterPanel(QWidget):
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
 
-        scroll = QScrollArea()
-        scroll.setWidgetResizable(True)
-        content = QWidget()
-        content_layout = QVBoxLayout(content)
-
         grouped: dict[str, list[ParameterDef]] = {g: [] for g in PARAMETER_GROUPS}
         for param in PARAMETERS:
             grouped[param.group].append(param)
@@ -55,11 +50,7 @@ class ParameterPanel(QWidget):
                 row.valueChanged.connect(self._on_value_changed)
                 self._rows[param.key] = row
                 box_layout.addWidget(row)
-            content_layout.addWidget(box)
-
-        content_layout.addStretch()
-        scroll.setWidget(content)
-        layout.addWidget(scroll)
+            layout.addWidget(box)
 
     def set_entry(
         self,
@@ -85,17 +76,20 @@ class ParameterPanel(QWidget):
             self._update_smart_locks()
         self._loading = False
 
-    def refresh_from_base(self, base_entry: DriverEntry) -> None:
-        """Reload per-track rows after global settings change."""
-        if not self._per_track or not self._entry:
-            return
-        self.set_entry(self._entry, base_entry)
+    def refresh_values(self) -> None:
         if not self._entry:
             return
         self._loading = True
         for key, row in self._rows.items():
             row.set_value(self._display_ui_value(key))
         self._loading = False
+
+    def refresh_from_base(self, base_entry: DriverEntry) -> None:
+        """Reload per-track rows after global settings change."""
+        if not self._per_track or not self._entry:
+            return
+        self._base_entry = base_entry
+        self.refresh_values()
 
     def _display_ui_value(self, key: str) -> int:
         if not self._entry:
