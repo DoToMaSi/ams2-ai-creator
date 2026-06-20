@@ -44,4 +44,4 @@ jobs:
       - name: Upload release asset
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/AMS2-AI-Creator-windows.zip
+          files: dist/AMS2-Creator-windows.zip

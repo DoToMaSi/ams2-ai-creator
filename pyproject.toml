@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ams2-ai-creator"
-version = "1.0.0"
-description = "Visual desktop editor for Automobilista 2 custom AI driver XML files — names, nationalities, personalities, and track overrides."
+version = "1.1.0"
+description = "AMS2 Creator suite — custom AI driver XML editor and custom skin override manager for Automobilista 2."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
@@ -19,11 +19,13 @@ keywords = [
     "sim-racing",
     "ai",
     "xml",
+    "livery",
+    "skins",
     "pySide6",
     "reiza",
 ]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 4 - Beta",
     "Environment :: Win32 (MS Windows)",
     "Intended Audience :: End Users/Desktop",
     "License :: OSI Approved :: MIT License",
@@ -44,14 +46,16 @@ Issues = "https://github.com/DoToMaSi/ams2-ai-creator/issues"
 Changelog = "https://github.com/DoToMaSi/ams2-ai-creator/releases"
 
 [project.scripts]
+ams2-creator = "ams2_shared.launcher:main"
 ams2-ai-creator = "ams2_ai.ui.app:main"
+ams2-skin-manager = "ams2_skins.ui.app:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.8", "pyinstaller>=6", "pillow>=10"]
 dev-gui = ["pytest-qt>=4"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["ams2_ai"]
+packages = ["ams2_ai", "ams2_shared", "ams2_skins"]
 
 [tool.hatch.build.targets.wheel.force-include]
 "ams2_ai/data/countries.json" = "ams2_ai/data/countries.json"
@@ -60,8 +64,10 @@ packages = ["ams2_ai"]
 "ams2_ai/data/track_meta.json" = "ams2_ai/data/track_meta.json"
 "ams2_ai/data/vehicle_classes.json" = "ams2_ai/data/vehicle_classes.json"
 "ams2_ai/data/flags" = "ams2_ai/data/flags"
+"ams2_skins/data/livery_limits.json" = "ams2_skins/data/livery_limits.json"
 "assets/fonts" = "assets/fonts"
 "assets/icon" = "assets/icon"
+"ams2_shared/ui/styles" = "ams2_shared/ui/styles"
 "ams2_ai/ui/styles" = "ams2_ai/ui/styles"
 
 [tool.ruff]

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<USER_OVERRIDES>
+
+    <!--
+        Create a copy of this file without the '_dist' part and place it beside this one
+        
+        eg      'stock_cruze_20_dist.xml'
+                    should become 
+                'stock_cruze_20.xml'
+
+        Define a 'LIVERY_OVERRIDE' section for each default livery you wish to replace.
+
+        A LIVERY_OVERRIDE definition must be based on one of the base liveries provided which will provide
+        variations where required. The LIVERY attribute determines which base game livery is replaced.
+        A NAME attribute must be set
+        
+        Within a LIVERY_OVERRIDE definition each desired texture override 
+        should be defined in a TEXTURE element. Any texture not present will use the texture from 
+        the BASELIVERY.
+
+        Additionally a PREVIEWIMAGE element with a PATH attribute can be used to note a texture for use
+        in the game's UI. (2048 x 600 px )
+
+        Texture PATH attributes are relative to this file's directory. Further sub-directories are 
+        permissable and their structure is left to the users own preference.
+
+		LIVERY IDs can be viewed in the game UI by running the game with -showLiveryIDs switch/launch option
+
+AVAILABLE BASE LIVERIES
+        =======================
+
+		        Default: Default body only skin
+                Available textures: 
+                        BODY        - the main external body/window paint texture
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+									- DXT5 with MIPs saved with alpha channel for paint fx 
+									
+			            WINDSCREEN  - windscreen banner texture
+                                    - 1024 x 1024
+                                    - DXT5 with MIPs
+                        						
+						SPEC     	- specular map
+                                    - 4096 x 4096
+                                    - DXT5 with MIPs	
+
+						FRESNEL		- fresnel map
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+                                
+				Matte: Matte metallic effect
+                Available textures: 
+                        BODY        - the main external body/window paint texture
+                                    - 4096 x 4096
+                                    - DXT5 with MIPs saved with alpha channel for paint fx 
+									
+			            WINDSCREEN  - windscreen banner texture
+                                    - 1024 x 1024
+                                    - DXT5 with MIPs
+									
+						SPEC     	- specular map
+                                    - 4096 x 4096
+                                    - DXT5 with MIPs	
+
+						FRESNEL		- fresnel map
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+        
+				Chrome: Chrome effect
+                Available textures: 
+                        BODY        - the main external body/window paint texture
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+									- DXT5 with MIPs saved with alpha channel for paint fx 
+									
+			            WINDSCREEN  - windscreen banner texture
+                                    - 1024 x 1024
+                                    - DXT5 with MIPs
+									
+						SPEC     	- specular map for reflection effects
+                                    - 4096 x 4096
+                                    - DXT5 with MIPs	
+
+						FRESNEL		- fresnel map which controls the strength the chrome effects
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+ 
+
+		
+				GreenMetallic: Green Metallic Effect
+                Available textures: 
+                        BODY        - the main external body/window paint texture
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+									- DXT5 with MIPs saved with alpha channel for paint fx 
+									
+				        WINDSCREEN 	- internal windscreen texture
+                                    - 1024 x 1024
+                                    - DXT5 with MIPs
+									
+						SPEC     	- specular map for reflection effects
+                                    - 4096 x 4096
+                                    - DXT5 with MIPs	
+
+						FRESNEL		- fresnel map which controls the strength the chrome effects
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+									
+				RedMetallic: Red Metallic Effect
+                Available textures: 
+                        BODY        - the main external body/window paint texture
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+									- DXT5 with MIPs saved with alpha channel for paint fx 
+									
+				        WINDSCREEN 	- internal windscreen texture
+                                    - 1024 x 1024
+                                    - DXT5 with MIPs
+									
+						SPEC     	- specular map for reflection effects
+                                    - 4096 x 4096
+                                    - DXT5 with MIPs	
+
+						FRESNEL		- fresnel map which controls the strength the chrome effects
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+									
+				BlueMetallic: Blue Metallic Effect
+                Available textures: 
+                        BODY        - the main external body/window paint texture
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+									- DXT5 with MIPs saved with alpha channel for paint fx 
+									
+				        WINDSCREEN 	- internal windscreen texture
+                                    - 1024 x 1024
+                                    - DXT5 with MIPs
+									
+						SPEC     	- specular map for reflection effects
+                                    - 4096 x 4096
+                                    - DXT5 with MIPs	
+
+						FRESNEL		- fresnel map which controls the strength the chrome effects
+                                    - 4096 x 4096
+                                    - DXT1 with MIPs
+ 
+
+		
+    EXAMPLES--> 
+
+    <!-- <LIVERY_OVERRIDE LIVERY="59" NAME="My Racing Team #12" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="myracingteam\preview12.dds" />
+        <TEXTURE NAME="BODY" PATH="myracingteam\body12.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="myracingteam\banner86.dds" />
+    </LIVERY_OVERRIDE> -->
+
+    <!-- <LIVERY_OVERRIDE LIVERY="60" NAME="My Racing Team #86" BASELIVERY="Matte">
+        <PREVIEWIMAGE PATH="myracingteam\preview86.dds" />
+        <TEXTURE NAME="PAINT" PATH="myracingteam\body86.dds" />
+        <TEXTURE NAME="BODY" PATH="myracingteam\body86.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="myracingteam\banner86.dds" />
+    </LIVERY_OVERRIDE> -->
+	
+    <!-- <LIVERY_OVERRIDE LIVERY="61" NAME="My Racing Team #37" BASELIVERY="BlueMetallic">
+        <PREVIEWIMAGE PATH="myracingteam\preview86.dds" />
+        <TEXTURE NAME="PAINT" PATH="myracingteam\body86.dds" />
+        <TEXTURE NAME="BODY" PATH="myracingteam\body86.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="myracingteam\banner86.dds" />
+    </LIVERY_OVERRIDE> -->
+	
+    <!-- <LIVERY_OVERRIDE LIVERY="62" NAME="My Racing Team #38" BASELIVERY="Chrome">
+        <PREVIEWIMAGE PATH="myracingteam\preview38.dds" />
+        <TEXTURE NAME="BODY" PATH="myracingteam\body38.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="myracingteam\banner86.dds" />
+        <TEXTURE NAME="SPEC" PATH="MyTeam\body38_spec.dds" />
+        <TEXTURE NAME="FRESNEL" PATH="MyTeam\body38_fresnel.dds" />
+    </LIVERY_OVERRIDE> -->
+
+</USER_OVERRIDES>

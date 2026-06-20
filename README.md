@@ -1,18 +1,23 @@
-# AMS2 AI Creator
+# AMS2 Creator
 
 [![CI](https://github.com/DoToMaSi/ams2-ai-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/DoToMaSi/ams2-ai-creator/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/DoToMaSi/ams2-ai-creator?label=release)](https://github.com/DoToMaSi/ams2-ai-creator/releases)
 [![License: MIT](https://img.shields.io/github/license/DoToMaSi/ams2-ai-creator)](https://github.com/DoToMaSi/ams2-ai-creator/blob/master/LICENSE)
 
-**Version 1.0** — a desktop editor for **Automobilista 2 custom AI driver XML files**.
+**Version 1.1** — a desktop suite for **Automobilista 2 modding**:
 
-Create and tune AI opponents without hand-editing XML: driver names, countries, personality sliders, optional vehicle scalars, setup bias, per-track overrides, and more. Built for the AMS2 modding community by **[Douglas Tomacheski de Abreu e Silva (RockettSally)](https://github.com/DoToMaSi)**.
+| Tool | Purpose |
+|------|---------|
+| **AI Creator** (v1.0) | Custom AI driver XML editor |
+| **Skin Manager** (v0.1) | Custom livery override skinpack editor |
+
+Launch **AMS2 Creator** and pick a tool from the startup screen. Built for the AMS2 modding community by **[Douglas Tomacheski de Abreu e Silva (RockettSally)](https://github.com/DoToMaSi)**.
 
 > **Repository:** [github.com/DoToMaSi/ams2-ai-creator](https://github.com/DoToMaSi/ams2-ai-creator)
 
 ---
 
-## What it does
+## AI Creator
 
 Automobilista 2 reads custom AI definitions from XML files in:
 
@@ -40,15 +45,52 @@ Official AMS2 reference: [Information for Customizing AI drivers in AMS2](https:
 
 ---
 
+## Skin Manager
+
+Automobilista 2 custom liveries are **overrides** — they replace existing in-game skins rather than adding new slots. The game reads override XML from:
+
+```
+{Steam AMS2 Folder}/Vehicles/Textures/CustomLiveries/Overrides/{car_id}/{car_id}.xml
+```
+
+Skin Manager helps you build full skinpacks without hand-editing XML:
+
+| Feature | Description |
+|---------|-------------|
+| **AMS2 catalog scan** | Reads `{car_id}_dist.xml` from your install for base liveries and texture slots |
+| **Skinpack workflow** | New/open pack, add cars, scaffold override folders |
+| **Livery slot editor** | Per-slot name, base livery, DDS texture paths, preview image |
+| **Helmet overrides** | Optional paired helmet override per livery slot |
+| **Validation** | Missing DDS files, duplicate/out-of-range livery IDs, required names |
+| **Export** | Export Skin XML, full skinpack folder, or copy directly into AMS2 Overrides |
+
+Livery IDs start at **51**. Max livery ID per car is defined in bundled `ams2_skins/data/livery_limits.json` (expand as needed). Use AMS2 launch option `-showLiveryIDs` to see IDs in-game.
+
+Official AMS2 reference: [AMS2 User Livery Overrides](https://forum.reizastudios.com/threads/ams2-user-livery-overrides.14819/)
+
+Example skinpacks: [`docs/example_skinpacks/`](docs/example_skinpacks/)
+
+### Skin Manager quick start
+
+1. Launch **AMS2 Creator** → **Skin Manager**.
+2. **Browse…** to your AMS2 install folder → **Rescan**.
+3. **New Skinpack** or **Open Skinpack** (folder with `Vehicles/Textures/CustomLiveries/Overrides/`).
+4. **+ Car** from the scanned catalog.
+5. **+ Livery Slot** for each override (IDs 51+).
+6. Set display name, base livery, browse for `.dds` textures; enable helmet override if needed.
+7. **Save** → **Export to AMS2…** (File menu) or **Export Skinpack**.
+
+---
+
 ## Download (Windows)
 
 No Python install required.
 
-1. Download **`AMS2-AI-Creator-windows.zip`** from:
+1. Download **`AMS2-Creator-windows.zip`** from:
    - **[GitHub Releases](https://github.com/DoToMaSi/ams2-ai-creator/releases)** (recommended — versioned builds from `v*` tags)
-   - **[GitHub Actions artifacts](https://github.com/DoToMaSi/ams2-ai-creator/actions/workflows/ci.yml)** on the latest successful `master` push (CI job **build-windows** → artifact `AMS2-AI-Creator-windows`)
+   - **[GitHub Actions artifacts](https://github.com/DoToMaSi/ams2-ai-creator/actions/workflows/ci.yml)** on the latest successful `master` push (CI job **build-windows** → artifact `AMS2-Creator-windows`)
 2. Extract the zip.
-3. Run **`AMS2-AI-Creator.exe`** inside the extracted folder (keep the `_internal` folder beside the exe).
+3. Run **`AMS2-Creator.exe`** inside the extracted folder (keep the `_internal` folder beside the exe).
 
 Copy exported XML files into your AMS2 `CustomAIDrivers` folder, or use **File → Export to AMS2…** from the app.
 
@@ -191,19 +233,21 @@ pip install -e ".[dev,dev-gui]"
 python main.py
 ```
 
-Console entry point:
+Console entry points:
 
 ```bash
-ams2-ai-creator
+ams2-creator          # launcher (pick AI Creator or Skin Manager)
+ams2-ai-creator       # AI tool directly
+ams2-skin-manager     # Skin Manager directly
 ```
 
 Debug logging:
 
 ```powershell
-$env:AMS2_AI_DEBUG=1; python main.py
+$env:AMS2_DEBUG=1; python main.py
 ```
 
-Logs: `%APPDATA%\ams2-ai-creator\logs\` (Windows) — or **Help → Open Log Folder**.
+Logs: `%APPDATA%\ams2-creator\logs\` (Windows) — or **Help → Open Log Folder**.
 
 ---
 
@@ -220,8 +264,8 @@ scripts\build_windows.bat
 
 Output:
 
-- `dist/AMS2-AI-Creator/` — runnable folder  
-- `dist/AMS2-AI-Creator-windows.zip` — distributable archive  
+- `dist/AMS2-Creator/` — runnable folder  
+- `dist/AMS2-Creator-windows.zip` — distributable archive  
 
 ---
 
@@ -229,18 +273,27 @@ Output:
 
 ```
 ams2-ai-creator/
-├── main.py
-├── ams2_ai/
-│   ├── models/          # Documents, drivers, parameters, header metadata
-│   ├── xml/             # Reader / pretty-print writer
-│   ├── smart/           # Smart derivation + presets
-│   ├── identity/        # Name generation / romanization
-│   ├── data/            # Classes, tracks, countries, flags
-│   └── ui/              # PySide6 interface + AMS2 theme
-├── assets/              # Icon, fonts
+├── main.py                 # Suite launcher entry
+├── ams2_shared/            # Shared logging, theme, assets, launcher
+├── ams2_ai/                # AI Creator tool
+│   ├── models/             # Documents, drivers, parameters
+│   ├── xml/                # Reader / writer
+│   ├── smart/              # Smart derivation + presets
+│   ├── identity/           # Name generation
+│   ├── data/               # Classes, tracks, countries, flags
+│   └── ui/                 # PySide6 interface
+├── ams2_skins/             # Skin Manager tool
+│   ├── models/             # Skinpack, car override, livery slots
+│   ├── xml/                # Reader / writer / dist parser
+│   ├── catalog/            # AMS2 scan + livery limits
+│   ├── export/             # Skinpack scaffolding and export
+│   ├── data/               # livery_limits.json
+│   └── ui/                 # PySide6 interface
+├── assets/                 # Icon, fonts
+├── docs/example_skinpacks/ # Reference skinpacks
 ├── tests/
-├── scripts/             # build_windows.*, build_icon.py, build_track_meta.py
-└── .github/workflows/   # ci.yml, release.yml
+├── scripts/                # build_windows.*, build_icon.py
+└── .github/workflows/      # ci.yml, release.yml
 ```
 
 ```bash

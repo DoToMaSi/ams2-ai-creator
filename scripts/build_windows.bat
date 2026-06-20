@@ -3,7 +3,7 @@ setlocal
 
 cd /d "%~dp0\.."
 
-echo Building AMS2 AI Creator for Windows...
+echo Building AMS2 Creator for Windows...
 echo.
 
 echo Generating Windows-compatible application icon...
@@ -14,7 +14,7 @@ if errorlevel 1 (
   exit /b 1
 )
 
-python -m PyInstaller --noconfirm --clean AMS2-AI-Creator.spec
+python -m PyInstaller --noconfirm --clean AMS2-Creator.spec
 if errorlevel 1 (
   echo.
   echo Build failed.
@@ -22,7 +22,7 @@ if errorlevel 1 (
 )
 
 echo Creating release archive...
-powershell -NoProfile -Command "Compress-Archive -Path 'dist\AMS2-AI-Creator' -DestinationPath 'dist\AMS2-AI-Creator-windows.zip' -Force"
+powershell -NoProfile -Command "Compress-Archive -Path 'dist\AMS2-Creator' -DestinationPath 'dist\AMS2-Creator-windows.zip' -Force"
 if errorlevel 1 (
   echo.
   echo Failed to create zip archive.
@@ -30,7 +30,7 @@ if errorlevel 1 (
 )
 
 echo.
-echo Build complete: dist\AMS2-AI-Creator\
-echo Archive: dist\AMS2-AI-Creator-windows.zip
-echo Run: dist\AMS2-AI-Creator\AMS2-AI-Creator.exe
+echo Build complete: dist\AMS2-Creator\
+echo Archive: dist\AMS2-Creator-windows.zip
+echo Run: dist\AMS2-Creator\AMS2-Creator.exe
 endlocal

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<USER_OVERRIDES>
+    <LIVERY_OVERRIDE LIVERY="51" NAME="#06 Heitor Dutra - Anibbas" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap/Anibbas_06/preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap/Anibbas_06/body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap/Anibbas_06/bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="52" NAME="#13 Lucas Ribeiro - Anibbas" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap/Anibbas_13/preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap/Anibbas_13/body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap/Anibbas_13/bool.dds" />
+    </LIVERY_OVERRIDE>
+</USER_OVERRIDES>

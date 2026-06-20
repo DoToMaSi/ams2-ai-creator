@@ -1,8 +1,6 @@
-"""Entry point for AMS2 AI Creator."""
+"""Entry point for the AMS2 Creator suite."""
 
-from ams2_ai.logging_config import setup_logging
-from ams2_ai.ui.app import main
+from ams2_shared.launcher import main
 
 if __name__ == "__main__":
-    setup_logging()
     raise SystemExit(main())
