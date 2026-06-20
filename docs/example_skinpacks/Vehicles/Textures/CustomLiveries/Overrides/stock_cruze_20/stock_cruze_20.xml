@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<USER_OVERRIDES>
+    <LIVERY_OVERRIDE LIVERY="51" NAME="#06 Heitor Dutra - Anibbas" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\Anibbas_06\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\Anibbas_06\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\Anibbas_06\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="52" NAME="#13 Lucas Ribeiro - Anibbas" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\Anibbas_13\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\Anibbas_13\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\Anibbas_13\bool.dds" />
+    </LIVERY_OVERRIDE>
+	
+    <LIVERY_OVERRIDE LIVERY="53" NAME="#20 Sanabria - Anibbas" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\Anibbas_20\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\Anibbas_20\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\Anibbas_20\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="54" NAME="#39 Cataldo - Astralopitecos" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\Astralopitecos_39\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\Astralopitecos_39\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\Astralopitecos_39\bool.dds" />
+    </LIVERY_OVERRIDE>
+	
+    <LIVERY_OVERRIDE LIVERY="55" NAME="#51 Vitor Silva - Astralopitecos" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\Astralopitecos_51\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\Astralopitecos_51\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\Astralopitecos_51\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="56" NAME="#03 Sodré - AW" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\AW_03\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\AW_03\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\AW_03\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="57" NAME="#09 Misael Guerra - AW" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\AW_09\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\AW_09\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\AW_09\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="58" NAME="#28 Matheus Machado - AW" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\AW_28\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\AW_28\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\AW_28\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="59" NAME="#23 Danilo Vaz - BSS" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\BSS_23\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\BSS_23\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\BSS_23\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="60" NAME="#32 João Fernando - BSS" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\BSS_32\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\BSS_32\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\BSS_32\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="61" NAME="#33 Roveda - BSS" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\BSS_33\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\BSS_33\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\BSS_33\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="62" NAME="#12 Henrique Gomes - CRT" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\CRT_12\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\CRT_12\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\CRT_12\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="63" NAME="#19 Angeli - CRT" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\CRT_19\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\CRT_19\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\CRT_19\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="64" NAME="#47 Feh Silva - CRT" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\CRT_47\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\CRT_47\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\CRT_47\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="65" NAME="#50 Bruno Scremin - PMSP D3" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\D3_50\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\D3_50\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\D3_50\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="66" NAME="#91 Lucas Santana - PMSP D3" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\D3_91\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\D3_91\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\D3_91\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="67" NAME="#96 Gabriel Alcântara - PMSP D3" BASELIVERY="Default">
+        <PREVIEWIMAGE PATH="campap\D3_96\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\D3_96\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\D3_96\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="68" NAME="#07 Pancieri - Lobini Racing" BASELIVERY="Matte">
+        <PREVIEWIMAGE PATH="campap\Lobini_07\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\Lobini_07\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\Lobini_07\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="69" NAME="#08 Brendo - Lobini Racing" BASELIVERY="Matte">
+        <PREVIEWIMAGE PATH="campap\Lobini_08\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\Lobini_08\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\Lobini_08\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="70" NAME="#55 Ark - Lobini Racing" BASELIVERY="Matte">
+        <PREVIEWIMAGE PATH="campap\Lobini_55\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\Lobini_55\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\Lobini_55\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="71" NAME="#25 Gargioni - RCR" BASELIVERY="Matte">
+        <PREVIEWIMAGE PATH="campap\RC_25\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\RC_25\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\RC_25\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="72" NAME="#36 Tomacheski - RCR" BASELIVERY="Matte">
+        <PREVIEWIMAGE PATH="campap\RC_36\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\RC_36\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\RC_36\bool.dds" />
+    </LIVERY_OVERRIDE>
+
+    <LIVERY_OVERRIDE LIVERY="73" NAME="#46 Gabriel Brandão - RCR" BASELIVERY="Matte">
+        <PREVIEWIMAGE PATH="campap\RC_46\preview.dds" />
+        <TEXTURE NAME="BODY" PATH="campap\RC_46\body.dds" />
+        <TEXTURE NAME="WINDSCREEN" PATH="campap\RC_46\bool.dds" />
+    </LIVERY_OVERRIDE>
+</USER_OVERRIDES>
