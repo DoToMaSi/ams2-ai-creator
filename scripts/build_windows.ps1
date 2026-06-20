@@ -8,10 +8,6 @@ Write-Host ""
 Write-Host "Generating Windows-compatible application icon..."
 python scripts/build_icon.py
 
-pyinstaller --noconfirm AMS2-AI-Creator.spec
-
-Write-Host "Applying icon to executable..."
-python scripts/build_icon.py --apply-exe
+pyinstaller --noconfirm --clean AMS2-AI-Creator.spec
 
 Write-Host "Build complete: dist/AMS2-AI-Creator/"
-Write-Host "If Explorer still shows the old icon, rename the .exe or restart Explorer."

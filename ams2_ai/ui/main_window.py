@@ -7,7 +7,7 @@ import uuid
 from pathlib import Path
 
 from PySide6.QtCore import QSettings, QThread
-from PySide6.QtGui import QAction, QIcon, QKeySequence
+from PySide6.QtGui import QAction, QGuiApplication, QIcon, QKeySequence
 from PySide6.QtWidgets import (
     QFileDialog,
     QHBoxLayout,
@@ -51,7 +51,12 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle(f"AMS2 AI Creator v{__version__}")
-        self.resize(1400, 1000)
+        screen = QGuiApplication.primaryScreen()
+        if screen is not None:
+            available = screen.availableGeometry()
+            self.setGeometry(available)
+        else:
+            self.resize(1400, 1000)
         self.setMinimumSize(1080, 800)
         for icon_path in (icon_ico_path(), icon_png_path()):
             if icon_path.is_file():

@@ -13,6 +13,8 @@ from PySide6.QtWidgets import (
     QScrollArea,
     QSizePolicy,
     QSplitter,
+    QStyle,
+    QToolButton,
     QVBoxLayout,
     QWidget,
 )
@@ -22,6 +24,7 @@ from ams2_ai.ui.theme import SPACING_INNER, SPACING_OUTER, SPACING_SECTION
 from ams2_ai.models.driver_profile import DriverProfile
 from ams2_ai.ui.collapsible_section import CollapsibleSection
 from ams2_ai.ui.driver_editor import DriverEditor
+from ams2_ai.ui.icons import duplicate_icon
 from ams2_ai.ui.xml_properties_panel import XmlPropertiesPanel
 
 BUILD_BATCH_SIZE = 30
@@ -53,6 +56,7 @@ class DriverAccordionPanel(QWidget):
         root = QVBoxLayout(self)
         root.setContentsMargins(SPACING_INNER, SPACING_INNER, SPACING_INNER, SPACING_INNER)
         root.setSpacing(SPACING_SECTION)
+        root.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         self.xml_properties = XmlPropertiesPanel()
         self.xml_properties.propertiesChanged.connect(self.documentPropertiesChanged.emit)
@@ -60,7 +64,7 @@ class DriverAccordionPanel(QWidget):
 
         self.drivers_toolbar = QWidget()
         toolbar = QHBoxLayout(self.drivers_toolbar)
-        toolbar.setContentsMargins(0, 0, 0, 0)
+        toolbar.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
         self.drivers_label = QLabel("Drivers")
         self.drivers_label.setObjectName("sectionTitle")
         toolbar.addWidget(self.drivers_label)
@@ -72,7 +76,12 @@ class DriverAccordionPanel(QWidget):
 
         self.empty_label = QLabel("No drivers yet. Add a driver or open an XML file.")
         self.empty_label.setObjectName("mutedLabel")
-        self.empty_label.setContentsMargins(SPACING_INNER, SPACING_SECTION, SPACING_INNER, SPACING_SECTION)
+        self.empty_label.setAlignment(
+            Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignTop
+        )
+        self.empty_label.setContentsMargins(
+            SPACING_SECTION, SPACING_INNER, SPACING_SECTION, SPACING_INNER
+        )
         self.empty_label.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         root.addWidget(self.empty_label, 0)
 
@@ -101,6 +110,30 @@ class DriverAccordionPanel(QWidget):
         self.editor_container.setVisible(False)
         self.drivers_toolbar.setVisible(False)
         self.empty_label.setVisible(False)
+
+    def _make_driver_action_buttons(self, profile_id: str) -> list[QToolButton]:
+        style = QApplication.style()
+        if style is None:
+            style = self.style()
+
+        dup_btn = QToolButton()
+        dup_btn.setObjectName("compactActionButton")
+        dup_btn.setIcon(duplicate_icon(20))
+        dup_btn.setToolTip("Duplicate driver")
+        dup_btn.setFixedSize(34, 34)
+        dup_btn.clicked.connect(
+            lambda _checked=False, pid=profile_id: self.duplicateDriverRequested.emit(pid)
+        )
+
+        remove_btn = QToolButton()
+        remove_btn.setObjectName("compactActionButton")
+        remove_btn.setIcon(style.standardIcon(QStyle.StandardPixmap.SP_TrashIcon))
+        remove_btn.setToolTip("Remove driver")
+        remove_btn.setFixedSize(34, 34)
+        remove_btn.clicked.connect(
+            lambda _checked=False, pid=profile_id: self.removeDriverRequested.emit(pid)
+        )
+        return [dup_btn, remove_btn]
 
     def _set_document_ui_visible(self, document: AIDocument | None) -> None:
         has_document = document is not None
@@ -209,19 +242,12 @@ class DriverAccordionPanel(QWidget):
             self._progress(message)
 
     def _add_section(self, profile: DriverProfile, *, index: int = 1) -> None:
-        dup_btn = QPushButton("Duplicate")
-        dup_btn.clicked.connect(
-            lambda _checked=False, pid=profile.profile_id: self.duplicateDriverRequested.emit(pid)
-        )
-        remove_btn = QPushButton("Remove")
-        remove_btn.clicked.connect(
-            lambda _checked=False, pid=profile.profile_id: self.removeDriverRequested.emit(pid)
-        )
+        actions = self._make_driver_action_buttons(profile.profile_id)
 
         section = CollapsibleSection(
             profile.display_name(),
             index=index,
-            header_actions=[dup_btn, remove_btn],
+            header_actions=actions,
         )
         section.toggled.connect(
             lambda expanded, pid=profile.profile_id: self._on_section_toggled(pid, expanded)

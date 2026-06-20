@@ -32,6 +32,7 @@ class FileSidebar(QWidget):
         layout.setSpacing(SPACING_SECTION)
 
         files_header = QHBoxLayout()
+        files_header.setContentsMargins(SPACING_INNER, 0, SPACING_INNER, 0)
         title = QLabel("XML Files")
         title.setObjectName("sectionTitle")
         files_header.addWidget(title)

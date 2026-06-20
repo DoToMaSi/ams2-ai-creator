@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from PySide6.QtCore import Signal
+from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
     QComboBox,
     QFormLayout,
-    QGroupBox,
+    QFrame,
     QLineEdit,
     QSizePolicy,
     QVBoxLayout,
@@ -15,24 +15,30 @@ from PySide6.QtWidgets import (
 
 from ams2_ai.data import load_vehicle_classes
 from ams2_ai.models.document import AIDocument
+from ams2_ai.ui.collapsible_section import CollapsibleBlock
 from ams2_ai.ui.theme import SPACING_INNER, SPACING_SECTION
 
 
-class XmlPropertiesPanel(QGroupBox):
+class XmlPropertiesPanel(QWidget):
     propertiesChanged = Signal()
 
     def __init__(self, parent: QWidget | None = None):
-        super().__init__("XML Properties", parent)
-        self.setObjectName("compactGroup")
+        super().__init__(parent)
         self._document: AIDocument | None = None
         self._loading = False
         self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
 
-        form = QFormLayout()
-        form.setContentsMargins(0, 0, 0, 0)
+        form_host = QFrame()
+        form_host.setObjectName("collapsibleContent")
+        form = QFormLayout(form_host)
+        form.setContentsMargins(SPACING_SECTION, SPACING_INNER, SPACING_SECTION, SPACING_SECTION)
         form.setHorizontalSpacing(SPACING_SECTION)
         form.setVerticalSpacing(SPACING_INNER)
         form.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.ExpandingFieldsGrow)
+        form.setLabelAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter
+        )
+
         self.name_edit = QLineEdit()
         self.name_edit.setPlaceholderText("Set name shown in the file list")
         self.name_edit.textChanged.connect(self._on_changed)
@@ -51,10 +57,10 @@ class XmlPropertiesPanel(QGroupBox):
         self.custom_name_edit.textChanged.connect(self._on_changed)
         form.addRow("Custom Name:", self.custom_name_edit)
 
+        self._block = CollapsibleBlock("XML Properties", form_host, expanded=False)
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(SPACING_INNER, SPACING_SECTION, SPACING_INNER, SPACING_INNER)
-        layout.setSpacing(0)
-        layout.addLayout(form)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.addWidget(self._block)
 
     def set_document(self, document: AIDocument | None) -> None:
         self._loading = True

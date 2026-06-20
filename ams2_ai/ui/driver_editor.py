@@ -60,8 +60,12 @@ class DriverEditor(QWidget):
 
         identity_box = QGroupBox("Identity")
         identity_form = QFormLayout(identity_box)
+        identity_form.setContentsMargins(SPACING_INNER, SPACING_INNER, SPACING_INNER, SPACING_INNER)
         identity_form.setHorizontalSpacing(SPACING_SECTION)
         identity_form.setVerticalSpacing(SPACING_INNER)
+        identity_form.setLabelAlignment(
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter
+        )
         self.livery_edit = QLineEdit()
         self.livery_edit.textChanged.connect(self._on_identity_changed)
         identity_form.addRow("Livery Name:", self.livery_edit)

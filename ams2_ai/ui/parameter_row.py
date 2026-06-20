@@ -60,7 +60,8 @@ class ParameterRow(QWidget):
         self.spinbox = QSpinBox()
         self.spinbox.setMinimum(param.ui_min)
         self.spinbox.setMaximum(param.ui_max)
-        self.spinbox.setFixedWidth(64)
+        self.spinbox.setFixedWidth(88)
+        self.spinbox.setObjectName("paramSpinBox")
         layout.addWidget(self.spinbox)
 
         self._help_btn = self._make_help_button(param)

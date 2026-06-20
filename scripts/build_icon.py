@@ -101,23 +101,6 @@ def build_icon() -> None:
     print(f"Wrote {ICO_PATH} ({len(entries)} BMP sizes)")
 
 
-def apply_exe_icon(exe_path: Path | None = None) -> None:
-    """Apply the generated ICO to a built executable (post-PyInstaller step)."""
-    exe = exe_path or (ROOT / "dist" / "AMS2-AI-Creator" / "AMS2-AI-Creator.exe")
-    if not exe.is_file():
-        raise SystemExit(f"Executable not found: {exe}")
-    if not ICO_PATH.is_file():
-        build_icon()
-
-    from PyInstaller.utils.win32.icon import CopyIcons_FromIco
-
-    CopyIcons_FromIco(str(exe), [str(ICO_PATH)])
-    print(f"Applied icon to {exe}")
-
-
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "--apply-exe":
-        target = Path(sys.argv[2]) if len(sys.argv) > 2 else None
-        apply_exe_icon(target)
-    else:
-        build_icon()
+    build_icon()
+    sys.exit(0)
