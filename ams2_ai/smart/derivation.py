@@ -9,12 +9,15 @@ from ams2_ai.models.parameters import NUMERIC_KEYS, clamp, ui_to_xml
 def _clamp01(value: float) -> float:
     return clamp(value, 0.0, 1.0)
 
-# Vehicle performance scalars are not personality — editable independently in Smart mode.
+# Vehicle performance, setup, and reliability are car-specific — editable independently in Smart mode.
 INDEPENDENT_KEYS = frozenset(
     {
         "weight_scalar",
         "power_scalar",
         "drag_scalar",
+        "setup_downforce",
+        "setup_downforce_randomness",
+        "vehicle_reliability",
     }
 )
 
@@ -45,9 +48,6 @@ def calculate_smart_ai(skill: float, aggression: float) -> dict[str, float]:
         "fuel_management": _clamp01(s * 0.6 + (1.0 - a) * 0.4),
         "stamina": _clamp01(s * 0.7 + (1.0 - a) * 0.3),
         "weather_tyre_changes": _clamp01(s * 0.7 + (1.0 - a) * 0.3),
-        "vehicle_reliability": _clamp01(s * 0.5 + (1.0 - a) * 0.5),
-        "setup_downforce": _clamp01(0.5 - (a - 0.5) * 0.3 + (s - 0.5) * 0.1),
-        "setup_downforce_randomness": _clamp01((1.0 - s) * 0.5),
     }
 
     return {key: round(value, 3) for key, value in params.items()}
@@ -71,6 +71,9 @@ def derive_from_skill_aggression(
     derived["weight_scalar"] = 1.0
     derived["power_scalar"] = 1.0
     derived["drag_scalar"] = 1.0
+    derived["setup_downforce"] = 0.5
+    derived["setup_downforce_randomness"] = 0.0
+    derived["vehicle_reliability"] = 0.5
 
     return {key: derived[key] for key in NUMERIC_KEYS}
 
