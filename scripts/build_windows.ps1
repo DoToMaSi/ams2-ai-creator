@@ -9,6 +9,12 @@ Write-Host "Generating Windows-compatible application icon..."
 python scripts/build_icon.py
 
 pyinstaller --noconfirm --clean AMS2-AI-Creator.spec
+if ($LASTEXITCODE -ne 0) {
+    throw "PyInstaller failed with exit code $LASTEXITCODE"
+}
+if (-not (Test-Path "dist/AMS2-AI-Creator")) {
+    throw "Expected output directory not found: dist/AMS2-AI-Creator"
+}
 
 Write-Host "Creating release archive..."
 if (Test-Path "dist/AMS2-AI-Creator-windows.zip") {
