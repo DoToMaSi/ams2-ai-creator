@@ -4,11 +4,44 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ams2-ai-creator"
-version = "0.1.0"
-description = "Desktop tool to create and manage Automobilista 2 custom AI driver XML files"
+version = "1.0.0"
+description = "Visual desktop editor for Automobilista 2 custom AI driver XML files — names, nationalities, personalities, and track overrides."
 readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.11"
+authors = [
+    { name = "Douglas Tomacheski de Abreu e Silva (RockettSally)" },
+]
+keywords = [
+    "automobilista",
+    "ams2",
+    "racing",
+    "sim-racing",
+    "ai",
+    "xml",
+    "pySide6",
+    "reiza",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+    "Topic :: Utilities",
+]
 dependencies = ["PySide6>=6.6", "Faker>=24", "Unidecode>=1.3"]
+
+[project.urls]
+Homepage = "https://github.com/DoToMaSi/ams2-ai-creator"
+Documentation = "https://github.com/DoToMaSi/ams2-ai-creator#readme"
+Repository = "https://github.com/DoToMaSi/ams2-ai-creator"
+Issues = "https://github.com/DoToMaSi/ams2-ai-creator/issues"
+Changelog = "https://github.com/DoToMaSi/ams2-ai-creator/releases"
 
 [project.scripts]
 ams2-ai-creator = "ams2_ai.ui.app:main"
